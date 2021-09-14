@@ -11,7 +11,7 @@ If you have trouble viewing the jupyter files copy and paste into the nbviewer w
 
 ### Chapter 1 Introduction
    - Initial and boundary value problems (IBVP)
-   - Introduction to partial differential equations (PDEs)  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.ipynb)
+   - Introduction to partial differential equations (PDEs)  
    - The equations we shall study
 
 ### Chapter 2 Fourier Series
