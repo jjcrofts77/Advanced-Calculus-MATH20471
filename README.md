@@ -1,2 +1,2 @@
-# Advanced-Calculus-MATH20471
-Jupyter book of notes for Advanced Calculus
+# jjcrofts77
+# jjcrofts77

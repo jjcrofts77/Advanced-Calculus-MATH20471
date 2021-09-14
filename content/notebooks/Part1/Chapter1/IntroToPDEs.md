@@ -1,0 +1,184 @@
+# 1.2 Introduction to PDEs
+
+In many physical applications, the dependent variable depends on more than one independent variable.  Given that we live in a physical 
+space of three spatial dimensions and one time dimension, many functions are functions of four variables, and we would write $u=u(x,y,z,t)$, 
+where $x, y$ and $z$  are the usual Cartesian co-ordinate space variables and $t$ is the time. For example if $u$ depends on the two variables 
+$x$ and $t$, i.e. $u=u(x,t)$, then any derivatives with respect to $x$ or $t$, will be partial derivatives, and so any differential equation 
+involving $u$ will contain partial derivatives, and is called a partial differential equation.
+
+$$
+\frac{\partial^2u}{\partial{x^2}}+\frac{\partial{u}}{\partial{t}}+\frac{
+\partial^2u}{\partial{t}\partial{u}}=\sin(t)-x.
+$$
+
+Similarly, if $T=T(x,y,z,t)$ then an example of a partial differential equation involving $T$ might be
+
+$$
+\frac{1}{\kappa}\frac{\partial{T}}{\partial{t}} = \frac{\partial^2T}{\partial{x^2}}+\frac{\partial^2T}{\partial{y^2}}+\frac{
+\partial^2T}{\partial{z^2}}.
+$$
+
+Partial differential equations are an important area of theoretical physics and applied mathematics. Maxwell's equations govern electromagnetic wave propagation; Einstein's field equations occur in the general theory of relativity; Schr\"{o}dinger's wave equation is important in quantum mechanics; the Navier-Stokes equations govern fluid flow; the equation
+$\displaystyle
+\frac{\partial^2T}{\partial{x^2}}+\frac{\partial^2T}{\partial{y^2}}+\frac{
+\partial^2T}{\partial{z^2}} = \frac{1}{\kappa}\frac{\partial{T}}{\partial{t}}
+$
+governs the flow of heat in a homogeneous isotropic material. To solve a
+differential equation is to express the dependent variable in terms of the independent variables. For example the solution of the wave equation
+
+$$
+ \frac{\partial^2y}{\partial{t^2}} = c^2\frac{\partial^2y}{\partial{x^2}}
+$$
+
+is given by
+
+$$
+ y = F(x-ct)+G(x+ct)
+$$
+
+where $F$ and $G$ are arbitrary functions.
+
+The *order* of the partial differential equation is the order of the highest partial derivative that it contains. For example, $\displaystyle
+\frac{\partial^2y}{\partial{t^2}} = c^2\frac{\partial^2y}{\partial{x^2}}$ is a second order PDE, and
+
+$$
+\frac{\partial^2u}{\partial{x^2}}+\frac{\partial^4u}{\partial{t^4}}+\frac{
+\partial^2u}{\partial{t}\partial{u}}=\cos{t}
+$$
+
+is of order four. It can be shown that the general solution of an $n$th order partial differential equation contains $n$ arbitrary functions.
+
+## Solution by direct integration
+The simplest ordinary differential equations (ODEs) such as $\displaystyle \frac{d^2u}{dx^2}=F(x)$ can be solved by direct integration.
+
+**Example 1.1** if
+
+$$
+\frac{\mathrm{d}^2 u}{\mathrm{d}x^2} = 2,
+$$
+then
+
+$$
+\frac{du}{dx} &= \int 2\mathrm{d}x = 2x+A\\
+            u &= \int (2x+A) \mathrm{d}x=x^2+Ax+B.
+$$
+
+This is the general solution of the ODE containing the two arbitrary constants, $A$ and $B$. The values of these constants may be found if the solution must satisfy other 
+conditions. If, for example, the solution to the above equation must also satisfy the inital conditions $u(0)=5$ and $u'(0)=0$ then we have that $A=0$ and $B=5$, giving the particular solution  $u=x^2+5$.
+
+In a similar fashion, certain partial differential equations may be solved by direct integration. For example, given that $u=u(x,t)$ then the solution of the partial differential equation
+
+$$
+\frac{\partial^2u}{\partial{x^2}} = 2
+$$
+
+may be found as follows. Integrate with respect to $x$, to obtain
+
+$$
+\frac{\partial{u}}{\partial{x}} = 2x+F(t).
+$$
+
+Integrating again w.r.t. $x$ gives $\displaystyle u=x^2+xF(t)+G(t)$. This is the general solution to the given partial differential equation. Note that it contains two arbitrary functions, as required for a second 
+order partial differential equation.
+
+**Example 1.2** Given that $u=u(x,y)$: (a) find the general solution to the partial differential equation
+
+$$
+ \frac{\partial{u}}{\partial{x}} = 2x-e^y,
+$$
+
+and (b) find the particular solution, which satisfies $u(0,y)=\sin{y}$.
+
+Integrating gives
+
+$$
+ u(x,y) = x^2-xe^{y}+F(y).
+$$
+
+This is the general solution. We are told that $u(0,y)=\sin{y}$, and therefore
+
+$$
+ \sin{y}=0^2-0e^y+F(y),
+$$
+
+this means that $F(y)=\sin{y}$ and the particular solution required is
+
+$$
+ u(x,y) = x^2-xe^y+\sin{y}.
+$$
+
+## Solutions partly known
+On occasions, when solving a partial differential equation, the solution may be partly known. Often this information reduces a partial differential equation to an ordinary differential equation, which can then be solved in the usual fashion.
+
+**Example 1.3** Find the solution of the IBVP
+
+$$
+z+\frac{\partial^2z}{\partial{x^2}}+\frac{\partial^2z}{\partial{t^2}}-2\frac{
+\partial{z}}{\partial{t}} = 0
+$$
+
+which satisfies the conditions $z(0,t)=0$ and $z(x,0)=4\sin{3x}$, given that the solution is of the form
+
+$$
+z = F(x)e^{-2t}.
+$$
+
+The approach used is to find the derivatives appearing in the partial differential equation in terms of $F(x)$ and its derivatives, then to substitute these into the given partial differential equation and solve the resulting ordinary differential equation. We are given that
+
+$$
+ z=F(x)e^{-2t},
+$$
+
+therefore
+
+$$
+ \frac{\partial{z}}{\partial{t}}   &= -2F(x)e^{-2t}\\
+ \frac{\partial^2z}{\partial{t^2}} &= 4F(x)e^{-2t}\\
+ \frac{\partial{z}}{\partial{x}}   &= \frac{dF}{dx}e^{-2t} = F'(x)e^{-2t}\\
+ \frac{\partial^2z}{\partial{x^2}} &= \frac{d^2F}{dx^2}e^{-2t} = F''(x)e^{-2t}.
+$$
+
+Substituting this into the given equation gives
+
+$$
+e^{-2t}\left(F+F''+4F+4F\right) = 0.
+$$
+
+Thus the unknown function $F(x)$ satisfies the ordinary differential equation
+
+$$
+F''(x)+9F(x)=0.
+$$
+
+This is a linear homogeneous second order ordinary differential equation with constant coefficients. The auxiliary equation is $m^2+9=0$, with roots $m=\pm{3i}$. The solution is therefore given by
+
+$$
+ F(x) = A\cos(3x)+B\sin(3x).
+$$
+
+The solution to the partial differential equation is therefore
+
+$$
+ z(x,t) &= F(x)e^{-2t}\\
+        &= \left(A\cos(3x)+B\sin(3x)\right)e^{-2t}.
+$$$
+
+Applying the given conditions we have
+
+$$
+ z(0,t) \implies \left(A\cos(0)+B\sin(0)\right)e^{-2t} \implies A=0.
+$$
+
+Therefore
+
+$$
+ z(x,t) = B\sin(3x)e^{-2t}.
+$$
+
+Imposing the second condition gives
+
+$$
+ z(x,0)=4\sin(3x) \implies 4\sin(3x)=B\sin(3x)e^0 \implies B=4.
+$$
+
+The required solution is given by $z(x,t)=4\sin(3x)e^{-2t}$.

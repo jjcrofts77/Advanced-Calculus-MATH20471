@@ -1,0 +1,9 @@
+title: Advanced Calculus MATH20471
+author: Jonathan Crofts
+copyright: 2021
+logo: content/images/math.png
+exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+only_build_toc_files: true
+
+execute:
+  execute_notebooks: 'off'
