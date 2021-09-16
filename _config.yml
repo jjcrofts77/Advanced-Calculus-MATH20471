@@ -1,7 +1,12 @@
 title: Advanced Calculus MATH20471
 author: Jonathan Crofts
-copyright: 2021
+copyright: '2021'
 logo: content/images/math.png
+
+repository: 
+  url: https://github.com/jjcrofts77/Advanced-Calculus-MATH20471
+html:
+  use_repository_button: true
 
 sphinx:
   config:
@@ -10,12 +15,3 @@ sphinx:
 latex:
   latex_documents:
     targetname: book.tex
-
-parse:
-  myst_enable_extensions:
-    - amsmath
-
-repository: 
-  url: https://github.com/jjcrofts77/Advanced-Calculus-MATH20471
-html:
-  use_repository_button: true
