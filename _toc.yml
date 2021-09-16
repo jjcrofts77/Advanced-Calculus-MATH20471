@@ -17,7 +17,11 @@ parts:
     - file: content/notebooks/Part1/Chapter2/FuncsAnyPeriod
   - file: content/notebooks/Part1/Chapter3/Chapter3Intro
     sections:
-    - file: content/notebooks/Part1/Chapter3/derivationheat
+    - file: content/notebooks/Part1/Chapter3/DerivationHeat
+    - file: content/notebooks/Part1/Chapter3/HeatRod
+    - file: content/notebooks/Part1/Chapter3/IBVPHeat
+    - file: content/notebooks/Part1/Chapter3/UniquenessHeat
+    - file: content/notebooks/Part1/Chapter3/NonZeroBCsHeat    
 - caption: Part II - Complex Analysis
   chapters:
   - file: content/notebooks/Part2/Chapter1/Chapter1Intro
