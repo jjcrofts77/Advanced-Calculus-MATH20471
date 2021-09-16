@@ -22,6 +22,14 @@ parts:
     - file: content/notebooks/Part1/Chapter3/IBVPHeat
     - file: content/notebooks/Part1/Chapter3/UniquenessHeat
     - file: content/notebooks/Part1/Chapter3/NonZeroBCsHeat    
+  - file: content/notebooks/Part1/Chapter4/Chapter4Intro
+    sections:
+    - file: content/notebooks/Part1/Chapter4/DerivationWave
+    - file: content/notebooks/Part1/Chapter4/NormalModesString
+    - file: content/notebooks/Part1/Chapter4/IBVPWave
+    - file: content/notebooks/Part1/Chapter4/UniquenessWave
+    - file: content/notebooks/Part1/Chapter4/GeneralSolutionWave
+    - file: content/notebooks/Part1/Chapter4/DAlembert
 - caption: Part II - Complex Analysis
   chapters:
   - file: content/notebooks/Part2/Chapter1/Chapter1Intro
