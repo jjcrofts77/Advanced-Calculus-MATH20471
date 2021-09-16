@@ -11,6 +11,10 @@ latex:
   latex_documents:
     targetname: book.tex
 
+parse:
+  myst_enable_extensions:
+    - amsmath
+
 repository: 
   url: https://github.com/jjcrofts77/Advanced-Calculus-MATH20471
 html:
