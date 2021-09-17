@@ -30,6 +30,11 @@ parts:
     - file: content/notebooks/Part1/Chapter4/UniquenessWave
     - file: content/notebooks/Part1/Chapter4/GeneralSolutionWave
     - file: content/notebooks/Part1/Chapter4/DAlembert
+  - file: content/notebooks/Part1/Chapter5/Chapter5Intro
+    sections:
+    - file: content/notebooks/Part1/Chapter5/CartesianCoords
+    - file: content/notebooks/Part1/Chapter5/PolarCoords
+    - file: content/notebooks/Part1/Chapter5/UniquenessLaplace
 - caption: Part II - Complex Analysis
   chapters:
   - file: content/notebooks/Part2/Chapter1/Chapter1Intro
