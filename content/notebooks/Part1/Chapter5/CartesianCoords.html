@@ -386,9 +386,9 @@
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter5/CartesianCoords.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="section" id="bvp-in-catesian-coordinates">
 <h1>5.1 BVP in Catesian Coordinates<a class="headerlink" href="#bvp-in-catesian-coordinates" title="Permalink to this headline">¶</a></h1>
-<p>Consider the following BVP: find the solution of Laplace’s equation <a class="reference internal" href="Chapter5Intro.html#equation-laplacech5">(33)</a> which is defined on the rectangle <span class="math notranslate nohighlight">\(\{(x,y): 0\leq x\leq a, 0\leq y\leq b\}\)</span> and satisfies the boundary conditions</p>
+<p>Consider the following BVP: find the solution of Laplace’s equation <a class="reference internal" href="Chapter5Intro.html#equation-laplacech5">(34)</a> which is defined on the rectangle <span class="math notranslate nohighlight">\(\{(x,y): 0\leq x\leq a, 0\leq y\leq b\}\)</span> and satisfies the boundary conditions</p>
 <div class="math notranslate nohighlight" id="equation-laplacebcs1">
-<span class="eqno">(35)<a class="headerlink" href="#equation-laplacebcs1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(36)<a class="headerlink" href="#equation-laplacebcs1" title="Permalink to this equation">¶</a></span>\[
  T(0,y)=T(a,y)=0, \quad 0&lt;y&lt;b,
 \]</div>
 <div class="math notranslate nohighlight">
@@ -399,10 +399,10 @@
 <br>
 <div class="figure align-default" id="laplacerectangle">
 <a class="reference internal image-reference" href="../../../../_images/LaplaceRectangle.png"><img alt="../../../../_images/LaplaceRectangle.png" src="../../../../_images/LaplaceRectangle.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Domain of definition and boundary conditions for Laplace’s equation on a 2-d rectangular plate: <span class="math notranslate nohighlight">\(x=0, y=0\)</span> and <span class="math notranslate nohighlight">\(x=a\)</span> are held at a constant temperature of zero degrees (blue lines); and the temperature profile along <span class="math notranslate nohighlight">\(y=b\)</span> is given by <span class="math notranslate nohighlight">\(f(x)\)</span> (red line).</span><a class="headerlink" href="#laplacerectangle" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Domain of definition and boundary conditions for Laplace’s equation on a 2-d rectangular plate: <span class="math notranslate nohighlight">\(x=0, y=0\)</span> and <span class="math notranslate nohighlight">\(x=a\)</span> are held at a constant temperature of zero degrees (blue lines); and the temperature profile along <span class="math notranslate nohighlight">\(y=b\)</span> is given by <span class="math notranslate nohighlight">\(f(x)\)</span> (red line).</span><a class="headerlink" href="#laplacerectangle" title="Permalink to this image">¶</a></p>
 </div>
 <br>
-<p>To begin we look for special solutions of Laplace’s equation of the separable form <span class="math notranslate nohighlight">\(T(x,y)=F(x)G(y)\)</span>. Substituting into <a class="reference internal" href="Chapter5Intro.html#equation-laplacech5">(33)</a> and dividing through by <span class="math notranslate nohighlight">\(F(x)G(y)\)</span> gives</p>
+<p>To begin we look for special solutions of Laplace’s equation of the separable form <span class="math notranslate nohighlight">\(T(x,y)=F(x)G(y)\)</span>. Substituting into <a class="reference internal" href="Chapter5Intro.html#equation-laplacech5">(34)</a> and dividing through by <span class="math notranslate nohighlight">\(F(x)G(y)\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{F(x)}F''(x)+\frac{1}{G(x)}G''(x)=0.
@@ -417,7 +417,7 @@
 \[
 T(x,y) = \sin\left(\frac{n\pi x}{a}\right)G(y),
 \]</div>
-<p>which satisfies the boundary conditions <a class="reference internal" href="#equation-laplacebcs1">(35)</a>. Furthermore, <span class="math notranslate nohighlight">\(G(y)\)</span> is a solution of the ODE</p>
+<p>which satisfies the boundary conditions <a class="reference internal" href="#equation-laplacebcs1">(36)</a>. Furthermore, <span class="math notranslate nohighlight">\(G(y)\)</span> is a solution of the ODE</p>
 <div class="math notranslate nohighlight">
 \[
  G''(y) = \frac{n^2\pi^2}{a^2}G(y),
