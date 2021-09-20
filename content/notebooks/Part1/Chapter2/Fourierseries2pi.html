@@ -551,7 +551,14 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
 <p>Below we use Python to plot the FS approximations (with 1, 2 and 3 terms) of <span class="math notranslate nohighlight">\(|x|\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># hide content</span>
+<span class="p">{</span>    
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># python modules (maths + plotting)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># sets the size of the figure in inches</span>
@@ -684,7 +691,13 @@ s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># hide content</span>
+<span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="c1"># python modules (maths + plotting)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># sets the size of the figure in inches</span>
