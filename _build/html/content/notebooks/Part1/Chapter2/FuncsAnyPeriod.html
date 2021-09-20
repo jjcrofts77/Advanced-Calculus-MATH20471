@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.4 Functions of Any Period &#8212; Advanced Calculus MATH20471</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Chapter 3 The Heat Equation" href="../Chapter3/Chapter3Intro.html" />
+    <link rel="prev" title="2.3 Convergence of Fourier Series" href="FSConvergence.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+      <img src="../../../../_static/math.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/IBVP.html">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/IntroToPDEs.html">
+     1.2 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/PDEsToStudy.html">
+     1.3 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fourierseries2pi.html">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter1/ComplexNumbers.html">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter1/ComplexFunc.html">
+     1.2 Complex valued functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part1/Chapter2/FuncsAnyPeriod.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jjcrofts77/Advanced-Calculus-MATH20471"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jjcrofts77/Advanced-Calculus-MATH20471/master?urlpath=tree/content/notebooks/Part1/Chapter2/FuncsAnyPeriod.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sine-and-cosine-series">
+   Sine and cosine series
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter2/FuncsAnyPeriod.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="section" id="functions-of-any-period">
+<h1>2.4 Functions of Any Period<a class="headerlink" href="#functions-of-any-period" title="Permalink to this headline">¶</a></h1>
+<p>Consider a function <span class="math notranslate nohighlight">\(f\)</span> of period <span class="math notranslate nohighlight">\(2L (L&gt;0)\)</span>. We want a series in <span class="math notranslate nohighlight">\(\cos(n\pi x/L)\)</span> and <span class="math notranslate nohighlight">\(\sin(n\pi x/L)\)</span>. To do this we make the transformation <span class="math notranslate nohighlight">\(X=\pi x/L\)</span>. Formally, we define <span class="math notranslate nohighlight">\(g(X) = f(x) = f(LX/\pi)\)</span> so that</p>
+<br>
+<div class="math notranslate nohighlight">
+\[
+g(X+2\pi) = f\left(\frac{L(X+2\pi)}{\pi}\right) = f\left(\frac{LX}{\pi}+2L\right) = f\left(\frac{LX}{\pi}\right) = g(X),
+\]</div>
+<br>
+<p>and <span class="math notranslate nohighlight">\(g(X)\)</span> is <span class="math notranslate nohighlight">\(2\pi\)</span> periodic. Hence the previous theory holds for <span class="math notranslate nohighlight">\(g\)</span>, <em>i.e.</em> if we can write</p>
+<div class="math notranslate nohighlight" id="equation-geqn">
+<span class="eqno">(8)<a class="headerlink" href="#equation-geqn" title="Permalink to this equation">¶</a></span>\[
+ g(X) = \frac{1}{2}a_0 + \sum_{n=1}^\infty\left[ a_n\cos(nX) + b_n\sin(nX)\right],
+\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nonumber a_n &amp;= \frac{1}{\pi}\int_{-\pi}^\pi g(X)\cos(nX) \mathrm{d}X\\\nonumber
+ &amp;= \frac{1}{\pi}\int_{-L}^L g\left(\frac{\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\frac{\pi}{L} \mathrm{d}x\\
+ &amp;=\frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \mathrm{d}x,
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nonumber b_n &amp;= \frac{1}{\pi}\int_{-\pi}^\pi g(X)\sin(nX) \mathrm{d}X\\
+ &amp;= \frac{1}{\pi}\int_{-L}^L g\left(\frac{\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\frac{\pi}{L} \mathrm{d}x\\
+ &amp;=\frac{1}{L}\int_{-L}^L f(x)\sin\left(\frac{n\pi x}{L}\right) \mathrm{d}x.
+\end{split}\]</div>
+<p>So we can write</p>
+<div class="math notranslate nohighlight" id="equation-feqn">
+<span class="eqno">(9)<a class="headerlink" href="#equation-feqn" title="Permalink to this equation">¶</a></span>\[
+ f(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty\left[a_n\cos\left(\frac{n\pi x}{L}\right) + b_n\sin\left(\frac{n\pi x}{L}\right)\right],
+\]</div>
+<p>then <a class="reference internal" href="#equation-geqn">(8)</a> holds, so</p>
+<div class="math notranslate nohighlight">
+\[
+a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \mathrm{d}x, \quad b_n = \frac{1}{L}\int_{-L}^L f(x)\sin\left(\frac{n\pi x}{L}\right) \mathrm{d}x.
+\]</div>
+<p>The series in <a class="reference internal" href="#equation-feqn">(9)</a> is called the Fourier series for <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are the Fourier coefficients of <span class="math notranslate nohighlight">\(f\)</span>. Again, we use <span class="math notranslate nohighlight">\(\sim\)</span> if we are unsure whether or not the series converges. By Theorem 2.2, under suitable conditions the series in equation <a class="reference internal" href="#equation-geqn">(8)</a> converges to</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{g(X_+)+g(X_-)}{2}
+\]</div>
+<p>so we obtain</p>
+<br>
+<blockquote>
+<div><p><strong>Theorem 2.4.1</strong> Let <span class="math notranslate nohighlight">\(f\)</span> be a periodic function of period <span class="math notranslate nohighlight">\(2L\)</span> which is sufficiently well-behaved. Then the Fourier series of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span> converges to</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{f(x_+)+f(x_-)}{2},
+\]</div>
+<p>so that Equation <a class="reference internal" href="#equation-feqn">(9)</a> holds at any point where <span class="math notranslate nohighlight">\(f\)</span> is continuous.</p>
+</div></blockquote>
+<br>
+<p><strong>Example 2.4.1</strong> Find the Fourier series of the <span class="math notranslate nohighlight">\(2L\)</span>-periodic extension of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ f(x) = \begin{cases}x &amp; x\in(0, L]\\ 0 &amp; x\in(-L, 0].\end{cases}
+\end{split}\]</div>
+<p>Hence show that</p>
+<div class="math notranslate nohighlight" id="equation-ex1">
+<span class="eqno">(10)<a class="headerlink" href="#equation-ex1" title="Permalink to this equation">¶</a></span>\[
+ \frac{\pi^2}{8} = \sum_{m=0}^\infty \frac{1}{(2m+1)^2}.
+\]</div>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[
+a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{1}{L}\int_0^Lx\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{L[(-1)^n-1]}{n^2\pi^2}, \quad n\neq 0,
+\]</div>
+<p>as in Example 2.2.1.</p>
+<p>So we have <span class="math notranslate nohighlight">\(a_{2m}=0\)</span> for <span class="math notranslate nohighlight">\(m&gt;0\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+ a_{2m+1} = \frac{-2L}{(2m+1)^2\pi^2}.
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(a_0\)</span> we calculate</p>
+<div class="math notranslate nohighlight">
+\[
+ a_0 = \frac{1}{L}\int_{-L}^L f(x)\mathrm{d}x=\frac{1}{L}\int_0^L x\mathrm{d}x = \frac{L}{2},
+\]</div>
+<p>and for <span class="math notranslate nohighlight">\(b_n\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ b_n &amp;= \frac{1}{L}\int_{-L}^L f(x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x\\
+ &amp;=\frac{1}{L}\int_0^Lx\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x\\
+ &amp;= \frac{1}{L}\left(\left[-\frac{Lx}{n\pi}\cos\left(\frac{n\pi x}{L}\right)\right]_0^L + \int_0^L\frac{L}{n\pi}\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x\right)\\
+ &amp;=\frac{1}{L}\left(-\frac{L^2(-1)^n}{n\pi} + \left[\frac{L^2}{n^2\pi^2}\sin\left(\frac{n\pi x}{L}\right)\right]_0^L\right)\\
+ &amp;= (-1)^{n+1}\frac{L}{n\pi}.
+\end{split}\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight" id="equation-fsex1">
+<span class="eqno">(11)<a class="headerlink" href="#equation-fsex1" title="Permalink to this equation">¶</a></span>\[
+ f(x) \sim \frac{L}{4} + \sum_{m=0}^\infty \frac{-2L}{(2m+1)^2\pi^2}\cos\left[\frac{(2m+1)\pi x}{L}\right] + \sum_{m=1}^\infty (-1)^{m+1}\frac{L}{m\pi}\sin\left(\frac{m\pi x}{L}\right).
+\]</div>
+<p>By Theorem 2.4.1, if <span class="math notranslate nohighlight">\(x\in [0,L)\)</span> we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{L}{4}+ \sum_{m=0}^\infty \frac{-2L}{(2m+1)^2\pi^2}\cos\left[\frac{(2m+1)\pi x}{L}\right] + \sum_{m=1}^\infty (-1)^{m+1}\frac{L}{m\pi}\sin\left(\frac{m\pi x}{L}\right).
+\]</div>
+<p>because <span class="math notranslate nohighlight">\(f\)</span> is continuous on <span class="math notranslate nohighlight">\([0,L)\)</span>. If we put <span class="math notranslate nohighlight">\(x=0\)</span> we calculate</p>
+<div class="math notranslate nohighlight">
+\[
+0 = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2},
+\]</div>
+<p>which proves <a class="reference internal" href="#equation-ex1">(10)</a>. If we set <span class="math notranslate nohighlight">\(x=L\)</span> in equation <a class="reference internal" href="#equation-fsex1">(11)</a> we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(L_+)+f(L_-)}{2} = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2}\cos\left((2m+1)\pi\right),
+\]</div>
+<p>giving</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{0+L}{2} = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2},
+\]</div>
+<p>which gives equation (<a class="reference internal" href="#equation-ex1">(10)</a> again.</p>
+<div class="section" id="sine-and-cosine-series">
+<h2>Sine and cosine series<a class="headerlink" href="#sine-and-cosine-series" title="Permalink to this headline">¶</a></h2>
+<p>Given a function <span class="math notranslate nohighlight">\(f\)</span> defined on <span class="math notranslate nohighlight">\([0,L]\)</span> we require an expansion with only cosine terms or only sine terms. This will be done by extending <span class="math notranslate nohighlight">\(f\)</span> to be even (for only cosine terms) or odd (for only sine terms) on <span class="math notranslate nohighlight">\((-L,L]\)</span> and then extending to a <span class="math notranslate nohighlight">\(2L\)</span>-periodic function. The series obtained will then be valid on <span class="math notranslate nohighlight">\((0,L)\)</span>.</p>
+<br>
+<blockquote>
+<div><p><strong>Definition 2.4.1</strong> If <span class="math notranslate nohighlight">\(f\)</span> is defined on <span class="math notranslate nohighlight">\([0, L]\)</span>, the <em>even extension</em> for <span class="math notranslate nohighlight">\(f\)</span>, denoted by <span class="math notranslate nohighlight">\(f_e\)</span>, is the periodic extension of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f_e(x) = \begin{cases}
+f(x)&amp; x\in[0,L),\\
+f(-x)&amp; x\in(-L,0),
+\end{cases}
+\end{split}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(f_e(x) = f_e(-x)\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[
+f_e(x)\sim \frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos\left(\frac{n\pi x}{L}\right),
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+ a_n = \frac{1}{L}\int_{-L}^Lf_e(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x,
+\]</div>
+<p>is called the <em>Fourier cosine series</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div></blockquote>
+<br>
+<blockquote>
+<div><p><strong>Definition 2.4.2</strong> The <em>odd extension</em> for <span class="math notranslate nohighlight">\(f\)</span>, denoted by <span class="math notranslate nohighlight">\(f_o\)</span>, is the periodic extension of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f_o(x) = \begin{cases}
+f(x)&amp; x\in[0,L),\\
+-f(-x)&amp; x\in(-L,0),
+\end{cases}
+\end{split}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(f_o(x) = -f_o(-x)\)</span> for all <span class="math notranslate nohighlight">\(x\neq nL\)</span>. Similarly,</p>
+<div class="math notranslate nohighlight">
+\[
+f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+ b_n = \frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x,
+\]</div>
+<p>is called the <em>Fourier sine series</em> for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div></blockquote>
+<br>
+<p><strong>Note:</strong> For <span class="math notranslate nohighlight">\(f_o\)</span> to really be odd we must have <span class="math notranslate nohighlight">\(f_o(0)=0\)</span> and also <span class="math notranslate nohighlight">\(f_o(L)=-f_o(-L)=-f_o(L)\)</span> (the last equality follows from periodicity) giving <span class="math notranslate nohighlight">\(f_o(L)=0\)</span> and therefore <span class="math notranslate nohighlight">\(f_o(nL)=0\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>. However, the value of <span class="math notranslate nohighlight">\(f\)</span> at these isolated points does not affect the Fourier series.</p>
+<br>
+<p><strong>Example 2.4.2</strong> Find the Fourier sine and cosine series  expansions of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span>.</p>
+<p><em>Sine expansion:</em></p>
+<p>The odd extension is defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ f_o(x) = \begin{cases} x&amp;x\in[0,L],\\-(-x)&amp;x\in(-L,0).\end{cases}
+\end{split}\]</div>
+<p>In this case</p>
+<div class="math notranslate nohighlight">
+\[
+ b_n = \frac{2}{L}\int_0^L x\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x = (-1)^{n+1}\frac{2L}{n\pi},
+\]</div>
+<p>as in Example 2.4.1. For <span class="math notranslate nohighlight">\(x\in[0,L)\)</span> we therefore obtain</p>
+<div class="math notranslate nohighlight">
+\[
+ x = \sum_{n=1}^\infty (-1)^{n+1}\frac{2L}{n\pi}\sin\left(\frac{n\pi x}{L}\right).
+\]</div>
+<p><em>Cosine expansion</em></p>
+<p>The even extension is defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ f_e(x) = \begin{cases}x&amp;x\in[0,L],\\-x&amp;x\in(-L,0).\end{cases}
+\end{split}\]</div>
+<p>Now,</p>
+<div class="math notranslate nohighlight">
+\[
+ a_0 = \frac{2}{L}\int_0^L x\mathrm{d}x = L,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ a_n=\frac{2}{L}\int_0^L x\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x =
+ \begin{cases}0&amp;n=2m \text{ even},\\ \frac{-4L}{(2m+1)^2\pi^2}&amp;n=2m+1 \text{ odd}. \end{cases}
+\end{split}\]</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\Part1\Chapter2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="FSConvergence.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">2.3 Convergence of Fourier Series</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Chapter3/Chapter3Intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Chapter 3 The Heat Equation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jonathan Crofts<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
