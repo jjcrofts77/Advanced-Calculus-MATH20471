@@ -17,15 +17,16 @@ y3=y2-(4/np.pi)*np.cos(5*x)/25.0 # 3 terms
 # plot
 plt.ion()
 plt.plot(x,f,'b-',lw=3,label='f(x)')
-plt.plot(x,y1,'r--',lw=2,label='two terms')
-plt.plot(x,y2,'y--',lw=2,label='four terms')
-plt.plot(x,y3,'m--',lw=2,label='six terms')
+plt.plot(x,y1,'r--',lw=2,label='one terms')
+plt.plot(x,y2,'y--',lw=2,label='two terms')
+plt.plot(x,y3,'m--',lw=2,label='three terms')
 
 # add legend, label axis and add title
 plt.legend(loc='best')
 plt.xlabel('x',style='italic')
 plt.ylabel('partial sums',style='italic')
 plt.suptitle('Partial sums for Fourier series of $f(x) = |x|$ on $(-\pi, \pi)$',size=16,weight='bold')
+exit()
 
 # python modules (maths + plotting)
 import numpy as np
@@ -56,4 +57,5 @@ plt.legend(loc='best')
 plt.xlabel('x',style='italic')
 plt.ylabel('partial sums',style='italic')
 plt.suptitle('Partial sums for Fourier series of the square wave function',size=16,weight='bold')
+exit()
 
