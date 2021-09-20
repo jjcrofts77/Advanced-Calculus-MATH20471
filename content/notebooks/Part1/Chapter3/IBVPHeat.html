@@ -420,10 +420,11 @@
  T(x,t) = \sum_{n=1}^\infty a_n\sin\left(\frac{n\pi x}{L}\right)e^{-n^2\pi^2\kappa t/L^2}.
 \]</div>
 <br>
-<p><strong>Example 3.3.1</strong> Solve the IBVP for the case
-$<span class="math notranslate nohighlight">\(
+<p><strong>Example 3.3.1</strong> Solve the IBVP for the case</p>
+<div class="math notranslate nohighlight">
+\[
  T(x,0) = \sin\left(\frac{\pi x}{L}\right) + \frac{1}{2}\sin\left(\frac{2\pi x}{L}\right) = f(x), \quad 0 \leq x \leq L.
-\)</span>$</p>
+\]</div>
 <p>From equation <a class="reference internal" href="#equation-heatsol">(14)</a> we see that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -434,6 +435,32 @@ $<span class="math notranslate nohighlight">\(
 \[
  T(x,t) = \sin\left(\frac{\pi x}{L}\right)e^{-\pi^2\kappa t/L^2} +\frac{1}{2}\sin\left(\frac{2\pi x}{L}\right)e^{-4\pi^2 \kappa t/L^2}.
 \]</div>
+<p>The initial condition and solution is shown in the figures below.</p>
+<br>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/HeatICExample31.png" src="../../../../_images/HeatICExample31.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Initial condition</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id2">
+<img alt="../../../../_images/HeatExample31.png" src="../../../../_images/HeatExample31.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Solution of Example 3.3.1 with <span class="math notranslate nohighlight">\(L = \pi\)</span> and <span class="math notranslate nohighlight">\(\kappa = 1\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <br>
 <div class="section" id="application-of-fourier-series">
 <h2>Application of Fourier Series<a class="headerlink" href="#application-of-fourier-series" title="Permalink to this headline">¶</a></h2>
@@ -473,6 +500,34 @@ f(x) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1}{
 \[
 T(x,t) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1}{L}\right)-\cos\left(\frac{n\pi L_2}{L}\right)\right]\sin\left(\frac{n\pi x}{L}\right)e^{-n^2\pi^2\kappa t/L^2}.
 \]</div>
+<p>The initial condition and solution is shown in the figures below.</p>
+<br>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id3">
+<img alt="../../../../_images/HeatICExample32.png" src="../../../../_images/HeatICExample32.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Initial condition (FS approximation with <span class="math notranslate nohighlight">\(n=1000\)</span> terms)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id4">
+<img alt="../../../../_images/HeatExample32.png" src="../../../../_images/HeatExample32.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Solution of Example 3.3.2 with <span class="math notranslate nohighlight">\(L = \pi\)</span> and <span class="math notranslate nohighlight">\(\kappa = 1\)</span> truncated to <span class="math notranslate nohighlight">\(n=1000\)</span> terms</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<p>Notice Gibb’s phenomenon is present despite the large number of terms taken in the FS approximation.</p>
 </div>
 </div>
 
@@ -489,7 +544,7 @@ T(x,t) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content\notebooks\Part1\Chapter3"
+            path: "./content/notebooks/Part1/Chapter3"
         },
         predefinedOutput: true
     }
