@@ -2,9 +2,10 @@
 # Jupyter Book settings
 #######################
 
-# Main page settings
-# Optional: you can replace with <https://github.com/my-first-jupyter-book/my-book-site> your repo URL
-#footer_text               : View source repository at <a href="https://github.com/my-first-jupyter-book/my-book-site"></a> #@@@ CHANGE THIS - 7 @@@#
+# Book settings
+title                       : Advanced Calculus MATH20471  # The title of the book. Will be placed in the left navbar.
+author                      : Jonathan J Crofts  # The author of the book
+copyright                   : "2021"  # Copyright year to be placed in the footer
 
 # Sidebar settings
 show_sidebar              : true  # Show the sidebar. Only set to false if your only wish to host a single page.
