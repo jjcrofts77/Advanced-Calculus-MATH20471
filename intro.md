@@ -6,7 +6,6 @@ This Jupyterbook provides the course notes for the second year module Advanced C
 ### Lectures/Seminars
 
 | Lecture   | 11-12 Wednesday, NHB LT8  |
-| :--- | ---: |
 | Seminar Group M1, M2    | 11-12 Tuesday, NHB 169    |
 | Seminar Group M3, P    | 13-14 Tuesday, CELS 116    |
 
