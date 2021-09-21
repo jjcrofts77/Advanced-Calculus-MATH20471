@@ -52,8 +52,8 @@ The second part of this course of lectures considers the extension of calculus t
 ### Chapter 3 Singularities
    - Poles
    - Removable singularities
-   - essenital singularities
-   - singularities at infinity (optional)
+   - Essenital singularities
+   - Singularities at infinity (optional)
 
 ### Chapter 4 Integration
    - Preliminary definitions
