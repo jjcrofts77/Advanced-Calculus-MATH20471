@@ -1,11 +1,11 @@
 <!-- #region -->
 # Course Overview
 
-This Jupyterbook provides the course notes for Advanced Calculus.
-
-If you have trouble viewing the jupyter files copy and paste into the nbviewer website.
+This Jupyterbook provides the course notes for the second year module Advanced Calculus (MATH20471).
 
 ## Part I - PDEs and Fourier Series
+
+The first part of this course of lectures introduces Fourier series, focussing on their practical applications rather than proofs of convergence. We will then discuss how the wave equation, heat equation and Laplace's equation arise in physical models. In each case we will explore basic techniques for solving the equations in several dependent variables.
 
 ### Chapter 1 Introduction
    - Initial and boundary value problems (IBVP)
@@ -40,18 +40,20 @@ If you have trouble viewing the jupyter files copy and paste into the nbviewer w
 
 ## Part II Complex Analysis
 
+The second part of this course of lectures considers the extension of calculus to functions of a complex variable. It develops theory with important applications such as evaluation of contour integrals using residue calculus as well as real-valued integrals that arise in engineering applications.
+
 ### Chapter 1 Prerequisites
    - Revision of complex numbers
    - Complex valued functions
 
 ### Chapter 2 Differentiation
-   - Concsequences/uses of the Cauchy-Riemann equations
+   - Consequences/uses of the Cauchy-Riemann equations
 
 ### Chapter 3 Singularities
    - Poles
    - Removable singularities
-   - essenital singularities
-   - singularities at infinity (optional)
+   - Essenital singularities
+   - Singularities at infinity (optional)
 
 ### Chapter 4 Integration
    - Preliminary definitions
@@ -79,15 +81,15 @@ If you have trouble viewing the jupyter files copy and paste into the nbviewer w
 
 ------
 ## Supplementary Video Lectures
+3Blue1Brown: But what is a partial differential equation? YouTube. https://www.youtube.com/watch?v=ly4S0oi3Yz8&t=316s
 
-------
-## Popular Videos
+3Blue1Brown: But what is a Fourier series? From heat flow to drawing circles. YouTube. https://www.youtube.com/watch?v=r6sGWTCMz2k
+
+3Blue1Brown: Complex numbers fundamentals. YouTube. https://www.youtube.com/watch?v=5PcpBw5Hbwo
 
 ------
 ## Popular Press Reading
-
-------
-## Podcasts
+Strogatz, S., 2019. Infinite powers: How calculus reveals the secrets of the universe. Houghton Mifflin Harcourt.
 
 <!-- #endregion -->
 
