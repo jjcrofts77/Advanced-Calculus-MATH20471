@@ -13,8 +13,8 @@ This Jupyterbook provides the course notes for the second year module Advanced C
 
 ### Assessment
 
---Exam: PDEs and Fourier Series (50%, January)
---Exam
+* Exam: PDEs and Fourier Series (50%, January)
+* Exam: Complex Analysis (50%, Summer)
 
 ## Part I - PDEs and Fourier Series
 
