@@ -1,11 +1,13 @@
 <!-- #region -->
 # Course Overview
 
-This Jupyterbook provides the course notes for Advanced Calculus.
+This Jupyterbook provides the course notes for the second year module Advanced Calculus (MATH20471).
 
 If you have trouble viewing the jupyter files copy and paste into the nbviewer website.
 
 ## Part I - PDEs and Fourier Series
+
+The first part of this course of lectures introduces Fourier series, focussing on their practical applications rather than proofs of convergence. We will then discuss how the wave equation, heat equation and Laplace's equation arise in physical models. In each case we will explore basic techniques for solving the equations in several dependent variables.
 
 ### Chapter 1 Introduction
    - Initial and boundary value problems (IBVP)
