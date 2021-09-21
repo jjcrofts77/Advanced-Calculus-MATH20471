@@ -3,19 +3,6 @@
 
 This Jupyterbook provides the course notes for the second year module Advanced Calculus (MATH20471).
 
-### Lectures/Seminars
-
-|  Activity  | Time + Location |
-| :--- | ---: |
-|Lecture  | 11-12 Wednesday, NHB LT8     |
-| Seminar Group M1, M2    | 11-12 Tuesday, NHB 169    |
-| Seminar Group M3, P    | 13-14 Tuesday, CELS 116    |
-
-### Assessment
-
-* Exam: PDEs and Fourier Series (50%, January)
-* Exam: Complex Analysis (50%, Summer)
-
 ## Part I - PDEs and Fourier Series
 
 The first part of this course of lectures introduces Fourier series, focussing on their practical applications rather than proofs of convergence. We will then discuss how the wave equation, heat equation and Laplace's equation arise in physical models. In each case we will explore basic techniques for solving the equations in several dependent variables.
@@ -94,15 +81,13 @@ The second part of this course of lectures considers the extension of calculus t
 
 ------
 ## Supplementary Video Lectures
+3Blue1Brown Complex numbers fundamentals. YouTube. https://www.youtube.com/watch?v=5PcpBw5Hbwo
 
 ------
 ## Popular Videos
 
 ------
 ## Popular Press Reading
-
-------
-## Podcasts
 
 <!-- #endregion -->
 
