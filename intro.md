@@ -3,7 +3,11 @@
 
 This Jupyterbook provides the course notes for the second year module Advanced Calculus (MATH20471).
 
-If you have trouble viewing the jupyter files copy and paste into the nbviewer website.
+### Lectures/Seminars
+
+| a    | b    |
+| :--- | ---: |
+| c    | d    |
 
 ## Part I - PDEs and Fourier Series
 
@@ -41,6 +45,8 @@ The first part of this course of lectures introduces Fourier series, focussing o
    - Uniqueness (optional)
 
 ## Part II Complex Analysis
+
+The second part of this course of lectures considers the extension of calculus to functions of a complex variable. It develops theory with important applications such as evaluation of contour integrals using residue calculus as well as real-valued integrals that arise in engineering applications.
 
 ### Chapter 1 Prerequisites
    - Revision of complex numbers
