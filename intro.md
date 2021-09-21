@@ -81,13 +81,12 @@ The second part of this course of lectures considers the extension of calculus t
 
 ------
 ## Supplementary Video Lectures
+But what is a Fourier series? From heat flow to drawing circles. YouTube. https://www.youtube.com/watch?v=r6sGWTCMz2k
 3Blue1Brown Complex numbers fundamentals. YouTube. https://www.youtube.com/watch?v=5PcpBw5Hbwo
 
 ------
-## Popular Videos
-
-------
 ## Popular Press Reading
+Strogatz, S., 2019. Infinite powers: How calculus reveals the secrets of the universe. Houghton Mifflin Harcourt.
 
 <!-- #endregion -->
 
