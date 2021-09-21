@@ -81,11 +81,11 @@ The second part of this course of lectures considers the extension of calculus t
 
 ------
 ## Supplementary Video Lectures
-But what is a partial differential equation? YouTube. https://www.youtube.com/watch?v=ly4S0oi3Yz8&t=316s
+3Blue1Brown: But what is a partial differential equation? YouTube. https://www.youtube.com/watch?v=ly4S0oi3Yz8&t=316s
 
-But what is a Fourier series? From heat flow to drawing circles. YouTube. https://www.youtube.com/watch?v=r6sGWTCMz2k
+3Blue1Brown: But what is a Fourier series? From heat flow to drawing circles. YouTube. https://www.youtube.com/watch?v=r6sGWTCMz2k
 
-3Blue1Brown Complex numbers fundamentals. YouTube. https://www.youtube.com/watch?v=5PcpBw5Hbwo
+3Blue1Brown: Complex numbers fundamentals. YouTube. https://www.youtube.com/watch?v=5PcpBw5Hbwo
 
 ------
 ## Popular Press Reading
