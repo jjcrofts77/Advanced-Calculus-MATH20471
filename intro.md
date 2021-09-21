@@ -5,7 +5,7 @@ This Jupyterbook provides the course notes for the second year module Advanced C
 
 ### Lectures/Seminars
 
-| a    | b    |
+| Lecture   | 11-12 Wednesday, NHB LT8  |
 | :--- | ---: |
 | c    | d    |
 
