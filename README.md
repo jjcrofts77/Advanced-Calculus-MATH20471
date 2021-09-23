@@ -5,8 +5,6 @@
 
 This Jupyterbook provides the course notes for Advanced Calculus.
 
-If you have trouble viewing the jupyter files copy and paste into the nbviewer website.
-
 ## Part I - PDEs and Fourier Series
 
 ### Chapter 1 Introduction
@@ -70,6 +68,8 @@ If you have trouble viewing the jupyter files copy and paste into the nbviewer w
    - Cauchy's residue theorem
    - Calculating residues
    - Evaluation of real integrals
+
+<br>
 
 ## References
 [1] Jordan D.W., Smith P. Mathematical techniques: an introduction for the engineering, physical, and mathematical sciences (2008)
