@@ -92,9 +92,3 @@ The second part of this course of lectures considers the extension of calculus t
 Strogatz, S., 2019. Infinite powers: How calculus reveals the secrets of the universe. Houghton Mifflin Harcourt.
 
 <!-- #endregion -->
-
-```python
-
-```
-
-
