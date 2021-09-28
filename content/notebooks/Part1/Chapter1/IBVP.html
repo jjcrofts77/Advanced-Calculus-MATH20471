@@ -433,8 +433,8 @@ x''(t) = \mu(1-x^2(t))x'(t) - x(t),\quad t\geq 0
 \[
  x(0) = x_0,~ x'(0) = \nu_0.
 \]</div>
-<p>Here <span class="math notranslate nohighlight">\(\mu, x_0, \nu_0\)</span> are constants. Because we specify sufficient conditions at an initial time <span class="math notranslate nohighlight">\(t=0\)</span> (<span class="math notranslate nohighlight">\(t=t_0\)</span>) to fix the solution, this is called an
-<em>initial value problem</em> (IVP).</p>
+<p>Here <span class="math notranslate nohighlight">\(\mu, x_0, \nu_0\)</span> are constants.</p>
+<p>Because we specify sufficient conditions at an initial time <span class="math notranslate nohighlight">\(t=0\)</span> (<span class="math notranslate nohighlight">\(t=t_0\)</span>) to fix the solution, this is called an <em>initial value problem</em> (IVP).</p>
 <p>Note that the example given above is the famed <em>Van der Pol equation</em>, which was originally proposed by the Dutch electrical engineer Balthasar
 van der Pol to model oscillations observed in certain types of electrical circuits. It is an example of a <em>nonlinear differential equation</em> and importantly does
 not admit an analytic solution. (It can however be analysed both numerically and by using the methods of dynamical systems – see (take?) the third year module
@@ -442,29 +442,36 @@ not admit an analytic solution. (It can however be analysed both numerically and
 </div>
 <div class="section" id="boundary-value-problem-bvp">
 <h2>Boundary value problem (BVP)<a class="headerlink" href="#boundary-value-problem-bvp" title="Permalink to this headline">¶</a></h2>
-<p>Suppose <span class="math notranslate nohighlight">\(x(t)\)</span> is defined on an interval <span class="math notranslate nohighlight">\([a, b]\)</span> and <span class="math notranslate nohighlight">\(x(a) = A\)</span> and <span class="math notranslate nohighlight">\(x(b) = B\)</span> are prescribed. Consider, for example, the linear equation</p>
+<p>Suppose <span class="math notranslate nohighlight">\(x(t)\)</span> is defined on an interval <span class="math notranslate nohighlight">\(\displaystyle [a, b]\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x(a) = A\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x(b) = B\)</span> are prescribed. Consider, for example, the linear equation</p>
 <div class="math notranslate nohighlight">
 \[
-x''(t) = -\mu^2 x(t), 0 &lt; t &lt; 1, \text{ with } x(0) = A, x(1) = B.
+x''(t) = -\mu^2 x(t), ~~0 &lt; t &lt; 1,\quad \text{with}\quad x(0) = A,~~ x(1) = B.
 \]</div>
 <p>Such equations are called <em>two-point boundary value problems</em>.</p>
 <p>In the simple case given above, we can solve in the usual way to obtain solutions</p>
 <div class="math notranslate nohighlight">
 \[
- x_1(t) = e^{\mu t} \text{ and } x_2(t) = e^{-\mu t}. 
+ x_1(t) = e^{\mu t} \quad\text{and}\quad x_2(t) = e^{-\mu t}. 
 \]</div>
-<p>Linearity then implies that the general solution is <span class="math notranslate nohighlight">\(\displaystyle x(t) = C_1x_1(t) + C_2x_2(t)\)</span> where <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> are constants. All that remains in
-order to solve our BVP is to determine for which values of <span class="math notranslate nohighlight">\(\mu, C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> the determined solution satisfies the boundary conditions.</p>
-<p>We shall return to this problem later on in the course, but it is worth noting that in general boundary value problems (BVPs) are much harder to solve than IVPs.
-(This follows due to their <em>global</em> as opposed to <em>local</em> nature.)</p>
+<p>Linearity then implies that the general solution is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x(t) &amp;= C_1x_1(t) + C_2x_2(t)\\
+&amp;= C_1e^{\mu t} + C_2e^{-\mu t},
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> are constants.</p>
+<p>All that remains in order to solve our BVP is to determine for which values of <span class="math notranslate nohighlight">\(\mu, C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> the determined solution satisfies the boundary conditions.</p>
+<p>We shall return to this problem later on in the course, but it is worth noting that in general boundary value problems (BVPs) are much harder to solve than IVPs. (This follows due to their <em>global</em> as opposed to <em>local</em> nature.)</p>
+<br>
 </div>
 <div class="section" id="existence-and-uniquness">
 <h2>Existence and uniquness<a class="headerlink" href="#existence-and-uniquness" title="Permalink to this headline">¶</a></h2>
 <p>Note that solutions may not exist, or if they exist they may not be unique.</p>
+<br>
 <ul class="simple">
-<li><p><strong>IVP:</strong> <span class="math notranslate nohighlight">\(x''=6x^{1/3},~ x(0) = 0, x'(0)=0\)</span> has solutions <span class="math notranslate nohighlight">\(x(t)=0\)</span> and <span class="math notranslate nohighlight">\(x(t)=x^3\)</span> and so uniqueness breaks down.</p></li>
-<li><p><strong>BVP1:</strong> <span class="math notranslate nohighlight">\(x''+x=0,~ x(0)=1, x(2\pi)=0\)</span> has no solution and so existence fails.</p></li>
-<li><p><strong>BVP2:</strong> <span class="math notranslate nohighlight">\(x''+x=0,~ x(0)=x(2\pi)=0\)</span> has infinitely many solutions, <span class="math notranslate nohighlight">\(x(t)=c\sin{t}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant (non-uniqueness).</p></li>
+<li><p><strong>IVP:</strong> <span class="math notranslate nohighlight">\(\displaystyle x''=6x^{1/3},~ x(0) = 0, x'(0)=0\)</span> has solutions <span class="math notranslate nohighlight">\(x(t)=0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x(t)=t^3\)</span> and so uniqueness breaks down.</p></li>
+<li><p><strong>BVP1:</strong> <span class="math notranslate nohighlight">\(\displaystyle x''+x=0,~ x(0)=1, x(2\pi)=0\)</span> has no solution and so existence fails.</p></li>
+<li><p><strong>BVP2:</strong> <span class="math notranslate nohighlight">\(\displaystyle x''+x=0,~ x(0)=x(2\pi)=0\)</span> has infinitely many solutions, <span class="math notranslate nohighlight">\(\displaystyle x(t)=c\sin{t}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant (non-uniqueness).</p></li>
 </ul>
 </div>
 </div>

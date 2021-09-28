@@ -405,16 +405,15 @@
 <div class="section" id="introduction-to-pdes">
 <h1>1.2 Introduction to PDEs<a class="headerlink" href="#introduction-to-pdes" title="Permalink to this headline">¶</a></h1>
 <p>In many physical applications, the dependent variable depends on more than one independent variable.  Given that we live in a physical
-space of three spatial dimensions and one time dimension, many functions are functions of four variables, and we would write <span class="math notranslate nohighlight">\(u=u(x,y,z,t)\)</span>,
-where <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>  are the usual Cartesian co-ordinate space variables and <span class="math notranslate nohighlight">\(t\)</span> is the time. For example if <span class="math notranslate nohighlight">\(u\)</span> depends on the two variables
-<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, i.e. <span class="math notranslate nohighlight">\(u=u(x,t)\)</span>, then any derivatives with respect to <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>, will be partial derivatives, and so any differential equation
-involving <span class="math notranslate nohighlight">\(u\)</span> will contain partial derivatives, and is called a partial differential equation. For example</p>
+space of three spatial dimensions and one time dimension, many functions are functions of four variables, and we would write <span class="math notranslate nohighlight">\(\displaystyle u=u(x,y,z,t)\)</span>,
+where <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>  are the usual Cartesian co-ordinate space variables and <span class="math notranslate nohighlight">\(t\)</span> is the time.</p>
+<p>If <span class="math notranslate nohighlight">\(u\)</span> depends on the two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, <em>i.e.</em> <span class="math notranslate nohighlight">\(u=u(x,t)\)</span>, then any derivatives with respect to <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>, will be partial derivatives, and so any differential equation involving <span class="math notranslate nohighlight">\(u\)</span> will contain partial derivatives, and is called a partial differential equation. For example</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial^2u}{\partial{x^2}}+\frac{\partial{u}}{\partial{t}}+\frac{
 \partial^2u}{\partial{t}\partial{u}}=\sin(t)-x.
 \]</div>
-<p>Similarly, if <span class="math notranslate nohighlight">\(T=T(x,y,z,t)\)</span> then an example of a partial differential equation involving <span class="math notranslate nohighlight">\(T\)</span> might be</p>
+<p>Similarly, if <span class="math notranslate nohighlight">\(\displaystyle T=T(x,y,z,t)\)</span> then an example of a partial differential equation involving <span class="math notranslate nohighlight">\(T\)</span> might be</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{\kappa}\frac{\partial{T}}{\partial{t}} = \frac{\partial^2T}{\partial{x^2}}+\frac{\partial^2T}{\partial{y^2}}+\frac{
@@ -437,17 +436,30 @@ governs the flow of heat in a homogeneous isotropic material, <em>etc</em>.</p>
  y = F(x-ct)+G(x+ct)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> are arbitrary functions.</p>
-<p>The <em>order</em> of the partial differential equation is the order of the highest partial derivative that it contains. For example, <span class="math notranslate nohighlight">\(\displaystyle
-\frac{\partial^2y}{\partial{t^2}} = c^2\frac{\partial^2y}{\partial{x^2}}\)</span> is a second order PDE, and</p>
+<p>The <em>order</em> of the partial differential equation is the order of the highest partial derivative that it contains. For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2y}{\partial{t^2}} = c^2\frac{\partial^2y}{\partial{x^2}}
+\]</div>
+<p>is a second order PDE, and</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial^2u}{\partial{x^2}}+\frac{\partial^4u}{\partial{t^4}}+\frac{
 \partial^2u}{\partial{t}\partial{u}}=\cos{t}
 \]</div>
-<p>is of order four. It can be shown that the general solution of an <span class="math notranslate nohighlight">\(n\)</span>th order partial differential equation contains <span class="math notranslate nohighlight">\(n\)</span> arbitrary functions.</p>
+<p>is of order four.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recall that an <span class="math notranslate nohighlight">\(n\)</span>th order ODE contains <span class="math notranslate nohighlight">\(n\)</span> arbitrary constants</p>
+</div>
+</div>
+<p>It can be shown that the general solution of an <span class="math notranslate nohighlight">\(n\)</span>th order partial differential equation contains <span class="math notranslate nohighlight">\(n\)</span> arbitrary functions.</p>
 <div class="section" id="solution-by-direct-integration">
 <h2>Solution by direct integration<a class="headerlink" href="#solution-by-direct-integration" title="Permalink to this headline">¶</a></h2>
-<p>The simplest ordinary differential equations (ODEs) such as <span class="math notranslate nohighlight">\(\displaystyle \frac{d^2u}{dx^2}=F(x)\)</span> can be solved by direct integration.</p>
+<p>The simplest ordinary differential equations (ODEs) such as <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}^2u}{\mathrm{d}x^2}=F(x)\)</span> can be solved by direct integration.</p>
+<br>
 <p><strong>Example 1.2.1</strong> If</p>
 <div class="math notranslate nohighlight">
 \[
@@ -456,8 +468,8 @@ governs the flow of heat in a homogeneous isotropic material, <em>etc</em>.</p>
 <p>then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\frac{du}{dx} &amp;= \int 2\mathrm{d}x = 2x+A\\
-            u &amp;= \int (2x+A) \mathrm{d}x=x^2+Ax+B.
+\frac{\mathrm{d}u}{\mathrm{d}x} &amp;= \int 2\mathrm{d}x = 2x+A\\
+            u(x) &amp;= \int (2x+A) \mathrm{d}x=x^2+Ax+B.
 \end{split}\]</div>
 <p>This is the general solution of the ODE containing the two arbitrary constants, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. The values of these constants may be found if the solution must satisfy other conditions. If, for example, the solution to the above equation must also satisfy the inital conditions <span class="math notranslate nohighlight">\(u(0)=5\)</span> and <span class="math notranslate nohighlight">\(u'(0)=0\)</span> then we have that <span class="math notranslate nohighlight">\(A=0\)</span> and <span class="math notranslate nohighlight">\(B=5\)</span>, giving the particular solution  <span class="math notranslate nohighlight">\(u=x^2+5\)</span>.</p>
 <p>In a similar fashion, certain partial differential equations may be solved by direct integration. For example, given that <span class="math notranslate nohighlight">\(u=u(x,t)\)</span> then the solution of the partial differential equation</p>
@@ -470,7 +482,12 @@ governs the flow of heat in a homogeneous isotropic material, <em>etc</em>.</p>
 \[
 \frac{\partial{u}}{\partial{x}} = 2x+F(t).
 \]</div>
-<p>Integrating again w.r.t. <span class="math notranslate nohighlight">\(x\)</span> gives <span class="math notranslate nohighlight">\(\displaystyle u=x^2+xF(t)+G(t)\)</span>. This is the general solution to the given partial differential equation. Note that it contains two arbitrary functions, as required for a second
+<p>Integrating again w.r.t. <span class="math notranslate nohighlight">\(x\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[
+u(x,t) = x^2+xF(t)+G(t). 
+\]</div>
+<p>This is the general solution to the given partial differential equation. Note that it contains two arbitrary functions, as required for a second
 order partial differential equation.</p>
 <br>
 <p><strong>Example 1.2.2</strong> Given that <span class="math notranslate nohighlight">\(u=u(x,y)\)</span>: (a) find the general solution to the partial differential equation</p>
@@ -502,6 +519,7 @@ order partial differential equation.</p>
 <div class="section" id="solutions-partly-known">
 <h2>Solutions partly known<a class="headerlink" href="#solutions-partly-known" title="Permalink to this headline">¶</a></h2>
 <p>On occasions, when solving a partial differential equation, the solution may be partly known. Often this information reduces a partial differential equation to an ordinary differential equation, which can then be solved in the usual fashion.</p>
+<br>
 <p><strong>Example 1.2.3</strong> Find the solution of the IBVP</p>
 <div class="math notranslate nohighlight">
 \[
