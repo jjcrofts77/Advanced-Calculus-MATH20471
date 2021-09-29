@@ -7,6 +7,7 @@ parts:
   - file: content/notebooks/Part1/Chapter1/Chapter1Intro  
     sections:
     - file: content/notebooks/Part1/Chapter1/IBVP
+    - file: content/notebooks/Part1/Chapter1/ODERev
     - file: content/notebooks/Part1/Chapter1/IntroToPDEs
     - file: content/notebooks/Part1/Chapter1/PDEsToStudy
   - file: content/notebooks/Part1/Chapter2/Chapter2Intro
