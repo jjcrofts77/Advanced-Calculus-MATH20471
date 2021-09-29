@@ -111,13 +111,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter1/IntroToPDEs.html">
-     1.2 Introduction to PDEs
+     1.3 Introduction to PDEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter1/PDEsToStudy.html">
-     1.3 The Equations we Shall Study
+     1.4 The Equations we Shall Study
     </a>
    </li>
   </ul>
@@ -399,7 +404,7 @@
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter5/PolarCoords.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="section" id="bvp-in-polar-coordinates-optional">
 <h1>5.2 BVP in Polar Coordinates (optional)<a class="headerlink" href="#bvp-in-polar-coordinates-optional" title="Permalink to this headline">¶</a></h1>
-<p>Next, let us consider separable solutions of Laplace’s equation of the form <span class="math notranslate nohighlight">\(T(r,\theta)=F(r)G(\theta)\)</span>. Substitution into <a class="reference internal" href="Chapter5Intro.html#equation-laplacech5polar">(35)</a> gives</p>
+<p>Next, let us consider separable solutions of Laplace’s equation of the form <span class="math notranslate nohighlight">\(T(r,\theta)=F(r)G(\theta)\)</span>. Substitution into <a class="reference internal" href="Chapter5Intro.html#equation-laplacech5polar">(41)</a> gives</p>
 <div class="math notranslate nohighlight">
 \[
  F''(r)G(\theta)+\frac{1}{r}F'(r)G(\theta)+\frac{1}{r^2}F(r)G''(\theta)=0.
@@ -411,14 +416,14 @@
 \]</div>
 <p>and there is a constant <span class="math notranslate nohighlight">\(\lambda\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-fpolar">
-<span class="eqno">(37)<a class="headerlink" href="#equation-fpolar" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(43)<a class="headerlink" href="#equation-fpolar" title="Permalink to this equation">¶</a></span>\[
  r^2F''(r)+rF'(r)=\lambda F(r), 
 \]</div>
 <div class="math notranslate nohighlight" id="equation-gpolar">
-<span class="eqno">(38)<a class="headerlink" href="#equation-gpolar" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(44)<a class="headerlink" href="#equation-gpolar" title="Permalink to this equation">¶</a></span>\[
  G''(\theta) = -\lambda G(\theta).
 \]</div>
-<p>The function <span class="math notranslate nohighlight">\(G(\theta)\)</span> must be periodic with period <span class="math notranslate nohighlight">\(2\pi\)</span> so that <span class="math notranslate nohighlight">\(G(\theta+2\pi)=G(\theta)\)</span>, and this is possible only if <span class="math notranslate nohighlight">\(\lambda=n^2\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is an integer. If <span class="math notranslate nohighlight">\(n=0\)</span>, the only solution of <a class="reference internal" href="#equation-gpolar">(38)</a> which are periodic are <span class="math notranslate nohighlight">\(G(\theta)\equiv \text{constant}\)</span>. If <span class="math notranslate nohighlight">\(n\neq 0\)</span> the periodic solutions are arbitrary linear combinations of <span class="math notranslate nohighlight">\(\cos(n\theta)\)</span> and <span class="math notranslate nohighlight">\(\sin(n\theta)\)</span>. When <span class="math notranslate nohighlight">\(n=0\)</span> solutions of <a class="reference internal" href="#equation-fpolar">(37)</a> are of the form <span class="math notranslate nohighlight">\(F(r)=A+B\log{r}\)</span>. When <span class="math notranslate nohighlight">\(n\neq 0\)</span>, equation <a class="reference internal" href="#equation-fpolar">(37)</a> is of Euler’s type and <span class="math notranslate nohighlight">\(F(r)\)</span> is a linear combination of <span class="math notranslate nohighlight">\(r^n\)</span> and <span class="math notranslate nohighlight">\(r^{-n}\)</span>. Thus there are separable solutions of Laplace’s equation of the forms</p>
+<p>The function <span class="math notranslate nohighlight">\(G(\theta)\)</span> must be periodic with period <span class="math notranslate nohighlight">\(2\pi\)</span> so that <span class="math notranslate nohighlight">\(G(\theta+2\pi)=G(\theta)\)</span>, and this is possible only if <span class="math notranslate nohighlight">\(\lambda=n^2\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is an integer. If <span class="math notranslate nohighlight">\(n=0\)</span>, the only solution of <a class="reference internal" href="#equation-gpolar">(44)</a> which are periodic are <span class="math notranslate nohighlight">\(G(\theta)\equiv \text{constant}\)</span>. If <span class="math notranslate nohighlight">\(n\neq 0\)</span> the periodic solutions are arbitrary linear combinations of <span class="math notranslate nohighlight">\(\cos(n\theta)\)</span> and <span class="math notranslate nohighlight">\(\sin(n\theta)\)</span>. When <span class="math notranslate nohighlight">\(n=0\)</span> solutions of <a class="reference internal" href="#equation-fpolar">(43)</a> are of the form <span class="math notranslate nohighlight">\(F(r)=A+B\log{r}\)</span>. When <span class="math notranslate nohighlight">\(n\neq 0\)</span>, equation <a class="reference internal" href="#equation-fpolar">(43)</a> is of Euler’s type and <span class="math notranslate nohighlight">\(F(r)\)</span> is a linear combination of <span class="math notranslate nohighlight">\(r^n\)</span> and <span class="math notranslate nohighlight">\(r^{-n}\)</span>. Thus there are separable solutions of Laplace’s equation of the forms</p>
 <div class="math notranslate nohighlight">
 \[
  T(r)=A+B\log(r),

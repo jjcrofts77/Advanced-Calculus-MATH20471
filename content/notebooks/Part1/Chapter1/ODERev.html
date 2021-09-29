@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.3 Introduction to PDEs &#8212; Advanced Calculus MATH20471</title>
+    <title>1.2 ODE Revision &#8212; Advanced Calculus MATH20471</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="1.4 The Equations we Shall Study" href="PDEsToStudy.html" />
-    <link rel="prev" title="1.2 ODE Revision" href="ODERev.html" />
+    <link rel="next" title="1.3 Introduction to PDEs" href="IntroToPDEs.html" />
+    <link rel="prev" title="1.1 Initial and Boundary Value Problems (IBVP)" href="IBVP.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -110,13 +110,13 @@
      1.1 Initial and Boundary Value Problems (IBVP)
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ODERev.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      1.2 ODE Revision
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroToPDEs.html">
      1.3 Introduction to PDEs
     </a>
    </li>
@@ -338,7 +338,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part1/Chapter1/IntroToPDEs.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part1/Chapter1/ODERev.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -363,7 +363,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part1/Chapter1/IntroToPDEs.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part1/Chapter1/ODERev.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
@@ -386,18 +386,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solution-by-direct-integration">
-   Solution by direct integration
+  <a class="reference internal nav-link" href="#separable-odes">
+   Separable ODEs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solving-pdes-like-odes">
-   Solving PDEs like ODEs
+  <a class="reference internal nav-link" href="#integrating-factor">
+   Integrating Factor
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solutions-partly-known">
-   Solutions partly known
+  <a class="reference internal nav-link" href="#complementary-functions-for-second-order-odes">
+   Complementary Functions for Second-Order ODEs
   </a>
  </li>
 </ul>
@@ -411,213 +411,335 @@
         
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter1/IntroToPDEs.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="section" id="introduction-to-pdes">
-<h1>1.3 Introduction to PDEs<a class="headerlink" href="#introduction-to-pdes" title="Permalink to this headline">¶</a></h1>
-<p>In many physical applications, the dependent variable depends on more than one independent variable.  Given that we live in a physical
-space of three spatial dimensions and one time dimension, many functions are functions of four variables, and we would write <span class="math notranslate nohighlight">\(\displaystyle u=u(x,y,z,t)\)</span>,
-where <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>  are the usual Cartesian co-ordinate space variables and <span class="math notranslate nohighlight">\(t\)</span> is the time.</p>
-<p>If <span class="math notranslate nohighlight">\(u\)</span> depends on the two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, <em>i.e.</em> <span class="math notranslate nohighlight">\(u=u(x,t)\)</span>, then any derivatives with respect to <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>, will be partial derivatives, and so any differential equation involving <span class="math notranslate nohighlight">\(u\)</span> will contain partial derivatives, and is called a partial differential equation. For example</p>
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter1/ODERev.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="section" id="ode-revision">
+<h1>1.2 ODE Revision<a class="headerlink" href="#ode-revision" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="separable-odes">
+<h2>Separable ODEs<a class="headerlink" href="#separable-odes" title="Permalink to this headline">¶</a></h2>
+<p>We say that an ODE is separable if it can be written in the form</p>
+<div class="math notranslate nohighlight" id="equation-separable">
+<span class="eqno">(1)<a class="headerlink" href="#equation-separable" title="Permalink to this equation">¶</a></span>\[
+\frac{\mathrm{d}x}{\mathrm{d}t} = \frac{f(t)}{g(x)}
+\]</div>
+<p>To solve such an equation we rearrange and integrate as follows</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial^2u}{\partial{x^2}}+\frac{\partial{u}}{\partial{t}}+\frac{
-\partial^2u}{\partial{t}\partial{u}}=\sin(t)-x.
+ \int g(x)\mathrm{d}x = \int f(t)\mathrm{d}t.
 \]</div>
-<p>Similarly, if <span class="math notranslate nohighlight">\(\displaystyle T=T(x,y,z,t)\)</span> then an example of a partial differential equation involving <span class="math notranslate nohighlight">\(T\)</span> might be</p>
+<br>
+<p><strong>Example 1.2.1</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = -2xt\)</span>.</p>
+<div class="toggle docutils container">
+<p>The right-hand side is clearly separable with <span class="math notranslate nohighlight">\(\displaystyle f(t)=-2t\)</span> and <span class="math notranslate nohighlight">\(\displaystyle g(x)=1/x\)</span> and so</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{1}{\kappa}\frac{\partial{T}}{\partial{t}} = \frac{\partial^2T}{\partial{x^2}}+\frac{\partial^2T}{\partial{y^2}}+\frac{
-\partial^2T}{\partial{z^2}}.
+\int x^{-1}\mathrm{d}x = \int (-2t)\mathrm{d}t
 \]</div>
-<p>Partial differential equations are an important area of theoretical physics and applied mathematics. Maxwell’s equations govern electromagnetic wave propagation; Einstein’s field equations occur in the general theory of relativity; Schrodinger’s wave equation is important in quantum mechanics; the Navier-Stokes equations govern fluid flow; the equation
-<span class="math notranslate nohighlight">\(\displaystyle
-\frac{\partial^2T}{\partial{x^2}}+\frac{\partial^2T}{\partial{y^2}}+\frac{
-\partial^2T}{\partial{z^2}} = \frac{1}{\kappa}\frac{\partial{T}}{\partial{t}}
-\)</span>
-governs the flow of heat in a homogeneous isotropic material, <em>etc</em>.</p>
-<p>To solve a differential equation is to express the dependent variable in terms of the independent variables. For example the solution of the wave equation</p>
+<p>thus</p>
 <div class="math notranslate nohighlight">
 \[
- \frac{\partial^2y}{\partial{t^2}} = c^2\frac{\partial^2y}{\partial{x^2}}
+\log{x} = -t^2 + c
 \]</div>
-<p>is given by</p>
+<p>giving</p>
 <div class="math notranslate nohighlight">
 \[
- y = F(x-ct)+G(x+ct)
+x(t) = e^{-t^2+c} = ke^{-t^2}.
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> are arbitrary functions.</p>
-<p>The <em>order</em> of the partial differential equation is the order of the highest partial derivative that it contains. For example,</p>
+</div>
+<br>
+<p><strong>Example 1.2.2</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{t}{x}\)</span>.</p>
+<div class="toggle docutils container">
+<p>Multiplying through by <span class="math notranslate nohighlight">\(x\mathrm{d}t\)</span> and integrating gives</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial^2y}{\partial{t^2}} = c^2\frac{\partial^2y}{\partial{x^2}}
+\int x\mathrm{d}x = \int t\mathrm{d}t.
 \]</div>
-<p>is a second order PDE, and</p>
+<p>Then</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial^2u}{\partial{x^2}}+\frac{\partial^4u}{\partial{t^4}}+\frac{
-\partial^2u}{\partial{t}\partial{u}}=\cos{t}
+ \frac{1}{2}x^2 = \frac{1}{2}t^2 + \frac{c}{2}
 \]</div>
-<p>is of order four.</p>
+<p>and so</p>
+<div class="math notranslate nohighlight">
+\[
+ x^2 = t^2 + c.
+\]</div>
+<p>Taking square roots we obtain the general solution</p>
+<div class="math notranslate nohighlight">
+\[
+x = \pm\sqrt{t^2 + c}.
+\]</div>
+<p>We show solutions for several values of <span class="math notranslate nohighlight">\(c\)</span> in the figure below</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="content/notebooks/images/Example122.png"><img alt="content/notebooks/images/Example122.png" src="content/notebooks/images/Example122.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Solutions for the ODE in Example 1.2.2</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<br>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the differential equation is of the form</p>
+<div class="math notranslate nohighlight" id="equation-sep2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-sep2" title="Permalink to this equation">¶</a></span>\[
+\frac{\mathrm{d}x}{\mathrm{d}t} =f(x/t)
+\]</div>
+<p>then we can use a change of variables <span class="math notranslate nohighlight">\(x=vt\)</span> to rewrite <a class="reference internal" href="#equation-sep2">(2)</a> as</p>
+<div class="math notranslate nohighlight">
+\[
+v+t\frac{\mathrm{d}v}{\mathrm{d}t} = f(v),
+\]</div>
+<p>which is a separable equation (<em>i.e.</em> we can solve as in our earlier examples)</p>
+</div>
+<br>
+<p><strong>Example 1.2.3</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{t+x}{t}\)</span>.</p>
+<div class="toggle docutils container">
+<p>The right-hand side can be written as <span class="math notranslate nohighlight">\(\displaystyle 1 + x/t\)</span> and hence is of the form  <span class="math notranslate nohighlight">\(\displaystyle f(x/t)\)</span>.</p>
+<p>Putting <span class="math notranslate nohighlight">\(x = vt\)</span> we get</p>
+<div class="math notranslate nohighlight">
+\[
+v+t\frac{\mathrm{d}v}{\mathrm{d}t} = 1+v
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+t\frac{\mathrm{d}v}{\mathrm{d}t} = 1.
+\]</div>
+<p>Multiplying through by <span class="math notranslate nohighlight">\(\displaystyle \mathrm{d}t/t\)</span> and integrating gives</p>
+<div class="math notranslate nohighlight">
+\[
+\int \mathrm{d}v = \int t^{-1}\mathrm{d}t
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+v = \log{t} + \log{k} = \log{kt}.
+\]</div>
+<p>Finally, putting <span class="math notranslate nohighlight">\(v=x/t\)</span>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = t\log{kt}.
+\]</div>
+</div>
+<br>
+</div>
+<div class="section" id="integrating-factor">
+<h2>Integrating Factor<a class="headerlink" href="#integrating-factor" title="Permalink to this headline">¶</a></h2>
+<p>Given a first-order linear differential equation of the form</p>
+<div class="math notranslate nohighlight" id="equation-intfact">
+<span class="eqno">(3)<a class="headerlink" href="#equation-intfact" title="Permalink to this equation">¶</a></span>\[
+x' + p(t)x = q(t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are functions of <span class="math notranslate nohighlight">\(t\)</span> only, we can use the so-called <em>integrating factor method</em> to solve.</p>
+<p>To do this we introduce an <em>integrating factor</em> as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = e^{\int p(t)\mathrm{d}t}.
+\]</div>
+<p>We then multiply <a class="reference internal" href="#equation-intfact">(3)</a> by the function <span class="math notranslate nohighlight">\(f(t)\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[
+x'e^{\int p(t)\mathrm{d}t} + p(t)e^{\int p(t)\mathrm{d}t}x = q(t)e^{\int p(t)\mathrm{d}t}.
+\]</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Recall that an <span class="math notranslate nohighlight">\(n\)</span>th order ODE contains <span class="math notranslate nohighlight">\(n\)</span> arbitrary constants</p>
+<p>This trick is just the product rule in reverse!</p>
 </div>
 </div>
-<p>It can be shown that the general solution of an <span class="math notranslate nohighlight">\(n\)</span>th order partial differential equation contains <span class="math notranslate nohighlight">\(n\)</span> arbitrary functions.</p>
-<div class="section" id="solution-by-direct-integration">
-<h2>Solution by direct integration<a class="headerlink" href="#solution-by-direct-integration" title="Permalink to this headline">¶</a></h2>
-<p>The simplest ordinary differential equations (ODEs) such as <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}^2u}{\mathrm{d}x^2}=F(x)\)</span> can be solved by direct integration.</p>
-<br>
-<p><strong>Example 1.2.1</strong> If</p>
+<p>The trick to solving is to notice that the left-hand side of the above equation can be rewritten as</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\mathrm{d}^2 u}{\mathrm{d}x^2} = 2,
+x'e^{\int p(t)\mathrm{d}t} + p(t)e^{\int p(t)\mathrm{d}t}x = \frac{\mathrm{d}}{\mathrm{d}t}\left(x e^{\int p(t)\mathrm{d}t}\right).
 \]</div>
-<p>then</p>
+<p>Using this <a class="reference internal" href="#equation-intfact">(3)</a> becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}\left(x e^{\int p(t)\mathrm{d}t}\right) = q(t)e^{\int p(t)\mathrm{d}t},
+\]</div>
+<p>which can be integrated and solved to determine <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
+<p>Hopefully an example will clarify how the above process works in practice.</p>
+<br>
+<p><strong>Example 1.2.4</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x' = t + \frac{2x}{t}\)</span>.</p>
+<div class="toggle docutils container">
+<p>To start let us rearrange the equation into the standard form given in <a class="reference internal" href="#equation-intfact">(3)</a></p>
+<div class="math notranslate nohighlight">
+\[
+x' - \frac{2}{t}x = t
+\]</div>
+<p>so that <span class="math notranslate nohighlight">\(p(t)=-2/t\)</span> and <span class="math notranslate nohighlight">\(q(t)=t\)</span>.</p>
+<p>It follows that the integrating factor</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = e^{\int (-2/t)\mathrm{d}t} = e^{-2\log|t|} = e^{\log(t^{-2})} = t^{-2}.
+\]</div>
+<p>Multiplying by the integrating factor gives</p>
+<div class="math notranslate nohighlight">
+\[
+t^{-2}x' - \frac{1}{t^3}x = t^{-1}.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{\mathrm{d}}{\mathrm{d}t}\left(xt^{-2}\right) = t^{-1},
+\]</div>
+<p>which integrates to</p>
+<div class="math notranslate nohighlight">
+\[
+ xt^{-2} = \int t^{-1}\mathrm{d}t = \log|t| + \log|k| = \log|kt|
+\]</div>
+<p>giving</p>
+<div class="math notranslate nohighlight">
+\[
+ x(t) = t^2\log|kt|.
+\]</div>
+</div>
+<br>
+</div>
+<div class="section" id="complementary-functions-for-second-order-odes">
+<h2>Complementary Functions for Second-Order ODEs<a class="headerlink" href="#complementary-functions-for-second-order-odes" title="Permalink to this headline">¶</a></h2>
+<p>We wish to solve equations of the form</p>
+<div class="math notranslate nohighlight" id="equation-compfun">
+<span class="eqno">(4)<a class="headerlink" href="#equation-compfun" title="Permalink to this equation">¶</a></span>\[
+ x'' -px' + qx = 0,
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(p, q\in\mathbb{R}\)</span>.</p>
+<p>Experience suggests that solutions of the above are likely to be of the form <span class="math notranslate nohighlight">\(\displaystyle x(t) = e^{\lambda t}\)</span> and so we substitute this into <a class="reference internal" href="#equation-compfun">(4)</a> as a trial solution obtaining</p>
+<div class="math notranslate nohighlight" id="equation-aux">
+<span class="eqno">(5)<a class="headerlink" href="#equation-aux" title="Permalink to this equation">¶</a></span>\[\begin{split}
+ \lambda^2e^{\lambda t} -p\lambda e^{\lambda t} + q\lambda^2e^{\lambda t} &amp;= e^{\lambda t}\left(\lambda^2-p\lambda+q\right) = 0\\
+ \implies \left(\lambda^2-p\lambda+q\right) = 0
+\end{split}\]</div>
+<p>Equation <a class="reference internal" href="#equation-aux">(5)</a> is called the <em>auxillary equation</em> of the ODE in <a class="reference internal" href="#equation-compfun">(4)</a>. It is a quadratic equation for <span class="math notranslate nohighlight">\(\lambda\)</span> and hence has two roots, <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span>, say, so that if these are distinct, there are two possible solutions of <a class="reference internal" href="#equation-compfun">(4)</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+ x_1(t) = e^{\lambda_1 t}\quad\text{and}\quad x_2(t) = e^{\lambda_2 t}.
+\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the equation is linear we can combine solutions (linearly!) to determine the general solution</p>
+</div>
+</div>
+<p>Thus a general solution of <a class="reference internal" href="#equation-compfun">(4)</a> is</p>
+<div class="math notranslate nohighlight">
+\[
+ x(t) = Ae^{\lambda_1 t} + Be^{\lambda_2 t}
+\]</div>
+<p>provided <span class="math notranslate nohighlight">\(\lambda_1\neq\lambda_2\)</span>.</p>
+<br>
+<p><strong>Example 1.2.5 (distinct roots)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''-3x'+2x=0\)</span>.</p>
+<div class="toggle docutils container">
+<p>Substituting <span class="math notranslate nohighlight">\(\displaystyle x=e^{\lambda t}\)</span> into our ODE gives the following auxillary equation</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2-3\lambda+2=0,
+\]</div>
+<p>which has roots 1 and 2. The complementary function is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = Ae^t + Be^{2t}.
+\]</div>
+</div>
+<br>
+<p><strong>Example 1.2.6 (repeated roots)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''-4x'+4x = 0.\)</span></p>
+<div class="toggle docutils container">
+<p>The axillary equation is</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2-4\lambda+4= (\lambda -2)^2 = 0.
+\]</div>
+<p>Thus we have obtained just one solution: <span class="math notranslate nohighlight">\(\displaystyle e^{2t}\)</span>.</p>
+<p>A second solution is provided by <span class="math notranslate nohighlight">\(\displaystyle x=te^{2t}\)</span> (the reason for this will be explained later on in the course). To check this is indeed a solution note that <span class="math notranslate nohighlight">\(\displaystyle x'=(1+2t)e^{2t}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x''=4(1+t)e^{2t}\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+(4(1+t)-4(1+2t)+4t)e^2t = 0.
+\]</div>
+<p>Thus <span class="math notranslate nohighlight">\(\displaystyle x=te^{2t}\)</span> solves our equation.</p>
+<p>Forming a linear combination of our two solutions provides the following general solution</p>
+<div class="math notranslate nohighlight">
+\[
+ x(t) = (A+Bt)e^{2t}.
+\]</div>
+</div>
+<br>
+<p><strong>Example 1.2.7 (complex roots)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''-6x'+25x=0\)</span>.</p>
+<div class="toggle docutils container">
+<p>The auxillary equation is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2-6\lambda+25=0
+\]</div>
+<p>whose roots are <span class="math notranslate nohighlight">\(\lambda_{1,2} = 3\pm 4i\)</span>. These are distinct so we can write</p>
+<div class="math notranslate nohighlight">
+\[
+ x(t) = Ae^{(3+4i)t} + Be^{(3-4i)t}.
+\]</div>
+<p>It appears that our solution is complex in this case; however, let us put</p>
+<div class="math notranslate nohighlight">
+\[
+ e^{(3\pm 4i)t} = e^{3t}e^{\pm 4it} = e^{3t}\left(\cos{4t}\pm i\sin{4t}\right)
+\]</div>
+<p>so that the solution becomes</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\frac{\mathrm{d}u}{\mathrm{d}x} &amp;= \int 2\mathrm{d}x = 2x+A\\
-            u(x) &amp;= \int (2x+A) \mathrm{d}x=x^2+Ax+B.
+x(t) &amp;= e^{3t}(A(\cos{4t}+i\sin{4t})+B(\cos{4t}-i\sin{4t}))\\
+     &amp;= e^{3t}(C\cos{4t}+D\sin{4t}),
 \end{split}\]</div>
-<p>This is the general solution of the ODE containing the two arbitrary constants, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. The values of these constants may be found if the solution must satisfy other conditions. If, for example, the solution to the above equation must also satisfy the inital conditions <span class="math notranslate nohighlight">\(u(0)=5\)</span> and <span class="math notranslate nohighlight">\(u'(0)=0\)</span> then we have that <span class="math notranslate nohighlight">\(A=0\)</span> and <span class="math notranslate nohighlight">\(B=5\)</span>, giving the particular solution  <span class="math notranslate nohighlight">\(u=x^2+5\)</span>.</p>
-<p>In a similar fashion, certain partial differential equations may be solved by direct integration. For example, given that <span class="math notranslate nohighlight">\(u=u(x,t)\)</span> then the solution of the partial differential equation</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\partial^2u}{\partial{x^2}} = 2
-\]</div>
-<p>may be found as follows. Integrate with respect to <span class="math notranslate nohighlight">\(x\)</span>, to obtain</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\partial{u}}{\partial{x}} = 2x+F(t).
-\]</div>
-<p>Integrating again w.r.t. <span class="math notranslate nohighlight">\(x\)</span> gives</p>
-<div class="math notranslate nohighlight">
-\[
-u(x,t) = x^2+xF(t)+G(t). 
-\]</div>
-<p>This is the general solution to the given partial differential equation. Note that it contains two arbitrary functions, as required for a second
-order partial differential equation.</p>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle C=A+B\)</span> and <span class="math notranslate nohighlight">\(D=(A-B)i\)</span> are arbitrary constants.</p>
+<p>Clearly for real initial conditions the solutions are real for all <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
 <br>
-<p><strong>Example 1.2.2</strong> Given that <span class="math notranslate nohighlight">\(u=u(x,y)\)</span>: (a) find the general solution to the partial differential equation</p>
+<p>Recall that we can use the same technique to solve an inhomogeneous ODE of the form</p>
+<div class="math notranslate nohighlight" id="equation-general">
+<span class="eqno">(6)<a class="headerlink" href="#equation-general" title="Permalink to this equation">¶</a></span>\[
+x''-px'+qx = f(t);
+\]</div>
+<p>however, we must now find a particular solution, <span class="math notranslate nohighlight">\(x_p(t)\)</span>, to accompany our complementary solution, <span class="math notranslate nohighlight">\(x_c(t)\)</span>. This leads to a general solution of <a class="reference internal" href="#equation-general">(6)</a> of the form</p>
 <div class="math notranslate nohighlight">
 \[
- \frac{\partial{u}}{\partial{x}} = 2x-e^y,
+ x(t) = x_c(t) + x_p(t).
 \]</div>
-<p>and (b) find the particular solution, which satisfies <span class="math notranslate nohighlight">\(u(0,y)=\sin{y}\)</span>.</p>
-<p><strong>Solution</strong></p>
+<br>
+<p><strong>Example 1.2.8 (inhomogeneous)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''+3x'-4x=6t\)</span>.</p>
 <div class="toggle docutils container">
-<p>Integrating gives</p>
+<p>We start by solving the homogeneous equation</p>
 <div class="math notranslate nohighlight">
 \[
- u(x,y) = x^2-xe^{y}+F(y).
+x_c''+3x_c-4x_c=0.
 \]</div>
-<p>This is the general solution. We are told that <span class="math notranslate nohighlight">\(u(0,y)=\sin{y}\)</span>, and therefore</p>
+<p>The auxillary equation is <span class="math notranslate nohighlight">\(\displaystyle \lambda^2+3\lambda-4=0\)</span> which has roots 1 and -4 so that</p>
 <div class="math notranslate nohighlight">
 \[
- \sin{y}=0^2-0e^y+F(y),
+x_c(t) = Ae^t + Be^{-4t}.
 \]</div>
-<p>this means that <span class="math notranslate nohighlight">\(F(y)=\sin{y}\)</span> and the particular solution required is</p>
+<p>Since the right-hand side of our ODE is linear in <span class="math notranslate nohighlight">\(t\)</span> we try the particular solution <span class="math notranslate nohighlight">\(x_p = at+b\)</span>, which gives <span class="math notranslate nohighlight">\(x_p'=a\)</span> and <span class="math notranslate nohighlight">\(x_p''=0\)</span>. Putting these into our ODE, we find</p>
 <div class="math notranslate nohighlight">
 \[
- u(x,y) = x^2-xe^y+\sin{y}.
+ 0+3a-4(at+b) = 6t.
 \]</div>
-</div>
-<br>
-</div>
-<div class="section" id="solving-pdes-like-odes">
-<h2>Solving PDEs like ODEs<a class="headerlink" href="#solving-pdes-like-odes" title="Permalink to this headline">¶</a></h2>
-<p>When a PDE involves only derivatives with respect to one variable (or can be transformed to such a form) we can solve using the techniques of ODEs, treating the other variables as parameters.</p>
-<br>
-<p><strong>Example 1.2.3</strong> Find solutions <span class="math notranslate nohighlight">\(\displaystyle u = u(x,y)\)</span> of the PDE <span class="math notranslate nohighlight">\(\displaystyle u_{xx}-u=0\)</span></p>
-<p><strong>Solution</strong></p>
-<div class="toggle docutils container">
-<p>Since no <span class="math notranslate nohighlight">\(y\)</span> derivatives occur we can solve this as</p>
+<p>Since this equation must hold for all <span class="math notranslate nohighlight">\(t\)</span>, we have that</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\mathrm{d}^2 u}{\mathrm{d}x^2} - u = 0
+3a-4b = 0 \quad \text{and} \quad -4a = 6,
 \]</div>
-<p>which has axuillary equation (using the anzatz <span class="math notranslate nohighlight">\(\displaystyle u = A(y)e^{\lambda x}\)</span>)</p>
+<p>or <span class="math notranslate nohighlight">\(a=-\frac{3}{2}\)</span> and <span class="math notranslate nohighlight">\(b=-\frac{9}{8}\)</span> giving the following particular integral</p>
 <div class="math notranslate nohighlight">
 \[
-\lambda^2-1=0,
+x_p(t) = -\frac{3}{2}t-\frac{9}{8}
 \]</div>
-<p>so that solutions are of the form</p>
-<div class="math notranslate nohighlight">
-\[
- u(x,y) = A_1(y)e^x + A_2(y)e^{-x}.
-\]</div>
-</div>
-<br>
-</div>
-<div class="section" id="solutions-partly-known">
-<h2>Solutions partly known<a class="headerlink" href="#solutions-partly-known" title="Permalink to this headline">¶</a></h2>
-<p>On occasions, when solving a partial differential equation, the solution may be partly known. Often this information reduces a partial differential equation to an ordinary differential equation, which can then be solved in the usual fashion.</p>
-<br>
-<p><strong>Example 1.2.4</strong> Find the solution of the IBVP</p>
-<div class="math notranslate nohighlight">
-\[
-z+\frac{\partial^2z}{\partial{x^2}}+\frac{\partial^2z}{\partial{t^2}}-2\frac{
-\partial{z}}{\partial{t}} = 0
-\]</div>
-<p>which satisfies the conditions <span class="math notranslate nohighlight">\(z(0,t)=0\)</span> and <span class="math notranslate nohighlight">\(z(x,0)=4\sin{3x}\)</span>, given that the solution is of the form</p>
-<div class="math notranslate nohighlight">
-\[
-z = F(x)e^{-2t}.
-\]</div>
-<p><strong>Solution</strong></p>
-<div class="toggle docutils container">
-<p>The approach used is to find the derivatives appearing in the partial differential equation in terms of <span class="math notranslate nohighlight">\(F(x)\)</span> and its derivatives, then to substitute these into the given partial differential equation and solve the resulting ordinary differential equation. We are given that</p>
-<div class="math notranslate nohighlight">
-\[
- z=F(x)e^{-2t},
-\]</div>
-<p>therefore</p>
+<p>Finally we have that the general solution is given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
- \frac{\partial{z}}{\partial{t}}   &amp;= -2F(x)e^{-2t}\\
- \frac{\partial^2z}{\partial{t^2}} &amp;= 4F(x)e^{-2t}\\
- \frac{\partial{z}}{\partial{x}}   &amp;= \frac{dF}{dx}e^{-2t} = F'(x)e^{-2t}\\
- \frac{\partial^2z}{\partial{x^2}} &amp;= \frac{d^2F}{dx^2}e^{-2t} = F''(x)e^{-2t}.
+x(t) &amp;= x_c(t) + x_p(t)\\
+     &amp;= Ae^t + Be^{-4t}-\frac{3}{2}t-\frac{9}{8}.
 \end{split}\]</div>
-<p>Substituting this into the given equation gives</p>
-<div class="math notranslate nohighlight">
-\[
-e^{-2t}\left(F+F''+4F+4F\right) = 0.
-\]</div>
-<p>Thus the unknown function <span class="math notranslate nohighlight">\(F(x)\)</span> satisfies the ordinary differential equation</p>
-<div class="math notranslate nohighlight">
-\[
-F''(x)+9F(x)=0.
-\]</div>
-<p>This is a linear homogeneous second order ordinary differential equation with constant coefficients. The auxiliary equation is <span class="math notranslate nohighlight">\(m^2+9=0\)</span>, with roots <span class="math notranslate nohighlight">\(m=\pm{3i}\)</span>. The solution is therefore given by</p>
-<div class="math notranslate nohighlight">
-\[
- F(x) = A\cos(3x)+B\sin(3x).
-\]</div>
-<p>The solution to the partial differential equation is therefore</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
- z(x,t) &amp;= F(x)e^{-2t}\\
-        &amp;= \left(A\cos(3x)+B\sin(3x)\right)e^{-2t}.
-\end{split}\]</div>
-<p>Applying the given conditions we have</p>
-<div class="math notranslate nohighlight">
-\[
- z(0,t) \implies \left(A\cos(0)+B\sin(0)\right)e^{-2t} \implies A=0.
-\]</div>
-<p>Therefore</p>
-<div class="math notranslate nohighlight">
-\[
- z(x,t) = B\sin(3x)e^{-2t}.
-\]</div>
-<p>Imposing the second condition gives</p>
-<div class="math notranslate nohighlight">
-\[
- z(x,0)=4\sin(3x) \implies 4\sin(3x)=B\sin(3x)e^0 \implies B=4.
-\]</div>
-<p>The required solution is given by <span class="math notranslate nohighlight">\(z(x,t)=4\sin(3x)e^{-2t}\)</span>.</p>
+<p>As usual to find the arbitrary constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> requires additional information (<em>i.e.</em> initial or boundary data).</p>
+</div>
+<br>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In general, when choosing the form of the particular solution, <span class="math notranslate nohighlight">\(x_p(t)\)</span>, we are guided by the function <span class="math notranslate nohighlight">\(f(t)\)</span> on the right-hand side of <a class="reference internal" href="#equation-general">(6)</a>; however, care must be taken if the right-hand side function, <span class="math notranslate nohighlight">\(f(t)\)</span>, is similar to the complementary function <span class="math notranslate nohighlight">\(x_c(t)\)</span>.</p>
 </div>
 </div>
 </div>
@@ -652,19 +774,19 @@ F''(x)+9F(x)=0.
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="ODERev.html" title="previous page">
+        <a class="left-prev" href="IBVP.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">1.2 ODE Revision</p>
+                <p class="prevnext-title">1.1 Initial and Boundary Value Problems (IBVP)</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="PDEsToStudy.html" title="next page">
+        <a class="right-next" href="IntroToPDEs.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">1.4 The Equations we Shall Study</p>
+                <p class="prevnext-title">1.3 Introduction to PDEs</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

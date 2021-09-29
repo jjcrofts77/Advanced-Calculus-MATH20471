@@ -9,6 +9,7 @@ This Jupyterbook provides the course notes for Advanced Calculus.
 
 ### Chapter 1 Introduction
    - Initial and boundary value problems (IBVP)
+   - ODE Revision
    - Introduction to partial differential equations (PDEs)  
    - The equations we shall study
 

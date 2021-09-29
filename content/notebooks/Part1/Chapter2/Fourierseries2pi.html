@@ -111,13 +111,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter1/IntroToPDEs.html">
-     1.2 Introduction to PDEs
+     1.3 Introduction to PDEs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter1/PDEsToStudy.html">
-     1.3 The Equations we Shall Study
+     1.4 The Equations we Shall Study
     </a>
    </li>
   </ul>
@@ -411,7 +416,7 @@
 <h1>2.2 Fourier Series for Functions of Period <span class="math notranslate nohighlight">\(2\pi\)</span><a class="headerlink" href="#fourier-series-for-functions-of-period-2-pi" title="Permalink to this headline">¶</a></h1>
 <p>Let <span class="math notranslate nohighlight">\(f\)</span> be a function of period <span class="math notranslate nohighlight">\(2\pi\)</span>. We would like to get an expansion for <span class="math notranslate nohighlight">\(f\)</span> of the form</p>
 <div class="math notranslate nohighlight" id="equation-fseq">
-<span class="eqno">(2)<a class="headerlink" href="#equation-fseq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(8)<a class="headerlink" href="#equation-fseq" title="Permalink to this equation">¶</a></span>\[
  f(x) = \frac{1}{2}a_0 +\sum_{n=1}^\infty \left[a_n\cos(nx) + b_n\sin(nx)\right],
 \]</div>
 <p>where the <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are constants. Remember that <span class="math notranslate nohighlight">\(\sin(nx)\)</span> and <span class="math notranslate nohighlight">\(\cos(nx)\)</span> are periodic with period <span class="math notranslate nohighlight">\(2\pi\)</span>.</p>
@@ -436,20 +441,20 @@
 \[
 a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
 \]</div>
-<p>Thus if equation <a class="reference internal" href="#equation-fseq">(2)</a> holds, then we know <span class="math notranslate nohighlight">\(a_0\)</span>.</p>
+<p>Thus if equation <a class="reference internal" href="#equation-fseq">(8)</a> holds, then we know <span class="math notranslate nohighlight">\(a_0\)</span>.</p>
 <br>
 <blockquote>
 <div><p><strong>Lemma 2.2.1:</strong> Let <span class="math notranslate nohighlight">\(n, m\in\mathbb{N}\backslash 0\)</span>. We then have the following equalities:</p>
 <div class="math notranslate nohighlight" id="equation-sceq">
-<span class="eqno">(3)<a class="headerlink" href="#equation-sceq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(9)<a class="headerlink" href="#equation-sceq" title="Permalink to this equation">¶</a></span>\[
 \int_{-\pi}^\pi \sin(mx)\cos(nx)\mathrm{d}x = 0,
 \]</div>
 <div class="math notranslate nohighlight" id="equation-sseq">
-<span class="eqno">(4)<a class="headerlink" href="#equation-sseq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(10)<a class="headerlink" href="#equation-sseq" title="Permalink to this equation">¶</a></span>\[
  \int_{-\pi}^\pi\sin(mx)\sin(nx)\mathrm{d}x = \pi\delta_{nm},
 \]</div>
 <div class="math notranslate nohighlight" id="equation-cceq">
-<span class="eqno">(5)<a class="headerlink" href="#equation-cceq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(11)<a class="headerlink" href="#equation-cceq" title="Permalink to this equation">¶</a></span>\[
  \int_{-\pi}^\pi\cos(mx)\cos(nx)\mathrm{d}x = \pi\delta_{nm}.
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta_{mn}\)</span> is the <em>Kronecker delta</em> defined by</p>
@@ -460,7 +465,7 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
 </div></blockquote>
 <blockquote>
 <div><p><strong>Proof</strong></p>
-<p>Equation <a class="reference internal" href="#equation-sceq">(3)</a> is trivial as <span class="math notranslate nohighlight">\(\sin(mx)\cos(nx)\)</span> is odd. For equation <a class="reference internal" href="#equation-sseq">(4)</a> we compute, for <span class="math notranslate nohighlight">\(n\neq m\)</span>,</p>
+<p>Equation <a class="reference internal" href="#equation-sceq">(9)</a> is trivial as <span class="math notranslate nohighlight">\(\sin(mx)\cos(nx)\)</span> is odd. For equation <a class="reference internal" href="#equation-sseq">(10)</a> we compute, for <span class="math notranslate nohighlight">\(n\neq m\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_{-\pi}^\pi\sin(mx)\sin(nx)\mathrm{d}x &amp;= \frac{1}{2}\int_{-\pi}^\pi\left[-\cos((m+n)x)+\cos((m-n)x)\right]\mathrm{d}x\\
@@ -472,9 +477,9 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
 \[
  \int_{-\pi}^\pi\sin(nx)\sin(mx)\mathrm{d}x = \int_{-\pi}^\pi\frac{1-\cos(2nx)}{2}\mathrm{d}x = \frac{1}{2}\left[x-\frac{\sin(2nx)}{2n}\right] = \pi
  \]</div>
-<p>Similar computations yield equation <a class="reference internal" href="#equation-cceq">(5)</a>. <span class="math notranslate nohighlight">\(\quad\blacksquare\)</span></p>
+<p>Similar computations yield equation <a class="reference internal" href="#equation-cceq">(11)</a>. <span class="math notranslate nohighlight">\(\quad\blacksquare\)</span></p>
 </div></blockquote>
-<p>Thus to find <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, we assume equation <a class="reference internal" href="#equation-fseq">(2)</a> is true. Multiplying both sides by <span class="math notranslate nohighlight">\(\cos(mx)\)</span> and integrating term-wise gives</p>
+<p>Thus to find <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, we assume equation <a class="reference internal" href="#equation-fseq">(8)</a> is true. Multiplying both sides by <span class="math notranslate nohighlight">\(\cos(mx)\)</span> and integrating term-wise gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x =\frac{1}{2}a_0&amp;\int_{-\pi}^\pi \cos(mx)\mathrm{d}x\\&amp;+\sum_{n=1}^\infty a_n\int_{-\pi}^\pi\cos(nx)\cos(mx)\mathrm{d}x\\
@@ -491,7 +496,7 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
  a_m = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x.
 \]</div>
 <p>Note that this also holds for <span class="math notranslate nohighlight">\(m=0\)</span> (which explains the factor of 1/2).</p>
-<p>Multiplying equation <a class="reference internal" href="#equation-fseq">(2)</a> by <span class="math notranslate nohighlight">\(\sin(mx)\)</span> and integrating term-wise, we similarly obtain</p>
+<p>Multiplying equation <a class="reference internal" href="#equation-fseq">(8)</a> by <span class="math notranslate nohighlight">\(\sin(mx)\)</span> and integrating term-wise, we similarly obtain</p>
 <div class="math notranslate nohighlight">
 \[
  b_m = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(mx)\mathrm{d}x.
@@ -647,7 +652,7 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
 \end{split}\]</div>
 <p>The Fourier series expansion of the given function is therefore</p>
 <div class="math notranslate nohighlight" id="equation-fsex2">
-<span class="eqno">(6)<a class="headerlink" href="#equation-fsex2" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(12)<a class="headerlink" href="#equation-fsex2" title="Permalink to this equation">¶</a></span>\[
  f(t) \sim \sum_{n=1}^\infty{\frac{2}{n\pi}\left(1-(-1)^n\right)\sin{nx}}.
 \]</div>
 <p>Noting that</p>
@@ -655,7 +660,7 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
 \[
  b_{2m} = 0, \qquad b_{2m+1} = \frac{4}{(2m+1)\pi},
 \]</div>
-<p>we can reduce equation <a class="reference internal" href="#equation-fsex2">(6)</a> to</p>
+<p>we can reduce equation <a class="reference internal" href="#equation-fsex2">(12)</a> to</p>
 <div class="math notranslate nohighlight">
 \[
  f(x) \sim \frac{4}{\pi}\sum_{m=0}^\infty \frac{1}{2m+1}\sin\left((2m+1)x\right).
@@ -677,7 +682,7 @@ s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
 \]</div>
 <p>The question is therefore, does <span class="math notranslate nohighlight">\(s_n(x)\)</span> converge for each <span class="math notranslate nohighlight">\(x\)</span>? If it does, is the limit <span class="math notranslate nohighlight">\(f(x)\)</span>?</p>
 <br>
-<p>The python script below plots an approximation of the square wave function (shown in blue) consisting of 2, 4 and 6 terms of the Fourier series in <a class="reference internal" href="#equation-fsex2">(6)</a>. We see that the FS appears to be converging to the function as we increase the number of terms although not as quickly as the series in Example 2.2.1. In particular, there appears to be an issue at zero…</p>
+<p>The python script below plots an approximation of the square wave function (shown in blue) consisting of 2, 4 and 6 terms of the Fourier series in <a class="reference internal" href="#equation-fsex2">(12)</a>. We see that the FS appears to be converging to the function as we increase the number of terms although not as quickly as the series in Example 2.2.1. In particular, there appears to be an issue at zero…</p>
 <div class="margin sidebar">
 <p class="sidebar-title">Note</p>
 <p>The slower convergence shouldn’t be too surprising given that the square wave function is discontinuous at <span class="math notranslate nohighlight">\(x=0\)</span>. We shall return to this issue later on in the course.</p>
