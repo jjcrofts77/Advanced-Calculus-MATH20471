@@ -9,6 +9,7 @@ The first part of this course of lectures introduces Fourier series, focussing o
 
 ### Chapter 1 Introduction
    - Initial and boundary value problems (IBVP)
+   - ODE revision
    - Introduction to partial differential equations (PDEs)  
    - The equations we shall study
 
