@@ -426,7 +426,7 @@ second-order PDEs as well as considering their applications throughout the physi
 sciences.</p>
 <div class="section" id="the-wave-equation-hyperbolic">
 <h2>The wave equation (hyperbolic)<a class="headerlink" href="#the-wave-equation-hyperbolic" title="Permalink to this headline">¶</a></h2>
-<p>Here we seek a function <span class="math notranslate nohighlight">\(y(x,t)\)</span> such that</p>
+<p>Here we seek a function <span class="math notranslate nohighlight">\(u(x,t)\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{\partial^2 y}{\partial t^2} = c^2\frac{\partial^2 y}{\partial x^2},
@@ -436,14 +436,21 @@ sciences.</p>
 </div>
 <div class="section" id="the-heat-equation-parabolic">
 <h2>The heat equation (parabolic)<a class="headerlink" href="#the-heat-equation-parabolic" title="Permalink to this headline">¶</a></h2>
-<p>Also known as the <em>diffusion equation</em>, we will find <span class="math notranslate nohighlight">\(T(x,t)\)</span> such that</p>
+<p>Also known as the <em>diffusion equation</em>, we will find <span class="math notranslate nohighlight">\(u(x,t)\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
- \frac{\partial T}{\partial t} = \kappa\frac{\partial^2T}{\partial x^2},
+ \frac{\partial u}{\partial t} = \kappa\frac{\partial^2u}{\partial x^2},
  \label{eqn:heat}
 \]</div>
-<p>where, for example, <span class="math notranslate nohighlight">\(T(x,t)\)</span> is a temperature at position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(\kappa\)</span> is a positive
-constant called the <em>thermal diffusivity</em>.</p>
+<p>where, for example, <span class="math notranslate nohighlight">\(u(x,t)\)</span> is a temperature at position <span class="math notranslate nohighlight">\(x\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(\kappa\)</span> is a positive constant called the <em>thermal diffusivity</em>.</p>
+<p>For example, we shall consider how the above equation can be used to model heat flow in a metal rod of the form shown below.</p>
+<br>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/Temp_Rod_homobc.png"><img alt="../../../../_images/Temp_Rod_homobc.png" src="../../../../_images/Temp_Rod_homobc.png" style="height: 275px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Modelling setup for heat flow in a 1-d metal rod</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<br>
+<p>In the figure, the ends of the rod are held at a constant temperature of zero degrees (BCs) and the initial temperature of the rod is given by the function <span class="math notranslate nohighlight">\(f\)</span> (IC).</p>
 </div>
 <div class="section" id="laplace-s-equation-elliptic">
 <h2>Laplace’s equation (elliptic)<a class="headerlink" href="#laplace-s-equation-elliptic" title="Permalink to this headline">¶</a></h2>
