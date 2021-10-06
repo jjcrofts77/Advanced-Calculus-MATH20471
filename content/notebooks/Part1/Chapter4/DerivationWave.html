@@ -420,12 +420,12 @@
 <br>
 <p>Consider a segment of string from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(x +\Delta{x}\)</span> as in Figure \ref{fig:string}(b). The Tension <span class="math notranslate nohighlight">\(T\)</span> is always tangential to the string. Breaking this vector into its horizontal and vertical components we have</p>
 <div class="math notranslate nohighlight" id="equation-tension">
-<span class="eqno">(21)<a class="headerlink" href="#equation-tension" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(22)<a class="headerlink" href="#equation-tension" title="Permalink to this equation">¶</a></span>\[\begin{split}
  T_y = -T\sin{\theta},\\
  T_x = -T\cos{\theta},
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the angular displacement from the horizontal. The horizontal component <span class="math notranslate nohighlight">\(T_x\)</span> can be neglected since every point on the string has another tension vector in the opposite direction. The slope of the string at any point <span class="math notranslate nohighlight">\(x\)</span> can be described as <span class="math notranslate nohighlight">\(\partial{y}/\partial{x}=\tan{\theta}\)</span> (Figure \ref{fig:tension}(a)). Additionally, since <span class="math notranslate nohighlight">\(y(x,t)\)</span> is small compared to <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(\cos{\theta}\approx 1\)</span> so <span class="math notranslate nohighlight">\(\tan{\theta} \approx \sin{\theta}\)</span>.</p>
-<p>Using these facts along with Equation <a class="reference internal" href="#equation-tension">(21)</a> gives</p>
+<p>Using these facts along with Equation <a class="reference internal" href="#equation-tension">(22)</a> gives</p>
 <div class="math notranslate nohighlight">
 \[
  T_y = -T\frac{\partial{y}}{\partial{x}}(x,t).
@@ -451,32 +451,32 @@ F\approx T\left(\frac{\partial{y}}{\partial{x}}(x+\Delta{x},t) -
 \]</div>
 <p>Now, we can divide both sides by <span class="math notranslate nohighlight">\(\Delta{x}\)</span> and take the limit as <span class="math notranslate nohighlight">\(\Delta{x}\)</span> approaches zero</p>
 <div class="math notranslate nohighlight" id="equation-wave-deriv">
-<span class="eqno">(22)<a class="headerlink" href="#equation-wave-deriv" title="Permalink to this equation">¶</a></span>\[ 
+<span class="eqno">(23)<a class="headerlink" href="#equation-wave-deriv" title="Permalink to this equation">¶</a></span>\[ 
  \rho\frac{\partial^2y}{\partial t^2} = T\lim_{\Delta{x}\to
 0}\frac{1}{\Delta{x}}\left(\frac{\partial y}{\partial x}(x+\Delta{x},t) -
 \frac{\partial y}{\partial x}(x, t)\right).
 \]</div>
 <p>From the definition of the derivative we have</p>
 <div class="math notranslate nohighlight" id="equation-deriv">
-<span class="eqno">(23)<a class="headerlink" href="#equation-deriv" title="Permalink to this equation">¶</a></span>\[ 
+<span class="eqno">(24)<a class="headerlink" href="#equation-deriv" title="Permalink to this equation">¶</a></span>\[ 
  \lim_{\Delta{x}\to 0}\frac{\left(\frac{\partial y}{\partial x}(x+\Delta{x},t) -
 \frac{\partial y}{\partial x}(x, t)\right)}{\Delta{x}} =
 \frac{\partial^2y}{\partial x^2}
 \]</div>
-<p>and, combining this with <a class="reference internal" href="#equation-wave-deriv">(22)</a> ( and setting <span class="math notranslate nohighlight">\(c^2=T/\rho\)</span>) results in the famous wave equation as defined by D’Alembert</p>
+<p>and, combining this with <a class="reference internal" href="#equation-wave-deriv">(23)</a> ( and setting <span class="math notranslate nohighlight">\(c^2=T/\rho\)</span>) results in the famous wave equation as defined by D’Alembert</p>
 <div class="math notranslate nohighlight" id="equation-wave">
-<span class="eqno">(24)<a class="headerlink" href="#equation-wave" title="Permalink to this equation">¶</a></span>\[ 
+<span class="eqno">(25)<a class="headerlink" href="#equation-wave" title="Permalink to this equation">¶</a></span>\[ 
  \frac{\partial^2y}{\partial t^2} = c^2\frac{\partial^2y}{\partial
 x^2}.
 \]</div>
-<p>In the case of the string, the boundary conditions for <a class="reference internal" href="#equation-wave">(24)</a> are given by</p>
+<p>In the case of the string, the boundary conditions for <a class="reference internal" href="#equation-wave">(25)</a> are given by</p>
 <div class="math notranslate nohighlight">
 \[
  y(0,t)=0 \qquad \mathrm{and} \qquad y(L,t)=0, \quad t\geq 0,
 \]</div>
 <p>whilst the initial condition (or displacement of the string) is given by <span class="math notranslate nohighlight">\(y(x,0) = f(x)\)</span>.</p>
 <br>
-<p><strong>Remark</strong> Equation <a class="reference internal" href="#equation-wave">(24)</a> is the <span class="math notranslate nohighlight">\(1\)</span>-dimensional wave equation. However, we can define the multi-dimensional wave equation similarly:</p>
+<p><strong>Remark</strong> Equation <a class="reference internal" href="#equation-wave">(25)</a> is the <span class="math notranslate nohighlight">\(1\)</span>-dimensional wave equation. However, we can define the multi-dimensional wave equation similarly:</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{\partial^2y}{\partial t^2} = c^2\Delta{y}.

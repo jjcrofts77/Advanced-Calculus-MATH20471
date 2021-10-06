@@ -411,7 +411,7 @@
 \]</div>
 <p>and <span class="math notranslate nohighlight">\(y\)</span> satisfies the initial conditions</p>
 <div class="math notranslate nohighlight" id="equation-waveics3">
-<span class="eqno">(30)<a class="headerlink" href="#equation-waveics3" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(31)<a class="headerlink" href="#equation-waveics3" title="Permalink to this equation">¶</a></span>\[
  y(x,0) = f(x) \text{ and } \frac{\partial y}{\partial t}(x,0) = g(x) \text{ for } 0\leq x\leq L,
 \]</div>
 <p>and the boundary conditions</p>
@@ -419,13 +419,13 @@
 \[
  y(0,t) = 0 \text{ and } y(L,t) = 0 \text{ for } t&gt;0,
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> are known functions. According to <a class="reference internal" href="#equation-waveics3">(30)</a>, the initial tranverse displacement and the initial tranverse velocity are prescribed. If <em>e.g.</em></p>
+<p>where <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> are known functions. According to <a class="reference internal" href="#equation-waveics3">(31)</a>, the initial tranverse displacement and the initial tranverse velocity are prescribed. If <em>e.g.</em></p>
 <div class="math notranslate nohighlight" id="equation-wavetriic">
-<span class="eqno">(31)<a class="headerlink" href="#equation-wavetriic" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(32)<a class="headerlink" href="#equation-wavetriic" title="Permalink to this equation">¶</a></span>\[\begin{split}
  f(x) = \begin{cases}2hx/L&amp;0\leq x\leq L/2,\\2h(L-x)/L&amp; L/2\leq x\leq L,\end{cases}
 \end{split}\]</div>
 <p>and <span class="math notranslate nohighlight">\(g(x)=0, 0\leq x\leq L\)</span>, the mid-point of the string is pulled aside a distance <span class="math notranslate nohighlight">\(h\)</span> and the string is released from rest.</p>
-<p>We know that the general solution can be written as in equation <a class="reference internal" href="NormalModesString.html#equation-wavegensol">(29)</a>, and hence the boundary conditions must satisfy</p>
+<p>We know that the general solution can be written as in equation <a class="reference internal" href="NormalModesString.html#equation-wavegensol">(30)</a>, and hence the boundary conditions must satisfy</p>
 <div class="math notranslate nohighlight">
 \[
  y(x,0) = \sum_{n=1}^\infty a_n\sin\left(\frac{n\pi x}{L}\right), \quad \frac{\partial y}{\partial t}(x,0) = \sum_{n=1}^\infty \left(\frac{n\pi c}{L}\right)b_n\sin\left(\frac{n\pi x}{L}\right).
@@ -543,7 +543,7 @@ g(x)&amp;=\sum_{n=1}^\infty \left(\frac{n\pi c}{L}\right)b_n\sin\left(\frac{n\pi
  b_n &amp;= \frac{2}{n\pi c}\int_0^L g(x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x.
 \end{split}\]</div>
 <br>
-<p><strong>Example 4.3.3 (Guitar)</strong> For the special case <a class="reference internal" href="#equation-wavetriic">(31)</a>,</p>
+<p><strong>Example 4.3.3 (Guitar)</strong> For the special case <a class="reference internal" href="#equation-wavetriic">(32)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
  a_n &amp;= \frac{2}{L}\cdot\frac{2h}{L}\int_0^{\frac{L}{2}}x\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x +\frac{2}{L}\cdot\frac{2h}{L}\int_{\frac{L}{2}}^L(L-x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x,\\

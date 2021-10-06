@@ -619,6 +619,62 @@ F''(x)+9F(x)=0.
 \]</div>
 <p>The required solution is given by <span class="math notranslate nohighlight">\(z(x,t)=4\sin(3x)e^{-2t}\)</span>.</p>
 </div>
+<br>
+<p><strong>Example 1.2.5</strong> Assuming a solution of the form <span class="math notranslate nohighlight">\(\displaystyle u(x,y) = y^\alpha f(x)\)</span>, where <span class="math notranslate nohighlight">\(\displaystyle \alpha\in\mathbb{R}\)</span>, solve the following PDE</p>
+<div class="math notranslate nohighlight" id="equation-ex125">
+<span class="eqno">(7)<a class="headerlink" href="#equation-ex125" title="Permalink to this equation">¶</a></span>\[
+y^2u_{yy}+2yu_y-2u=0.
+\]</div>
+<br>
+<p><strong>Solution</strong></p>
+<div class="toggle docutils container">
+<p>We have that</p>
+<div class="math notranslate nohighlight">
+\[
+u_y = \alpha y^{\alpha-1}f(x) \quad \text{and} \quad u_{yy} = \alpha(\alpha-1)y^{\alpha-2}f(x),
+\]</div>
+<p>so <a class="reference internal" href="#equation-ex125">(7)</a> becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha(\alpha-1)y^\alpha f(x) + 2 \alpha y^\alpha f(x) -2 y^\alpha f(x) = 0
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+y^\alpha f(x)\left(\alpha^2+\alpha-2\right) = 0.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\displaystyle y^\alpha f(x)\neq 0\)</span> we must have that</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\alpha^2+\alpha-2\right) = (\alpha-1)(\alpha+2) = 0,
+\]</div>
+<p>or <span class="math notranslate nohighlight">\(\displaystyle \alpha_1 = 1\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \alpha_2=-2\)</span>.</p>
+<p>Thus we have two solutions</p>
+<div class="math notranslate nohighlight">
+\[
+ u_1(x,y) = yf_1(x) \quad\text{and}\quad u_2(x,y) = y^{-2}f_2(x),
+\]</div>
+<p>and since the PDE is linear and homogeneous we can derive a general solution as a linear combination of <span class="math notranslate nohighlight">\(u_1\)</span> and <span class="math notranslate nohighlight">\(u_2\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+ u(x,y) = A_1yf_1(x) + \frac{A_2}{y^2}f_2(x)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can check the validity of the above solution via direct substitution.</p>
+<p>Firstly note that</p>
+<div class="math notranslate nohighlight">
+\[
+u_y = A_1f_1-2A_2f_2\frac{1}{y^3} \quad \text{and} \quad u_{yy} = 6A_2f_2\frac{1}{y^4},
+\]</div>
+<p>substituting this into <a class="reference internal" href="#equation-ex125">(7)</a> gives</p>
+<div class="math notranslate nohighlight">
+\[
+y^2\left(6A_2f_2\frac{1}{y^4}\right) + 2y\left(A_1f_1-2A_2f_2\frac{1}{y^3}\right) -2\left(A_1yf_1(x) + \frac{A_2}{y^2}f_2(x)\right) = 0
+\]</div>
+<p>as required.</p>
+</div>
+</div>
 </div>
 </div>
 
