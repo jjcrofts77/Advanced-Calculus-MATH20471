@@ -33,6 +33,16 @@ such that $x-ma\in(\alpha, \alpha+a]$. If we then set $F(x) = f(x-ma)$, we can s
 
 <br>
 
+Examples of periodic functions are shown below.
+
+
+https://user-images.githubusercontent.com/90452278/137192140-38c0aad9-3741-45f7-8f66-c174fcb2778f.mp4
+
+
+
+
+<br>
+
 ## Properties of periodic functions
 If $f, g$ are periodic functions with period $a$, then:
  1. $f, g$ are also periodic functions with period $na$ for any $n\in \mathbb{N}$;
