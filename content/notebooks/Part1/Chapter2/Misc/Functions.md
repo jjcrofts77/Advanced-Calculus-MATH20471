@@ -97,3 +97,11 @@ $
 $
 
  4. the functions $h(x)=f(x)g(x)$, $h_1(x)=f(x)f_1(x)$ and $h_2(x)=g(x)g_1(x)$ are odd, even and even, respectively.
+
+
+```{code-cell} ipython3
+:tags: [output_scroll]
+
+for ii in range(40):
+    print(f"this is output line {ii}")
+```
