@@ -413,7 +413,7 @@ g(X+2\pi) = f\left(\frac{L(X+2\pi)}{\pi}\right) = f\left(\frac{LX}{\pi}+2L\right
 <br>
 <p>and <span class="math notranslate nohighlight">\(g(X)\)</span> is <span class="math notranslate nohighlight">\(2\pi\)</span> periodic. Hence the previous theory holds for <span class="math notranslate nohighlight">\(g\)</span>, <em>i.e.</em> if we can write</p>
 <div class="math notranslate nohighlight" id="equation-geqn">
-<span class="eqno">(15)<a class="headerlink" href="#equation-geqn" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(18)<a class="headerlink" href="#equation-geqn" title="Permalink to this equation">¶</a></span>\[
  g(X) = \frac{1}{2}a_0 + \sum_{n=1}^\infty\left[ a_n\cos(nX) + b_n\sin(nX)\right],
 \]</div>
 <p>then</p>
@@ -432,15 +432,15 @@ g(X+2\pi) = f\left(\frac{L(X+2\pi)}{\pi}\right) = f\left(\frac{LX}{\pi}+2L\right
 \end{split}\]</div>
 <p>So we can write</p>
 <div class="math notranslate nohighlight" id="equation-feqn">
-<span class="eqno">(16)<a class="headerlink" href="#equation-feqn" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(19)<a class="headerlink" href="#equation-feqn" title="Permalink to this equation">¶</a></span>\[
  f(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty\left[a_n\cos\left(\frac{n\pi x}{L}\right) + b_n\sin\left(\frac{n\pi x}{L}\right)\right],
 \]</div>
-<p>then <a class="reference internal" href="#equation-geqn">(15)</a> holds, so</p>
+<p>then <a class="reference internal" href="#equation-geqn">(18)</a> holds, so</p>
 <div class="math notranslate nohighlight">
 \[
 a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \mathrm{d}x, \quad b_n = \frac{1}{L}\int_{-L}^L f(x)\sin\left(\frac{n\pi x}{L}\right) \mathrm{d}x.
 \]</div>
-<p>The series in <a class="reference internal" href="#equation-feqn">(16)</a> is called the Fourier series for <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are the Fourier coefficients of <span class="math notranslate nohighlight">\(f\)</span>. Again, we use <span class="math notranslate nohighlight">\(\sim\)</span> if we are unsure whether or not the series converges. By Theorem 2.2, under suitable conditions the series in equation <a class="reference internal" href="#equation-geqn">(15)</a> converges to</p>
+<p>The series in <a class="reference internal" href="#equation-feqn">(19)</a> is called the Fourier series for <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are the Fourier coefficients of <span class="math notranslate nohighlight">\(f\)</span>. Again, we use <span class="math notranslate nohighlight">\(\sim\)</span> if we are unsure whether or not the series converges. By Theorem 2.2, under suitable conditions the series in equation <a class="reference internal" href="#equation-geqn">(18)</a> converges to</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{g(X_+)+g(X_-)}{2}
@@ -453,21 +453,21 @@ a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \mathrm{d}x, 
 \[
  \frac{f(x_+)+f(x_-)}{2},
 \]</div>
-<p>so that Equation <a class="reference internal" href="#equation-feqn">(16)</a> holds at any point where <span class="math notranslate nohighlight">\(f\)</span> is continuous.</p>
+<p>so that Equation <a class="reference internal" href="#equation-feqn">(19)</a> holds at any point where <span class="math notranslate nohighlight">\(f\)</span> is continuous.</p>
 </div></blockquote>
 <br>
 <p><strong>Example 2.4.1</strong> Find the Fourier series of the <span class="math notranslate nohighlight">\(2L\)</span>-periodic extension of</p>
 <div class="math notranslate nohighlight" id="equation-funcexample241">
-<span class="eqno">(17)<a class="headerlink" href="#equation-funcexample241" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(20)<a class="headerlink" href="#equation-funcexample241" title="Permalink to this equation">¶</a></span>\[\begin{split}
  f(x) = \begin{cases}x &amp; x\in(0, L]\\ 0 &amp; x\in(-L, 0].\end{cases}
 \end{split}\]</div>
 <div class="figure align-default" id="figexample241">
 <a class="reference internal image-reference" href="../../../../_images/Example23.png"><img alt="../../../../_images/Example23.png" src="../../../../_images/Example23.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Plot of the function in <a class="reference internal" href="#equation-funcexample241">(17)</a></span><a class="headerlink" href="#figexample241" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Plot of the function in <a class="reference internal" href="#equation-funcexample241">(20)</a></span><a class="headerlink" href="#figexample241" title="Permalink to this image">¶</a></p>
 </div>
 <p>Hence show that</p>
 <div class="math notranslate nohighlight" id="equation-ex1">
-<span class="eqno">(18)<a class="headerlink" href="#equation-ex1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(21)<a class="headerlink" href="#equation-ex1" title="Permalink to this equation">¶</a></span>\[
  \frac{\pi^2}{8} = \sum_{m=0}^\infty \frac{1}{(2m+1)^2}.
 \]</div>
 <p>We have</p>
@@ -497,7 +497,7 @@ a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = 
 \end{split}\]</div>
 <p>So</p>
 <div class="math notranslate nohighlight" id="equation-fsex1">
-<span class="eqno">(19)<a class="headerlink" href="#equation-fsex1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(22)<a class="headerlink" href="#equation-fsex1" title="Permalink to this equation">¶</a></span>\[
  f(x) \sim \frac{L}{4} + \sum_{m=0}^\infty \frac{-2L}{(2m+1)^2\pi^2}\cos\left[\frac{(2m+1)\pi x}{L}\right] + \sum_{m=1}^\infty (-1)^{m+1}\frac{L}{m\pi}\sin\left(\frac{m\pi x}{L}\right).
 \]</div>
 <p>By Theorem 2.4.1, if <span class="math notranslate nohighlight">\(x\in [0,L)\)</span> we obtain</p>
@@ -510,7 +510,7 @@ x = \frac{L}{4}+ \sum_{m=0}^\infty \frac{-2L}{(2m+1)^2\pi^2}\cos\left[\frac{(2m+
 \[
 0 = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2},
 \]</div>
-<p>which proves <a class="reference internal" href="#equation-ex1">(18)</a>. If we set <span class="math notranslate nohighlight">\(x=L\)</span> in equation <a class="reference internal" href="#equation-fsex1">(19)</a> we obtain</p>
+<p>which proves <a class="reference internal" href="#equation-ex1">(21)</a>. If we set <span class="math notranslate nohighlight">\(x=L\)</span> in equation <a class="reference internal" href="#equation-fsex1">(22)</a> we obtain</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{f(L_+)+f(L_-)}{2} = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2}\cos\left((2m+1)\pi\right),
@@ -520,7 +520,7 @@ x = \frac{L}{4}+ \sum_{m=0}^\infty \frac{-2L}{(2m+1)^2\pi^2}\cos\left[\frac{(2m+
 \[
  \frac{0+L}{2} = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2},
 \]</div>
-<p>which gives equation (<a class="reference internal" href="#equation-ex1">(18)</a> again.</p>
+<p>which gives equation (<a class="reference internal" href="#equation-ex1">(21)</a> again.</p>
 <div class="section" id="sine-and-cosine-series">
 <h2>Sine and cosine series<a class="headerlink" href="#sine-and-cosine-series" title="Permalink to this headline">¶</a></h2>
 <p>Given a function <span class="math notranslate nohighlight">\(f\)</span> defined on <span class="math notranslate nohighlight">\([0,L]\)</span> we require an expansion with only cosine terms or only sine terms. This will be done by extending <span class="math notranslate nohighlight">\(f\)</span> to be even (for only cosine terms) or odd (for only sine terms) on <span class="math notranslate nohighlight">\((-L,L]\)</span> and then extending to a <span class="math notranslate nohighlight">\(2L\)</span>-periodic function. The series obtained will then be valid on <span class="math notranslate nohighlight">\((0,L)\)</span>.</p>
@@ -575,7 +575,7 @@ f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
 <p><em>Sine expansion:</em></p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/Example24Odd.png"><img alt="../../../../_images/Example24Odd.png" src="../../../../_images/Example24Odd.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Odd extension of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Odd extension of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The odd extension is defined by</p>
 <div class="math notranslate nohighlight">
@@ -595,7 +595,7 @@ f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
 <p><em>Cosine expansion</em></p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/Example24Even.png"><img alt="../../../../_images/Example24Even.png" src="../../../../_images/Example24Even.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Even extension of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Even extension of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The even extension is defined by</p>
 <div class="math notranslate nohighlight">
@@ -629,7 +629,7 @@ f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/notebooks/Part1/Chapter2"
+            path: "./content\notebooks\Part1\Chapter2"
         },
         predefinedOutput: true
     }

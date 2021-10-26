@@ -589,7 +589,7 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/Fourierseries2pi_2_0.png" src="../../../../_images/Fourierseries2pi_2_0.png" />
+<img alt="../../../../_images/Fourierseries2pi_3_0.png" src="../../../../_images/Fourierseries2pi_3_0.png" />
 </div>
 </div>
 </div>
@@ -723,7 +723,84 @@ s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/Fourierseries2pi_4_0.png" src="../../../../_images/Fourierseries2pi_4_0.png" />
+<img alt="../../../../_images/Fourierseries2pi_5_0.png" src="../../../../_images/Fourierseries2pi_5_0.png" />
+</div>
+</div>
+<br>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="figure align-default" id="figexample223">
+<a class="reference internal image-reference" href="../../../../_images/Ex223.png"><img alt="../../../../_images/Ex223.png" src="../../../../_images/Ex223.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Plot of the function in <a class="reference internal" href="#equation-ex223">(14)</a>.</span><a class="headerlink" href="#figexample223" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<p><strong>Example 2.2.3</strong> Find the Fourier series of the function</p>
+<div class="math notranslate nohighlight" id="equation-ex223">
+<span class="eqno">(14)<a class="headerlink" href="#equation-ex223" title="Permalink to this equation">¶</a></span>\[
+f(x) = x^2,\quad x\in[-\pi, \pi]
+\]</div>
+<p>such that <span class="math notranslate nohighlight">\(f(x) = f(x+2\pi)\)</span> outside of this region.</p>
+<p><strong>Solution</strong></p>
+<div class="toggle docutils container">
+<p>Since the function is even we know that <span class="math notranslate nohighlight">\(b_n=0, \forall n\)</span>.</p>
+<p>Now,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_0 &amp;= \frac{1}{\pi}\int_{-\pi}^\pi x^2\mathrm{d}x\\
+&amp;=\frac{2}{\pi}\int_0^\pi x^2\mathrm{d}x\\
+&amp;= \frac{2}{\pi}\left[\frac{1}{3}x^3\right]_0^\pi = \frac{2}{3}\pi^2, 
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_n &amp;=\frac{2}{\pi}\int_{0}^\pi x^2\cos(nx)\mathrm{d}x\\
+&amp;= \frac{2}{\pi}\left[\frac{x^2}{n}\sin(nx)\right]_0^\pi-\frac{4}{n\pi}\int_0^\pi x\sin(nx)\mathrm{d}x\\
+&amp;= -\frac{4}{n\pi}\left[\frac{-x}{n}\cos(nx)\right]_0^\pi - \frac{4}{n^2\pi}\int_0^\pi \cos(nx)\mathrm{d}x\\
+&amp;= \frac{4}{n^2}(-1)^n.
+\end{split}\]</div>
+<p>Thus the FS of the function in <a class="reference internal" href="#equation-ex223">(14)</a> is</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{\pi^2}{3} + \sum_{n=1}^\infty \frac{4(-1)^n}{n^2}\cos(nx).
+\]</div>
+</div>
+<p>Below we use Python to plot the FS approximations (with 2, 4 and 6 terms) of <span class="math notranslate nohighlight">\(x^2\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># sets the size of the figure in inches</span>
+
+<span class="c1"># domain of plot (-pi, pi)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># quadratic (Example 2.2.3)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Partial sums for the FS of the square wave</span>
+<span class="n">y1</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># two terms (first and second harmonics)</span>
+<span class="n">y2</span><span class="o">=</span><span class="n">y1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span> <span class="c1"># 4 terms</span>
+<span class="n">y3</span><span class="o">=</span><span class="n">y2</span><span class="o">+</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">16.0</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)</span> <span class="c1"># 6 terms</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;c--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;two terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;four terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s1">&#39;g--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;six terms&#39;</span><span class="p">)</span>
+
+<span class="c1"># add legend, label axis and add title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;partial sums&#39;</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Partial sums for the Fourier series of the quadratic function&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Fourierseries2pi_7_0.png" src="../../../../_images/Fourierseries2pi_7_0.png" />
 </div>
 </div>
 </div>
@@ -742,7 +819,7 @@ s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/notebooks/Part1/Chapter2"
+            path: "./content\notebooks\Part1\Chapter2"
         },
         predefinedOutput: true
     }
