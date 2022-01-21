@@ -50,6 +50,7 @@ The second part of this course of lectures considers the extension of calculus t
 ### Chapter 2 Differentiation
    - Differentiation of complex functions
    - Consequences/uses of the Cauchy-Riemann equations
+   - Examples
 
 ### Chapter 3 Singularities
    - Poles
