@@ -46,3 +46,4 @@ parts:
     sections:
     - file: content/notebooks/Part2/Chapter2/Differentiation
     - file: content/notebooks/Part2/Chapter2/CauchyRiemann
+    - file: content/notebooks/Part2/Chapter2/Examples
