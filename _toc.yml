@@ -52,4 +52,10 @@ parts:
     - file: content/notebooks/Part2/Chapter3/Poles
     - file: content/notebooks/Part2/Chapter3/RemovableSingularities
     - file: content/notebooks/Part2/Chapter3/EssentialSingularities
-    - file: content/notebooks/Part2/Chapter3/Infinity
+    - file: content/notebooks/Part2/Chapter3/Infinity    
+  - file: content/notebooks/Part2/Chapter3/Chapter4Intro
+    sections:
+    - file: content/notebooks/Part2/Chapter4/IntegrationPreliminaries
+    - file: content/notebooks/Part2/Chapter4/FundamentalInt
+    - file: content/notebooks/Part2/Chapter4/CauchyIntForm
+    - file: content/notebooks/Part2/Chapter4/Annulus
