@@ -42,7 +42,7 @@ parts:
     sections:
     - file: content/notebooks/Part2/Chapter1/ComplexNumbers
     - file: content/notebooks/Part2/Chapter1/ComplexFunc
-  - file: content/notebooks/Part2/Chapter1/Chapter2Intro
+  - file: content/notebooks/Part2/Chapter2/Chapter2Intro
     sections:
     - file: content/notebooks/Part2/Chapter2/Differentiation
     - file: content/notebooks/Part2/Chapter2/CauchyRiemann
