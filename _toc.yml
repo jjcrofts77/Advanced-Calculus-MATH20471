@@ -53,7 +53,7 @@ parts:
     - file: content/notebooks/Part2/Chapter3/RemovableSingularities
     - file: content/notebooks/Part2/Chapter3/EssentialSingularities
     - file: content/notebooks/Part2/Chapter3/Infinity    
-  - file: content/notebooks/Part2/Chapter3/Chapter4Intro
+  - file: content/notebooks/Part2/Chapter4/Chapter4Intro
     sections:
     - file: content/notebooks/Part2/Chapter4/IntegrationPreliminaries
     - file: content/notebooks/Part2/Chapter4/FundamentalInt
