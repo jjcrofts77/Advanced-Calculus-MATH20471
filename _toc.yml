@@ -57,6 +57,7 @@ parts:
     sections:
     - file: content/notebooks/Part2/Chapter4/IntegrationPreliminaries
     - file: content/notebooks/Part2/Chapter4/FundamentalInt
+    - file: content/notebooks/Part2/Chapter4/CauchyIntTheorem
     - file: content/notebooks/Part2/Chapter4/CauchyIntForm
     - file: content/notebooks/Part2/Chapter4/Annulus
   - file: content/notebooks/Part2/Chapter5/Chapter5Intro
