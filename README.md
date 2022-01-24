@@ -57,7 +57,8 @@ This Jupyterbook provides the course notes for Advanced Calculus.
 ### Chapter 4 Integration
    - Preliminary definitions
    - The fundamental theorem of contour integration
-   - Cauchy's integral theorems
+   - Cauchy's integral theorem
+   - Cauchy's integral formula
    - The annulus (or deformation) theorem 
 
 ### Chapter 5 Taylor and Laurent series 
