@@ -63,6 +63,7 @@ parts:
   - file: content/notebooks/Part2/Chapter5/Chapter5Intro
     sections:
     - file: content/notebooks/Part2/Chapter5/TaylorSeries
+    - file: content/notebooks/Part2/Chapter5/TaylorSeriesComplex
     - file: content/notebooks/Part2/Chapter5/LaurentSeries    
   - file: content/notebooks/Part2/Chapter6/Chapter6Intro
     sections:
