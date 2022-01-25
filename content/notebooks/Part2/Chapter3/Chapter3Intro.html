@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter 3 The heat equation &#8212; Advanced Calculus MATH20471</title>
+    <title>Chapter 3 Singularities &#8212; Advanced Calculus MATH20471</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,6 +53,8 @@
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.1 Poles" href="Poles.html" />
+    <link rel="prev" title="2.3 Examples" href="../Chapter2/Examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -270,7 +274,7 @@
   Part II - Complex Analysis
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter1/Chapter1Intro.html">
    Chapter 1 Introduction
@@ -288,7 +292,157 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter1/ComplexFunc.html">
-     1.2 Complex valued functions
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Chapter 3 Singularities
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
+     Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter6/Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/CalculatingResidues.html">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/RealIntegrals.html">
+     6.3 Evaluation of real integrals
     </a>
    </li>
   </ul>
@@ -334,9 +488,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part2/Chapter3/Chapter3Intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part2/Chapter3/Chapter3Intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -354,6 +508,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part2/Chapter3/Chapter3Intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -367,8 +538,29 @@
         
               <div>
                 
-  <div class="section" id="chapter-3-the-heat-equation">
-<h1>Chapter 3 The heat equation<a class="headerlink" href="#chapter-3-the-heat-equation" title="Permalink to this headline">¶</a></h1>
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter3/Chapter3Intro.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="section" id="chapter-3-singularities">
+<h1>Chapter 3 Singularities<a class="headerlink" href="#chapter-3-singularities" title="Permalink to this headline">¶</a></h1>
+<p>A singular point of a complex function <span class="math notranslate nohighlight">\(f(z)\)</span> is a point in the complex plane at which <span class="math notranslate nohighlight">\(f\)</span> is <em>not</em> analytic. To be pedantic, earlier in the course, I have used the terms “analytic” and “differentiable” interchangeably. However, this isn’t strictly the case.</p>
+<p>The derivative of a function exists at <span class="math notranslate nohighlight">\(z=z_0\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
+\]</div>
+<p>exists, independent of the way in which <span class="math notranslate nohighlight">\(z\to z_0\)</span>. Such a derivative exists at a point if and only if the Cauchy-Riemann conditions are satisfied.</p>
+<p>However, a function is “analytic” at the point <span class="math notranslate nohighlight">\(z_0\)</span> if its derivative exists in some <em>neighbourhood</em> of <span class="math notranslate nohighlight">\(z_0\)</span>. A neighbourhood of a complex number <span class="math notranslate nohighlight">\(z_0\)</span> is defined as the disc in the complex plane obeying <span class="math notranslate nohighlight">\(|z-z_0|&lt;\epsilon\)</span> for some small positive number, <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>This may not seem important but, considering the function <span class="math notranslate nohighlight">\(f(z)=x^2-iy^2\)</span>. Taking the various derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{\partial u}{\partial x}=2x,\ \frac{\partial u}{\partial y}=0,\ \frac{\partial v}{\partial x}=0,\ \frac{\partial v}{\partial y}=-2y,
+\]</div>
+<p>and so the Cauchy-Riemann conditions not satisfied unless <span class="math notranslate nohighlight">\(y=-x\)</span>. So the first derivative exists only along that line. However, for any non-zero <span class="math notranslate nohighlight">\(\epsilon\)</span>, the neighbourhood of any <span class="math notranslate nohighlight">\(z_0\)</span> on the line <span class="math notranslate nohighlight">\(y=-x\)</span> contains points at which <span class="math notranslate nohighlight">\(f\)</span> is not analytic; the function <span class="math notranslate nohighlight">\(f(z)=x^2-iy^2\)</span> is nowhere analytic.</p>
+<br>
+<p><strong>Definition 3.0.1</strong> If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at every point within a set <span class="math notranslate nohighlight">\(S\in \mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is “analytic on <span class="math notranslate nohighlight">\(S\)</span>”. If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at every point within <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is “entire”.</p>
+<br>
+<p>We shall use these definitions throughout the course.</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -400,6 +592,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../Chapter2/Examples.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">2.3 Examples</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Poles.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">3.1 Poles</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

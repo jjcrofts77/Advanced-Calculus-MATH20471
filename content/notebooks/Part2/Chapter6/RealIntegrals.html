@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.3 Evaluation of real integrals &#8212; Advanced Calculus MATH20471</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="prev" title="6.2 Calculating residues" href="CalculatingResidues.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/IBVP.html">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/IntroToPDEs.html">
+     1.3 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/PDEsToStudy.html">
+     1.4 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter2/Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/Fourierseries2pi.html">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/FuncsAnyPeriod.html">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ComplexNumbers.html">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ComplexFunc.html">
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
+   Chapter 3 Singularities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
+     Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CalculatingResidues.html">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.3 Evaluation of real integrals
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part2/Chapter6/RealIntegrals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part2/Chapter6/RealIntegrals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter6/RealIntegrals.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="section" id="evaluation-of-real-integrals">
+<h1>6.3 Evaluation of real integrals<a class="headerlink" href="#evaluation-of-real-integrals" title="Permalink to this headline">¶</a></h1>
+<p>It is quite surprising that certain classes of complicated <em>real</em> integrals can be integrated by the residue theorem, as we shall see.</p>
+<p>In this course we shall consider real integrals of the type</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^\infty f(x)\mathrm{d}x.
+\]</div>
+<p>Such an integral is called an <em>improper integral</em>, and it has the meaning</p>
+<div class="math notranslate nohighlight" id="equation-label1">
+<span class="eqno">(56)<a class="headerlink" href="#equation-label1" title="Permalink to this equation">¶</a></span>\[
+ \int_{-\infty}^\infty f(x)\mathrm{d}x = \lim_{a\rightarrow\infty}\int_a^0 f(x)\mathrm{d}x + \lim_{b\rightarrow\infty}\int_0^b f(x)\mathrm{d}x.
+\]</div>
+<p>If both limits exist then we write</p>
+<div class="math notranslate nohighlight" id="equation-label2">
+<span class="eqno">(57)<a class="headerlink" href="#equation-label2" title="Permalink to this equation">¶</a></span>\[
+ \int_{-\infty}^\infty f(x)\mathrm{d}x = \lim_{R\rightarrow\infty}\int_{-R}^R f(x)\mathrm{d}x.
+\]</div>
+<p>The limit in eqref<code class="docutils literal notranslate"><span class="pre">label2</span></code>) is called the <strong>Cauchy principal value</strong> of the integral. It is written</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{P} \int_{-\infty}^\infty f(x)\mathrm{d}x.
+\]</div>
+<p>It may exist even if the limits in eqref<code class="docutils literal notranslate"><span class="pre">label1</span></code> do not. For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{R\rightarrow\infty}\int_{-R}^R x\mathrm{d}x = \lim_{R\rightarrow\infty}\left(\frac{R^2}{2}-\frac{R^2}{2}\right) = 0, \quad\text{but}\quad \lim_{b\rightarrow\infty}\int_0^b x\mathrm{d}x = \infty.
+\]</div>
+<p>Now, we assume that the function <span class="math notranslate nohighlight">\(f(x)\)</span> is a real rational function, <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+ f(x) =\frac{P(x)}{Q(x)},
+\]</div>
+<p>whose denominator is non-zero for all real <span class="math notranslate nohighlight">\(x\)</span> and is of degree at least 2 units higher than the degree of the numerator. Note that <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are polynomials in <span class="math notranslate nohighlight">\(x\)</span>. Examples of such functions include</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{1}{x^2}, ~ \frac{x^2+1}{x^4+1} ~\text{ and }~ \frac{1}{(x^2-2x+5)^2}.
+\]</div>
+<p>In particular, for such functions we have that the limits in eqref<code class="docutils literal notranslate"><span class="pre">label1</span></code> and eqref<code class="docutils literal notranslate"><span class="pre">label2</span></code> exist.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/ResFig.png"><img alt="../../../../_images/ResFig.png" src="../../../../_images/ResFig.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Path <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> of the contour integral in the example below</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Consider the corresponding contour integral (<span class="math notranslate nohighlight">\(f\)</span> the same as above)</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_\mathcal{C}f(z)\mathrm{d}z
+\]</div>
+<p>around the path <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> in Figure 8. Since <span class="math notranslate nohighlight">\(f(x)\)</span> is rational, <span class="math notranslate nohighlight">\(f(z)\)</span> has finitely many poles in the upper half-plane, and if we choose <span class="math notranslate nohighlight">\(R\)</span> large enough, then <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> encloses all these poles. By the residue theorem we then obtain</p>
+<div class="math notranslate nohighlight" id="equation-label3">
+<span class="eqno">(58)<a class="headerlink" href="#equation-label3" title="Permalink to this equation">¶</a></span>\[
+ \oint_\mathcal{C}f(z)\mathrm{d}z = \int_Sf(z)\mathrm{d}z + \int_{-R}^Rf(x)\mathrm{d}x = 2\pi i\sum_j \mathrm{Res}(f; z_j),
+\]</div>
+<p>where the sum consists of all residues of <span class="math notranslate nohighlight">\(f(z)\)</span> at the points in the upper half-plane at which <span class="math notranslate nohighlight">\(f(z)\)</span> has a pole.</p>
+<p>From eqref<code class="docutils literal notranslate"><span class="pre">label3</span></code> we have</p>
+<div class="math notranslate nohighlight" id="equation-label4">
+<span class="eqno">(59)<a class="headerlink" href="#equation-label4" title="Permalink to this equation">¶</a></span>\[
+\int_{-R}^Rf(x)\mathrm{d}x = 2\pi i\sum_j \mathrm{Res}(f;z_j) - \int_Sf(z)\mathrm{d}z.
+\]</div>
+<p>Importantly, it can be shown that (using the ML-inequality, which is outside the scope of the current course) in the <span class="math notranslate nohighlight">\(R\rightarrow\infty\)</span> limit the integral over the semicircle <span class="math notranslate nohighlight">\(S\)</span> approaches zero, <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+ \int_Sf(z)\mathrm{d}z\rightarrow 0 \text{ as } R\rightarrow\infty, 
+\]</div>
+<p>and so in the <span class="math notranslate nohighlight">\(R\rightarrow\infty\)</span> limit eqref<code class="docutils literal notranslate"><span class="pre">label4</span></code> yields the result</p>
+<div class="math notranslate nohighlight" id="equation-label5">
+<span class="eqno">(60)<a class="headerlink" href="#equation-label5" title="Permalink to this equation">¶</a></span>\[
+\int_{-\infty}^\infty f(x)\mathrm{d}x = 2\pi i\sum_j \mathrm{Res}(f;z_j).\]</div>
+<p>Here the sum consists of all residues of <span class="math notranslate nohighlight">\(f(z)\)</span> at the points in the upper half-plane at which <span class="math notranslate nohighlight">\(f(z)\)</span> has a pole.</p>
+<br>
+<p><strong>Example 6.3.1</strong> Show that</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_0^\infty \frac{\mathrm{d}x}{1+x^4} = \frac{\pi}{2\sqrt{2}}. 
+\]</div>
+<p><strong>Solution</strong></p>
+<p>The function <span class="math notranslate nohighlight">\(\displaystyle f(x)=1/(1+x^4)\)</span> is a rational function and has a denominator 4 units higher than its numerator and so we can apply the above techniques to solve the integral.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/ResSing.png"><img alt="../../../../_images/ResSing.png" src="../../../../_images/ResSing.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Singularities of <span class="math notranslate nohighlight">\(\displaystyle f(z) = 1/(1+z^4)\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Indeed, <span class="math notranslate nohighlight">\(\displaystyle f(z)=1/(1+z^4)\)</span> has 4 order 1 poles at the points (see the sketch)</p>
+<div class="math notranslate nohighlight">
+\[
+ z_1 = e^{\pi i/4},\quad z_2 = e^{3\pi i/4},\quad z_3 = e^{-3\pi i/4}, \quad z_4 = e^{-\pi i/4}.
+\]</div>
+<p>The first two poles lie in the upper half-plane. From earlier we have that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{Res}(f; z_1) &amp;=\left[\frac{1}{\left(1+z^4\right)'}\right]_{z=z_1} = \left.\frac{1}{4z^3}\right|_{z=z_1} = \frac{1}{4}e^{-3\pi i/4} = -\frac{1}{4}e^{\pi i/4}\\
+\mathrm{Res}(f; z_2) &amp;=\left[\frac{1}{\left(1+z^4\right)'}\right]_{z=z_2} = \left.\frac{1}{4z^3}\right|_{z=z_2} = \frac{1}{4}e^{-9\pi i/4} = \frac{1}{4}e^{-\pi i/4}.
+\end{split}\]</div>
+<p>Here we have used the fact that <span class="math notranslate nohighlight">\(\displaystyle e^{\pi i} = -1\)</span> and <span class="math notranslate nohighlight">\(\displaystyle e^{-2\pi i}=1\)</span>.</p>
+<p>From eqref<code class="docutils literal notranslate"><span class="pre">label5</span></code> we have</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^\infty \frac{\mathrm{d}x}{1+x^4} = -\frac{2\pi i}{4}\left(e^{\pi i/4}-e^{-\pi i/4}\right) = -\frac{2\pi i}{4}\cdot 2i\cdot\sin\left(\frac{\pi}{4}\right) = \frac{\pi}{\sqrt{2}}.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\displaystyle 1/(1+x^4)\)</span> is an even function, we thus obtain, as asserted,</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_0^\infty\frac{\mathrm{d}x}{1+x^4} = \frac{1}{2} \int_{-\infty}^\infty\frac{\mathrm{d}x}{1+x^4} = \frac{\pi}{2\sqrt{2}}.
+\]</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\Part2\Chapter6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="CalculatingResidues.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">6.2 Calculating residues</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jonathan J Crofts<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
