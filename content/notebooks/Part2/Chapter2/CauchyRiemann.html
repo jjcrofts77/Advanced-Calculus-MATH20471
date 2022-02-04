@@ -595,14 +595,13 @@
 <h2>Determining an analytic function<a class="headerlink" href="#determining-an-analytic-function" title="Permalink to this headline">¶</a></h2>
 <p>The Cauchy-Riemann equations can be employed to determine an analytic function, given either its real or imaginary parts <span class="math notranslate nohighlight">\(u\)</span> or <span class="math notranslate nohighlight">\(v\)</span> <em>up to an arbitrary constant</em>.</p>
 <p>The method employed is as follows:</p>
-<ol class="simple">
-<li><p>If a complex function <span class="math notranslate nohighlight">\(f(z)=u(x,y)+iv(x,y)\)</span> is analytic then its real and imaginary parts must satisfy Laplace’s equation and the Cauchy Riemann conditions:</p></li>
-</ol>
+<ol>
+<li><p>If a complex function <span class="math notranslate nohighlight">\(f(z)=u(x,y)+iv(x,y)\)</span> is analytic then its real and imaginary parts must satisfy Laplace’s equation and the Cauchy Riemann conditions:</p>
 <div class="math notranslate nohighlight">
 \[
- \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\quad \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}.
- \]</div>
-<ol class="simple">
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\quad \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}.
+	\]</div>
+</li>
 <li><p>Then, given either of <span class="math notranslate nohighlight">\(u\)</span> or <span class="math notranslate nohighlight">\(v\)</span>, these equations can be integrated to yield the function.</p></li>
 </ol>
 <p>For instance, if <span class="math notranslate nohighlight">\(u(x,y)=x^2-y^2\)</span> is the real part of an analytic function <span class="math notranslate nohighlight">\(f(z)=u(x,y)+iv(x,y)\)</span> then the Cauchy-Riemann conditions give:</p>
@@ -654,44 +653,46 @@ v=\int 2x \mathrm{d} y = 2xy + h(x)\ \mbox{and}\ v=\int 2y \mathrm{d} x=2xy + g(
 <p>To show this, we use the Cauchy-Riemann equations again:</p>
 <div class="math notranslate nohighlight">
 \[
-	 f'(z) = \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x} = \frac {\partial v}{\partial y}-i\frac{\partial u}{\partial y} = 0
-	 \]</div>
+	f'(z) = \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x} = \frac {\partial v}{\partial y}-i\frac{\partial u}{\partial y} = 0
+	\]</div>
 <p>So we must have <span class="math notranslate nohighlight">\(u_x=v_x=u_y=v_y=0\)</span>. Then, integrating each of those provides:</p>
 <div class="math notranslate nohighlight">
 \[
-	 u=f_1(y)=f_2(x)\ \Rightarrow u=k_1\ \mbox{and} \ v=f_3(y)=f_4(x)\ \Rightarrow v=k_2
-	 \]</div>
+	u=f_1(y)=f_2(x)\ \Rightarrow u=k_1\ \mbox{and} \ v=f_3(y)=f_4(x)\ \Rightarrow v=k_2
+	\]</div>
 <p>And so <span class="math notranslate nohighlight">\(f(z)=k_1+ik_2 = \mbox{constant}\)</span>.</p>
 </li>
-<li><p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic and <em>any</em> of <span class="math notranslate nohighlight">\(\mathrm{Re}(f)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Im}(f)\)</span>, <span class="math notranslate nohighlight">\(|f|\)</span> is constant then <span class="math notranslate nohighlight">\(f(z)\)</span> is constant.</p></li>
-</ol>
+<li><p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic and <em>any</em> of <span class="math notranslate nohighlight">\(\mathrm{Re}(f)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Im}(f)\)</span>, <span class="math notranslate nohighlight">\(|f|\)</span> is constant then <span class="math notranslate nohighlight">\(f(z)\)</span> is constant.</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\mathrm{Re}(f)=u(x,y)=c_1\)</span>. Clearly, <span class="math notranslate nohighlight">\(u_x=u_y=0\)</span>. Then, from Cauchy-Riemann, <span class="math notranslate nohighlight">\(u_x=v_y=0\)</span> and <span class="math notranslate nohighlight">\(u_y=-v_x=0\)</span> and so <span class="math notranslate nohighlight">\(v=c_2\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathrm{Im}(f)=v(x,y)=c_2\)</span>. The same reasoning as above yields <span class="math notranslate nohighlight">\(u=c_1\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(|f|=c\)</span></p>
-<ul class="simple">
+<ul>
 <li><p>If <span class="math notranslate nohighlight">\(c=0\)</span>, <span class="math notranslate nohighlight">\(|f|^2=u^2+v^2=0\)</span>. This is true only if <span class="math notranslate nohighlight">\(u=v=0\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(c\neq 0\)</span>:</p></li>
-</ul>
+<li><p>If <span class="math notranslate nohighlight">\(c\neq 0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-	\frac{\partial |f|^2}{\partial x} = 2u\frac{\partial u}{\partial x}+2v\frac{\partial v}{\partial x}=0,\quad \frac{\partial |f|^2}{\partial y} = 2u\frac{\partial u}{\partial y}+2v\frac{\partial v}{\partial y}=0
-	\]</div>
+			\frac{\partial |f|^2}{\partial x} = 2u\frac{\partial u}{\partial x}+2v\frac{\partial v}{\partial x}=0,\quad \frac{\partial |f|^2}{\partial y} = 2u\frac{\partial u}{\partial y}+2v\frac{\partial v}{\partial y}=0
+			\]</div>
 <p>Then, Cauchy-Riemann implies</p>
 <div class="math notranslate nohighlight">
 \[
-	u\frac{\partial u}{\partial x} - v\frac{\partial u}{\partial y}=0,\quad u\frac{\partial u}{\partial y} + v\frac{\partial u}{\partial x}=0
-	\]</div>
+			u\frac{\partial u}{\partial x} - v\frac{\partial u}{\partial y}=0,\quad u\frac{\partial u}{\partial y} + v\frac{\partial u}{\partial x}=0
+			\]</div>
 <p>Multiplying the first by <span class="math notranslate nohighlight">\(u\)</span> and the second by <span class="math notranslate nohighlight">\(v\)</span> and adding:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	0&amp;=&amp;u^2\frac{\partial u}{\partial x} - uv\frac{\partial u}{\partial y} + uv\frac{\partial u}{\partial y} + v^2\frac{\partial u}{\partial x}\\
-	0&amp;=&amp;(u^2+v^2)\frac{\partial u}{\partial x}\\
-	0&amp;=&amp;c^2\frac{\partial u}{\partial x}.
-	\end{split}\]</div>
-<p>Therefore <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial x}=0\)</span> and by the above results so are the other derivatives. And therefore <span class="math notranslate nohighlight">\(f(z)=\mbox{constant}\)</span></p>
+			0&amp;=&amp;u^2\frac{\partial u}{\partial x} - uv\frac{\partial u}{\partial y} + uv\frac{\partial u}{\partial y} + v^2\frac{\partial u}{\partial x}\\
+			0&amp;=&amp;(u^2+v^2)\frac{\partial u}{\partial x}\\
+			0&amp;=&amp;c^2\frac{\partial u}{\partial x}.
+			\end{split}\]</div>
+<p>Therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial u}{\partial x}=0\)</span> and by the above results so are the other derivatives. And therefore <span class="math notranslate nohighlight">\(f(z)=\mbox{constant}\)</span></p>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+</ol>
 </div>
 </div>
 

@@ -588,7 +588,7 @@
 </div>
 <div class="section" id="algebraic-form">
 <h2>Algebraic form<a class="headerlink" href="#algebraic-form" title="Permalink to this headline">¶</a></h2>
-<p>A complex number, <span class="math notranslate nohighlight">\(z\)</span> can be written:</p>
+<p>A complex number <span class="math notranslate nohighlight">\(z\)</span> can be written:</p>
 <div class="math notranslate nohighlight">
 \[
 	z=x+iy,\ x,y\in\mathbb{R};
@@ -598,16 +598,14 @@
 <ol class="simple">
 <li><p>Equality: <span class="math notranslate nohighlight">\(z_1=z_2\)</span> iff <span class="math notranslate nohighlight">\(x_1=x_2\)</span> and <span class="math notranslate nohighlight">\(y_1=y_2\)</span></p></li>
 <li><p>Addition/subtraction: <span class="math notranslate nohighlight">\(z_1\pm z_2 = (x_1\pm x_2) + i(y_1\pm y_2)\)</span></p></li>
-<li><p>Multiplication:</p></li>
-</ol>
+<li><p>Multiplication:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(k\in \mathbb{R}\)</span>: <span class="math notranslate nohighlight">\(kz = kx+iky\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z_1z_2 = (x_1+iy_1)(x_2+iy_2) = (x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1)\)</span></p></li>
 </ul>
-<ol class="simple">
+</li>
 <li><p>Modulus: <span class="math notranslate nohighlight">\(|z| = |x+iy|=\sqrt{x^2+y^2}\)</span></p></li>
-<li><p>Conjugation: The conjugate of a complex number <span class="math notranslate nohighlight">\(z\)</span> is denoted <span class="math notranslate nohighlight">\(\bar{z}\)</span>:</p></li>
-</ol>
+<li><p>Conjugation: The conjugate of a complex number <span class="math notranslate nohighlight">\(z\)</span> is denoted <span class="math notranslate nohighlight">\(\bar{z}\)</span>:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\overline{z}=x-iy\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\overline{z}=x^2+y^2\)</span>. <strong>This is REAL.</strong></p></li>
@@ -615,30 +613,32 @@
 <li><p><span class="math notranslate nohighlight">\(\overline{z_1 z_2} = \overline{z_1}\, \overline{z_2}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(|\overline{z}|=|{z}|\)</span></p></li>
 </ul>
-<ol class="simple">
+</li>
 <li><p>Inverse: <span class="math notranslate nohighlight">\(\displaystyle z^{-1} = \frac{1}{x+iy} = \frac{x-iy}{x^2+y^2}\)</span></p></li>
-<li><p>Division: <span class="math notranslate nohighlight">\(\frac{z_1}{z_2}=z_1z_2^{-1}\)</span>, so using the previous result,</p></li>
+<li><p>Division: <span class="math notranslate nohighlight">\(\displaystyle\frac{z_1}{z_2}=z_1z_2^{-1}\)</span>, so using the previous result,</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
 \frac{z_1}{z_2}=\frac{(x_1+iy_1)(x_2-iy_2)}{x_2^2+y_2^2}=\frac{x_1x_2 + y_1y_2 + i(x_2y_1-x_1y_2)}{x_2^2+y_2^2}
 \]</div>
-<p><strong>Method for inversion and division: multiply numerator and denominator by the conjugate of the denominator. This ensures that the denominator is real and the result can be written in the standard form <span class="math notranslate nohighlight">\(x+iy\)</span></strong></p>
+<br>
+<p><strong>Method for inversion and division: multiply numerator and denominator by the conjugate of the denominator. This ensures that the denominator is real and the result can be written in the standard form <span class="math notranslate nohighlight">\(\mathbf{x+iy}\)</span></strong></p>
 <br>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Complex numbers cannot be ordered in the same way as real numbers: <span class="math notranslate nohighlight">\(z_1&gt;z_2\)</span> has no meaning (\emph{cf.} vectors); however, <span class="math notranslate nohighlight">\(|z_1|&gt;|z_2|\)</span>,  <span class="math notranslate nohighlight">\(\mathrm{Re}(z_1)&gt;\mathrm{Re}(z_2)\)</span>,  <span class="math notranslate nohighlight">\(\mathrm{Im}(z_1)&gt;\mathrm{Im}(z_2)\)</span> do.</p>
+<p>Complex numbers cannot be ordered in the same way as real numbers: <span class="math notranslate nohighlight">\(z_1&gt;z_2\)</span> has no meaning (<em>cf.</em> vectors); however, <span class="math notranslate nohighlight">\(|z_1|&gt;|z_2|\)</span>,  <span class="math notranslate nohighlight">\(\mathrm{Re}(z_1)&gt;\mathrm{Re}(z_2)\)</span>,  <span class="math notranslate nohighlight">\(\mathrm{Im}(z_1)&gt;\mathrm{Im}(z_2)\)</span> do.</p>
 </div>
 <br>
 </div>
 <div class="section" id="argand-diagram">
 <h2>Argand diagram<a class="headerlink" href="#argand-diagram" title="Permalink to this headline">¶</a></h2>
 <br>
-The complex number $z=x+iy$ can be understood in terms of a plot in Cartesian space: the real part of $z$ is plotted on the $x$-axis, the imaginary part on the $y$-axis. Simple trigonometry then gives us a series of important results.
+<p>The complex number <span class="math notranslate nohighlight">\(z=x+iy\)</span> can be understood in terms of a plot in Cartesian space: the real part of <span class="math notranslate nohighlight">\(z\)</span> is plotted on the <span class="math notranslate nohighlight">\(x\)</span>-axis, the imaginary part on the <span class="math notranslate nohighlight">\(y\)</span>-axis. Simple trigonometry then gives us a series of important results.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/ArgandDiagram.png"><img alt="../../../../_images/ArgandDiagram.png" src="../../../../_images/ArgandDiagram.png" style="height: 350px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Argand diagram for the complex number <span class="math notranslate nohighlight">\(z = x+ iy\)</span>, indicating Cartesian and Polar coordinates</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
+<br>
 <p>The position of <span class="math notranslate nohighlight">\(z\)</span> in the Argand diagram may be expressed in Polar coordinates via:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -659,12 +659,12 @@ The complex number $z=x+iy$ can be understood in terms of a plot in Cartesian sp
 <p>Employing the above notation, we have</p>
 <div class="math notranslate nohighlight">
 \[
-	z = |z|\left(\cos\theta + i\sin\theta\right).
+z = |z|\left(\cos\theta + i\sin\theta\right).
 \]</div>
 <p>Now, expressing <span class="math notranslate nohighlight">\(\cos\)</span> and <span class="math notranslate nohighlight">\(\sin\)</span> in exponential notation:</p>
 <div class="math notranslate nohighlight">
 \[
-	z = |z|\left(\frac{e^{i\theta}+e^{-i\theta}}{2} + i \frac{e^{i\theta}-e^{-i\theta}}{2i}\right)=|z|e^{i\theta}.
+z = |z|\left(\frac{e^{i\theta}+e^{-i\theta}}{2} + i \frac{e^{i\theta}-e^{-i\theta}}{2i}\right)=|z|e^{i\theta}.
 \]</div>
 <p>From the above it is easy to see <span class="math notranslate nohighlight">\(e^{i\theta}=\cos\theta+i\sin\theta\)</span>. <strong>This is known as Euler’s formula.</strong></p>
 <p>These different methods of writing complex numbers are useful when considering different algebraic operations.</p>
@@ -674,22 +674,28 @@ The complex number $z=x+iy$ can be understood in terms of a plot in Cartesian sp
 </ol>
 <p>To see this, consider the complex multiplication <span class="math notranslate nohighlight">\(z_1z_2\)</span> written in polar form:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-	z_1 &amp;=&amp; r_1\left(\cos\theta_1+i\sin\theta_1\right),\ z_2 = r_2\left(\cos\theta_2+i\sin\theta_2 \right)\\
-	&amp; &amp;\hspace{-3cm}\mbox{then}\\
-	z_1z_2 &amp;=&amp; r_1r_2\left(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2 + i\left(\cos\theta_1\sin\theta_2 + \cos\theta_2\sin\theta_1 \right) \right)\\
-	&amp; &amp;\hspace{-3cm}\mbox{and double angle formulae give}\\
-	z_1z_2 &amp;=&amp; r_1r_2\left(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)\right).
-\end{split}\]</div>
+\[
+z_1 = r_1\left(\cos\theta_1+i\sin\theta_1\right),\ z_2 = r_2\left(\cos\theta_2+i\sin\theta_2 \right)
+\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[
+z_1z_2 = r_1r_2\left(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2 + i\left(\cos\theta_1\sin\theta_2 + \cos\theta_2\sin\theta_1 \right) \right)
+\]</div>
+<p>and double angle formulae give</p>
+<div class="math notranslate nohighlight">
+\[
+z_1z_2 = r_1r_2\left(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)\right).
+\]</div>
 <p>Similarly:</p>
 <div class="math notranslate nohighlight">
 \[
-	\frac{z_1}{z_2}=\frac{r_1}{r_2}\left( \cos(\theta_1-\theta_2) + i \sin(\theta_1-\theta_2)\right);
+\frac{z_1}{z_2}=\frac{r_1}{r_2}\left( \cos(\theta_1-\theta_2) + i \sin(\theta_1-\theta_2)\right);
 \]</div>
 <p>and (for integers, <span class="math notranslate nohighlight">\(n\)</span>)</p>
 <div class="math notranslate nohighlight">
 \[
-	z^n=r^n e^{in\theta}.
+z^n=r^n e^{in\theta}.
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -699,7 +705,7 @@ The complex number $z=x+iy$ can be understood in terms of a plot in Cartesian sp
 </div>
 <div class="section" id="curves-and-regions-in-the-complex-plane">
 <h2>Curves and regions in the complex plane<a class="headerlink" href="#curves-and-regions-in-the-complex-plane" title="Permalink to this headline">¶</a></h2>
-<p>Example: The equation of a circle.</p>
+<p><strong>Example 1.1.1</strong> The equation of a circle.</p>
 <p>In Cartesian coordinates, the equation of a circle with radius <span class="math notranslate nohighlight">\(R\)</span>, centred on <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[

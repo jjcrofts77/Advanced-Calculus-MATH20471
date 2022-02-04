@@ -557,39 +557,35 @@
 \frac{\mathrm{d}f}{\mathrm{d} z}\bigg|_{z=z_0}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.
 \]</div>
 <p>Given that <span class="math notranslate nohighlight">\(z\)</span> lies in the complex plane, there are many different ways which <span class="math notranslate nohighlight">\(z\)</span> can approach <span class="math notranslate nohighlight">\(z_0\)</span>. Again, <span class="math notranslate nohighlight">\(\tfrac{\mathrm{d} f}{\mathrm{d} z}\)</span> must be independent of these choices. We consider two separate cases:</p>
-<ol class="simple">
-<li><p><strong><span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> along the line <span class="math notranslate nohighlight">\(z=x+iy_0\)</span>:</strong></p></li>
-</ol>
-<ul class="simple">
-<li><p>We approach <span class="math notranslate nohighlight">\(z_0\)</span> along the line <span class="math notranslate nohighlight">\(y=y_0\)</span>; <em>i.e.</em> <span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> implies 	<span class="math notranslate nohighlight">\(x\rightarrow x_0\)</span>. Then, using the above definition of the derivative</p></li>
-</ul>
+<ol>
+<li><p><strong><span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> along the line <span class="math notranslate nohighlight">\(z=x+iy_0\)</span>:</strong></p>
+<p>We approach <span class="math notranslate nohighlight">\(z_0\)</span> along the line <span class="math notranslate nohighlight">\(y=y_0\)</span>; <em>i.e.</em> <span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> implies 	<span class="math notranslate nohighlight">\(x\rightarrow x_0\)</span>. Then, using the above definition of the derivative</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=&amp;\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
+	\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=&amp;\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
 								&amp;=&amp;\lim_{z\to z_0}\frac{u(x,y_0)+iv(x,y_0) - u(x_0,y_0)-iv(x_0,y_0)}{x-x_0}\\
 								&amp;=&amp; \lim_{z\to z_0}\frac{u(x,y_0)-u(x_0,y_0)}{x-x_0} +i\frac{ v(x,y_0)-v(x_0,y_0)}{x-x_0}\\
 								&amp;=&amp; \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}
-\end{split}\]</div>
-<ol class="simple">
-<li><p><strong><span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> along the line <span class="math notranslate nohighlight">\(z=x_0+iy\)</span>:</strong></p></li>
-</ol>
-<ul class="simple">
-<li><p>We approach <span class="math notranslate nohighlight">\(z_0\)</span> along the line <span class="math notranslate nohighlight">\(x=x_0\)</span>; <em>i.e.</em> <span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> implies <span class="math notranslate nohighlight">\(y\rightarrow y_0\)</span>. Then, using the above definition of the derivative</p></li>
-</ul>
+	\end{split}\]</div>
+</li>
+<li><p><strong><span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> along the line <span class="math notranslate nohighlight">\(z=x_0+iy\)</span>:</strong></p>
+<p>We approach <span class="math notranslate nohighlight">\(z_0\)</span> along the line <span class="math notranslate nohighlight">\(x=x_0\)</span>; <em>i.e.</em> <span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> implies <span class="math notranslate nohighlight">\(y\rightarrow y_0\)</span>. Then, using the above definition of the derivative</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=&amp;\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
+	\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=&amp;\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
 								&amp;=&amp;\lim_{z\to z_0}\frac{u(x_0,y)+iv(x_0,y) - u(x_0,y_0)-iv(x_0,y_0)}{i(y-y_0)}\\
 								&amp;=&amp; \lim_{z\to z_0}-i\frac{u(x_0,y)-u(x_0,y_0)}{y-y_0} +\frac{ v(x_0,y)-v(x_0,y_0)}{y-y_0}\\
-								&amp;=&amp; \frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}
- \end{split}\]</div>
+								&amp;=&amp; \frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}\end{split}\]</div>
+</li>
+</ol>
+<br>
 <p>The same method works employing the <span class="math notranslate nohighlight">\(\Delta z\rightarrow 0\)</span> notation (<strong>Recommend you do this as an exercise</strong>).</p>
-<p>Now, comparing real and imaginary parts, we find that in order for the expressions to be equal, we must obey the ** ``Cauchy-Riemann conditions’’**:</p>
+<p>Now, comparing real and imaginary parts, we find that in order for the expressions to be equal, we must obey the <strong>``Cauchy-Riemann conditions’’</strong>:</p>
 <div class="math notranslate nohighlight" id="equation-cr">
 <span class="eqno">(49)<a class="headerlink" href="#equation-cr" title="Permalink to this equation">¶</a></span>\[
 	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\quad \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
 \]</div>
-<p>These equations are key to complex analysis and have a number of important ramifications. Above, we have shown that they are necessary conditions for functions of a complex variable to be analytic (<em>i.e.</em> differentiable). Note that the converse result is false, unless the partial derivatives in eq<code class="docutils literal notranslate"><span class="pre">CR</span></code> are continuous.</p>
+<p>These equations are key to complex analysis and have a number of important ramifications. Above, we have shown that they are necessary conditions for functions of a complex variable to be analytic (<em>i.e.</em> differentiable). Note that the converse result is false, unless the partial derivatives in <a class="reference internal" href="#equation-cr">(49)</a> are continuous.</p>
 </div>
 
     <script type="text/x-thebe-config">
