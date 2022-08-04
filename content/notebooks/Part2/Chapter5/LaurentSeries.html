@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5.3 Laurent series &#8212; Advanced Calculus MATH20471</title>
     
-  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,48 +20,65 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/togglebutton.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Chapter 6 Residues in complex variable analysis" href="../Chapter6/Chapter6Intro.html" />
     <link rel="prev" title="5.2 Taylor series for complex valued functions" href="TaylorSeriesComplex.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -68,10 +87,17 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/SpiralWave.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
@@ -82,14 +108,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../intro.html">
-   Course Overview
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Part I - PDEs and Fourier Series
  </span>
@@ -269,7 +296,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Part II - Complex Analysis
  </span>
@@ -450,91 +477,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/content/notebooks/Part2/Chapter5/LaurentSeries.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part2/Chapter5/LaurentSeries.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part2/Chapter5/LaurentSeries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/content/notebooks/Part2/Chapter5/LaurentSeries.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#laurent-s-theorem">
    Laurent’s theorem
@@ -557,18 +657,56 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>5.3 Laurent series</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laurent-s-theorem">
+   Laurent’s theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laurent-series-coefficients-by-direct-integration">
+   Laurent series coefficients by direct integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-useful-technique-for-laurent-series-at-singular-points">
+   A useful technique for Laurent series at singular points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-relationship-between-series-and-singularities">
+   The relationship between series and singularities
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter5/LaurentSeries.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="section" id="laurent-series">
-<h1>5.3 Laurent series<a class="headerlink" href="#laurent-series" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="laurent-series">
+<h1>5.3 Laurent series<a class="headerlink" href="#laurent-series" title="Permalink to this headline">#</a></h1>
 <p>It has been demonstrated above that a function <span class="math notranslate nohighlight">\(f(z)\)</span> of a complex variable <span class="math notranslate nohighlight">\(z\)</span> can be expanded as a Taylor series around the point <span class="math notranslate nohighlight">\(z=z_0\)</span> in a similar way to the function <span class="math notranslate nohighlight">\(f(x)\)</span> of a real variable <span class="math notranslate nohighlight">\(x\)</span>. The resulting series will be convergent within some circular region of <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>: <span class="math notranslate nohighlight">\(|z-z_0|&lt;R\)</span>, where <span class="math notranslate nohighlight">\(R\)</span> is the radius of convergence.</p>
 <p>However, this region is almost always only part of the entire region in which the function <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic. For example, above, we obtained the series</p>
 <div class="math notranslate nohighlight">
@@ -578,11 +716,11 @@
 <p>but this only converges to <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(|z|&lt;1\)</span>, even though the only point at which <span class="math notranslate nohighlight">\(f\)</span> fails to be analytic is at <span class="math notranslate nohighlight">\(z=-1\)</span>.</p>
 <p>To address this, we employ <strong>Laurent series</strong>. These are a generalisation of Taylor series which involve negative powers as well as positive powers. In general, such a series converges over an annulus <span class="math notranslate nohighlight">\(R_1&lt;|z-z_0|&lt;R_2\)</span>.</p>
 <p>Clearly then, if there is only one singularity, we can isolate this within the inner region <span class="math notranslate nohighlight">\(|z-z_0|&lt;R_1\)</span> and the series converges in the remainder of the domain (<span class="math notranslate nohighlight">\(R_2\to \infty\)</span>).</p>
-<div class="section" id="laurent-s-theorem">
-<h2>Laurent’s theorem<a class="headerlink" href="#laurent-s-theorem" title="Permalink to this headline">¶</a></h2>
+<section id="laurent-s-theorem">
+<h2>Laurent’s theorem<a class="headerlink" href="#laurent-s-theorem" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic within the annular region <span class="math notranslate nohighlight">\(R_1&lt;|z-z_0|&lt;R_2\)</span> then <span class="math notranslate nohighlight">\(f(z)\)</span> can be represented as the series:</p>
 <div class="math notranslate nohighlight" id="equation-laurent">
-<span class="eqno">(53)<a class="headerlink" href="#equation-laurent" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(55)<a class="headerlink" href="#equation-laurent" title="Permalink to this equation">#</a></span>\[
 	f(z) = \sum_{n=-\infty}^{\infty} d_n(z-z_0)^n;\quad d_n = \frac{1}{2\pi i}\oint_\mathscr{C} \frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d} z
 \]</div>
 <p>where the path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is an appropriate contour within the annulus.</p>
@@ -676,17 +814,19 @@ f^{(n)}(z_0)=\frac{n!}{2i\pi}\oint_{\mathscr{C}}\frac{f(z)}{(z-z_0)^{n+1}}\mathr
 </ol>
 </div>
 <br>
-</div>
-<div class="section" id="laurent-series-coefficients-by-direct-integration">
-<h2>Laurent series coefficients by direct integration<a class="headerlink" href="#laurent-series-coefficients-by-direct-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="laurent-series-coefficients-by-direct-integration">
+<h2>Laurent series coefficients by direct integration<a class="headerlink" href="#laurent-series-coefficients-by-direct-integration" title="Permalink to this headline">#</a></h2>
 <p><strong>Example 5.3.5</strong> Calculate the Laurent series of <span class="math notranslate nohighlight">\(f(z)=\frac{1}{z(z-1)}\)</span> around <span class="math notranslate nohighlight">\(z_0=0\)</span></p>
 <p><strong>Solution</strong></p>
 <p><span class="math notranslate nohighlight">\(f\)</span> has two singularities at <span class="math notranslate nohighlight">\(z=0,1\)</span> which are order one poles. The annulus of convergence is therefore <span class="math notranslate nohighlight">\(0&lt;|z|&lt;1\)</span>.</p>
 <p>Returning to the two curves <span class="math notranslate nohighlight">\(\mathscr{C}_1,\ \mathscr{C}_2\)</span> which define our annular region, we set <span class="math notranslate nohighlight">\(R_2=\epsilon\)</span> and <span class="math notranslate nohighlight">\(R_1=r\)</span> and take <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> and <span class="math notranslate nohighlight">\(r\to 1\)</span>. See Figure below.</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/AnnulusLS.png"><img alt="../../../../_images/AnnulusLS.png" src="../../../../_images/AnnulusLS.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">The annulus enclosing the region between <span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(z=1\)</span> in which the Laurent series is valid.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">The annulus enclosing the region between <span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(z=1\)</span> in which the Laurent series is valid.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Then, the coefficients are:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -750,9 +890,9 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 </ol>
 </div>
 <br>
-</div>
-<div class="section" id="a-useful-technique-for-laurent-series-at-singular-points">
-<h2>A useful technique for Laurent series at singular points<a class="headerlink" href="#a-useful-technique-for-laurent-series-at-singular-points" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-useful-technique-for-laurent-series-at-singular-points">
+<h2>A useful technique for Laurent series at singular points<a class="headerlink" href="#a-useful-technique-for-laurent-series-at-singular-points" title="Permalink to this headline">#</a></h2>
 <p>Returning to the definition of an order <span class="math notranslate nohighlight">\(m\)</span> pole we have that:</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(z_0\)</span> is a root of order <span class="math notranslate nohighlight">\(m\)</span> of <span class="math notranslate nohighlight">\(f(z)\)</span> if <span class="math notranslate nohighlight">\((z-z_0)^m f(z)\)</span> is analytic at <span class="math notranslate nohighlight">\(z_0\)</span> and <span class="math notranslate nohighlight">\((z-z_0)^{m-1} f(z)\)</span> is not.</p></li>
@@ -769,9 +909,9 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
   f(z)=\frac{1}{z^3}\left(1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots\right)
 \]</div>
 <br>
-</div>
-<div class="section" id="the-relationship-between-series-and-singularities">
-<h2>The relationship between series and singularities<a class="headerlink" href="#the-relationship-between-series-and-singularities" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-relationship-between-series-and-singularities">
+<h2>The relationship between series and singularities<a class="headerlink" href="#the-relationship-between-series-and-singularities" title="Permalink to this headline">#</a></h2>
 <p>In general, we have the Laurent series for a function <span class="math notranslate nohighlight">\(f(z)\)</span> about some (possibly singular) point <span class="math notranslate nohighlight">\(z_0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -844,8 +984,8 @@ $<span class="math notranslate nohighlight">\(
 <li><p>The part of the Laurent series which has negative powers of <span class="math notranslate nohighlight">\(z\)</span> (<em>i.e.</em> the <span class="math notranslate nohighlight">\(b_n\)</span> terms) is known as the “principle part” of <span class="math notranslate nohighlight">\(f(z)\)</span> at <span class="math notranslate nohighlight">\(z_0\)</span>. If <span class="math notranslate nohighlight">\(f(z)\)</span> has an <span class="math notranslate nohighlight">\(m^{th}\)</span> order pole at <span class="math notranslate nohighlight">\(z_0\)</span> the principle part has <span class="math notranslate nohighlight">\(m\)</span> terms. If the singularity is essential, the principle part has infinitely many terms.</p></li>
 <li><p>if <span class="math notranslate nohighlight">\(z_0\)</span> is an <span class="math notranslate nohighlight">\(m^{th}\)</span> order pole of <span class="math notranslate nohighlight">\(f(z)\)</span>, the function <span class="math notranslate nohighlight">\(g(z)=(z-z_0)^m f(z)\)</span> is analytic. This is another way of defining a pole of order <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -869,54 +1009,48 @@ $<span class="math notranslate nohighlight">\(
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="TaylorSeriesComplex.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">5.2 Taylor series for complex valued functions</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="TaylorSeriesComplex.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">5.2 Taylor series for complex valued functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Chapter6/Chapter6Intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 6 Residues in complex variable analysis</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../Chapter6/Chapter6Intro.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Chapter 6 Residues in complex variable analysis</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Jonathan J Crofts<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan J Crofts<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
