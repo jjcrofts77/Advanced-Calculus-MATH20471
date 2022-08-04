@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6.2 Calculating residues &#8212; Advanced Calculus MATH20471</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="6.3 Evaluation of real integrals" href="RealIntegrals.html" />
+    <link rel="prev" title="6.1 Cauchy’s residue theorem" href="ResidueTheorem.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/SpiralWave.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/IBVP.html">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/IntroToPDEs.html">
+     1.3 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/PDEsToStudy.html">
+     1.4 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter2/Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/Fourierseries2pi.html">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/FuncsAnyPeriod.html">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ComplexNumbers.html">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ComplexFunc.html">
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
+   Chapter 3 Singularities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
+     Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RealIntegrals.html">
+     6.3 Evaluation of real integrals
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part2/Chapter6/CalculatingResidues.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/content/notebooks/Part2/Chapter6/CalculatingResidues.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>6.2 Calculating residues</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter6/CalculatingResidues.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="calculating-residues">
+<h1>6.2 Calculating residues<a class="headerlink" href="#calculating-residues" title="Permalink to this headline">#</a></h1>
+<p>The residue theorem can be used to calculate integrals. For it to be of much use we must find ways of calculating residues.</p>
+<p><strong>Example 6.1.1</strong> Find the poles and corresponding residues of <span class="math notranslate nohighlight">\(f(z)=\frac{z^2+5z+3}{(z-1)(z+2)^2}\)</span></p>
+<p><strong>Solution</strong></p>
+<ul class="simple">
+<li><p>Using partial fractions, <span class="math notranslate nohighlight">\(f\)</span> may be expressed <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{z-1}+\frac{1}{(z+2)^2}\)</span></p></li>
+<li><p>The poles are <span class="math notranslate nohighlight">\(z_1=1\)</span> and <span class="math notranslate nohighlight">\(z_2=-2\)</span>. Clearly, these are order 1 and 2, respectively.</p></li>
+<li><p>(a) <span class="math notranslate nohighlight">\(z_1=1\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  f(z) = \frac{1}{z-1}+\frac{1}{(z+2)^2}=\sum_{n=-1}^\infty d_n (z-1)^n\\
+  \end{split}\]</div>
+<ul>
+<li><p>We can now expand each term individually.</p></li>
+<li><p>The second term is analytic at <span class="math notranslate nohighlight">\(z=1\)</span> so a simple Taylor expansion will do.</p></li>
+<li><p>The Laurent expansion of <span class="math notranslate nohighlight">\(\displaystyle g(z)=\frac{1}{z-1}\)</span> at the point <span class="math notranslate nohighlight">\(z=1\)</span> is easily found by using the ``useful technique’’ outlined in previously.</p></li>
+<li><p>Since <span class="math notranslate nohighlight">\(z_0=1\)</span> is a simple pole of <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\((z-1)g\)</span> is analytic at <span class="math notranslate nohighlight">\(z_0\)</span>. Then multiplying the Taylor series of <span class="math notranslate nohighlight">\((z-1)g\)</span> by <span class="math notranslate nohighlight">\((z-1)^{-1}\)</span> gives the Laurent series.</p></li>
+<li><p>In this case, <span class="math notranslate nohighlight">\((z-1)g=1\)</span> so the Laurent series is just <span class="math notranslate nohighlight">\((z-1)^{-1}\)</span> and so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	 f(z)&amp;= \frac{1}{z-1}  + \frac{1}{(z+2)^2}\\
+		    &amp;= \frac{1}{z-1}  + \sum_{n=0}^\infty a_n \left(z-1\right)^n
+	 \end{split}\]</div>
+</li>
+</ul>
+<p>where the <span class="math notranslate nohighlight">\(a_n\)</span>s in the Taylor series are unknown; however, we’re only interested in the residue so we don’t need to evaluate them. The residue associated with the pole at <span class="math notranslate nohighlight">\(z=1\)</span> is the coefficient of the negative index <span class="math notranslate nohighlight">\(b_{-1}\)</span> so, <span class="math notranslate nohighlight">\(\mathrm{Res}(f,z_1)=1\)</span>.</p>
+<ul>
+<li><p>(b) <span class="math notranslate nohighlight">\(z_2=-2\)</span>:</p></li>
+<li><p>This time, the <span class="math notranslate nohighlight">\(\displaystyle\frac{1}{z-1}\)</span> may be expressed as a Taylor series since it is analytic at <span class="math notranslate nohighlight">\(z_2\)</span>. The combination <span class="math notranslate nohighlight">\((z+2)^2g=1\)</span> (<em>i.e.</em> <span class="math notranslate nohighlight">\(\displaystyle g(z)=\frac{1}{(z+2)^2}\)</span>) and so the Laurent expansion of the second term is just <span class="math notranslate nohighlight">\((z+2)^{-2}\)</span>. The Taylor series of the 1st term just includes <span class="math notranslate nohighlight">\(a_n\)</span>s. The series therefore has no <span class="math notranslate nohighlight">\(\mathcal{O}(z-z_0)^{-1}\)</span> terms and so <span class="math notranslate nohighlight">\(b_{-1}=0\)</span>.</p>
+<p>The residue is therefore <span class="math notranslate nohighlight">\(\mathrm{Res}(f,z_2)=0\)</span>.</p>
+</li>
+</ul>
+<br>
+<p>The above example has indicated that the integral may be easily evaluated by use of the residue theorem. In certain circumstances there are easier ways to determine the residue. The three options are as follows:</p>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(z_i\)</span> is a removable singularity of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Res}(f;z_i)=0\)</span> since the Laurent series reduces to a Taylor series with <span class="math notranslate nohighlight">\(b_{-1}=0\)</span> and the residue is zero.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(z_i\)</span> is an essential singularity of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Res}(f;z_i)\)</span> can only be determined by direct expansion of <span class="math notranslate nohighlight">\(f(z)\)</span> around <span class="math notranslate nohighlight">\(z_i\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(z_i\)</span> is a pole of order <span class="math notranslate nohighlight">\(m\)</span> of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Res}(f;z_i)\)</span> is given by the following formula:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+ 	\mathrm{Res}(f;z_i)=\lim_{z\rightarrow z_i}\bigg\{\frac{1}{(m-1)!}\frac{\mathrm{d}^{m-1}}{\mathrm{d} z^{m-1}} \left((z-z_i)^m f(z)\right)\bigg\},
+ \]</div>
+<p>which in the case of a first order pole (<em>i.e.</em> <span class="math notranslate nohighlight">\(m=1\)</span>) reduces to</p>
+<div class="math notranslate nohighlight">
+\[
+ 	\mathrm{Res}(f;z_i)=\lim_{z\rightarrow z_i}\left\{(z-z_i) f(z)\right\}.
+ \]</div>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(z_0\)</span> is a simple pole of the function <span class="math notranslate nohighlight">\(\displaystyle f(z)=p(z)/q(z)\)</span> where <span class="math notranslate nohighlight">\(p(z_0)\neq 0\)</span>, <span class="math notranslate nohighlight">\(q(z_0)=0\)</span> and <span class="math notranslate nohighlight">\(q'(z_0)\neq 0\)</span>, then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+ \mathrm{Res}(f;z_0) = \frac{p(z_0)}{q'(z_0)}.
+ \]</div>
+<br>
+Returning to the previous example: 
+<p><strong>Example 6.1.2</strong> Find the poles and corresponding residues of <span class="math notranslate nohighlight">\(f(z)=\frac{z^2+5z+3}{(z-1)(z+2)^2}\)</span></p>
+<p><strong>Solution</strong></p>
+<ul class="simple">
+<li><p>The pole at <span class="math notranslate nohighlight">\(z_1=1\)</span> is order 1 so
+$<span class="math notranslate nohighlight">\(
+\mathrm{Res}(f;z_1)&amp;=\lim_{z\rightarrow z_1}\left\{(z-z_1) f(z)\right\}\\
+&amp;= \lim_{z\rightarrow 1}\left\{(z-1) \frac{z^2+5z+3}{(z-1)(z+2)^2}\right\}\\
+&amp;= \left. \frac{z^2+5z+3}{(z+2)^2}\right|_{z=1}\\
+&amp;= \frac{9}{(3)^2} = 1\\
+\)</span>$</p></li>
+<li><p>The pole at <span class="math notranslate nohighlight">\(z_2=-2\)</span> is order 2 so</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\mathrm{Res}(f;z_2)&amp;=&amp;\lim_{z\rightarrow z_2}\left\{\frac{\mathrm{d} }{\mathrm{d} z}((z-z_2)^2 f(z))\right\}\\
+	&amp;= \lim_{z\rightarrow -2}\left\{\frac{\mathrm{d}}{\mathrm{d} z}\left((z+2)^2 \frac{z^2+5z+3}{(z-1)(z+2)^2}\right)\right\}\\
+	&amp;= \frac{\mathrm{d}}{\mathrm{d} z}\bigg\{  \frac{z^2+5z+3}{(z-1)}\bigg\}\bigg|_{z=-2}\\
+	&amp;= \bigg\{  \frac{(z-1)(2z+5)-(z^2+5z+3)}{(z-1)^2}\bigg\}\bigg|_{z=-2}\\
+	&amp;=  0.
+	\end{split}\]</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\Part2\Chapter6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ResidueTheorem.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">6.1 Cauchy’s residue theorem</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="RealIntegrals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6.3 Evaluation of real integrals</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan J Crofts<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

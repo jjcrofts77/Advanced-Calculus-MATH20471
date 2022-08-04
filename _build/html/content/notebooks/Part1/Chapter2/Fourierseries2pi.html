@@ -1,0 +1,1161 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.2 Fourier Series for Functions of Period \(2\pi\) &#8212; Advanced Calculus MATH20471</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="2.3 Convergence of Fourier Series" href="FSConvergence.html" />
+    <link rel="prev" title="2.1 Periodic, Even and Odd Functions" href="Functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/SpiralWave.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/IBVP.html">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/IntroToPDEs.html">
+     1.3 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter1/PDEsToStudy.html">
+     1.4 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FuncsAnyPeriod.html">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter1/ComplexNumbers.html">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter1/ComplexFunc.html">
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter3/Chapter3Intro.html">
+   Chapter 3 Singularities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
+     Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter6/Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter6/ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter6/CalculatingResidues.html">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter6/RealIntegrals.html">
+     6.3 Evaluation of real integrals
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part1/Chapter2/Fourierseries2pi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/content/notebooks/Part1/Chapter2/Fourierseries2pi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1">
+   Question 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sine-and-cosine-series">
+   Sine and cosine series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>2.2 Fourier Series for Functions of Period 2\pi</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1">
+   Question 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sine-and-cosine-series">
+   Sine and cosine series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter2/Fourierseries2pi.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="fourier-series-for-functions-of-period-2-pi">
+<h1>2.2 Fourier Series for Functions of Period <span class="math notranslate nohighlight">\(2\pi\)</span><a class="headerlink" href="#fourier-series-for-functions-of-period-2-pi" title="Permalink to this headline">#</a></h1>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a function of period <span class="math notranslate nohighlight">\(2\pi\)</span>. We would like to get an expansion for <span class="math notranslate nohighlight">\(f\)</span> of the form</p>
+<div class="math notranslate nohighlight" id="equation-fseq">
+<span class="eqno">(11)<a class="headerlink" href="#equation-fseq" title="Permalink to this equation">#</a></span>\[
+ f(x) = \frac{1}{2}a_0 +\sum_{n=1}^\infty \left[a_n\cos(nx) + b_n\sin(nx)\right],
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are constants. Remember that <span class="math notranslate nohighlight">\(\sin(nx)\)</span> and <span class="math notranslate nohighlight">\(\cos(nx)\)</span> are periodic with period <span class="math notranslate nohighlight">\(2\pi\)</span>.</p>
+<p>Such an expansion is know as a Fourier series (FS).</p>
+<p>We have two questions to answer about the above series:</p>
+<p><strong>Question 1:</strong> If the series on the RHS of the above equation converges, can we find constants <span class="math notranslate nohighlight">\(a_0, a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> in terms of the function <span class="math notranslate nohighlight">\(f\)</span>?</p>
+<p><strong>Question 2:</strong> with these <span class="math notranslate nohighlight">\(a_n, b_n\)</span>, for what values of <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> does our FS equation hold?</p>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
+<p>Suppose the above equation is true and that we can integrate it term by term (<em>i.e</em> the series on the RHS above converges <em>uniformly</em>) so that</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\pi}^\pi f(x)\mathrm{d}x = \frac{1}{2}a_0\int_{-\pi}^\pi\mathrm{d}x +\sum_{n=1}^\infty \left[a_n\int_{-\pi}^\pi\cos(nx)\mathrm{d}x + b_n\int_{-\pi}^\pi\sin(nx)\mathrm{d}x\right],
+\]</div>
+<p>since</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\pi}^\pi \mathrm{d}x = 2\pi, \quad \int_{-\pi}^\pi \cos(nx)\mathrm{d}x = 0, \quad \int_{-\pi}^\pi\sin(nx)\mathrm{d}x=0,
+\]</div>
+<p>we must have</p>
+<div class="math notranslate nohighlight">
+\[
+a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
+\]</div>
+<p>Thus if equation <a class="reference internal" href="#equation-fseq">(11)</a> holds, then we know <span class="math notranslate nohighlight">\(a_0\)</span>.</p>
+<br>
+<blockquote>
+<div><p><strong>Lemma 2.2.1:</strong> Let <span class="math notranslate nohighlight">\(n, m\in\mathbb{N}\backslash 0\)</span>. We then have the following equalities:</p>
+<div class="math notranslate nohighlight" id="equation-sceq">
+<span class="eqno">(12)<a class="headerlink" href="#equation-sceq" title="Permalink to this equation">#</a></span>\[
+\int_{-\pi}^\pi \sin(mx)\cos(nx)\mathrm{d}x = 0,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-sseq">
+<span class="eqno">(13)<a class="headerlink" href="#equation-sseq" title="Permalink to this equation">#</a></span>\[
+ \int_{-\pi}^\pi\sin(mx)\sin(nx)\mathrm{d}x = \pi\delta_{nm},
+\]</div>
+<div class="math notranslate nohighlight" id="equation-cceq">
+<span class="eqno">(14)<a class="headerlink" href="#equation-cceq" title="Permalink to this equation">#</a></span>\[
+ \int_{-\pi}^\pi\cos(mx)\cos(nx)\mathrm{d}x = \pi\delta_{nm}.
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta_{mn}\)</span> is the <em>Kronecker delta</em> defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \delta_{mn} = \begin{cases}0&amp; n\neq m\\1&amp;n=m.\end{cases}
+\end{split}\]</div>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Proof</strong></p>
+<p>Equation <a class="reference internal" href="#equation-sceq">(12)</a> is trivial as <span class="math notranslate nohighlight">\(\sin(mx)\cos(nx)\)</span> is odd. For equation <a class="reference internal" href="#equation-sseq">(13)</a> we compute, for <span class="math notranslate nohighlight">\(n\neq m\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_{-\pi}^\pi\sin(mx)\sin(nx)\mathrm{d}x &amp;= \frac{1}{2}\int_{-\pi}^\pi\left[-\cos((m+n)x)+\cos((m-n)x)\right]\mathrm{d}x\\
+&amp;= \frac{1}{2}\left[\frac{-\sin((m+n)x)}{m+n}+\frac{\sin((m-n)x)}{m-n}\right]_{-\pi}^\pi\\
+&amp;=0.
+ \end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(n=m\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_{-\pi}^\pi\sin(nx)\sin(mx)\mathrm{d}x = \int_{-\pi}^\pi\frac{1-\cos(2nx)}{2}\mathrm{d}x = \frac{1}{2}\left[x-\frac{\sin(2nx)}{2n}\right] = \pi
+ \]</div>
+<p>Similar computations yield equation <a class="reference internal" href="#equation-cceq">(14)</a>. <span class="math notranslate nohighlight">\(\quad\blacksquare\)</span></p>
+</div></blockquote>
+<br>
+<p>Thus to find <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, we assume equation <a class="reference internal" href="#equation-fseq">(11)</a> is true. Multiplying both sides by <span class="math notranslate nohighlight">\(\cos(mx)\)</span> and integrating term-wise gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x =\frac{1}{2}a_0&amp;\int_{-\pi}^\pi \cos(mx)\mathrm{d}x\\&amp;+\sum_{n=1}^\infty a_n\int_{-\pi}^\pi\cos(nx)\cos(mx)\mathrm{d}x\\
+&amp;+\sum_{n=1}^\infty b_n\int_{-\pi}^\pi \sin(nx)\cos(mx)\mathrm{d}x.
+\end{split}\]</div>
+<p>The first term on the RHS is equal to zero (by symmetry) for <span class="math notranslate nohighlight">\(m\neq 0\)</span>. Using Lemma 2.1 for the remaining terms gives</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x = \sum_{n=1}^\infty a_n\pi\delta_{nm} = \pi a_m,
+\]</div>
+<p>and hence</p>
+<div class="math notranslate nohighlight">
+\[
+ a_m = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x.
+\]</div>
+<p>Note that this also holds for <span class="math notranslate nohighlight">\(m=0\)</span> (which explains the factor of 1/2).</p>
+<p>Multiplying equation <a class="reference internal" href="#equation-fseq">(11)</a> by <span class="math notranslate nohighlight">\(\sin(mx)\)</span> and integrating term-wise, we similarly obtain</p>
+<div class="math notranslate nohighlight">
+\[
+ b_m = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(mx)\mathrm{d}x.
+\]</div>
+<br>
+<blockquote>
+<div><p><strong>Definition 2.2.1:</strong> Suppose <span class="math notranslate nohighlight">\(f\)</span> is such that</p>
+<div class="math notranslate nohighlight">
+\[
+ a_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)\mathrm{d}x, \qquad b_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(nx)\mathrm{d}x,
+\]</div>
+<p>exist. Then we shall write</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x)\sim \frac{1}{2}a_0 + \sum_{n=1}^\infty \left[a_n\cos(nx) + b_n\sin(nx)\right],
+\]</div>
+<p>and call the series on the right-hand side the <em>Fourier series</em> for <span class="math notranslate nohighlight">\(f\)</span>, whether or not it converges to <span class="math notranslate nohighlight">\(f\)</span>. The constants <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are called <em>Fourier coefficients</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div></blockquote>
+<br>
+<p><strong>Example 2.2.1</strong>  Find the Fourier series of the function <span class="math notranslate nohighlight">\(f\)</span> which is periodic of period <span class="math notranslate nohighlight">\(2\pi\)</span> and such that</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x) = |x|, \quad x\in(-\pi, \pi].
+\]</div>
+<p>To find <span class="math notranslate nohighlight">\(a_n, b_n\)</span> first notice that <span class="math notranslate nohighlight">\(f\)</span> is even, so that <span class="math notranslate nohighlight">\(f(x)\sin(nx)\)</span> is odd and</p>
+<div class="math notranslate nohighlight">
+\[
+ b_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(nx)\mathrm{d}x = 0,
+\]</div>
+<p>for every <span class="math notranslate nohighlight">\(n\)</span>. Also, <span class="math notranslate nohighlight">\(f(x)\cos(nx)\)</span> is even, so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ a_n &amp;=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)\mathrm{d}x,\\
+ &amp;=\frac{2}{\pi}\int_{0}^\pi f(x)\cos(nx)\mathrm{d}x,\\
+ &amp;=\frac{2}{\pi}\int_{0}^\pi x\cos(nx)\mathrm{d}x,\\
+ &amp;= \frac{2}{\pi}\left(\left[\frac{x\sin(nx)}{n}\right]_0^\pi - \int_0^\pi \frac{\sin(nx)}{n}\mathrm{d}x\right),\\
+ &amp;=-\frac{2}{\pi}\left(\left[\frac{-\cos(nx)}{n^2}\right]_0^\pi\right),\\
+ &amp;=\frac{2}{\pi}\left(\frac{\cos(n\pi)-\cos(0)}{n^2}\right),\\
+ &amp;=\frac{2}{\pi}\frac{((-1)^n-1)}{n^2}.
+\end{split}\]</div>
+<p>Note that this is not valid for <span class="math notranslate nohighlight">\(n=0\)</span>. In fact, <span class="math notranslate nohighlight">\(a_0=\pi\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(n\)</span> is even, <span class="math notranslate nohighlight">\(n=2m\)</span> say, we have</p>
+<div class="math notranslate nohighlight">
+\[
+a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(n\)</span> is odd, <span class="math notranslate nohighlight">\(n=2m+1\)</span> say, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+ a_{2m+1} = \frac{2((-1)^{2m+1}-1)}{\pi(2m+1)^2} = \frac{-4}{\pi(2m+1)^2}.
+\]</div>
+<p>The Fourier series expansion of the given function is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+ f(t) \sim \frac{\pi}{2} + \sum_{m=0}^\infty{\frac{-4}{\pi(2m+1)^2}\cos{\left((2m+1)x\right)}}.
+\]</div>
+<p>Below we use Python to plot the FS approximations (with 1, 2 and 3 terms) of <span class="math notranslate nohighlight">\(|x|\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># sets the size of the figure in inches</span>
+
+<span class="c1"># domain of plot (-pi, pi)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># square wave function (Example 2.2.2)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Partial sums for the FS of the square wave</span>
+<span class="n">y1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 1 term (first harmonic)</span>
+<span class="n">y2</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">9.0</span> <span class="c1"># 2 terms (first + second harmonic)</span>
+<span class="n">y3</span><span class="o">=</span><span class="n">y2</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">25.0</span> <span class="c1"># 3 terms (first three harmonics)</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;one term&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;y--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;two terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s1">&#39;m--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;three terms&#39;</span><span class="p">)</span>
+
+<span class="c1"># add legend, label axis and add title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;partial sums&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Partial sums for Fourier series of $f(x) = |x|$ on $(-\pi, \pi)$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Fourierseries2pi_3_0.png" src="../../../../_images/Fourierseries2pi_3_0.png" />
+</div>
+</div>
+</section>
+<section id="sine-and-cosine-series">
+<h2>Sine and cosine series<a class="headerlink" href="#sine-and-cosine-series" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be <span class="math notranslate nohighlight">\(2\pi\)</span>-periodic. If <span class="math notranslate nohighlight">\(f\)</span> is odd then</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x)\sim \sum_{n=1}^\infty b_n\sin(nx),
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+ b_n = \frac{1}{\pi}\int_{-\pi}^\pi f(s)\sin(ns)\mathrm{d}s = \frac{2}{\pi}\int_{0}^\pi f(s)\sin(ns)\mathrm{d}s,
+\]</div>
+<p><em>i.e.</em> <span class="math notranslate nohighlight">\(f\)</span> has a <em>Fourier sine series</em>. In this case <span class="math notranslate nohighlight">\(a_n=0\)</span> because <span class="math notranslate nohighlight">\(f(x)\cos(nx)\)</span> is odd.</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is even then</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x)\sim \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n\cos(nx),
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+ a_n = \frac{2}{\pi}\int_0^\pi f(s)\cos(ns)\mathrm{d}s,
+\]</div>
+<p><em>i.e.</em> <span class="math notranslate nohighlight">\(f\)</span> has a <em>Fourier cosine series</em>.</p>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
+<p>Recall question 2: with these <span class="math notranslate nohighlight">\(a_n, b_n\)</span> when, if ever, is equation (1) true? Consider what happens in the following example.</p>
+<br>
+<p><strong>Example 2.2.2</strong> Find the Fourier series of the function <span class="math notranslate nohighlight">\(f\)</span> which is periodic of period <span class="math notranslate nohighlight">\(2\pi\)</span> and such that</p>
+<aside class="margin sidebar">
+<p class="sidebar-title">Square Wave Function</p>
+<img alt="../../../../_images/SquareWave.png" src="../../../../_images/SquareWave.png" />
+</aside>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ f(x) = \begin{cases}
+         -1, &amp; -\pi&lt;x&lt;0,\\
+         1, &amp; 0&lt;x&lt;\pi,\\
+        \end{cases}
+\end{split}\]</div>
+<p>The function <span class="math notranslate nohighlight">\(f\)</span> is known as the <em>square wave function</em>.</p>
+<br>
+<p>To find the <span class="math notranslate nohighlight">\(a_n, b_n\)</span> first notice that <span class="math notranslate nohighlight">\(f\)</span> is odd, so <span class="math notranslate nohighlight">\(f(x)\cos(nx)\)</span> is odd so that</p>
+<div class="math notranslate nohighlight">
+\[
+ a_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)\mathrm{d}x = 0,
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(n = 0, 1, 2, \ldots\)</span>. Also, <span class="math notranslate nohighlight">\(f(x)\sin(nx)\)</span> is even, so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ b_n &amp;= \frac{1}{\pi}\int_{-\pi}^\pi{f(x)\sin{(nx)}\mathrm{d}x},\\
+      &amp;= \frac{2}{\pi}\int_{0}^\pi{f(x)\sin{(nx)}\mathrm{d}x},\\
+      &amp;= \frac{2}{\pi}\int_{0}^\pi{\sin{(nx)}\mathrm{d}x},\\
+     &amp;=\frac{2}{\pi}\left[-\frac{\cos{nx}}{n}\right]_0^\pi,\\
+     &amp;=\frac{2}{n\pi}\left(1-(-1)^n\right).
+\end{split}\]</div>
+<p>The Fourier series expansion of the given function is therefore</p>
+<div class="math notranslate nohighlight" id="equation-fsex2">
+<span class="eqno">(15)<a class="headerlink" href="#equation-fsex2" title="Permalink to this equation">#</a></span>\[
+ f(t) \sim \sum_{n=1}^\infty{\frac{2}{n\pi}\left(1-(-1)^n\right)\sin{nx}}.
+\]</div>
+<p>Noting that</p>
+<div class="math notranslate nohighlight">
+\[
+ b_{2m} = 0, \qquad b_{2m+1} = \frac{4}{(2m+1)\pi},
+\]</div>
+<p>we can reduce equation <a class="reference internal" href="#equation-fsex2">(15)</a> to</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x) \sim \frac{4}{\pi}\sum_{m=0}^\infty \frac{1}{2m+1}\sin\left((2m+1)x\right).
+\]</div>
+<p>Consider question 2 for this case: when is</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty \left[a_n\cos(nx)+b_n\sin(nx)\right]?
+\]</div>
+<p>Recall that</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{4}{\pi}\sum_{m=0}^\infty\frac{\sin\left((2m+1)x\right)}{2m+1}
+\]</div>
+<p>means <span class="math notranslate nohighlight">\(\displaystyle \lim_{n\to\infty} s_n(x)\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[
+s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
+\]</div>
+<p>The question is therefore, does <span class="math notranslate nohighlight">\(s_n(x)\)</span> converge for each <span class="math notranslate nohighlight">\(x\)</span>? If it does, is the limit <span class="math notranslate nohighlight">\(f(x)\)</span>?</p>
+<br>
+<p>The python script below (click the tab to view it) plots an approximation of the square wave function (shown in blue) consisting of 2, 4 and 6 terms of the Fourier series in <a class="reference internal" href="#equation-fsex2">(15)</a>. We see that the FS appears to be converging to the function as we increase the number of terms although not as quickly as the series in Example 2.2.1. In particular, there appears to be an issue at zero…</p>
+<aside class="margin sidebar">
+<p class="sidebar-title">Note</p>
+<p>The slower convergence shouldn’t be too surprising given that the square wave function is discontinuous at <span class="math notranslate nohighlight">\(x=0\)</span>. We shall return to this issue later on in the course.</p>
+</aside>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># sets the size of the figure in inches</span>
+
+<span class="c1"># domain of plot (-pi, pi)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># square wave function (Example 2.2.2)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span>
+
+<span class="c1"># Partial sums for the FS of the square wave</span>
+<span class="n">y1</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span> <span class="c1"># two terms (first and second harmonics)</span>
+<span class="n">y2</span><span class="o">=</span><span class="n">y1</span><span class="o">+</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">7.0</span><span class="p">)</span> <span class="c1"># 4 terms</span>
+<span class="n">y3</span><span class="o">=</span><span class="n">y2</span><span class="o">+</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">11.0</span> <span class="c1"># 6 terms</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;c--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;two terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;four terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s1">&#39;g--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;six terms&#39;</span><span class="p">)</span>
+
+<span class="c1"># add legend, label axis and add title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;partial sums&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Partial sums for Fourier series of the square wave function&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Fourierseries2pi_5_0.png" src="../../../../_images/Fourierseries2pi_5_0.png" />
+</div>
+</div>
+<br>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<figure class="align-default" id="figexample223">
+<a class="reference internal image-reference" href="../../../../_images/Ex223.png"><img alt="../../../../_images/Ex223.png" src="../../../../_images/Ex223.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Plot of the function in <a class="reference internal" href="#equation-ex223">(16)</a>.</span><a class="headerlink" href="#figexample223" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</aside>
+<p><strong>Example 2.2.3</strong> Find the Fourier series of the function</p>
+<div class="math notranslate nohighlight" id="equation-ex223">
+<span class="eqno">(16)<a class="headerlink" href="#equation-ex223" title="Permalink to this equation">#</a></span>\[
+f(x) = x^2,\quad x\in[-\pi, \pi]
+\]</div>
+<p>such that <span class="math notranslate nohighlight">\(f(x) = f(x+2\pi)\)</span> outside of this region.</p>
+<p><strong>Solution</strong></p>
+<div class="toggle docutils container">
+<p>Since the function is even we know that <span class="math notranslate nohighlight">\(b_n=0, \forall n\)</span>.</p>
+<p>Now,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_0 &amp;= \frac{1}{\pi}\int_{-\pi}^\pi x^2\mathrm{d}x\\
+&amp;=\frac{2}{\pi}\int_0^\pi x^2\mathrm{d}x\\
+&amp;= \frac{2}{\pi}\left[\frac{1}{3}x^3\right]_0^\pi = \frac{2}{3}\pi^2, 
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_n &amp;=\frac{2}{\pi}\int_{0}^\pi x^2\cos(nx)\mathrm{d}x\\
+&amp;= \frac{2}{\pi}\left[\frac{x^2}{n}\sin(nx)\right]_0^\pi-\frac{4}{n\pi}\int_0^\pi x\sin(nx)\mathrm{d}x\\
+&amp;= -\frac{4}{n\pi}\left[\frac{-x}{n}\cos(nx)\right]_0^\pi - \frac{4}{n^2\pi}\int_0^\pi \cos(nx)\mathrm{d}x\\
+&amp;= \frac{4}{n^2}(-1)^n.
+\end{split}\]</div>
+<p>Thus the FS of the function in <a class="reference internal" href="#equation-ex223">(16)</a> is</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{\pi^2}{3} + \sum_{n=1}^\infty \frac{4(-1)^n}{n^2}\cos(nx).
+\]</div>
+</div>
+<p>Below we use Python to plot the FS approximations (with 2, 4 and 6 terms) of <span class="math notranslate nohighlight">\(x^2\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># sets the size of the figure in inches</span>
+
+<span class="c1"># domain of plot (-pi, pi)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># quadratic (Example 2.2.3)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Partial sums for the FS of the square wave</span>
+<span class="n">y1</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># two terms (first and second harmonics)</span>
+<span class="n">y2</span><span class="o">=</span><span class="n">y1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span> <span class="c1"># 4 terms</span>
+<span class="n">y3</span><span class="o">=</span><span class="n">y2</span><span class="o">+</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">16.0</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)</span> <span class="c1"># 6 terms</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;c--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;two terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;four terms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s1">&#39;g--&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;six terms&#39;</span><span class="p">)</span>
+
+<span class="c1"># add legend, label axis and add title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;partial sums&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Partial sums for the Fourier series of the quadratic function&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Fourierseries2pi_7_0.png" src="../../../../_images/Fourierseries2pi_7_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\Part1\Chapter2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">2.1 Periodic, Even and Odd Functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="FSConvergence.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2.3 Convergence of Fourier Series</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan J Crofts<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

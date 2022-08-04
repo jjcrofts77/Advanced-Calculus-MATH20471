@@ -1,0 +1,936 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1.1 Revision of complex numbers &#8212; Advanced Calculus MATH20471</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="1.2 Functions of a complex variable" href="ComplexFunc.html" />
+    <link rel="prev" title="Chapter 1 Introduction" href="Chapter1Intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/SpiralWave.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/IBVP.html">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/IntroToPDEs.html">
+     1.3 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter1/PDEsToStudy.html">
+     1.4 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter2/Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/Fourierseries2pi.html">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter2/FuncsAnyPeriod.html">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part1/Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part1/Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ComplexFunc.html">
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
+   Chapter 3 Singularities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
+     Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter6/Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/CalculatingResidues.html">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/RealIntegrals.html">
+     6.3 Evaluation of real integrals
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part2/Chapter1/ComplexNumbers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/content/notebooks/Part2/Chapter1/ComplexNumbers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-definitions">
+   Notation/definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algebraic-form">
+   Algebraic form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#argand-diagram">
+   Argand diagram
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-form">
+   Exponential form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curves-and-regions-in-the-complex-plane">
+   Curves and regions in the complex plane
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>1.1 Revision of complex numbers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-definitions">
+   Notation/definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algebraic-form">
+   Algebraic form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#argand-diagram">
+   Argand diagram
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-form">
+   Exponential form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curves-and-regions-in-the-complex-plane">
+   Curves and regions in the complex plane
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter1/ComplexNumbers.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="revision-of-complex-numbers">
+<h1>1.1 Revision of complex numbers<a class="headerlink" href="#revision-of-complex-numbers" title="Permalink to this headline">#</a></h1>
+<br>
+<section id="notation-definitions">
+<h2>Notation/definitions<a class="headerlink" href="#notation-definitions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>It is conventional to denote complex numbers by <span class="math notranslate nohighlight">\(z\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(z\in \mathbb{C}\)</span> means <span class="math notranslate nohighlight">\(z\)</span> is complex;</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\in \mathbb{R}\)</span> means <span class="math notranslate nohighlight">\(x\)</span> is real;</p></li>
+<li><p>the imaginary unit is defined: <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>; <span class="math notranslate nohighlight">\(i^2=-1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(i^{-1}=-i\)</span>.</p></li>
+</ul>
+<br>
+</section>
+<section id="algebraic-form">
+<h2>Algebraic form<a class="headerlink" href="#algebraic-form" title="Permalink to this headline">#</a></h2>
+<p>A complex number <span class="math notranslate nohighlight">\(z\)</span> can be written:</p>
+<div class="math notranslate nohighlight">
+\[
+	z=x+iy,\ x,y\in\mathbb{R};
+\]</div>
+<p><span class="math notranslate nohighlight">\(x\)</span> is known as the real part of <span class="math notranslate nohighlight">\(z\)</span>: <span class="math notranslate nohighlight">\(\mathrm{Re}(z)=x\)</span>, while <span class="math notranslate nohighlight">\(y\)</span> is termed the imaginary part of <span class="math notranslate nohighlight">\(z\)</span>: <span class="math notranslate nohighlight">\(\mathrm{Im}(z)=y\)</span>.</p>
+<p>Adopting <span class="math notranslate nohighlight">\(z_1=x_1+iy_1\)</span> and <span class="math notranslate nohighlight">\(z_2=x_2+iy_2\)</span> where necessary, the following results hold</p>
+<ol class="simple">
+<li><p>Equality: <span class="math notranslate nohighlight">\(z_1=z_2\)</span> iff <span class="math notranslate nohighlight">\(x_1=x_2\)</span> and <span class="math notranslate nohighlight">\(y_1=y_2\)</span></p></li>
+<li><p>Addition/subtraction: <span class="math notranslate nohighlight">\(z_1\pm z_2 = (x_1\pm x_2) + i(y_1\pm y_2)\)</span></p></li>
+<li><p>Multiplication:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k\in \mathbb{R}\)</span>: <span class="math notranslate nohighlight">\(kz = kx+iky\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z_1z_2 = (x_1+iy_1)(x_2+iy_2) = (x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1)\)</span></p></li>
+</ul>
+</li>
+<li><p>Modulus: <span class="math notranslate nohighlight">\(|z| = |x+iy|=\sqrt{x^2+y^2}\)</span></p></li>
+<li><p>Conjugation: The conjugate of a complex number <span class="math notranslate nohighlight">\(z\)</span> is denoted <span class="math notranslate nohighlight">\(\bar{z}\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\overline{z}=x-iy\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\overline{z}=x^2+y^2\)</span>. <strong>This is REAL.</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{z_1 z_2} = \overline{z_1}\, \overline{z_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|\overline{z}|=|{z}|\)</span></p></li>
+</ul>
+</li>
+<li><p>Inverse: <span class="math notranslate nohighlight">\(\displaystyle z^{-1} = \frac{1}{x+iy} = \frac{x-iy}{x^2+y^2}\)</span></p></li>
+<li><p>Division: <span class="math notranslate nohighlight">\(\displaystyle\frac{z_1}{z_2}=z_1z_2^{-1}\)</span>, so using the previous result,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\frac{z_1}{z_2}=\frac{(x_1+iy_1)(x_2-iy_2)}{x_2^2+y_2^2}=\frac{x_1x_2 + y_1y_2 + i(x_2y_1-x_1y_2)}{x_2^2+y_2^2}
+\]</div>
+<br>
+<p><strong>Method for inversion and division: multiply numerator and denominator by the conjugate of the denominator. This ensures that the denominator is real and the result can be written in the standard form <span class="math notranslate nohighlight">\(\mathbf{x+iy}\)</span></strong></p>
+<br>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Complex numbers cannot be ordered in the same way as real numbers: <span class="math notranslate nohighlight">\(z_1&gt;z_2\)</span> has no meaning (<em>cf.</em> vectors); however, <span class="math notranslate nohighlight">\(|z_1|&gt;|z_2|\)</span>,  <span class="math notranslate nohighlight">\(\mathrm{Re}(z_1)&gt;\mathrm{Re}(z_2)\)</span>,  <span class="math notranslate nohighlight">\(\mathrm{Im}(z_1)&gt;\mathrm{Im}(z_2)\)</span> do.</p>
+</div>
+<br>
+</section>
+<section id="argand-diagram">
+<h2>Argand diagram<a class="headerlink" href="#argand-diagram" title="Permalink to this headline">#</a></h2>
+<br>
+<p>The complex number <span class="math notranslate nohighlight">\(z=x+iy\)</span> can be understood in terms of a plot in Cartesian space: the real part of <span class="math notranslate nohighlight">\(z\)</span> is plotted on the <span class="math notranslate nohighlight">\(x\)</span>-axis, the imaginary part on the <span class="math notranslate nohighlight">\(y\)</span>-axis. Simple trigonometry then gives us a series of important results.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/ArgandDiagram.png"><img alt="../../../../_images/ArgandDiagram.png" src="../../../../_images/ArgandDiagram.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Argand diagram for the complex number <span class="math notranslate nohighlight">\(z = x+ iy\)</span>, indicating Cartesian and Polar coordinates</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<br>
+<p>The position of <span class="math notranslate nohighlight">\(z\)</span> in the Argand diagram may be expressed in Polar coordinates via:</p>
+<div class="math notranslate nohighlight">
+\[
+	\mathbf{r}=(x,y);\ x=r\cos(\theta),\ y=r\sin(\theta);\ r=\sqrt{x^2+y^2}=|z|,\ \theta=\tan^{-1}(\tfrac{y}{x}).
+\]</div>
+<p>There are a few important things to note about this representation:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> is known as the argument of <span class="math notranslate nohighlight">\(z\)</span>, denoted <span class="math notranslate nohighlight">\(\mbox{arg}(z)\)</span>.</p></li>
+<li><p>Clearly <span class="math notranslate nohighlight">\(z\)</span> is unchanged for <span class="math notranslate nohighlight">\(\theta\pm 2n\pi\)</span> for integer <span class="math notranslate nohighlight">\(n\)</span>. For uniqueness, the angle is typically restricted to <span class="math notranslate nohighlight">\(-\pi&lt;\theta\leqslant\pi\)</span>.</p></li>
+<li><p>Although one can calculate it via <span class="math notranslate nohighlight">\(\theta=\tan^{-1}(\tfrac{y}{x})\)</span>, care must be taken that you choose the correct solution to this equation: <span class="math notranslate nohighlight">\(\theta\pm\pi\)</span> is also a solution. The simplest way is to check which quadrant you require from the Argand diagram.</p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> can be written <span class="math notranslate nohighlight">\(z=r\cos\theta + i r \sin\theta\)</span></p></li>
+</ol>
+<br>
+</section>
+<section id="exponential-form">
+<h2>Exponential form<a class="headerlink" href="#exponential-form" title="Permalink to this headline">#</a></h2>
+<p>Using the above results, one can easily derive another way of expressing a complex number.</p>
+<p>Employing the above notation, we have</p>
+<div class="math notranslate nohighlight">
+\[
+z = |z|\left(\cos\theta + i\sin\theta\right).
+\]</div>
+<p>Now, expressing <span class="math notranslate nohighlight">\(\cos\)</span> and <span class="math notranslate nohighlight">\(\sin\)</span> in exponential notation:</p>
+<div class="math notranslate nohighlight">
+\[
+z = |z|\left(\frac{e^{i\theta}+e^{-i\theta}}{2} + i \frac{e^{i\theta}-e^{-i\theta}}{2i}\right)=|z|e^{i\theta}.
+\]</div>
+<p>From the above it is easy to see <span class="math notranslate nohighlight">\(e^{i\theta}=\cos\theta+i\sin\theta\)</span>. <strong>This is known as Euler’s formula.</strong></p>
+<p>These different methods of writing complex numbers are useful when considering different algebraic operations.</p>
+<ol class="simple">
+<li><p>The algebraic form <span class="math notranslate nohighlight">\(x+iy\)</span> is more convenient for addition/subtraction</p></li>
+<li><p>The polar and exponential forms are more convenient for multiplication and division</p></li>
+</ol>
+<p>To see this, consider the complex multiplication <span class="math notranslate nohighlight">\(z_1z_2\)</span> written in polar form:</p>
+<div class="math notranslate nohighlight">
+\[
+z_1 = r_1\left(\cos\theta_1+i\sin\theta_1\right),\ z_2 = r_2\left(\cos\theta_2+i\sin\theta_2 \right)
+\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[
+z_1z_2 = r_1r_2\left(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2 + i\left(\cos\theta_1\sin\theta_2 + \cos\theta_2\sin\theta_1 \right) \right)
+\]</div>
+<p>and double angle formulae give</p>
+<div class="math notranslate nohighlight">
+\[
+z_1z_2 = r_1r_2\left(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)\right).
+\]</div>
+<p>Similarly:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{z_1}{z_2}=\frac{r_1}{r_2}\left( \cos(\theta_1-\theta_2) + i \sin(\theta_1-\theta_2)\right);
+\]</div>
+<p>and (for integers, <span class="math notranslate nohighlight">\(n\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+z^n=r^n e^{in\theta}.
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The result <span class="math notranslate nohighlight">\(e^{in\theta}=\cos(n\theta)+i\sin(n\theta)\)</span> is known as <strong>DeMoivre’s theorem</strong>.</p>
+</div>
+<br>
+</section>
+<section id="curves-and-regions-in-the-complex-plane">
+<h2>Curves and regions in the complex plane<a class="headerlink" href="#curves-and-regions-in-the-complex-plane" title="Permalink to this headline">#</a></h2>
+<p><strong>Example 1.1.1</strong> The equation of a circle.</p>
+<p>In Cartesian coordinates, the equation of a circle with radius <span class="math notranslate nohighlight">\(R\)</span>, centred on <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+	(x-x_0)^2 + (y-y_0)^2=R^2,
+\]</div>
+<p>which, in complex form is: <span class="math notranslate nohighlight">\(|z-z_0|=R\)</span>, where <span class="math notranslate nohighlight">\(z_0=x_0+iy_0\)</span>. Employing the exponential notation above, this may also be written in the compact form: <span class="math notranslate nohighlight">\(z=z_0+Re^{i\theta}\)</span>.</p>
+<p>By simple extension, regions in the complex plane may be defined via inequalities such as: <span class="math notranslate nohighlight">\(a&lt;|z-z_0|&lt;b\)</span>.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/ConcentricCircles.png"><img alt="../../../../_images/ConcentricCircles.png" src="../../../../_images/ConcentricCircles.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">The region in the complex plane between the two concentric circles is defined by <span class="math notranslate nohighlight">\(a&lt;|z-z_0|&lt;b\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\Part2\Chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Chapter1Intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 1 Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ComplexFunc.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.2 Functions of a complex variable</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan J Crofts<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

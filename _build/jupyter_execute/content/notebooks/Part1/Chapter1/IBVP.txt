@@ -1,0 +1,88 @@
+# Van der Pol - numerical solution 
+
+# load packages for integrating ODEs and plotting solutions
+import numpy as np # matlab-like commands 
+import matplotlib.pyplot as plt # plotting tools
+from scipy.integrate import odeint # ode solver
+
+# RHS function of the Van der Pol ODE (written as a first order system - see NMODEs!)
+def rhs(Y,t,mu):
+  y,ydot=Y
+  return ydot, mu*(1-y**2)*ydot-y
+
+t = np.linspace(0,7*np.pi,1001) # integration interval
+y0 = [0, 2]                     # initial condition
+mu = 4                          # paramater value
+
+# integrate numerically using RK4
+y_arr = odeint(rhs,y0,t,args=(mu,))
+y,ydot = y_arr[:,0],y_arr[:,1]
+
+# initialise plots
+plt.ion()
+plt.figure(figsize=[25,7.5])
+
+# trajectories
+plt.subplot(131)
+plt.plot(t, y)
+plt.title('trajectories',size=20)
+plt.xlabel('$t$',size=16)
+plt.ylabel('$y$',size=16)
+
+# phase portrait
+plt.subplot(132)
+plt.plot(y,ydot)
+plt.xlabel('$y$',size=16)
+plt.ylabel('$\dot{y}$',size=16)
+plt.title('phase portrait',size=20)
+
+# vector field
+y,ydot = np.mgrid[-3:3:21j,-6:6:21j]
+u,v = rhs(np.array([y,ydot]),0.0,mu)
+mag = np.hypot(u,v)
+mag[mag==0] = 1.0
+plt.subplot(133)
+plt.quiver(y,ydot)
+plt.xlabel('$y$',size=16)
+plt.ylabel('$\dot{y}$',size=16)
+plt.title('vector field',size=20)
+
+# add title
+plt.suptitle('Numerical solution of the Van der Pol ODE',size=24,weight='bold');
+
+# draw
+plt.show()
+
+import numpy as np
+from scipy.integrate import solve_bvp # BVP solver
+
+# write as a system of first order ODEs
+def ode(x, Z):
+  u,du = Z
+  return [du, -u]
+
+# boundary conditions function
+def bc(u, du):
+    return [u[0], du[1]-1.0]  
+
+# define an initail mesh with 5 points
+x = np.linspace(0, np.pi, 5)
+
+# initial guesses
+u0 = [np.zeros(x.size),np.ones(x.size)]
+res = solve_bvp(ode, bc, x, u0) # solve the BVP
+
+# plot the solution
+# initialise plots
+plt.ion()
+plt.figure(figsize=[10,7.5])
+x_plot = np.linspace(0, np.pi, 100)
+u_plot = res.sol(x_plot)[0]
+
+import matplotlib.pyplot as plt
+plt.plot(x_plot, u_plot, linewidth=4,label='$u=-\sin(x)$')
+plt.legend(fontsize=18)
+plt.xlabel("$x$",size=16)
+plt.ylabel("$u(x)$",size=16)
+plt.title('Solution of the BVP in Example 1.2.2',size=24,weight='bold')
+plt.show()

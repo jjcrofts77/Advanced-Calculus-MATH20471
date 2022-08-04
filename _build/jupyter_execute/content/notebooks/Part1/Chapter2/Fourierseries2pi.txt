@@ -1,0 +1,91 @@
+# python modules (maths + plotting)
+import numpy as np
+import matplotlib.pyplot as plt
+plt.rcParams['figure.figsize'] = [10, 6] # sets the size of the figure in inches
+
+# domain of plot (-pi, pi)
+x = np.linspace(-np.pi,np.pi,100)
+
+# square wave function (Example 2.2.2)
+f=np.abs(x)
+
+# Partial sums for the FS of the square wave
+y1=np.pi/2-(4/np.pi)*np.cos(x) # 1 term (first harmonic)
+y2=y1-(4/np.pi)*np.cos(3*x)/9.0 # 2 terms (first + second harmonic)
+y3=y2-(4/np.pi)*np.cos(5*x)/25.0 # 3 terms (first three harmonics)
+
+# plot
+plt.ion()
+plt.plot(x,f,'b-',lw=3,label='f(x)')
+plt.plot(x,y1,'r--',lw=2,label='one term')
+plt.plot(x,y2,'y--',lw=2,label='two terms')
+plt.plot(x,y3,'m--',lw=2,label='three terms')
+
+# add legend, label axis and add title
+plt.legend(loc='best',fontsize=16)
+plt.xlabel('$x$',size=18)
+plt.ylabel('partial sums',size=18)
+plt.suptitle('Partial sums for Fourier series of $f(x) = |x|$ on $(-\pi, \pi)$',size=20,weight='bold')
+exit()
+
+# python modules (maths + plotting)
+import numpy as np
+import matplotlib.pyplot as plt
+plt.rcParams['figure.figsize'] = [10, 6] # sets the size of the figure in inches
+
+# domain of plot (-pi, pi)
+x = np.linspace(-np.pi,np.pi,100)
+
+# square wave function (Example 2.2.2)
+f=np.ones_like(x)
+f[x<0]=-1
+
+# Partial sums for the FS of the square wave
+y1=(4/np.pi)*(np.sin(x)+np.sin(3*x)/3.0) # two terms (first and second harmonics)
+y2=y1+(4/np.pi)*(np.sin(5*x)/5.0+np.sin(7*x)/7.0) # 4 terms
+y3=y2+(4/np.pi)*(np.sin(9*x)/9.0)+np.sin(11*x)/11.0 # 6 terms
+
+# plot
+plt.ion()
+plt.plot(x,f,'b-',lw=3,label='f(x)')
+plt.plot(x,y1,'c--',lw=2,label='two terms')
+plt.plot(x,y2,'r--',lw=2,label='four terms')
+plt.plot(x,y3,'g--',lw=2,label='six terms')
+
+# add legend, label axis and add title
+plt.legend(loc='best',fontsize=16)
+plt.xlabel('$x$',size=18)
+plt.ylabel('partial sums',size=18)
+plt.suptitle('Partial sums for Fourier series of the square wave function',size=16,weight='bold')
+exit()
+
+
+# python modules (maths + plotting)
+import numpy as np
+import matplotlib.pyplot as plt
+plt.rcParams['figure.figsize'] = [10, 6] # sets the size of the figure in inches
+
+# domain of plot (-pi, pi)
+x = np.linspace(-np.pi,np.pi,100)
+
+# quadratic (Example 2.2.3)
+f=x**2
+
+# Partial sums for the FS of the square wave
+y1=(np.pi**2)/3-4*np.cos(x) # two terms (first and second harmonics)
+y2=y1+np.cos(2*x)-(4*np.cos(3*x)/9.0) # 4 terms
+y3=y2+(4*np.cos(4*x)/16.0)-(4*np.cos(5*x)/25.0) # 6 terms
+
+# plot
+plt.ion()
+plt.plot(x,f,'b-',lw=3,label='f(x)')
+plt.plot(x,y1,'c--',lw=2,label='two terms')
+plt.plot(x,y2,'r--',lw=2,label='four terms')
+plt.plot(x,y3,'g--',lw=2,label='six terms')
+
+# add legend, label axis and add title
+plt.legend(loc='best',fontsize=16)
+plt.xlabel('$x$',size=18)
+plt.ylabel('partial sums',size=18)
+plt.suptitle('Partial sums for the Fourier series of the quadratic function',size=18,weight='bold')
+exit()

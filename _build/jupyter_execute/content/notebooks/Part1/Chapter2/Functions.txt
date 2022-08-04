@@ -1,0 +1,42 @@
+from IPython.display import HTML
+
+HTML("""
+    <video width="700" height="600" controls>
+        <source src="../../../../_static/videos/PeriodicFunctions.mp4" type="video/mp4">
+    </video>
+""")
+
+from IPython.display import HTML
+
+HTML("""
+    <video width="700" height="600" controls>
+        <source src="../../../../_static/videos/OddFuncs.mp4" type="video/mp4">
+    </video>
+""")
+
+from IPython.display import HTML
+
+HTML("""
+    <video width="700" height="600" controls>
+        <source src="../../../../_static/videos/EvenFuncs.mp4" type="video/mp4">
+    </video>
+""")
+
+
+from IPython.display import HTML
+
+HTML("""
+    <video width="700" height="600" controls>
+        <source src="../../../../_static/videos/OddIntegral.mp4" type="video/mp4">
+    </video>
+""")
+
+
+from IPython.display import HTML
+
+HTML("""
+    <video width="700" height="600" controls>
+        <source src="../../../../_static/videos/EvenIntegral.mp4" type="video/mp4">
+    </video>
+""")
+

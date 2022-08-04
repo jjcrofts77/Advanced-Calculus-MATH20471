@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1.1 Initial and Boundary Value Problems (IBVP) &#8212; Advanced Calculus MATH20471</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="1.2 ODE Revision" href="ODERev.html" />
+    <link rel="prev" title="Chapter 1 Introduction" href="Chapter1Intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/SpiralWave.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroToPDEs.html">
+     1.3 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="PDEsToStudy.html">
+     1.4 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/Fourierseries2pi.html">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2/FuncsAnyPeriod.html">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter1/ComplexNumbers.html">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter1/ComplexFunc.html">
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter3/Chapter3Intro.html">
+   Chapter 3 Singularities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter3/Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
+     Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Part2/Chapter6/Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter6/ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter6/CalculatingResidues.html">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Part2/Chapter6/RealIntegrals.html">
+     6.3 Evaluation of real integrals
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Part1/Chapter1/IBVP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/content/notebooks/Part1/Chapter1/IBVP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-value-problem-ivp">
+   Initial-value problem (IVP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-value-problem-bvp">
+   Boundary value problem (BVP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#existence-and-uniquness">
+   Existence and uniquness
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>1.1 Initial and Boundary Value Problems (IBVP)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-value-problem-ivp">
+   Initial-value problem (IVP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-value-problem-bvp">
+   Boundary value problem (BVP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#existence-and-uniquness">
+   Existence and uniquness
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part1/Chapter1/IBVP.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="initial-and-boundary-value-problems-ibvp">
+<h1>1.1 Initial and Boundary Value Problems (IBVP)<a class="headerlink" href="#initial-and-boundary-value-problems-ibvp" title="Permalink to this headline">#</a></h1>
+<p>Consider a second-order ordinary differential equation (ODE)</p>
+<div class="math notranslate nohighlight">
+\[
+x'' = f(t,x,x') 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( x'=\mathrm{d}x/\mathrm{d}t \)</span> and <span class="math notranslate nohighlight">\( x''=\mathrm{d}^2x/\mathrm{d}t^2 \)</span>. The problem is to find <span class="math notranslate nohighlight">\(x(t)\)</span> subject to appropriate additional information.</p>
+<p>Familiar examples of such equations include</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} &amp;= \sin{t}\\
+ \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} &amp;= -3\frac{\mathrm{d} x}{\mathrm{d}t} - 2x 
+\end{split}\]</div>
+<section id="initial-value-problem-ivp">
+<h2>Initial-value problem (IVP)<a class="headerlink" href="#initial-value-problem-ivp" title="Permalink to this headline">#</a></h2>
+<p>Suppose <span class="math notranslate nohighlight">\(x(0)\)</span> and <span class="math notranslate nohighlight">\(x'(0)\)</span> (or more generally <span class="math notranslate nohighlight">\(x(t_0)\)</span> and <span class="math notranslate nohighlight">\(x'(t_0)\)</span>) are prescribed. Consider the second-order differential equation</p>
+<div class="math notranslate nohighlight" id="equation-vanderpol">
+<span class="eqno">(1)<a class="headerlink" href="#equation-vanderpol" title="Permalink to this equation">#</a></span>\[
+x''(t) = \mu(1-x^2(t))x'(t) - x(t),\quad t\geq 0
+\]</div>
+<p>for a function <span class="math notranslate nohighlight">\(x(t)\)</span>, with initial data</p>
+<div class="math notranslate nohighlight">
+\[
+ x(0) = x_0,~ x'(0) = \nu_0.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\mu, x_0, \nu_0\)</span> are constants.</p>
+<p>Because we specify sufficient conditions at an initial time <span class="math notranslate nohighlight">\(t=0\)</span> (<span class="math notranslate nohighlight">\(t=t_0\)</span>) to fix the solution, this is called an <em>initial value problem</em> (IVP).</p>
+<p>Note that the example given above is the famed <em>Van der Pol equation</em>, which was originally proposed by the Dutch electrical engineer <a class="reference external" href="https://en.wikipedia.org/wiki/Balthasar_van_der_Pol">Balthasar
+van der Pol</a> to model oscillations observed in certain types of electrical circuits. It is an example of a <em>nonlinear differential equation</em> and importantly does
+not admit an analytic solution. (It can however be analysed both numerically and by using the methods of dynamical systems – see (take?) the third year module
+<em>Numerical Analysis and Dynamical Systems</em> for more details!)</p>
+<br>
+<p><strong>Example 1.1.1</strong> Below, we use numerical methods, such as those you are currently learning about in the <em>Numerical Methods for ODEs</em> module, to solve the Van der Pol Equation in <a class="reference internal" href="#equation-vanderpol">(1)</a></p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since this equation is nonlinear it can <strong>not</strong> be solved analytically.</p>
+</div>
+</aside>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Van der Pol - numerical solution </span>
+
+<span class="c1"># load packages for integrating ODEs and plotting solutions</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># matlab-like commands </span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># plotting tools</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span> <span class="c1"># ode solver</span>
+
+<span class="c1"># RHS function of the Van der Pol ODE (written as a first order system - see NMODEs!)</span>
+<span class="k">def</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">mu</span><span class="p">):</span>
+  <span class="n">y</span><span class="p">,</span><span class="n">ydot</span><span class="o">=</span><span class="n">Y</span>
+  <span class="k">return</span> <span class="n">ydot</span><span class="p">,</span> <span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">ydot</span><span class="o">-</span><span class="n">y</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span> <span class="c1"># integration interval</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>                     <span class="c1"># initial condition</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">4</span>                          <span class="c1"># paramater value</span>
+
+<span class="c1"># integrate numerically using RK4</span>
+<span class="n">y_arr</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">mu</span><span class="p">,))</span>
+<span class="n">y</span><span class="p">,</span><span class="n">ydot</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">y_arr</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># initialise plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mf">7.5</span><span class="p">])</span>
+
+<span class="c1"># trajectories</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;trajectories&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1"># phase portrait</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">ydot</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\dot</span><span class="si">{y}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;phase portrait&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># vector field</span>
+<span class="n">y</span><span class="p">,</span><span class="n">ydot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">21</span><span class="n">j</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">21</span><span class="n">j</span><span class="p">]</span>
+<span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">rhs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">,</span><span class="n">ydot</span><span class="p">]),</span><span class="mf">0.0</span><span class="p">,</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="n">mag</span><span class="p">[</span><span class="n">mag</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">ydot</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\dot</span><span class="si">{y}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;vector field&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># add title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Numerical solution of the Van der Pol ODE&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">);</span>
+
+<span class="c1"># draw</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/IBVP_2_0.png" src="../../../../_images/IBVP_2_0.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We do not consider numerical solutions of ODEs (or PDEs…) in this course so don’t worry too much if the above is a little hard to follow! The above illustration is really just to get you thinking about what the solution of an ODE looks like and also to highlight the importance of numerical methods (most real-world problems result in nonlinear ODEs that can’t be solved analytically).</p>
+</div>
+</section>
+<section id="boundary-value-problem-bvp">
+<h2>Boundary value problem (BVP)<a class="headerlink" href="#boundary-value-problem-bvp" title="Permalink to this headline">#</a></h2>
+<p>Suppose <span class="math notranslate nohighlight">\(x(t)\)</span> is defined on an interval <span class="math notranslate nohighlight">\(\displaystyle [a, b]\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x(a) = A\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x(b) = B\)</span> are prescribed. Consider, for example, the linear equation</p>
+<div class="math notranslate nohighlight">
+\[
+x''(t) = \mu^2 x(t), ~~0 &lt; t &lt; 1,\quad \text{with}\quad x(0) = A,~~ x(1) = B.
+\]</div>
+<p>Such equations are called <em>two-point boundary value problems</em>.</p>
+<p>In the simple case given above, we can solve in the usual way to obtain solutions</p>
+<div class="math notranslate nohighlight">
+\[
+ x_1(t) = e^{\mu t} \quad\text{and}\quad x_2(t) = e^{-\mu t}. 
+\]</div>
+<p>Linearity then implies that the general solution is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x(t) &amp;= C_1x_1(t) + C_2x_2(t)\\
+&amp;= C_1e^{\mu t} + C_2e^{-\mu t},
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> are constants.</p>
+<p>All that remains in order to solve our BVP is to determine for which values of <span class="math notranslate nohighlight">\(\mu, C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> the determined solution satisfies the boundary conditions.</p>
+<p>We shall return to this problem in some detail later on in the course, but it is worth noting that in general boundary value problems (BVPs) are much harder to solve than IVPs. (This follows due to their <em>global</em> as opposed to <em>local</em> nature.)</p>
+<br>
+<p><strong>Example 1.1.2</strong> Conisder the following example of a two-point boundary value problem</p>
+<div class="math notranslate nohighlight">
+\[
+ u''(x)+u(x) = 0, \quad u(0)=0,\quad u'(\pi)=1,\quad 0\leq x\leq \pi
+\]</div>
+<p>This problem can be solved analytically with exact solution <span class="math notranslate nohighlight">\(u(x) = -\sin(x)\)</span> and we shall see how to derive this later on in the course.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is easy to check that <span class="math notranslate nohighlight">\(u(x) = -\sin(x)\)</span> is a solution by differentiation and checking it satisfies the BCs.</p>
+</div>
+</aside>
+<p>Below we show some python code (click the tab to reveal the code) for solving the above BVP along with a plot of the solution.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_bvp</span> <span class="c1"># BVP solver</span>
+
+<span class="c1"># write as a system of first order ODEs</span>
+<span class="k">def</span> <span class="nf">ode</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Z</span><span class="p">):</span>
+  <span class="n">u</span><span class="p">,</span><span class="n">du</span> <span class="o">=</span> <span class="n">Z</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">du</span><span class="p">,</span> <span class="o">-</span><span class="n">u</span><span class="p">]</span>
+
+<span class="c1"># boundary conditions function</span>
+<span class="k">def</span> <span class="nf">bc</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">du</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">du</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">1.0</span><span class="p">]</span>  
+
+<span class="c1"># define an initail mesh with 5 points</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># initial guesses</span>
+<span class="n">u0</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">solve_bvp</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">u0</span><span class="p">)</span> <span class="c1"># solve the BVP</span>
+
+<span class="c1"># plot the solution</span>
+<span class="c1"># initialise plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mf">7.5</span><span class="p">])</span>
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">u_plot</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">x_plot</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">u_plot</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$u=-\sin(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$u(x)$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Solution of the BVP in Example 1.2.2&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/IBVP_4_0.png" src="../../../../_images/IBVP_4_0.png" />
+</div>
+</div>
+</section>
+<section id="existence-and-uniquness">
+<h2>Existence and uniquness<a class="headerlink" href="#existence-and-uniquness" title="Permalink to this headline">#</a></h2>
+<p>We conclude this section by noting that solutions of IV and BV problems may not exist, or if they exist, may not be unique.</p>
+<p>See below for such examples.</p>
+<ul class="simple">
+<li><p><strong>IVP:</strong> <span class="math notranslate nohighlight">\(\displaystyle x''=6x^{1/3},~ x(0) = 0, x'(0)=0\)</span> has solutions <span class="math notranslate nohighlight">\(x(t)=0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle x(t)=t^3\)</span> and so uniqueness breaks down.</p></li>
+<li><p><strong>BVP1:</strong> <span class="math notranslate nohighlight">\(\displaystyle x''+x=0,~ x(0)=1, x(2\pi)=0\)</span> has no solution and so existence fails.</p></li>
+<li><p><strong>BVP2:</strong> <span class="math notranslate nohighlight">\(\displaystyle x''+x=0,~ x(0)=x(2\pi)=0\)</span> has infinitely many solutions, <span class="math notranslate nohighlight">\(\displaystyle x(t)=c\sin{t}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is an arbitrary constant (non-uniqueness).</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks\Part1\Chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Chapter1Intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 1 Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ODERev.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.2 ODE Revision</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan J Crofts<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

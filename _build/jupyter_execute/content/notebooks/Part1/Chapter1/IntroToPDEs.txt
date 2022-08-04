@@ -1,0 +1,28 @@
+# solution for the PDE of Example 1.2.2
+import matplotlib.pyplot as plt
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator
+import numpy as np
+
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"},figsize=(8,6),dpi=80)
+
+# Make data.
+X = np.arange(-2, 2, 0.25)
+Y = np.arange(-2, 2, 0.25)
+X, Y = np.meshgrid(X, Y)
+Z = X**2-X*np.exp(Y)+np.sin(Y)
+
+# Plot the surface.
+surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
+                       linewidth=0, antialiased=False)
+
+# Add a color bar which maps values to colors.
+fig.colorbar(surf, shrink=0.5, aspect=5);
+
+# add title and label axis
+ax.set_xlabel('$x$',size=16)
+ax.set_ylabel('$y$',size=16)
+ax.set_zlabel('$u(x,y)$',size=16)
+ax.set_title('Solution $u(x,y)$ of the PDE in Example 1.2.2\n',size=24)
+
+plt.show()
