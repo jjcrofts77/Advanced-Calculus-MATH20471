@@ -707,11 +707,13 @@ title="Print to PDF"
 T(r,\theta) = \left(Ar^n+Br^{-n}\right)\left[C\cos(n\theta)+D\sin(n\theta)\right],
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is a positive integer and <span class="math notranslate nohighlight">\(A, B, C, D\)</span> are arbitrary constants. The solutions <span class="math notranslate nohighlight">\(\log{r}, r^{-n}\cos(n\theta), r^{-n}\sin(n\theta)\)</span> are not defined at <span class="math notranslate nohighlight">\(r=0\)</span> and so are not admissible if the origin belongs to the domain in which <span class="math notranslate nohighlight">\(T\)</span> is defined.</p>
-<p>\noindent {\bf Example 5.1} Find <span class="math notranslate nohighlight">\(T\)</span> so as to satisfy Laplace’s equation in the annulus <span class="math notranslate nohighlight">\(a&lt;r&lt;b\)</span> and the boundary conditions
-\begin{equation}
-T=T_0 \text{ on } r=a, \quad T=T_1 \text{ on } r=b,
-\end{equation}
-where <span class="math notranslate nohighlight">\(T_0\)</span> and <span class="math notranslate nohighlight">\(T_1\)</span> are constants.</p>
+<br>
+<p><strong>Example 5.2.1</strong> Find <span class="math notranslate nohighlight">\(T\)</span> so as to satisfy Laplace’s equation in the annulus <span class="math notranslate nohighlight">\(a&lt;r&lt;b\)</span> and the boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[
+ T=T_0 \text{ on } r=a, \quad T=T_1 \text{ on } r=b,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(T_0\)</span> and <span class="math notranslate nohighlight">\(T_1\)</span> are constants.</p>
 <p>By inspection, <span class="math notranslate nohighlight">\(T=A+B\log(r)\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> must satisfy</p>
 <div class="math notranslate nohighlight">
 \[
@@ -728,7 +730,7 @@ A=\frac{T_0\log(b)-T_1\log(a)}{\log(b/a)},\quad B=\frac{T_1-T_0}{\log(b/a)},
  T(r,\theta) = \frac{T_0\log(b)-T_1\log(a)}{\log(b/a)}+\frac{T_1-T_0}{\log(b/a)}\log(r).
 \]</div>
 <br>
-<p><strong>Example 5.2</strong> A conductor occupies the region <span class="math notranslate nohighlight">\(r\leq a\)</span> and the temperature satisfies the boundary condition <span class="math notranslate nohighlight">\(T(a,\theta)=\sin^3(\theta)\)</span>. Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> in <span class="math notranslate nohighlight">\(r&lt;a\)</span>.</p>
+<p><strong>Example 5.2.2</strong> A conductor occupies the region <span class="math notranslate nohighlight">\(r\leq a\)</span> and the temperature satisfies the boundary condition <span class="math notranslate nohighlight">\(T(a,\theta)=\sin^3(\theta)\)</span>. Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> in <span class="math notranslate nohighlight">\(r&lt;a\)</span>.</p>
 <p>Note that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -739,6 +741,7 @@ A=\frac{T_0\log(b)-T_1\log(a)}{\log(b/a)},\quad B=\frac{T_1-T_0}{\log(b/a)},
 \[
 T = \frac{3}{4}\left(\frac{r}{a}\right)\sin(\theta)-\frac{1}{4}\left(\frac{r}{a}\right)^3\sin(3\theta).
 \]</div>
+<br>
 <section id="application-of-fourier-series">
 <h2>Application of Fourier Series<a class="headerlink" href="#application-of-fourier-series" title="Permalink to this headline">#</a></h2>
 <p>We wish to find <span class="math notranslate nohighlight">\(T\)</span> so as to satisfy Laplace’s equation in the disc <span class="math notranslate nohighlight">\(0\leq r&lt;a\)</span> and the boundary condition <span class="math notranslate nohighlight">\(T=f(\theta)\)</span> on <span class="math notranslate nohighlight">\(r=a, (0\leq \theta\leq 2\pi)\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is a prescribed function. Here the solution is of the form</p>
@@ -759,7 +762,7 @@ C_n &amp;=\frac{1}{\pi a^n}\int_0^{2\pi}f(\theta)\cos(n\theta)\mathrm{d}\theta\\
 D_N&amp;=\frac{1}{\pi a^n}\int_0^{2\pi}f(\theta)\sin(n\theta)\mathrm{d}\theta.
 \end{split}\]</div>
 <br>
-<p><strong>Example 5.3</strong> Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> so as to satisfy Laplace’s equation in the disc <span class="math notranslate nohighlight">\(r&lt;a\)</span> and the boundary condition</p>
+<p><strong>Example 5.2.3</strong> Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> so as to satisfy Laplace’s equation in the disc <span class="math notranslate nohighlight">\(r&lt;a\)</span> and the boundary condition</p>
 <div class="math notranslate nohighlight">
 \[
  T(a,\theta) = |\sin(\theta)|,\quad 0\leq \theta\leq 2\pi.
