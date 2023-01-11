@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -728,8 +731,12 @@ van der Pol</a> to model oscillations observed in certain types of electrical ci
 not admit an analytic solution. (It can however be analysed both numerically and by using the methods of dynamical systems – see (take?) the third year module
 <em>Numerical Analysis and Dynamical Systems</em> for more details!)</p>
 <br>
-<p><strong>Example 1.1.1</strong> Below, we use numerical methods, such as those you are currently learning about in the <em>Numerical Methods for ODEs</em> module, to solve the Van der Pol Equation in <a class="reference internal" href="#equation-vanderpol">(1)</a></p>
-<aside class="margin sidebar">
+<div class="proof example admonition" id="example1">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Below, we use numerical methods, such as those you are currently learning about in the <em>Numerical Methods for ODEs</em> module, to solve the Van der Pol Equation in <a class="reference internal" href="#equation-vanderpol">(1)</a></p>
+</section>
+</div><aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -827,13 +834,15 @@ x(t) &amp;= C_1x_1(t) + C_2x_2(t)\\
 <p>All that remains in order to solve our BVP is to determine for which values of <span class="math notranslate nohighlight">\(\mu, C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> the determined solution satisfies the boundary conditions.</p>
 <p>We shall return to this problem in some detail later on in the course, but it is worth noting that in general boundary value problems (BVPs) are much harder to solve than IVPs. (This follows due to their <em>global</em> as opposed to <em>local</em> nature.)</p>
 <br>
-<p><strong>Example 1.1.2</strong> Conisder the following example of a two-point boundary value problem</p>
+<div class="proof example admonition" id="example2">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Conisider the following example of a two-point boundary value problem</p>
 <div class="math notranslate nohighlight">
-\[
- u''(x)+u(x) = 0, \quad u(0)=0,\quad u'(\pi)=1,\quad 0\leq x\leq \pi
-\]</div>
+\[ u''(x)+u(x) = 0, \quad u(0)=0,\quad u'(\pi)=1,\quad 0\leq x\leq \pi\]</div>
 <p>This problem can be solved analytically with exact solution <span class="math notranslate nohighlight">\(u(x) = -\sin(x)\)</span> and we shall see how to derive this later on in the course.</p>
-<aside class="margin sidebar">
+</section>
+</div><aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -874,7 +883,7 @@ x(t) &amp;= C_1x_1(t) + C_2x_2(t)\\
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$u(x)$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Solution of the BVP in Example 1.2.2&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Solution of the BVP in Example 2&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>

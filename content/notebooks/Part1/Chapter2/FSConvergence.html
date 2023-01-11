@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -711,12 +714,6 @@ a_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)\mathrm{d}x \quad (n=0,1,2,\ldots
 \]</div>
 <p>An important question is: for these values of <span class="math notranslate nohighlight">\(a_n, b_n\)</span>, which <span class="math notranslate nohighlight">\(\displaystyle x\in\mathbb{R}\)</span> does the above FS converge?</p>
 <p>Let us consider an example.</p>
-<p><strong>Example 2.3.1</strong> Compute the Fourier series of the function</p>
-<div class="math notranslate nohighlight" id="equation-funcexample231">
-<span class="eqno">(17)<a class="headerlink" href="#equation-funcexample231" title="Permalink to this equation">#</a></span>\[\begin{split}
-f(x) = \begin{cases} x-\pi,&amp;x\in(-\pi,0);\\x+\pi, &amp; x\in(0,\pi).\end{cases}
-\end{split}\]</div>
-<p>Such that <span class="math notranslate nohighlight">\(\displaystyle f(x+2\pi) = f(x)\)</span> outside of this region.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -728,13 +725,21 @@ f(x) = \begin{cases} x-\pi,&amp;x\in(-\pi,0);\\x+\pi, &amp; x\in(0,\pi).\end{cas
 </ul>
 </div>
 </aside>
+<div class="proof example admonition" id="example18">
+<p class="admonition-title"><span class="caption-number">Example 18 </span></p>
+<section class="example-content" id="proof-content">
+<p>Compute the Fourier series of the function</p>
+<div class="math notranslate nohighlight" id="equation-funcexample231">
+<span class="eqno">(17)<a class="headerlink" href="#equation-funcexample231" title="Permalink to this equation">#</a></span>\[\begin{split}
+f(x) = \begin{cases} x-\pi,&amp;x\in(-\pi,0);\\x+\pi, &amp; x\in(0,\pi).\end{cases}
+\end{split}\]</div>
+<p>Such that <span class="math notranslate nohighlight">\(\displaystyle f(x+2\pi) = f(x)\)</span> outside of this region.</p>
 <figure class="align-default" id="figexample231">
 <a class="reference internal image-reference" href="../../../../_images/Ex231.png"><img alt="../../../../_images/Ex231.png" src="../../../../_images/Ex231.png" style="height: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Plot of the function in <a class="reference internal" href="#equation-funcexample231">(17)</a></span><a class="headerlink" href="#figexample231" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p><strong>Solution</strong></p>
 <div class="toggle docutils container">
 <p><span class="math notranslate nohighlight">\(f\)</span> is <em>odd</em> so we know that <span class="math notranslate nohighlight">\(\displaystyle a_0=a_n=0 \forall n\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -750,8 +755,8 @@ b_n &amp;=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(nx)\mathrm{d}x\\
 f(x)\sim \sum_{n=1}^\infty \frac{2}{n}\left(1-2(-1)^n\right) \sin(nx).
 \]</div>
 </div>
-<br>
-<p>Recalling that</p>
+</section>
+</div><p>Recalling that</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -776,15 +781,15 @@ s_n(x) = \sum_{m=1}^n \frac{2}{m}(1-2(-1)^m)\sin(mx).
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">Plot of the partial sum in <a class="reference internal" href="#equation-partialsums231">(18)</a> for different choices of <span class="math notranslate nohighlight">\(n\)</span>.</span><a class="headerlink" href="#partialsums231" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<br>
 </section>
 <section id="fourier-series-convergence-theorem">
 <h2>Fourier Series Convergence Theorem<a class="headerlink" href="#fourier-series-convergence-theorem" title="Permalink to this headline">#</a></h2>
 <p>For the above example, it does appear that except at points of discontinuity the partial sums do converge to <span class="math notranslate nohighlight">\(f(x)\)</span>. At points of discontinuity they converge to zero. A similar result is true for most functions that appear in applications. (<em>i.e.</em> convergence is observed at points of continuity.)</p>
 <p>To present the main result of this section we first need to discuss the concept of one-sided limits.</p>
-<br>
-<blockquote>
-<div><p><strong>Definition 2.3.1</strong> We say that the <em>right-hand limit</em> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(c\)</span> is</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (left/right-hand limits)</p>
+<section class="definition-content" id="proof-content">
+<p>We say that the <em>right-hand limit</em> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(c\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
  f(c_+) = \lim_{h\rightarrow 0, h&gt;0}f(c+h),
@@ -795,15 +800,17 @@ s_n(x) = \sum_{m=1}^n \frac{2}{m}(1-2(-1)^m)\sin(mx).
  f(c_{-}) = \lim_{h\rightarrow 0, h&gt;0}f(c-h),
 \]</div>
 <p>if this exists.</p>
-</div></blockquote>
-<br>
-<p>The existence part is important. Consider, for example, the function <span class="math notranslate nohighlight">\(f(x) = \sin(1/x)\)</span>, which does not have these limits at zero.</p>
-<br>
-<blockquote>
-<div><p><strong>Definition 2.3.2</strong> The function <span class="math notranslate nohighlight">\(f\)</span> is <em>piecewise continuous</em> on an interval <span class="math notranslate nohighlight">\((a, b)\)</span> if we can divide <span class="math notranslate nohighlight">\((a, b)\)</span> into a finite number of sub-intervals, on each of which <span class="math notranslate nohighlight">\(f\)</span> is defined and continuous, and the left-hand and right-hand limits at the endpoints of each sub-interval exist.</p>
-</div></blockquote>
-<br>
-<p><strong>Example 2.3.2</strong> Consider the function plotted below.</p>
+</section>
+</div><p>The existence part is important. Consider, for example, the function <span class="math notranslate nohighlight">\(f(x) = \sin(1/x)\)</span>, which does not have these limits at zero.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (piecewise continuous)</p>
+<section class="definition-content" id="proof-content">
+<p>The function <span class="math notranslate nohighlight">\(f\)</span> is <em>piecewise continuous</em> on an interval <span class="math notranslate nohighlight">\((a, b)\)</span> if we can divide <span class="math notranslate nohighlight">\((a, b)\)</span> into a finite number of sub-intervals, on each of which <span class="math notranslate nohighlight">\(f\)</span> is defined and continuous, and the left-hand and right-hand limits at the endpoints of each sub-interval exist.</p>
+</section>
+</div><div class="proof example admonition" id="example19">
+<p class="admonition-title"><span class="caption-number">Example 19 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the function plotted below.</p>
 <figure class="align-default" id="figexample232">
 <a class="reference internal image-reference" href="../../../../_images/PieceWiseEx232.png"><img alt="../../../../_images/PieceWiseEx232.png" src="../../../../_images/PieceWiseEx232.png" style="height: 300px;" /></a>
 <figcaption>
@@ -819,20 +826,23 @@ s_n(x) = \sum_{m=1}^n \frac{2}{m}(1-2(-1)^m)\sin(mx).
 <li><p>Therefore it is piecewise continuous</p></li>
 </ul>
 </div>
-<p>We are now in a position to state the Convergence Theorem for Fourier series.</p>
-<br>
-<blockquote>
-<div><p><strong>Theorem 2.3.1 (Convergence theorem)</strong> Let <span class="math notranslate nohighlight">\(f\)</span> be a periodic function with period <span class="math notranslate nohighlight">\(2\pi\)</span>, with <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(f'\)</span> piecewise continuous on <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. Then the Fourier series of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span> converges to <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}\left[f(x_+) + f(x_-)\right]\)</span>, <em>i.e.</em></p>
+</section>
+</div><p>We are now in a position to state the Fourier SeriesConvergence Theorem.</p>
+<div class="proof theorem admonition" id="theoremconv">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Convergence theorem )</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a periodic function with period <span class="math notranslate nohighlight">\(2\pi\)</span>, with <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(f'\)</span> piecewise continuous on <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. Then the Fourier series of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span> converges to <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}\left[f(x_+) + f(x_-)\right]\)</span>, <em>i.e.</em></p>
 <div class="math notranslate nohighlight" id="equation-thmconv">
 <span class="eqno">(19)<a class="headerlink" href="#equation-thmconv" title="Permalink to this equation">#</a></span>\[
 \frac{1}{2}\left[f(x_+) + f(x_-)\right] = \frac{1}{2}a_0 + \sum_{n=1}^\infty \left[a_n\cos(nx) + b_n \sin(nx)\right].
 \]</div>
 <p>Note that if <span class="math notranslate nohighlight">\(f\)</span> is continuous at <span class="math notranslate nohighlight">\(x\)</span>, then <span class="math notranslate nohighlight">\(f(x_+) = f(x_-) = f(x)\)</span> so the Fourier series converges to <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-</div></blockquote>
-<br>
-<p>Note that if a function is defined on an interval of length <span class="math notranslate nohighlight">\(2\pi\)</span>, we can find the Fourier series of  its periodic extension and equation <a class="reference internal" href="#equation-thmconv">(19)</a> will then hold on the original interval. But we have to be careful at the end points of the interval: <em>e.g.</em> if <span class="math notranslate nohighlight">\(f\)</span> is defined on <span class="math notranslate nohighlight">\((-\pi, \pi]\)</span> then at <span class="math notranslate nohighlight">\(\pm\pi\)</span> the Fourier series converges to <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}\left[f(\pi_+) + f(\pi_-)\right]\)</span>.</p>
-<br>
-<p><strong>Example 2.3.3</strong> From Example 2.2.2 (see the previous section) we have that the FS of the square wave function (see <a class="reference internal" href="#squarewave"><span class="std std-numref">Fig. 7</span></a> below) is given by</p>
+</section>
+</div><p>Note that if a function is defined on an interval of length <span class="math notranslate nohighlight">\(2\pi\)</span>, we can find the Fourier series of  its periodic extension and equation <a class="reference internal" href="#equation-thmconv">(19)</a> will then hold on the original interval. But we have to be careful at the end points of the interval: <em>e.g.</em> if <span class="math notranslate nohighlight">\(f\)</span> is defined on <span class="math notranslate nohighlight">\((-\pi, \pi]\)</span> then at <span class="math notranslate nohighlight">\(\pm\pi\)</span> the Fourier series converges to <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}\left[f(\pi_+) + f(\pi_-)\right]\)</span>.</p>
+<div class="proof example admonition" id="example20">
+<p class="admonition-title"><span class="caption-number">Example 20 </span></p>
+<section class="example-content" id="proof-content">
+<p>From <a class="reference internal" href="Fourierseries2pi.html#example16">Example 16</a> (see the previous section) we have that the FS of the square wave function (see <a class="reference internal" href="#squarewave"><span class="std std-numref">Fig. 7</span></a> below) is given by</p>
 <div class="math notranslate nohighlight">
 \[
 f(x)\sim \frac{4}{\pi}\sum_{m=0}^\infty \frac{1}{2m+1}\sin((2m+1)x).
@@ -843,7 +853,7 @@ f(x)\sim \frac{4}{\pi}\sum_{m=0}^\infty \frac{1}{2m+1}\sin((2m+1)x).
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">Square wave function of Example 2.2.2</span><a class="headerlink" href="#squarewave" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Thus, by Theorem 2.3.1, we have that the FS at <span class="math notranslate nohighlight">\(x=0\)</span> converges to</p>
+<p>Thus, by <a class="reference internal" href="#theoremconv">Theorem 1</a>, we have that the FS at <span class="math notranslate nohighlight">\(x=0\)</span> converges to</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{2}\left[f(0_+) + f(0_-)\right] = \frac{1}{2}\left[1 + (-1)\right] = 0,
@@ -861,6 +871,7 @@ f(x)\sim \frac{4}{\pi}\sum_{m=0}^\infty \frac{1}{2m+1}\sin((2m+1)x).
 \]</div>
 <p>which provides a series representation of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 </section>
+</div></section>
 <section id="gibbs-phenomenon">
 <h2>Gibbs Phenomenon<a class="headerlink" href="#gibbs-phenomenon" title="Permalink to this headline">#</a></h2>
 <p>As can be seen in <a class="reference internal" href="#partialsums231"><span class="std std-numref">Fig. 5</span></a>, at a point of discontinuity, the partial sums always overshoot the limiting values. This overshoot does not tend to zero as more terms are taken, but the width of the overshooting region does tend to zero. This is known as <em>Gibbs Phenomenon</em>.</p>

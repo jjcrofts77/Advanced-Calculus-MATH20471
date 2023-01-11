@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -56,7 +59,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Chapter 5 Taylor and Laurent series" href="../Chapter5/Chapter5Intro.html" />
-    <link rel="prev" title="Cauchy’s integral formula" href="CauchyIntForm.html" />
+    <link rel="prev" title="4.4 Cauchy’s integral formula" href="CauchyIntForm.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -678,24 +681,29 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="the-annulus-theorem">
 <h1>4.5 The annulus theorem<a class="headerlink" href="#the-annulus-theorem" title="Permalink to this headline">#</a></h1>
 <p>The following is a useful result which can simplify integrating around a singularity.</p>
-<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on the closed annulus determined by the two simple closed paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> then</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 12 </span> (annulus theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on the closed annulus determined by the two simple closed paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> (see <a class="reference internal" href="#annulus"><span class="std std-numref">Fig. 27</span></a> below) then</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{\mathscr{C}_1} f(z)\mathrm{d} z = \oint_{\mathscr{C}_2} f(z)\mathrm{d} z,
 \]</div>
 <p>provided that the two paths are traversed in the same direction.</p>
-<figure class="align-default" id="id1">
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. This can be shown by splitting the annulus via two additional paths <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span> as shown in <a class="reference internal" href="#annulus"><span class="std std-numref">Fig. 27</span></a>. Note, the paths in this figure do not have to be circular. The paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> are therefore split to new paths denoted <span class="math notranslate nohighlight">\(\mathscr{C}^*_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}^*_2\)</span>.</p>
+<figure class="align-default" id="annulus">
 <a class="reference internal image-reference" href="../../../../_images/AnnulusTheorem.png"><img alt="../../../../_images/AnnulusTheorem.png" src="../../../../_images/AnnulusTheorem.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">An annulus formed from two circular paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> cut via additional paths <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span> separated by a small distance <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> to leave new paths <span class="math notranslate nohighlight">\(\mathscr{C}^*_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}^*_2\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">An annulus formed from two circular paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> cut via additional paths <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span> separated by a small distance <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> to leave new paths <span class="math notranslate nohighlight">\(\mathscr{C}^*_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}^*_2\)</span>.</span><a class="headerlink" href="#annulus" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>This can be shown by splitting the annulus via two additional paths <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span> as shown in the figure. Note, the paths in this figure do not have to be circular. The paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> are therefore split to new paths denoted <span class="math notranslate nohighlight">\(\mathscr{C}^*_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}^*_2\)</span>.</p>
 <p>Now, considering the integral around the entire shape as indicated by the arrows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-I &amp; = &amp; \int_{\mathscr{C}^*_1}f(z)\mathrm{d} z + \int_{\gamma_1} f(z)\mathrm{d} z - \int_{\mathscr{C}^*_2}f(z)\mathrm{d} z + \int_{\gamma_2}f(z)\mathrm{d} z\\
-&amp;=&amp; 0\ \mbox{due to Cauchy's theorem}
+I &amp;=  \int_{\mathscr{C}^*_1}f(z)\mathrm{d} z + \int_{\gamma_1} f(z)\mathrm{d} z - \int_{\mathscr{C}^*_2}f(z)\mathrm{d} z + \int_{\gamma_2}f(z)\mathrm{d} z\\
+&amp;= 0\quad \text{due to Cauchy's theorem}
 \end{split}\]</div>
 <p>Note that the minus sign in the integral around <span class="math notranslate nohighlight">\(\mathscr{C}^*_2\)</span> is because the integral is taken in the opposite direction to <span class="math notranslate nohighlight">\(\mathscr{C}^*_2\)</span> indicated in the figure.</p>
 <p>In the limit <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span>, <span class="math notranslate nohighlight">\(\gamma_2\)</span> is the opposite path to <span class="math notranslate nohighlight">\(\gamma_1\)</span> (so that <span class="math notranslate nohighlight">\(\gamma_1\to -\gamma_2\)</span>):</p>
@@ -714,11 +722,15 @@ I &amp; = &amp; \int_{\mathscr{C}^*_1}f(z)\mathrm{d} z + \int_{\gamma_1} f(z)\ma
 I = \oint_{\mathscr{C}_1}f(z)\mathrm{d} z-\oint_{\mathscr{C}_2}f(z)\mathrm{d} z=0
 \]</div>
 <p>which gives the required result for any simple closed paths <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span>.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This theorem implies that, instead of integrating a function with a single singularity around a complicated closed path (avoiding the singularity), one can integrate the function around a circle with radius chosen such that the circle lies wholly within that path. This can greatly simplify the calculation.</p>
 </div>
-<p><strong>Example 4.4.1</strong> Evaluate <span class="math notranslate nohighlight">\(\displaystyle I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z\)</span> where the path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is a square centred on <span class="math notranslate nohighlight">\(z=0\)</span> with side 4.</p>
+<div class="proof example admonition" id="example54">
+<p class="admonition-title"><span class="caption-number">Example 54 </span></p>
+<section class="example-content" id="proof-content">
+<p>Evaluate <span class="math notranslate nohighlight">\(\displaystyle I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z\)</span> where the path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is a square centred on <span class="math notranslate nohighlight">\(z=0\)</span> with side 4.</p>
 <div class="toggle docutils container">
 <p>The given function <span class="math notranslate nohighlight">\(f(z)=\frac{1}{z-i}\)</span> has a pole at <span class="math notranslate nohighlight">\(z=i\)</span> which lies within <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>. The integration can be simplified by replacing <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> with a circle centred at <span class="math notranslate nohighlight">\(z=i\)</span> of radius <span class="math notranslate nohighlight">\(r&lt;1\)</span>; <em>i.e.</em>:</p>
 <div class="math notranslate nohighlight">
@@ -745,8 +757,8 @@ I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z=\oint_{\mathscr{C}^*} \frac{1}{z-
 	I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z=\oint_{|z-i|=r} \frac{1}{z-i} \mathrm{d} z=2i\pi.
 \]</div>
 </div>
-<br>
-<section id="the-multiple-annulus-theorem">
+</section>
+</div><section id="the-multiple-annulus-theorem">
 <h2>The multiple annulus theorem<a class="headerlink" href="#the-multiple-annulus-theorem" title="Permalink to this headline">#</a></h2>
 <p>By an analogous argument, it is simple to show that the annulus theorem can be extended to a multiple annulus.</p>
 <p>If <span class="math notranslate nohighlight">\(\mathscr{C}_1,\ \mathscr{C}_2,\ \mathscr{C}_3,\ldots,\mathscr{C}_n,\ldots \mathscr{C}\)</span> are <span class="math notranslate nohighlight">\(n+1\)</span> simple closed paths such that:</p>
@@ -755,19 +767,27 @@ I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z=\oint_{\mathscr{C}^*} \frac{1}{z-
 <li><p>Each <span class="math notranslate nohighlight">\(\mathscr{C}_i\)</span> lie in the exterior of <span class="math notranslate nohighlight">\(\mathscr{C}_j\)</span> for <span class="math notranslate nohighlight">\(i\neq j\)</span>; that is, the interior simple closed paths <span class="math notranslate nohighlight">\(\mathscr{C}_i\)</span> do not intersect.</p></li>
 </ol>
 <p>The group of paths <span class="math notranslate nohighlight">\(\mathscr{C}_i, \mathscr{C}\)</span> (<span class="math notranslate nohighlight">\(i=1,\ldots,n\)</span>) form a closed multiple annulus.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/MultipleAnnulus.png"><img alt="../../../../_images/MultipleAnnulus.png" src="../../../../_images/MultipleAnnulus.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">A multiple annulus enclosing singularities at <span class="math notranslate nohighlight">\(z=-1\)</span> and <span class="math notranslate nohighlight">\(z=2i\)</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">A multiple annulus enclosing singularities at <span class="math notranslate nohighlight">\(z=-1\)</span> and <span class="math notranslate nohighlight">\(z=2i\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Then, if <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on a closed multiple annulus determined by the closed paths <span class="math notranslate nohighlight">\(\mathscr{C}_1,\ \mathscr{C}_2,\ \mathscr{C}_3,\ldots,\mathscr{C}_n,\ \mathscr{C}\)</span>, then</p>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 13 </span> (multiple annulus theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on a closed multiple annulus determined by the closed paths <span class="math notranslate nohighlight">\(\mathscr{C}_1,\ \mathscr{C}_2,\ \mathscr{C}_3,\ldots,\mathscr{C}_n,\ \mathscr{C}\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{\mathscr{C}}f(z)\mathrm{d} z = \oint_{\mathscr{C}_1}f(z)\mathrm{d} z + \oint_{\mathscr{C}_2}f(z)\mathrm{d} z + \ldots + \oint_{\mathscr{C}_n}f(z)\mathrm{d} z,
 \]</div>
-<p>provided that the <span class="math notranslate nohighlight">\(n\)</span> paths are traversed in the same direction. This theorem is useful in the same way as above; <em>i.e.</em> if <span class="math notranslate nohighlight">\(f\)</span> has multiple singularities within <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>.</p>
-<p><strong>Example 4.4.2</strong> Consider the integral:</p>
+<p>provided that the <span class="math notranslate nohighlight">\(n\)</span> paths are traversed in the same direction.</p>
+</section>
+</div><p>This theorem is useful in the same way as above; <em>i.e.</em> if <span class="math notranslate nohighlight">\(f\)</span> has multiple singularities within <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>.</p>
+<div class="proof example admonition" id="example55">
+<p class="admonition-title"><span class="caption-number">Example 55 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the integral:</p>
 <div class="math notranslate nohighlight">
 \[
 	\oint_\mathscr{C}\frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z
@@ -781,8 +801,8 @@ I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z=\oint_{\mathscr{C}^*} \frac{1}{z-
 <p>as illustrated in the above Figure. Then, on the multiple closed annulus, the integrand is analytic since the singularities have been removed and the theorem gives:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	\oint_{\mathscr{C}} \frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z&amp;=&amp; \oint_{\mathscr{C}_1}\frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z \\
-	&amp;=&amp; \oint_{\mathscr{C}_1}\frac{3}{z+1} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{3}{z+1} \mathrm{d}  +\oint_{\mathscr{C}_1}\frac{4}{z+2i} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{4}{z-2i} \mathrm{d}  z.
+	\oint_{\mathscr{C}} \frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z&amp;= \oint_{\mathscr{C}_1}\frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{3}{z+1}+\frac{4}{z-2i} \mathrm{d} z \\
+	&amp;= \oint_{\mathscr{C}_1}\frac{3}{z+1} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{3}{z+1} \mathrm{d}  +\oint_{\mathscr{C}_1}\frac{4}{z+2i} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{4}{z-2i} \mathrm{d}  z.
 \end{split}\]</div>
 <p>Now, <span class="math notranslate nohighlight">\(\frac{1}{z-2i}\)</span> is analytic within and on <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span> and <span class="math notranslate nohighlight">\(\frac{3}{z+1}\)</span> is analytic within and on <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> so by Cauchy’s theorem, the second and third integrals are zero. The integral reduces to:</p>
 <div class="math notranslate nohighlight">
@@ -804,6 +824,7 @@ I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z=\oint_{\mathscr{C}^*} \frac{1}{z-
 	\oint_{\mathscr{C}_1}\frac{3}{z+1} \mathrm{d} z + \oint_{\mathscr{C}_2}\frac{4}{z-2i} \mathrm{d}  z=3(2i\pi )+4(2i\pi )=14i\pi.
 \]</div>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -837,7 +858,7 @@ I=\oint_\mathscr{C} \frac{1}{z-i} \mathrm{d} z=\oint_{\mathscr{C}^*} \frac{1}{z-
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Cauchy’s integral formula</p>
+            <p class="prev-next-title">4.4 Cauchy’s integral formula</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Chapter5/Chapter5Intro.html" title="next page">

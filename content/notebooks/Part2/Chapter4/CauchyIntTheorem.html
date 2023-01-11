@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -55,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Cauchy’s integral formula" href="CauchyIntForm.html" />
+    <link rel="next" title="4.4 Cauchy’s integral formula" href="CauchyIntForm.html" />
     <link rel="prev" title="4.2 The fundamental theorem of contour integration" href="FundamentalInt.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -640,43 +643,42 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter4/CauchyIntTheorem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="cauchy-s-integral-theorem">
 <h1>4.3 Cauchy’s integral theorem<a class="headerlink" href="#cauchy-s-integral-theorem" title="Permalink to this headline">#</a></h1>
+<p>We start by stating and proving an important result due to Cauchy.</p>
+<div class="proof theorem admonition" id="CIT">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span> (Cauchy’s integral theorem)</p>
+<section class="theorem-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at all points on and within a closed curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>, then</p>
 <div class="math notranslate nohighlight" id="equation-cauchysintegraltheorem">
-<span class="eqno">(52)<a class="headerlink" href="#equation-cauchysintegraltheorem" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(53)<a class="headerlink" href="#equation-cauchysintegraltheorem" title="Permalink to this equation">#</a></span>\[
 	\oint_\mathscr{C} f(z) \mathrm{d} z=0.
 \]</div>
-<p>This may be proved by simple application of Green’s theorem (which you have already studied) which states:</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. This may be proved by simple application of Green’s theorem (which you have already studied) which states:</p>
 <div class="math notranslate nohighlight" id="equation-greens">
-<span class="eqno">(53)<a class="headerlink" href="#equation-greens" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(54)<a class="headerlink" href="#equation-greens" title="Permalink to this equation">#</a></span>\[
 	\oint_\mathscr{C} f_1 \mathrm{d} x + f_2\mathrm{d} y = \iint_S\left( \frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y} \right)\mathrm{d} x\mathrm{d} y,
 \]</div>
-<p>for a closed curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> encompassing a surface <span class="math notranslate nohighlight">\(S\)</span>. Writing <span class="math notranslate nohighlight">\(f(z)=u(x,y)+iv(x,y)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{d} z=\mathrm{d} x + i \mathrm{d} y\)</span> in Equation eqref<code class="docutils literal notranslate"><span class="pre">Cauchysintegraltheorem</span></code></p>
+<p>for a closed curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> encompassing a surface <span class="math notranslate nohighlight">\(S\)</span>. Writing <span class="math notranslate nohighlight">\(f(z)=u(x,y)+iv(x,y)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{d} z=\mathrm{d} x + i \mathrm{d} y\)</span> in Equation <a class="reference internal" href="#equation-cauchysintegraltheorem">(53)</a></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 	I &amp;=&amp; \oint_\mathscr{C} (u+iv) (\mathrm{d} x + i \mathrm{d} y)\\
 	  &amp;=&amp; \oint_\mathscr{C} (u \mathrm{d} x - v\mathrm{d} y) + i\oint_\mathscr{C}(v \mathrm{d} x + u\mathrm{d} y),
 \end{split}\]</div>
-<p>and making the following associations: <span class="math notranslate nohighlight">\(u \leftrightarrow f_1\)</span>, <span class="math notranslate nohighlight">\(-v\leftrightarrow f_2\)</span> in the real part of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(u \leftrightarrow f_2\)</span>, <span class="math notranslate nohighlight">\(v\leftrightarrow f_1\)</span> in the imaginary part and invoking Green’s theorem eqref<code class="docutils literal notranslate"><span class="pre">Greens</span></code>:</p>
+<p>and making the following associations: <span class="math notranslate nohighlight">\(u \leftrightarrow f_1\)</span>, <span class="math notranslate nohighlight">\(-v\leftrightarrow f_2\)</span> in the real part of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(u \leftrightarrow f_2\)</span>, <span class="math notranslate nohighlight">\(v\leftrightarrow f_1\)</span> in the imaginary part and invoking Green’s theorem <a class="reference internal" href="#equation-greens">(54)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 	I &amp;=&amp; \oint_\mathscr{C} (u \mathrm{d} x - v\mathrm{d} y) + i\oint_\mathscr{C}(v \mathrm{d} x + u\mathrm{d} y),\\
 	  &amp;=&amp; \iint_D \left( \frac{\partial(-v)}{\partial x} - \frac{\partial u}{\partial y}\right) + i\left( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right) \mathrm{d} x\mathrm{d} y\\
 	  &amp;=&amp; 0\ \mbox{if $f$ is analytic.}
 \end{split}\]</div>
+</div>
 <p><strong>Remarks:</strong></p>
 <ol class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is not closed and the above conditions hold, the integral is dependent on the end points of <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> only.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f\)</span> contains singularities in the complex plane, eqref<code class="docutils literal notranslate"><span class="pre">Cauchysintegraltheorem</span></code> holds only if <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> does not contain those singularities</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f\)</span> contains singularities in the complex plane, <a class="reference internal" href="#equation-cauchysintegraltheorem">(53)</a> holds only if <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> does not contain those singularities</p></li>
 <li><p>The converse of Cauchy’s theorem is not necessarily true: if <span class="math notranslate nohighlight">\(f\)</span> isn’t analytic on <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>, <span class="math notranslate nohighlight">\(I\neq 0\)</span> is not necessarily true.</p></li>
 </ol>
-<br>
-<p><strong>Example 4.3.1</strong> Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \oint z ~\mathrm{d}z\)</span> on the unit circle</p>
-<p><strong>Solution</strong></p>
-<div class="math notranslate nohighlight">
-\[
-z = e^{i\theta} = \cos(\theta) + i\sin(\theta), \quad \mathrm{d}z = ie^{i\theta}\mathrm{d}\theta \mbox{ (via the chain rule)}  
-\]</div>
-<p>thus</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -689,39 +691,56 @@ z = e^{i\theta} = \cos(\theta) + i\sin(\theta), \quad \mathrm{d}z = ie^{i\theta}
 <p>follows by Cauchy’s integral theorem since <span class="math notranslate nohighlight">\(f(z) = z\)</span> is analytic</p>
 </div>
 </aside>
+<div class="proof example admonition" id="example50">
+<p class="admonition-title"><span class="caption-number">Example 50 </span></p>
+<section class="example-content" id="proof-content">
+<p>Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \oint z ~\mathrm{d}z\)</span> on the unit circle</p>
+<p><strong>Solution</strong></p>
+<div class="math notranslate nohighlight">
+\[
+z = e^{i\theta} = \cos(\theta) + i\sin(\theta), \quad \mathrm{d}z = ie^{i\theta}\mathrm{d}\theta \mbox{ (via the chain rule)}  
+\]</div>
+<p>thus</p>
 <div class="math notranslate nohighlight">
 \[
  \oint z \mathrm{d} z = \int_0^{2\pi} e^{i\theta}\ ie^{i\theta} \mathrm{d} \theta = \int_0^{2\pi}e^{2i\theta} i\mathrm{d} \theta = \frac{1}{2i}i e^{i\theta}\big|_0^{2}=\frac{1}{2}\left(e^{4i\pi}-1\right)=0,
 \]</div>
-<p>as expected</p>
-<br>
-<p><strong>Example 4.3.2</strong> Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \oint \overline{z} ~\mathrm{d}z\)</span> on the unit circle</p>
+<p>as expected.</p>
+</section>
+</div><div class="proof example admonition" id="example51">
+<p class="admonition-title"><span class="caption-number">Example 51 </span></p>
+<section class="example-content" id="proof-content">
+<p>Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \oint \overline{z} ~\mathrm{d}z\)</span> on the unit circle</p>
 <p><strong>Solution</strong></p>
 <div class="math notranslate nohighlight">
 \[
-\ov{z}&amp;=&amp;e^{-i\theta}=\cos\theta-i\sin\theta
+\overline{z} = e^{-i\theta}=\cos\theta-i\sin\theta
 \]</div>
 <p>thus</p>
 <div class="math notranslate nohighlight">
 \[
 \oint \overline{z} \mathrm{d} z = \int_0^{2\pi}e^{-i\theta}\ ie^{i\theta}\mathrm{d}\theta = \int_0^{2\pi} i \mathrm{d} \theta = 2i\pi \neq 0
 \]</div>
-<div class="admonition note">
+</section>
+</div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since <span class="math notranslate nohighlight">\(f(z) = \overline{z}\)</span> is <strong>not</strong> analytic Cauchy’s theorem doesn’t hold.</p>
 </div>
-<br>
-<p><strong>Example 4.3.3</strong> Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \oint z^{-n} ~\mathrm{d}z\)</span> on the unit circle</p>
+<div class="proof example admonition" id="example52">
+<p class="admonition-title"><span class="caption-number">Example 52 </span></p>
+<section class="example-content" id="proof-content">
+<p>Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \oint z^{-n} ~\mathrm{d}z\)</span> on the unit circle</p>
 <p><strong>Solution</strong> <span class="math notranslate nohighlight">\(z^{-n}\)</span> has an <span class="math notranslate nohighlight">\(n^{th}\)</span> order pole at <span class="math notranslate nohighlight">\(z=0\)</span>. This requires consideration of two cases:</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(n=1\)</span>: <span class="math notranslate nohighlight">\(z^{-n}=z^{-1}=e^{-i\theta}\)</span> and we already know that the integral equals <span class="math notranslate nohighlight">\(2i\pi\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n&gt;1\)</span>: The integral is:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[
-\oint {z}^{-n} \mathrm{d} z = \int_0^{2\pi} e^{-in\theta}\ ie^{i\theta}\mathrm{d}\theta = i \int_0^{2\pi} e^{i(1-n)\theta} \mathrm{d} \theta = \frac{1}{(1-n)}\left( e^{2i\pi(1-n)}-1\right)=0
-\]</div>
+\[\begin{split}
+\oint {z}^{-n} \mathrm{d} z = \int_0^{2\pi} e^{-in\theta}\ ie^{i\theta}\mathrm{d}\theta &amp;= i \int_0^{2\pi} e^{i(1-n)\theta} \mathrm{d} \theta\\ &amp;= \frac{1}{(1-n)}\left( e^{2i\pi(1-n)}-1\right)=0
+\end{split}\]</div>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -760,7 +779,7 @@ z = e^{i\theta} = \cos(\theta) + i\sin(\theta), \quad \mathrm{d}z = ie^{i\theta}
     <a class='right-next' id="next-link" href="CauchyIntForm.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cauchy’s integral formula</p>
+        <p class="prev-next-title">4.4 Cauchy’s integral formula</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

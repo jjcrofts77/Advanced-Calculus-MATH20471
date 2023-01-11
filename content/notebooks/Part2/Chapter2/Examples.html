@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -731,8 +734,11 @@ title="Print to PDF"
 <h1>2.3 Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h1>
 <section id="analytic-functions">
 <h2>Analytic functions<a class="headerlink" href="#analytic-functions" title="Permalink to this headline">#</a></h2>
-<p><strong>Example 2.3.1</strong> Show that <span class="math notranslate nohighlight">\(f(z)=z^2\)</span> is analytic everywhere.</p>
-<p><strong>Solution</strong></p>
+<div class="proof example admonition" id="example36">
+<p class="admonition-title"><span class="caption-number">Example 36 </span></p>
+<section class="example-content" id="proof-content">
+<p>Show that <span class="math notranslate nohighlight">\(f(z)=z^2\)</span> is analytic everywhere.</p>
+<div class="toggle docutils container">
 <div class="math notranslate nohighlight">
 \[
 f(z)=z^2=(x+iy)^2=x^2-y^2 + 2ixy
@@ -747,34 +753,46 @@ f(z)=z^2=(x+iy)^2=x^2-y^2 + 2ixy
 \[
 		\frac{\mathrm{d} f}{\mathrm{d} z}=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=-\frac{\partial v}{\partial y}+i\frac{\partial u}{\partial y}=2x+2iy=2z.
 \]</div>
-<br>
-<p><strong>Example 2.3.2</strong> Show that the function <span class="math notranslate nohighlight">\(f(z)=\overline{z}\)</span> is not analytic anywhere.</p>
-<p><strong>Solution</strong></p>
+</div>
+</section>
+</div><div class="proof example admonition" id="example37">
+<p class="admonition-title"><span class="caption-number">Example 37 </span></p>
+<section class="example-content" id="proof-content">
+<p>Show that the function <span class="math notranslate nohighlight">\(f(z)=\overline{z}\)</span> is not analytic anywhere.</p>
+<div class="toggle docutils container">
 <div class="math notranslate nohighlight">
 \[
- f(z)=\overline{z}\ \mbox{so}\ u=x,\ v=-y
+ f(z)=\overline{z}\quad \text{so}\quad u=x,\ v=-y
 \]</div>
 <p>Differentiating, we obtain</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial u}{\partial x}= 1,\ \frac{\partial v}{\partial x}= 0,\ \frac{\partial u}{\partial y}= 0,\ \frac{\partial v}{\partial y}= -1
+\frac{\partial u}{\partial x}= 1,~~ \frac{\partial v}{\partial x}= 0,~~ \frac{\partial u}{\partial y}= 0,~~ \frac{\partial v}{\partial y}= -1
 \]</div>
 <p>So the Cauchy-Riemann equations are not satisfied.</p>
-<br>
-<p><strong>Example 2.3.3</strong> Show that <em>Any</em> function of the form <span class="math notranslate nohighlight">\(f=f(z,\overline{z})\)</span> is not analytic</p>
-<p><strong>Solution</strong>
-This can be shown with little difficulty by treating <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(\overline{z}\)</span> as independent variables and using the chain rule of differentiation:</p>
+</div>
+</section>
+</div><div class="proof example admonition" id="example38">
+<p class="admonition-title"><span class="caption-number">Example 38 </span></p>
+<section class="example-content" id="proof-content">
+<p>Show that <em>Any</em> function of the form <span class="math notranslate nohighlight">\(f=f(z,\overline{z})\)</span> is not analytic</p>
+<div class="toggle docutils container">
+<p>This can be shown with little difficulty by treating <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(\overline{z}\)</span> as independent variables and using the chain rule of differentiation:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\mathrm{d}}{\mathrm{d} z}f(z,\overline{z}) = \frac{\partial f}{\partial z}\frac{\mathrm{d} z}{\mathrm{d} z}+\frac{\partial f}{\partial \overline{z}}\frac{\mathrm{d} \overline{z}}{\mathrm{d} z}
 \]</div>
-<p>Now, <span class="math notranslate nohighlight">\(\frac{\mathrm{d} \overline{z}}{\mathrm{d} z}\)</span> does not exist (see above!). The function <span class="math notranslate nohighlight">\(f(z,\overline{z})\)</span> is therefore not analytic.</p>
-<br>
+<p>Now, <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d} \overline{z}}{\mathrm{d} z}\)</span> does not exist (see above!). The function <span class="math notranslate nohighlight">\(f(z,\overline{z})\)</span> is therefore not analytic.</p>
+</div>
 </section>
+</div></section>
 <section id="harmonic-functions">
 <h2>Harmonic functions<a class="headerlink" href="#harmonic-functions" title="Permalink to this headline">#</a></h2>
-<p><strong>Example 2.3.4</strong> Show that the the function <span class="math notranslate nohighlight">\(f(z)=z^3\)</span> is harmonic</p>
-<p><strong>Solution</strong></p>
+<div class="proof example admonition" id="example39">
+<p class="admonition-title"><span class="caption-number">Example 39 </span></p>
+<section class="example-content" id="proof-content">
+<p>Show that the the function <span class="math notranslate nohighlight">\(f(z)=z^3\)</span> is harmonic</p>
+<div class="toggle docutils container">
 <p>Writing in terms of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -783,43 +801,54 @@ f(z)=(x+iy)^3=(x^3-3xy^2) + i(3x^2y-y^3) = u(x,y)+iv(x,y).
 <p>Then, differentiating:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\frac{\partial u}{\partial x}&amp;=&amp;3x^2-3y^2 	\Rightarrow \frac{\partial^2 u}{\partial x^2}=6x,\\
-\frac{\partial u}{\partial y}&amp;=&amp;-6xy 		\Rightarrow \frac{\partial^2 u}{\partial y^2}=-6x,\\
-\frac{\partial v}{\partial x}&amp;=&amp;6xy	 	\Rightarrow \frac{\partial^2 v}{\partial x^2}=6y,\\
-\frac{\partial v}{\partial y}&amp;=&amp;3x^2-3y^2	\Rightarrow \frac{\partial^2 v}{\partial y^2}=-6y,
+\frac{\partial u}{\partial x}&amp;=3x^2-3y^2 	&amp;\Rightarrow \frac{\partial^2 u}{\partial x^2}&amp;=6x,\\
+\frac{\partial u}{\partial y}&amp;=-6xy 		&amp;\Rightarrow \frac{\partial^2 u}{\partial y^2}&amp;=-6x,\\
+\frac{\partial v}{\partial x}&amp;=6xy	 	&amp;\Rightarrow \frac{\partial^2 v}{\partial x^2}&amp;=6y,\\
+\frac{\partial v}{\partial y}&amp;=3x^2-3y^2	&amp;\Rightarrow \frac{\partial^2 v}{\partial y^2}&amp;=-6y,
 \end{split}\]</div>
 <p>So <span class="math notranslate nohighlight">\(\nabla^2u=\nabla^2v=0\)</span> and the function is harmonic.</p>
-<br>
+</div>
 </section>
+</div></section>
 <section id="finding-a-function">
 <h2>Finding a function<a class="headerlink" href="#finding-a-function" title="Permalink to this headline">#</a></h2>
-<p><strong>Example 2.3.5</strong> If <span class="math notranslate nohighlight">\(u(x,y)=x(1-y)\)</span>, find <span class="math notranslate nohighlight">\(v\)</span></p>
-<p><strong>Solution</strong></p>
+<div class="proof example admonition" id="example40">
+<p class="admonition-title"><span class="caption-number">Example 40 </span></p>
+<section class="example-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(u(x,y)=x(1-y)\)</span>, find <span class="math notranslate nohighlight">\(v\)</span></p>
 <div class="toggle docutils container">
-<p>Firstly, <span class="math notranslate nohighlight">\(\frac{\partial^2 u}{\partial x^2}=\frac{\partial }{\partial x}(1)=0\)</span> and <span class="math notranslate nohighlight">\(\frac{\partial^2 u}{\partial y^2}=\frac{\partial }{\partial y}(-x)=0\)</span> so <span class="math notranslate nohighlight">\(u\)</span> satisfies Laplace’s equation and may therefore be taken as the real part of an analytic function.</p>
+<p>Firstly, <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2 u}{\partial x^2}=\frac{\partial }{\partial x}(1)=0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial^2 u}{\partial y^2}=\frac{\partial }{\partial y}(-x)=0\)</span> so <span class="math notranslate nohighlight">\(u\)</span> satisfies Laplace’s equation and may therefore be taken as the real part of an analytic function.</p>
 <p>Then Cauchy-Riemann:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}=1-y\ \mbox{and}\ \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}=x.
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}=1-y\quad \text{and}\quad \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}=x.
 \]</div>
 <p>Integrating each of the above to determine <span class="math notranslate nohighlight">\(v\)</span> provides:</p>
 <div class="math notranslate nohighlight">
 \[
-	v=\int 1-y \mathrm{d} y = y -\frac{y^2}{2} + h(x)\ \mbox{and}\ v=\int x \mathrm{d} x=\frac{x^2}{2} + g(y).
+	v=\int 1-y \mathrm{d} y = y -\frac{y^2}{2} + h(x)\quad \text{and}\quad v=\int x \mathrm{d} x=\frac{x^2}{2} + g(y).
 \]</div>
-<p>Equating the two expressions gives: <span class="math notranslate nohighlight">\(h(x)=\frac{x^2}{2}\)</span> and <span class="math notranslate nohighlight">\(g(y)=y-\frac{y^2}{2}\)</span> so the function is:</p>
+<p>Equating the two expressions gives: <span class="math notranslate nohighlight">\(\displaystyle h(x)=\frac{x^2}{2}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle g(y)=y-\frac{y^2}{2}\)</span> so the function is:</p>
 <div class="math notranslate nohighlight">
 \[
 f(z) = x(1-y) + i(\frac{x^2-y^2}{2}+y+k).
 \]</div>
 <p>Note that this is still only determined up to an additional arbitrary constant <span class="math notranslate nohighlight">\(k\)</span> (<strong>Exercise: do the differentiation of <span class="math notranslate nohighlight">\(v\)</span> to show why</strong>)</p>
 </div>
-<br>
 </section>
+</div></section>
 <section id="expressing-a-function-in-terms-of-z-given-x-and-y">
 <h2>Expressing a function in terms of <span class="math notranslate nohighlight">\(z\)</span> given <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#expressing-a-function-in-terms-of-z-given-x-and-y" title="Permalink to this headline">#</a></h2>
-<p><strong>Example 2.3.6</strong> <span class="math notranslate nohighlight">\(f_1=2x+3+2iy+4i\)</span>, <span class="math notranslate nohighlight">\(f_2=e^{-2x}\left(\cos(2y)-i\sin(2y)\right)\)</span>, <span class="math notranslate nohighlight">\(f_3=x-iy\)</span>; express <span class="math notranslate nohighlight">\(f_1,\ f_2\)</span> and <span class="math notranslate nohighlight">\(f_3\)</span> in terms of <span class="math notranslate nohighlight">\(z\)</span></p>
-<p><strong>Solution</strong></p>
+<div class="proof example admonition" id="example41">
+<p class="admonition-title"><span class="caption-number">Example 41 </span></p>
+<section class="example-content" id="proof-content">
+<p>Express each of the functions</p>
+<div class="math notranslate nohighlight">
+\[
+f_1=2x+3+2iy+4i,\quad f_2=e^{-2x}\left(\cos(2y)-i\sin(2y)\right)\quad \text{and}\quad f_3=x-iy
+\]</div>
+<p>in terms of <span class="math notranslate nohighlight">\(z\)</span></p>
+<div class="toggle docutils container">
 <p>In each case, taking <span class="math notranslate nohighlight">\(y=0\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[	
@@ -834,7 +863,9 @@ f_1(z)=2z+3+4i,\quad f_2(z)=e^{-2z},\quad f_3(z)=z
 <p class="admonition-title">Note</p>
 <p>The method hasn’t worked for <span class="math notranslate nohighlight">\(f_3\)</span>. Why not?</p>
 </div>
+</div>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

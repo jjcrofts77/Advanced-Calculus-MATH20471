@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,10 +657,12 @@ title="Print to PDF"
 	\frac{\partial u}{\partial x}=2x,\ \frac{\partial u}{\partial y}=0,\ \frac{\partial v}{\partial x}=0,\ \frac{\partial v}{\partial y}=-2y,
 \]</div>
 <p>and so the Cauchy-Riemann conditions not satisfied unless <span class="math notranslate nohighlight">\(y=-x\)</span>. So the first derivative exists only along that line. However, for any non-zero <span class="math notranslate nohighlight">\(\epsilon\)</span>, the neighbourhood of any <span class="math notranslate nohighlight">\(z_0\)</span> on the line <span class="math notranslate nohighlight">\(y=-x\)</span> contains points at which <span class="math notranslate nohighlight">\(f\)</span> is not analytic; the function <span class="math notranslate nohighlight">\(f(z)=x^2-iy^2\)</span> is nowhere analytic.</p>
-<br>
-<p><strong>Definition 3.0.1</strong> If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at every point within a set <span class="math notranslate nohighlight">\(S\in \mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is “analytic on <span class="math notranslate nohighlight">\(S\)</span>”. If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at every point within <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is “entire”.</p>
-<br>
-<p>We shall use these definitions throughout the course.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 13 </span> (analytic)</p>
+<section class="definition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at every point within a set <span class="math notranslate nohighlight">\(S\in \mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is “analytic on <span class="math notranslate nohighlight">\(S\)</span>”. If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic at every point within <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(f\)</span> is “entire”.</p>
+</section>
+</div><p>We shall use these definitions throughout the course.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

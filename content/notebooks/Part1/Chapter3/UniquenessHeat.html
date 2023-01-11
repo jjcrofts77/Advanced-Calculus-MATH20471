@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -641,13 +644,13 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="uniqueness-optional">
 <h1>3.4 Uniqueness (optional)<a class="headerlink" href="#uniqueness-optional" title="Permalink to this headline">#</a></h1>
 <p>We have constructed a solution of our IBVP, and found a formula for it as a sum of an infinite series, but is it the only solution?</p>
-<blockquote>
-<div><p><strong>Theorem 3.4.1</strong> The IBVP has only one solution.</p>
-</div></blockquote>
-<br>
-<blockquote>
-<div><p><strong>Proof</strong></p>
-<p>Let <span class="math notranslate nohighlight">\(U\)</span> be a solution of the same IBVP, <em>i.e.</em></p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 3 </span> (uniquness)</p>
+<section class="theorem-content" id="proof-content">
+<p>The IBVP has only one solution.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(U\)</span> be a solution of the same IBVP, <em>i.e.</em></p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial U}{\partial t} = \kappa\frac{\partial^2 U}{\partial x^2}, \quad 0&lt;x&lt;L, t&gt;0,
@@ -703,8 +706,8 @@ I'(t)=-\kappa\int_0^L\left(\frac{\partial W}{\partial x}\right)^2\mathrm{d}x\leq
 \[
 \int_0^L[W(x,t)]^2\mathrm{d}x=0,
 \]</div>
-<p>for every <span class="math notranslate nohighlight">\(t\geq 0\)</span> and so <span class="math notranslate nohighlight">\(W=0\)</span> and <span class="math notranslate nohighlight">\(U=T\)</span>, which proves the theorem. <span class="math notranslate nohighlight">\(\quad\blacksquare\)</span></p>
-</div></blockquote>
+<p>for every <span class="math notranslate nohighlight">\(t\geq 0\)</span> and so <span class="math notranslate nohighlight">\(W=0\)</span> and <span class="math notranslate nohighlight">\(U=T\)</span>, which proves the theorem.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

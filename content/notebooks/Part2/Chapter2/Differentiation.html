@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -640,52 +643,115 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter2/Differentiation.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="differentiation">
 <h1>2.1 Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline">#</a></h1>
-<blockquote>
-<div><p><strong>Definition 2.1.1</strong> If <span class="math notranslate nohighlight">\(f(z)\)</span> (<span class="math notranslate nohighlight">\(z=x+iy\)</span>) is a complex function, then <span class="math notranslate nohighlight">\(f\)</span> is said to be differentiable at a point <span class="math notranslate nohighlight">\(z\)</span> if:</p>
-</div></blockquote>
+<p>The definition of the complex derivative is similar to that of the derivative of a real-valued function.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 11 </span> (complex derivative )</p>
+<section class="definition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> (<span class="math notranslate nohighlight">\(z=x+iy\)</span>) is a complex function, then <span class="math notranslate nohighlight">\(f\)</span> is said to be differentiable at a point <span class="math notranslate nohighlight">\(z\)</span> if:</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{\Delta z\to 0} \frac{f(z+\Delta z)-f(z)}{\Delta z}
 \]</div>
-<blockquote>
-<div><p>exists <strong>and</strong> is independent of the manner that <span class="math notranslate nohighlight">\(\Delta z\)</span> approaches zero.</p>
-</div></blockquote>
+<p>exists <strong>and</strong> is independent of the manner that <span class="math notranslate nohighlight">\(\Delta z\)</span> approaches zero.</p>
+</section>
+</div><p>There are of course an infinite number of ways (some of which are shown in the applet below) with which we can approach <span class="math notranslate nohighlight">\(z_0\)</span> in the above limit. As noted above, the result should <em>not</em> depend on the choice of approach.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><center>
+<iframe scrolling="no" title="ZDeriv" src="https://www.geogebra.org/material/iframe/id/cnmcy7nh/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="700px" height="500px" style="border:0px;"> </iframe>
+</center>
+</div></div>
+</div>
 <p>Denoting the point of interest by <span class="math notranslate nohighlight">\(z_0\)</span> (and defining <span class="math notranslate nohighlight">\(z-z_0=\Delta z\)</span> in the normal way), an alternative and possibly more familiar notation is:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\mathrm{d}f}{\mathrm{d} z}\bigg|_{z=z_0}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.
 \]</div>
-<p>Given that <span class="math notranslate nohighlight">\(z\)</span> lies in the complex plane, there are many different ways which <span class="math notranslate nohighlight">\(z\)</span> can approach <span class="math notranslate nohighlight">\(z_0\)</span>. Again, <span class="math notranslate nohighlight">\(\tfrac{\mathrm{d} f}{\mathrm{d} z}\)</span> must be independent of these choices. We consider two separate cases:</p>
+<p>Given that <span class="math notranslate nohighlight">\(z\)</span> lies in the complex plane, there are many different ways which <span class="math notranslate nohighlight">\(z\)</span> can approach <span class="math notranslate nohighlight">\(z_0\)</span>. Again, <span class="math notranslate nohighlight">\(\tfrac{\mathrm{d} f}{\mathrm{d} z}\)</span> must be independent of these choices.</p>
+<br>
+<p>We consider two separate cases:</p>
 <ol>
 <li><p><strong><span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> along the line <span class="math notranslate nohighlight">\(z=x+iy_0\)</span>:</strong></p>
 <p>We approach <span class="math notranslate nohighlight">\(z_0\)</span> along the line <span class="math notranslate nohighlight">\(y=y_0\)</span>; <em>i.e.</em> <span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> implies 	<span class="math notranslate nohighlight">\(x\rightarrow x_0\)</span>. Then, using the above definition of the derivative</p>
+</li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=&amp;\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
-								&amp;=&amp;\lim_{z\to z_0}\frac{u(x,y_0)+iv(x,y_0) - u(x_0,y_0)-iv(x_0,y_0)}{x-x_0}\\
-								&amp;=&amp; \lim_{z\to z_0}\frac{u(x,y_0)-u(x_0,y_0)}{x-x_0} +i\frac{ v(x,y_0)-v(x_0,y_0)}{x-x_0}\\
-								&amp;=&amp; \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}
-	\end{split}\]</div>
-</li>
+	\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
+								&amp;=\lim_{z\to z_0}\frac{u(x,y_0)+iv(x,y_0) - u(x_0,y_0)-iv(x_0,y_0)}{x-x_0}\\
+								&amp;= \lim_{z\to z_0}\frac{u(x,y_0)-u(x_0,y_0)}{x-x_0} +i\frac{ v(x,y_0)-v(x_0,y_0)}{x-x_0}\\
+								&amp;= \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}
+\end{split}\]</div>
+<ol>
 <li><p><strong><span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> along the line <span class="math notranslate nohighlight">\(z=x_0+iy\)</span>:</strong></p>
 <p>We approach <span class="math notranslate nohighlight">\(z_0\)</span> along the line <span class="math notranslate nohighlight">\(x=x_0\)</span>; <em>i.e.</em> <span class="math notranslate nohighlight">\(z\rightarrow z_0\)</span> implies <span class="math notranslate nohighlight">\(y\rightarrow y_0\)</span>. Then, using the above definition of the derivative</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=&amp;\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
-								&amp;=&amp;\lim_{z\to z_0}\frac{u(x_0,y)+iv(x_0,y) - u(x_0,y_0)-iv(x_0,y_0)}{i(y-y_0)}\\
-								&amp;=&amp; \lim_{z\to z_0}-i\frac{u(x_0,y)-u(x_0,y_0)}{y-y_0} +\frac{ v(x_0,y)-v(x_0,y_0)}{y-y_0}\\
-								&amp;=&amp; \frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}\end{split}\]</div>
+	\frac{\mathrm{d} f}{\mathrm{d} z}\bigg|_{z=z_0}&amp;=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}\\
+								&amp;=\lim_{z\to z_0}\frac{u(x_0,y)+iv(x_0,y) - u(x_0,y_0)-iv(x_0,y_0)}{i(y-y_0)}\\
+								&amp;= \lim_{z\to z_0}-i\frac{u(x_0,y)-u(x_0,y_0)}{y-y_0} +\frac{ v(x_0,y)-v(x_0,y_0)}{y-y_0}\\
+								&amp;= \frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}\end{split}\]</div>
 </li>
 </ol>
 <br>
 <p>The same method works employing the <span class="math notranslate nohighlight">\(\Delta z\rightarrow 0\)</span> notation (<strong>Recommend you do this as an exercise</strong>).</p>
-<p>Now, comparing real and imaginary parts, we find that in order for the expressions to be equal, we must obey the <em>Cauchy-Riemann conditions</em>:</p>
+<p>Now, comparing real and imaginary parts, we find that in order for the expressions to be equal, the <em>Cauchy-Riemann conditions</em> must be satisfied:</p>
 <div class="math notranslate nohighlight" id="equation-cr">
 <span class="eqno">(51)<a class="headerlink" href="#equation-cr" title="Permalink to this equation">#</a></span>\[
 	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\quad \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
 \]</div>
 <p>These equations are key to complex analysis and have a number of important ramifications. Above, we have shown that they are necessary conditions for functions of a complex variable to be analytic (<em>i.e.</em> differentiable). Note that the converse result is false, unless the partial derivatives in <a class="reference internal" href="#equation-cr">(51)</a> are continuous.</p>
+<div class="proof theorem admonition" id="CRTheorem">
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span> (Cauchy-Riemann equations)</p>
+<section class="theorem-content" id="proof-content">
+<p>A complex-valued fuinction</p>
+<div class="math notranslate nohighlight">
+\[
+f(z) = u(x,y)+iv(x,y)
+\]</div>
+<p>is differentiable if and only if its real and imaginary parts are continuously differentiable and satisfy the Cauchy-Riemann equations given by</p>
+<div class="math notranslate nohighlight">
+\[
+ u_x=v_y, \quad u_y=-v_x
+\]</div>
+<p>In this case the complex derivative of <span class="math notranslate nohighlight">\(f(z)\)</span> is given by the following equivalent expressions</p>
+<div class="math notranslate nohighlight">
+\[
+f'(z) = u_x+iv_x = v_y-iu_y.
+\]</div>
 </section>
+</div><p>Fortunately, complex differentiation follows the same set of rules that we learnt for real-valued functions, and so, for example, we have the results</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}}{\mathrm{d}z}z^n = nz^{n-1}, \quad	\frac{\mathrm{d}}{\mathrm{d}z} e^{\alpha z} = \alpha e^{\alpha z},  \quad \frac{\mathrm{d}}{\mathrm{d}z}\log(z) = \frac{1}{z},  \quad etc.
+\]</div>
+<p>It should also be clear that one can determine the derivatives of complex trigonometric and hyperbolic functions using Euler’s formula (<strong>exercise</strong>) as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\mathrm{d}}{\mathrm{d}z} \sin{z} &amp;= \cos{z}\quad \frac{\mathrm{d}}{\mathrm{d}z} \cos{z} &amp;= -\sin{z}\\
+\frac{\mathrm{d}}{\mathrm{d}z} \sinh{z} &amp;= \cosh{z}\quad \frac{\mathrm{d}} {\mathrm{d}z} \cosh{z} &amp;=-\sinh{z}. 
+\end{split}\]</div>
+<p>In addition to this, the formulae for computing the derivatives of sums, products, ratios and compositions remain the same! (<em>i.e.</em> no need to learn any new rules!)</p>
+<div class="proof example admonition" id="example35">
+<p class="admonition-title"><span class="caption-number">Example 35 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the function <span class="math notranslate nohighlight">\(f(z) = z^2-z\)</span>, which can be written</p>
+<div class="math notranslate nohighlight">
+\[
+z^2 = (x^2-x-y^2) + iy(2x-1).
+\]</div>
+<p>Its real part <span class="math notranslate nohighlight">\(u=x^2-x-y^2\)</span> and imaginary part <span class="math notranslate nohighlight">\(v=y(2x-1)\)</span> satisfy the Cauchy-Riemann equations, since</p>
+<div class="math notranslate nohighlight">
+\[
+u_x = 2x-1 =v_y \quad \text{and} \quad v_x = 2y = -u_y.
+\]</div>
+<p><a class="reference internal" href="#CRTheorem">Theorem 7</a> implies that <span class="math notranslate nohighlight">\(f(z) = z^2-z\)</span> is differentiable with derivative given by</p>
+<div class="math notranslate nohighlight">
+\[
+f'(z) = u_x+iv_x = v_y-iu_y = (2x-1) + 2iy = 2z-1.
+\]</div>
+</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -707,8 +710,10 @@ title="Print to PDF"
 T(r,\theta) = \left(Ar^n+Br^{-n}\right)\left[C\cos(n\theta)+D\sin(n\theta)\right],
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is a positive integer and <span class="math notranslate nohighlight">\(A, B, C, D\)</span> are arbitrary constants. The solutions <span class="math notranslate nohighlight">\(\log{r}, r^{-n}\cos(n\theta), r^{-n}\sin(n\theta)\)</span> are not defined at <span class="math notranslate nohighlight">\(r=0\)</span> and so are not admissible if the origin belongs to the domain in which <span class="math notranslate nohighlight">\(T\)</span> is defined.</p>
-<br>
-<p><strong>Example 5.2.1</strong> Find <span class="math notranslate nohighlight">\(T\)</span> so as to satisfy Laplace’s equation in the annulus <span class="math notranslate nohighlight">\(a&lt;r&lt;b\)</span> and the boundary conditions</p>
+<div class="proof example admonition" id="example31">
+<p class="admonition-title"><span class="caption-number">Example 31 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find <span class="math notranslate nohighlight">\(T\)</span> so as to satisfy Laplace’s equation in the annulus <span class="math notranslate nohighlight">\(a&lt;r&lt;b\)</span> and the boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[
  T=T_0 \text{ on } r=a, \quad T=T_1 \text{ on } r=b,
@@ -729,8 +734,11 @@ A=\frac{T_0\log(b)-T_1\log(a)}{\log(b/a)},\quad B=\frac{T_1-T_0}{\log(b/a)},
 \[
  T(r,\theta) = \frac{T_0\log(b)-T_1\log(a)}{\log(b/a)}+\frac{T_1-T_0}{\log(b/a)}\log(r).
 \]</div>
-<br>
-<p><strong>Example 5.2.2</strong> A conductor occupies the region <span class="math notranslate nohighlight">\(r\leq a\)</span> and the temperature satisfies the boundary condition <span class="math notranslate nohighlight">\(T(a,\theta)=\sin^3(\theta)\)</span>. Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> in <span class="math notranslate nohighlight">\(r&lt;a\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example32">
+<p class="admonition-title"><span class="caption-number">Example 32 </span></p>
+<section class="example-content" id="proof-content">
+<p>A conductor occupies the region <span class="math notranslate nohighlight">\(r\leq a\)</span> and the temperature satisfies the boundary condition <span class="math notranslate nohighlight">\(T(a,\theta)=\sin^3(\theta)\)</span>. Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> in <span class="math notranslate nohighlight">\(r&lt;a\)</span>.</p>
 <p>Note that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -741,8 +749,8 @@ A=\frac{T_0\log(b)-T_1\log(a)}{\log(b/a)},\quad B=\frac{T_1-T_0}{\log(b/a)},
 \[
 T = \frac{3}{4}\left(\frac{r}{a}\right)\sin(\theta)-\frac{1}{4}\left(\frac{r}{a}\right)^3\sin(3\theta).
 \]</div>
-<br>
-<section id="application-of-fourier-series">
+</section>
+</div><section id="application-of-fourier-series">
 <h2>Application of Fourier Series<a class="headerlink" href="#application-of-fourier-series" title="Permalink to this headline">#</a></h2>
 <p>We wish to find <span class="math notranslate nohighlight">\(T\)</span> so as to satisfy Laplace’s equation in the disc <span class="math notranslate nohighlight">\(0\leq r&lt;a\)</span> and the boundary condition <span class="math notranslate nohighlight">\(T=f(\theta)\)</span> on <span class="math notranslate nohighlight">\(r=a, (0\leq \theta\leq 2\pi)\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is a prescribed function. Here the solution is of the form</p>
 <div class="math notranslate nohighlight">
@@ -761,8 +769,10 @@ A&amp;=\frac{1}{2\pi}\int_0^{2\pi}f(\theta)\mathrm{d}\theta,\\
 C_n &amp;=\frac{1}{\pi a^n}\int_0^{2\pi}f(\theta)\cos(n\theta)\mathrm{d}\theta\\
 D_N&amp;=\frac{1}{\pi a^n}\int_0^{2\pi}f(\theta)\sin(n\theta)\mathrm{d}\theta.
 \end{split}\]</div>
-<br>
-<p><strong>Example 5.2.3</strong> Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> so as to satisfy Laplace’s equation in the disc <span class="math notranslate nohighlight">\(r&lt;a\)</span> and the boundary condition</p>
+<div class="proof example admonition" id="example33">
+<p class="admonition-title"><span class="caption-number">Example 33 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find <span class="math notranslate nohighlight">\(T(r,\theta)\)</span> so as to satisfy Laplace’s equation in the disc <span class="math notranslate nohighlight">\(r&lt;a\)</span> and the boundary condition</p>
 <div class="math notranslate nohighlight">
 \[
  T(a,\theta) = |\sin(\theta)|,\quad 0\leq \theta\leq 2\pi.
@@ -785,6 +795,7 @@ D_n&amp;= \frac{1}{\pi a^n}\int_0^{2\pi}|\sin\theta|\sin(n\theta)\mathrm{d}\thet
 T(r,\theta) = \frac{2}{\pi}-\frac{4}{\pi}\sum_{n=1}^\infty\left(\frac{r}{a}\right)^{2n}\frac{\cos(2n\theta)}{4n^2-1}.
 \]</div>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

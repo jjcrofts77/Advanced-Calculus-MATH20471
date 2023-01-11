@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -653,7 +656,7 @@ title="Print to PDF"
 \]</div>
 <p>Integrating around the path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-res-pathint">
-<span class="eqno">(56)<a class="headerlink" href="#equation-res-pathint" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(58)<a class="headerlink" href="#equation-res-pathint" title="Permalink to this equation">#</a></span>\[
  	\oint_\mathscr{C} f(z) \mathrm{d} z = \sum_{n=0}^\infty \oint_\mathscr{C} a_n(z-z_0)^n \mathrm{d} z+ \sum_{n=-\infty}^{-1} \oint_\mathscr{C}  b_n(z-z_0)^n \mathrm{d} z. 
 \]</div>
 <p>Now, we have already proved that</p>
@@ -664,7 +667,7 @@ title="Print to PDF"
 			 0&amp; \mbox{if}\ n\neq 1.
 	\end{cases}
 \end{split}\]</div>
-<p>(This was additionally used in the “Laurent coefficients by direct integration” section. To remind you, this is easy enough to show if you convert to exponential form and then notice that <span class="math notranslate nohighlight">\(\displaystyle\int_{0}^{2\pi}e^{i l \theta}\mathrm{d} \theta\)</span> is only nonzero if <span class="math notranslate nohighlight">\(l=0\)</span>, in which case it’s <span class="math notranslate nohighlight">\(2\pi\)</span>) So, the <em>only</em> non-zero term in eqref<code class="docutils literal notranslate"><span class="pre">res_pathint</span></code> is the <span class="math notranslate nohighlight">\(b_{-1}\)</span> term in the second sum. The integral is therefore:</p>
+<p>(This was additionally used in the “Laurent coefficients by direct integration” section. To remind you, this is easy enough to show if you convert to exponential form and then notice that <span class="math notranslate nohighlight">\(\displaystyle\int_{0}^{2\pi}e^{i l \theta}\mathrm{d} \theta\)</span> is only nonzero if <span class="math notranslate nohighlight">\(l=0\)</span>, in which case it’s <span class="math notranslate nohighlight">\(2\pi\)</span>) So, the <em>only</em> non-zero term in <a class="reference internal" href="#equation-res-pathint">(58)</a> is the <span class="math notranslate nohighlight">\(b_{-1}\)</span> term in the second sum. The integral is therefore:</p>
 <div class="math notranslate nohighlight">
 \[
  	\oint_\mathscr{C} f(z) \mathrm{d} z = 2i\pi b_{-1}.
@@ -680,12 +683,17 @@ title="Print to PDF"
 \[
  \oint_\mathscr{C}f(z)\mathrm{d} z = 2\pi i \mathrm{Res}(f;z_0)
 \]</div>
-<p>By simple analogy with the above, we define <strong>Cauchy’s residue theorem</strong>: If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic inside and on a simple closed path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>, except at a finite number of <em>isolated singularities</em> of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(z_0,\ z_1, \ldots ,\ z_m\)</span>, then</p>
+<p>By simple analogy with the above, we define <em>Cauchy’s residue theorem</em>.</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 15 </span> (Cauchy’s residue theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic inside and on a simple closed path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>, except at a finite number of <em>isolated singularities</em> of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(z_0,\ z_1, \ldots ,\ z_m\)</span>, then</p>
 <div class="math notranslate nohighlight" id="equation-residuetheorem">
-<span class="eqno">(57)<a class="headerlink" href="#equation-residuetheorem" title="Permalink to this equation">#</a></span>\[
- 	\oint_\mathscr{C}f(z)\mathrm{d} z = 2\pi i \sum_{n=0}^m \mathrm{Res}(f;z_n).
+<span class="eqno">(59)<a class="headerlink" href="#equation-residuetheorem" title="Permalink to this equation">#</a></span>\[
+ 	\oint_\mathscr{C}f(z)\,\mathrm{d} z = 2\pi i \sum_{n=0}^m \mathrm{Res}(f;z_n).
 \]</div>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -726,8 +729,10 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
 \]</div>
 <p>Thus if equation <a class="reference internal" href="#equation-fseq">(11)</a> holds, then we know <span class="math notranslate nohighlight">\(a_0\)</span>.</p>
 <br>
-<blockquote>
-<div><p><strong>Lemma 2.2.1:</strong> Let <span class="math notranslate nohighlight">\(n, m\in\mathbb{N}\backslash 0\)</span>. We then have the following equalities:</p>
+<div class="proof lemma admonition" id="lemma1">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(n, m\in\mathbb{N}\backslash 0\)</span>. We then have the following equalities:</p>
 <div class="math notranslate nohighlight" id="equation-sceq">
 <span class="eqno">(12)<a class="headerlink" href="#equation-sceq" title="Permalink to this equation">#</a></span>\[
 \int_{-\pi}^\pi \sin(mx)\cos(nx)\mathrm{d}x = 0,
@@ -745,10 +750,9 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
 \[\begin{split}
  \delta_{mn} = \begin{cases}0&amp; n\neq m\\1&amp;n=m.\end{cases}
 \end{split}\]</div>
-</div></blockquote>
-<blockquote>
-<div><p><strong>Proof</strong></p>
-<p>Equation <a class="reference internal" href="#equation-sceq">(12)</a> is trivial as <span class="math notranslate nohighlight">\(\sin(mx)\cos(nx)\)</span> is odd. For equation <a class="reference internal" href="#equation-sseq">(13)</a> we compute, for <span class="math notranslate nohighlight">\(n\neq m\)</span>,</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Equation <a class="reference internal" href="#equation-sceq">(12)</a> is trivial as <span class="math notranslate nohighlight">\(\sin(mx)\cos(nx)\)</span> is odd. For equation <a class="reference internal" href="#equation-sseq">(13)</a> we compute, for <span class="math notranslate nohighlight">\(n\neq m\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_{-\pi}^\pi\sin(mx)\sin(nx)\mathrm{d}x &amp;= \frac{1}{2}\int_{-\pi}^\pi\left[-\cos((m+n)x)+\cos((m-n)x)\right]\mathrm{d}x\\
@@ -760,16 +764,15 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
 \[
  \int_{-\pi}^\pi\sin(nx)\sin(mx)\mathrm{d}x = \int_{-\pi}^\pi\frac{1-\cos(2nx)}{2}\mathrm{d}x = \frac{1}{2}\left[x-\frac{\sin(2nx)}{2n}\right] = \pi
  \]</div>
-<p>Similar computations yield equation <a class="reference internal" href="#equation-cceq">(14)</a>. <span class="math notranslate nohighlight">\(\quad\blacksquare\)</span></p>
-</div></blockquote>
-<br>
+<p>Similar computations yield equation <a class="reference internal" href="#equation-cceq">(14)</a>.</p>
+</div>
 <p>Thus to find <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span>, we assume equation <a class="reference internal" href="#equation-fseq">(11)</a> is true. Multiplying both sides by <span class="math notranslate nohighlight">\(\cos(mx)\)</span> and integrating term-wise gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x =\frac{1}{2}a_0&amp;\int_{-\pi}^\pi \cos(mx)\mathrm{d}x\\&amp;+\sum_{n=1}^\infty a_n\int_{-\pi}^\pi\cos(nx)\cos(mx)\mathrm{d}x\\
 &amp;+\sum_{n=1}^\infty b_n\int_{-\pi}^\pi \sin(nx)\cos(mx)\mathrm{d}x.
 \end{split}\]</div>
-<p>The first term on the RHS is equal to zero (by symmetry) for <span class="math notranslate nohighlight">\(m\neq 0\)</span>. Using Lemma 2.1 for the remaining terms gives</p>
+<p>The first term on the RHS is equal to zero (by symmetry) for <span class="math notranslate nohighlight">\(m\neq 0\)</span>. Using <a class="reference internal" href="#lemma1">Lemma 1</a> for the remaining terms gives</p>
 <div class="math notranslate nohighlight">
 \[
  \int_{-\pi}^\pi f(x)\cos(mx)\mathrm{d}x = \sum_{n=1}^\infty a_n\pi\delta_{nm} = \pi a_m,
@@ -786,8 +789,10 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
  b_m = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(mx)\mathrm{d}x.
 \]</div>
 <br>
-<blockquote>
-<div><p><strong>Definition 2.2.1:</strong> Suppose <span class="math notranslate nohighlight">\(f\)</span> is such that</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Fourier series)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose <span class="math notranslate nohighlight">\(f\)</span> is such that</p>
 <div class="math notranslate nohighlight">
 \[
  a_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)\mathrm{d}x, \qquad b_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(nx)\mathrm{d}x,
@@ -798,9 +803,11 @@ a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.
  f(x)\sim \frac{1}{2}a_0 + \sum_{n=1}^\infty \left[a_n\cos(nx) + b_n\sin(nx)\right],
 \]</div>
 <p>and call the series on the right-hand side the <em>Fourier series</em> for <span class="math notranslate nohighlight">\(f\)</span>, whether or not it converges to <span class="math notranslate nohighlight">\(f\)</span>. The constants <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> are called <em>Fourier coefficients</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
-</div></blockquote>
-<br>
-<p><strong>Example 2.2.1</strong>  Find the Fourier series of the function <span class="math notranslate nohighlight">\(f\)</span> which is periodic of period <span class="math notranslate nohighlight">\(2\pi\)</span> and such that</p>
+</section>
+</div><div class="proof example admonition" id="example15">
+<p class="admonition-title"><span class="caption-number">Example 15 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Fourier series of the function <span class="math notranslate nohighlight">\(f\)</span> which is periodic of period <span class="math notranslate nohighlight">\(2\pi\)</span> and such that</p>
 <div class="math notranslate nohighlight">
 \[
  f(x) = |x|, \quad x\in(-\pi, \pi].
@@ -838,7 +845,8 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
  f(t) \sim \frac{\pi}{2} + \sum_{m=0}^\infty{\frac{-4}{\pi(2m+1)^2}\cos{\left((2m+1)x\right)}}.
 \]</div>
 <p>Below we use Python to plot the FS approximations (with 1, 2 and 3 terms) of <span class="math notranslate nohighlight">\(|x|\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
-<div class="cell tag_hide-input docutils container">
+</section>
+</div><div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -905,12 +913,14 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
 <p>Recall question 2: with these <span class="math notranslate nohighlight">\(a_n, b_n\)</span> when, if ever, is equation (1) true? Consider what happens in the following example.</p>
-<br>
-<p><strong>Example 2.2.2</strong> Find the Fourier series of the function <span class="math notranslate nohighlight">\(f\)</span> which is periodic of period <span class="math notranslate nohighlight">\(2\pi\)</span> and such that</p>
 <aside class="margin sidebar">
 <p class="sidebar-title">Square Wave Function</p>
 <img alt="../../../../_images/SquareWave.png" src="../../../../_images/SquareWave.png" />
 </aside>
+<div class="proof example admonition" id="example16">
+<p class="admonition-title"><span class="caption-number">Example 16 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Fourier series of the function <span class="math notranslate nohighlight">\(f\)</span> which is periodic of period <span class="math notranslate nohighlight">\(2\pi\)</span> and such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
  f(x) = \begin{cases}
@@ -949,7 +959,8 @@ a_{2m} = \frac{2((-1)^{2m}-1)}{\pi(2m)^2} = 0.
 \[
  f(x) \sim \frac{4}{\pi}\sum_{m=0}^\infty \frac{1}{2m+1}\sin\left((2m+1)x\right).
 \]</div>
-<p>Consider question 2 for this case: when is</p>
+</section>
+</div><p>Consider question 2 for this case: when is</p>
 <div class="math notranslate nohighlight">
 \[
  f(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty \left[a_n\cos(nx)+b_n\sin(nx)\right]?
@@ -966,7 +977,7 @@ s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
 \]</div>
 <p>The question is therefore, does <span class="math notranslate nohighlight">\(s_n(x)\)</span> converge for each <span class="math notranslate nohighlight">\(x\)</span>? If it does, is the limit <span class="math notranslate nohighlight">\(f(x)\)</span>?</p>
 <br>
-<p>The python script below (click the tab to view it) plots an approximation of the square wave function (shown in blue) consisting of 2, 4 and 6 terms of the Fourier series in <a class="reference internal" href="#equation-fsex2">(15)</a>. We see that the FS appears to be converging to the function as we increase the number of terms although not as quickly as the series in Example 2.2.1. In particular, there appears to be an issue at zero…</p>
+<p>The python script below (click the tab to view it) plots an approximation of the square wave function (shown in blue) consisting of 2, 4 and 6 terms of the Fourier series in <a class="reference internal" href="#equation-fsex2">(15)</a>. We see that the FS appears to be converging to the function as we increase the number of terms, although not as quickly as the series in <a class="reference internal" href="#example16">Example 16</a>. In particular, there appears to be an issue at zero…</p>
 <aside class="margin sidebar">
 <p class="sidebar-title">Note</p>
 <p>The slower convergence shouldn’t be too surprising given that the square wave function is discontinuous at <span class="math notranslate nohighlight">\(x=0\)</span>. We shall return to this issue later on in the course.</p>
@@ -1020,13 +1031,15 @@ s_n(x) = \frac{4}{\pi}\sum_{m=0}^n\frac{\sin\left((2m+1)x\right)}{2m+1}.
 </figcaption>
 </figure>
 </aside>
-<p><strong>Example 2.2.3</strong> Find the Fourier series of the function</p>
+<div class="proof example admonition" id="example 17">
+<p class="admonition-title"><span class="caption-number">Example 17 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Fourier series of the function</p>
 <div class="math notranslate nohighlight" id="equation-ex223">
 <span class="eqno">(16)<a class="headerlink" href="#equation-ex223" title="Permalink to this equation">#</a></span>\[
 f(x) = x^2,\quad x\in[-\pi, \pi]
 \]</div>
 <p>such that <span class="math notranslate nohighlight">\(f(x) = f(x+2\pi)\)</span> outside of this region.</p>
-<p><strong>Solution</strong></p>
 <div class="toggle docutils container">
 <p>Since the function is even we know that <span class="math notranslate nohighlight">\(b_n=0, \forall n\)</span>.</p>
 <p>Now,</p>
@@ -1050,7 +1063,8 @@ a_n &amp;=\frac{2}{\pi}\int_{0}^\pi x^2\cos(nx)\mathrm{d}x\\
 f(x) = \frac{\pi^2}{3} + \sum_{n=1}^\infty \frac{4(-1)^n}{n^2}\cos(nx).
 \]</div>
 </div>
-<p>Below we use Python to plot the FS approximations (with 2, 4 and 6 terms) of <span class="math notranslate nohighlight">\(x^2\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
+</section>
+</div><p>Below we use Python to plot the FS approximations (with 2, 4 and 6 terms) of <span class="math notranslate nohighlight">\(x^2\)</span> (shown in blue) on the range <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span>. We see that it is in excellent agreement.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python modules (maths + plotting)</span>

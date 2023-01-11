@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -753,7 +756,7 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\overline{z}=x-iy\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z\overline{z}=x^2+y^2\)</span>. <strong>This is REAL.</strong></p></li>
 <li><p><span class="math notranslate nohighlight">\(\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\overline{z_1 z_2} = \overline{z_1}\, \overline{z_2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{z_1 z_2} = \overline{z_1} \cdot \overline{z_2}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(|\overline{z}|=|{z}|\)</span></p></li>
 </ul>
 </li>
@@ -846,18 +849,21 @@ z^n=r^n e^{in\theta}.
 <p class="admonition-title">Note</p>
 <p>The result <span class="math notranslate nohighlight">\(e^{in\theta}=\cos(n\theta)+i\sin(n\theta)\)</span> is known as <strong>DeMoivre’s theorem</strong>.</p>
 </div>
-<br>
 </section>
 <section id="curves-and-regions-in-the-complex-plane">
 <h2>Curves and regions in the complex plane<a class="headerlink" href="#curves-and-regions-in-the-complex-plane" title="Permalink to this headline">#</a></h2>
-<p><strong>Example 1.1.1</strong> The equation of a circle.</p>
+<div class="proof example admonition" id="example34">
+<p class="admonition-title"><span class="caption-number">Example 34 </span></p>
+<section class="example-content" id="proof-content">
+<p>The equation of a circle.</p>
 <p>In Cartesian coordinates, the equation of a circle with radius <span class="math notranslate nohighlight">\(R\)</span>, centred on <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[
 	(x-x_0)^2 + (y-y_0)^2=R^2,
 \]</div>
 <p>which, in complex form is: <span class="math notranslate nohighlight">\(|z-z_0|=R\)</span>, where <span class="math notranslate nohighlight">\(z_0=x_0+iy_0\)</span>. Employing the exponential notation above, this may also be written in the compact form: <span class="math notranslate nohighlight">\(z=z_0+Re^{i\theta}\)</span>.</p>
-<p>By simple extension, regions in the complex plane may be defined via inequalities such as: <span class="math notranslate nohighlight">\(a&lt;|z-z_0|&lt;b\)</span>.</p>
+</section>
+</div><p>By simple extension, regions in the complex plane may be defined via inequalities such as: <span class="math notranslate nohighlight">\(a&lt;|z-z_0|&lt;b\)</span>.</p>
 <figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/ConcentricCircles.png"><img alt="../../../../_images/ConcentricCircles.png" src="../../../../_images/ConcentricCircles.png" style="height: 350px;" /></a>
 <figcaption>

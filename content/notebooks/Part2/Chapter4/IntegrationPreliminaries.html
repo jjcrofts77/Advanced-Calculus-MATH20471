@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -640,9 +643,7 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter4/IntegrationPreliminaries.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="prelminary-definitions">
 <h1>4.1 Prelminary definitions<a class="headerlink" href="#prelminary-definitions" title="Permalink to this headline">#</a></h1>
-<ol class="simple">
-<li><p>A path in the complex plane is a continuous function</p></li>
-</ol>
+<p>A path in the complex plane is a continuous function</p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{C}(t)=x(t)+iy(t);\quad a\leqslant t\leqslant b;\quad a,b\in \mathbb{R}	
@@ -659,6 +660,61 @@ title="Print to PDF"
 <li><p>A simple closed path does not cross itself</p></li>
 <li><p>The opposite path <span class="math notranslate nohighlight">\(-\mathscr{C}\)</span> is the path traversed in the opposite direction: <span class="math notranslate nohighlight">\(-\mathscr{C}(t)=\mathscr{C}(a+b-t)\)</span>.</p></li>
 </ol>
+<p>See Figure <a class="reference internal" href="#simple"><span class="std std-numref">Fig. 26</span></a> below for a graphical illustration of what it means for a curve to be simple and/or closed.</p>
+<figure class="align-default" id="simple">
+<a class="reference internal image-reference" href="../../../../_images/SimpleVsNonSimple.png"><img alt="../../../../_images/SimpleVsNonSimple.png" src="../../../../_images/SimpleVsNonSimple.png" style="width: 499.2px; height: 466.79999999999995px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">A plot illustrating the difference between simple and non-simple curves</span><a class="headerlink" href="#simple" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The applet below traces a curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> connecting the points <span class="math notranslate nohighlight">\(z(0) = z_1=-2+2i~\)</span> and <span class="math notranslate nohighlight">\(~z(1) = z_2 = 2+2i\)</span>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><figure>
+<center>
+<iframe scrolling="no" title="TraceCurveAnim" src="https://www.geogebra.org/material/iframe/id/jrw9nvsy/width/500/height/350/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="500px" height="350px" style="border:0px;"> </iframe>
+<figcaption style="position: center; bottom: 0; height: 10%; width 10%">Paramaterisation of a curve in the complex plane (<b>click on the magenta circle!!!</b>)</figcaption>
+</center>
+</figure>
+</div></div>
+</div>
+<p>The curve <span class="math notranslate nohighlight">\(z(t)\)</span> in the above GeoGebra applet is given by the equation</p>
+<div class="math notranslate nohighlight">
+\[
+ z(t) = (t-2) + i(2+e^{-\frac{1}{2}t}\sin{\pi t}),\quad t\in[0, 4].
+\]</div>
+<br>
+<p>A curve that will arise frequently in this chapter is the unit circle, which is given by the paramaterisation:</p>
+<div class="math notranslate nohighlight">
+\[
+z(t) = e^{it} = \cos(t)+i\sin(t), \quad t\in[0, 2\pi].
+\]</div>
+<p>This curve is illustrated in the following applet.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><figure>
+<center>
+<iframe scrolling="no" title="ParamUnitCircle" src="https://www.geogebra.org/material/iframe/id/c57x97jq/width/500/height/350/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="500px" height="350px" style="border:0px;"> </iframe>
+<figcaption style="position: center; bottom: 0; height: 10%; width 10%">Paramaterisation of the unit circle (<b>click on the magenta circle!!!</b>)</figcaption>
+</center>
+</figure>
+</div></div>
+</div>
+<p>In the above applet, the curve is traced out in the positive direction (<em>i.e.</em> it is positively oriented).</p>
+<br>
+<p>Note that paramaterisations are not unique and so, for example, the following parametrisations of the unit circle are all equivalent:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1(t) &amp;= e^{it}        &amp;=&amp; \cos{t}+i\sin{t},\quad &amp;t\in[0,2\pi]\\
+z_2(t) &amp;= e^{2\pi it}   &amp;=&amp; \cos{2\pi t}+i\sin{2\pi t},\quad &amp;t\in[0,1]\\
+z_3(t) &amp;= e^{\pi i t/4} &amp;=&amp; \cos{\pi t/4}+i\sin{\pi t/4},\quad &amp;t\in[0,8].
+\end{split}\]</div>
+<p>All are positively oriented paramterisations of the unit circle. The only difference here is the speed at which we trace out the curve.</p>
+<br>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A quick reminder that in the case of a closed curve, we say that the curve is <em>positively oriented</em> if it is traversed in the counterclockwise direction and <em>negatively oriented</em> if it is traversed in the clockwise direction (for increasing values of <span class="math notranslate nohighlight">\(t\)</span> in each instance)</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

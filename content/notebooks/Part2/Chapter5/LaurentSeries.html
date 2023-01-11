@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -707,45 +710,51 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter5/LaurentSeries.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="laurent-series">
 <h1>5.3 Laurent series<a class="headerlink" href="#laurent-series" title="Permalink to this headline">#</a></h1>
-<p>It has been demonstrated above that a function <span class="math notranslate nohighlight">\(f(z)\)</span> of a complex variable <span class="math notranslate nohighlight">\(z\)</span> can be expanded as a Taylor series around the point <span class="math notranslate nohighlight">\(z=z_0\)</span> in a similar way to the function <span class="math notranslate nohighlight">\(f(x)\)</span> of a real variable <span class="math notranslate nohighlight">\(x\)</span>. The resulting series will be convergent within some circular region of <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>: <span class="math notranslate nohighlight">\(|z-z_0|&lt;R\)</span>, where <span class="math notranslate nohighlight">\(R\)</span> is the radius of convergence.</p>
+<p>It has been demonstrated above that a function <span class="math notranslate nohighlight">\(f(z)\)</span> of a complex variable <span class="math notranslate nohighlight">\(z\)</span> can be expanded as a Taylor series around the point <span class="math notranslate nohighlight">\(z=z_0\)</span> in a similar way to the function <span class="math notranslate nohighlight">\(f(x)\)</span> of a real variable <span class="math notranslate nohighlight">\(x\)</span>. The resulting series will be convergent within some circular region of <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>: <span class="math notranslate nohighlight">\(|z-z_0|&lt;{R}\)</span>, where <span class="math notranslate nohighlight">\(R\)</span> is the radius of convergence.</p>
 <p>However, this region is almost always only part of the entire region in which the function <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic. For example, above, we obtained the series</p>
 <div class="math notranslate nohighlight">
 \[
 	f(z)=\frac{1}{1+z}=\sum_{n=0}^\infty (-1)^n z^n.
 \]</div>
-<p>but this only converges to <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(|z|&lt;1\)</span>, even though the only point at which <span class="math notranslate nohighlight">\(f\)</span> fails to be analytic is at <span class="math notranslate nohighlight">\(z=-1\)</span>.</p>
-<p>To address this, we employ <strong>Laurent series</strong>. These are a generalisation of Taylor series which involve negative powers as well as positive powers. In general, such a series converges over an annulus <span class="math notranslate nohighlight">\(R_1&lt;|z-z_0|&lt;R_2\)</span>.</p>
-<p>Clearly then, if there is only one singularity, we can isolate this within the inner region <span class="math notranslate nohighlight">\(|z-z_0|&lt;R_1\)</span> and the series converges in the remainder of the domain (<span class="math notranslate nohighlight">\(R_2\to \infty\)</span>).</p>
+<p>but this only converges to <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(|z|&lt;{1}\)</span>, even though the only point at which <span class="math notranslate nohighlight">\(f\)</span> fails to be analytic is at <span class="math notranslate nohighlight">\(z=-1\)</span>.</p>
+<p>To address this, we employ <strong>Laurent series</strong>. These are a generalisation of Taylor series which involve negative powers as well as positive powers. In general, such a series converges over an annulus <span class="math notranslate nohighlight">\(R_1&lt;|z-z_0|&lt;{R_2}\)</span>.</p>
+<p>Clearly then, if there is only one singularity, we can isolate this within the inner region <span class="math notranslate nohighlight">\(|z-z_0|&lt;{R_1}\)</span> and the series converges in the remainder of the domain (<span class="math notranslate nohighlight">\(R_2\to \infty\)</span>).</p>
 <section id="laurent-s-theorem">
 <h2>Laurent’s theorem<a class="headerlink" href="#laurent-s-theorem" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic within the annular region <span class="math notranslate nohighlight">\(R_1&lt;|z-z_0|&lt;R_2\)</span> then <span class="math notranslate nohighlight">\(f(z)\)</span> can be represented as the series:</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 14 </span> (Laurent’s theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic within the annular region <span class="math notranslate nohighlight">\(R_1&lt;|z-z_0|&lt;{R_2}\)</span> then <span class="math notranslate nohighlight">\(f(z)\)</span> can be represented as the series:</p>
 <div class="math notranslate nohighlight" id="equation-laurent">
-<span class="eqno">(55)<a class="headerlink" href="#equation-laurent" title="Permalink to this equation">#</a></span>\[
-	f(z) = \sum_{n=-\infty}^{\infty} d_n(z-z_0)^n;\quad d_n = \frac{1}{2\pi i}\oint_\mathscr{C} \frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d} z
+<span class="eqno">(57)<a class="headerlink" href="#equation-laurent" title="Permalink to this equation">#</a></span>\[
+	f(z) = \sum_{n=-\infty}^{\infty} d_n(z-z_0)^n;\quad d_n = \frac{1}{2\pi i}\oint_\mathscr{C} \frac{f(z)}{(z-z_0)^{n+1}}\,\mathrm{d} z
 \]</div>
 <p>where the path <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is an appropriate contour within the annulus.</p>
-<p>Notes:</p>
+</section>
+</div><p>Notes:</p>
 <ol class="simple">
 <li><p>This series is sometimes split into the form:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-f(z)&amp;=&amp;\sum_{n=0}^{\infty} a_n(z-z_0)^n + \sum_{n=-\infty}^{-1} {b_n}{(z-z_0)^n};\\
-a_n &amp;=&amp; \f{1}{2\pi i}\oint_{\mathscr{C}_2} \f{f(z)}{(z-z_0)^{n+1}}\ud z:\quad n=0,1,2,\ldots;\\ 
-b_n &amp;=&amp; \f{1}{2\pi i}\oint_{\mathscr{C}_1} \f{f(z)}{(z-z_0)^{n+1}}\ud z:\quad n=-1,-2,\ldots;\\
-	&amp; &amp;{\mathscr{C}_1}: |z-z_0|=R_1,\quad {\mathscr{C}_2}: |z-z_0|=R_2\ (R_2&gt;R_1)
+f(z)&amp;=\sum_{n=0}^{\infty} a_n(z-z_0)^n + \sum_{n=-\infty}^{-1} {b_n}{(z-z_0)^n};\\
+a_n &amp;= \frac{1}{2\pi i}\oint_{\mathscr{C}_2} \frac{f(z)}{(z-z_0)^{n+1}}\,\mathrm{d} z:\quad n=0,1,2,\ldots;\\ 
+b_n &amp;= \frac{1}{2\pi i}\oint_{\mathscr{C}_1} \frac{f(z)}{(z-z_0)^{n+1}}\,\mathrm{d} z:\quad n=-1,-2,\ldots;\\
+	&amp; {\mathscr{C}_1}: |z-z_0|=R_1,\quad {\mathscr{C}_2}: |z-z_0|=R_2\ (R_2&gt;R_1)
 \end{split}\]</div>
 <ol class="simple">
-<li><p>The integral in (\ref{Laurent}) is equivalent to the appearance of the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative in the Taylor series (for <span class="math notranslate nohighlight">\(n\geqslant0\)</span>); <em>i.e.</em></p></li>
+<li><p>The integral in <a class="reference internal" href="#equation-laurent">(57)</a> is equivalent to the appearance of the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative in the Taylor series (for <span class="math notranslate nohighlight">\(n\geqslant0\)</span>); <em>i.e.</em></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
-f^{(n)}(z_0)=\frac{n!}{2i\pi}\oint_{\mathscr{C}}\frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d} z
+f^{(n)}(z_0)=\frac{n!}{2i\pi}\oint_{\mathscr{C}}\frac{f(z)}{(z-z_0)^{n+1}}\,\mathrm{d} z
 \]</div>
 <p>This is known as Cauchy’s derivative formula and the complex Taylor series is often written this way.</p>
 <p>The proof of Laurent’s theorem is a little complicated so we won’t go through it. It involves evaluating a series of integrals of the type given above which can be hard. To determine the coefficients <span class="math notranslate nohighlight">\(a_n\)</span> and <span class="math notranslate nohighlight">\(b_n\)</span> using the formula defined above, one also needs to evaluate such integrals; however, with a little manipulation, for certain functions <span class="math notranslate nohighlight">\(f(z)\)</span>, we can exploit known Taylor and binomial series to obtain the Laurent series for a given function <span class="math notranslate nohighlight">\(f(z)\)</span></p>
-<br>
-<p><strong>Example 5.3.1</strong> Find the Laurent series expansion of the function <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{e^z}{z^3}\)</span> centred at the singular point <span class="math notranslate nohighlight">\(z_0=0\)</span> and valid in the `annulus’ <span class="math notranslate nohighlight">\(0&lt;|z|&lt;\infty\)</span></p>
+<div class="proof example admonition" id="example59">
+<p class="admonition-title"><span class="caption-number">Example 59 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Laurent series expansion of the function <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{e^z}{z^3}\)</span> centred at the singular point <span class="math notranslate nohighlight">\(z_0=0\)</span> and valid in the `annulus’ <span class="math notranslate nohighlight">\(0&lt;|z|&lt;\infty\)</span></p>
 <p><strong>Solution</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f\)</span> has one singularity at <span class="math notranslate nohighlight">\(z_0=0\)</span></p></li>
@@ -765,24 +774,30 @@ f^{(n)}(z_0)=\frac{n!}{2i\pi}\oint_{\mathscr{C}}\frac{f(z)}{(z-z_0)^{n+1}}\mathr
 <ul class="simple">
 <li><p>This series is valid for all <span class="math notranslate nohighlight">\(z\)</span> <em>except</em> at <span class="math notranslate nohighlight">\(z=0\)</span>.</p></li>
 </ul>
-<br>
-<p><strong>Example 5.3.2</strong> Find the Laurent series expansion of the function <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{z}\)</span> centred at <span class="math notranslate nohighlight">\(z_0=1\)</span> valid in the `annulus’ <span class="math notranslate nohighlight">\(0&lt;|z|&lt;\infty\)</span> and having an annular convergence <span class="math notranslate nohighlight">\(1&lt;|z-1|&lt;\infty\)</span></p>
+</section>
+</div><div class="proof example admonition" id="example60">
+<p class="admonition-title"><span class="caption-number">Example 60 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Laurent series expansion of the function <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{z}\)</span> centred at <span class="math notranslate nohighlight">\(z_0=1\)</span> valid in the `annulus’ <span class="math notranslate nohighlight">\(0&lt;|z|&lt;\infty\)</span> and having an annular convergence <span class="math notranslate nohighlight">\(1&lt;|z-1|&lt;\infty\)</span></p>
 <p><strong>Solution</strong></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(1&lt;|z-1|&lt;\infty\)</span> is equivalent to <span class="math notranslate nohighlight">\(|z-1|&gt;1\)</span> which implies <span class="math notranslate nohighlight">\(\left|\frac{1}{|z-1|}\right|&lt;1\)</span>. Then we can exploit known Taylor series (or known binomial expansion) again as follows:</p></li>
+<li><p><span class="math notranslate nohighlight">\(1&lt;|z-1|&lt;\infty\)</span> is equivalent to <span class="math notranslate nohighlight">\(|z-1|&gt;1\)</span> which implies <span class="math notranslate nohighlight">\(\left|\frac{1}{|z-1|}\right|&lt;{1}\)</span>. Then we can exploit known Taylor series (or known binomial expansion) again as follows:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
- \frac{1}{z}&amp;=&amp; \frac{1}{(z-1)+1} = \frac{1}{z-1}\left( \frac{1}{1+\frac{1}{z-1}} \right)\\
-					&amp;=&amp; \frac{1}{z-1}\left( 1+\frac{1}{z-1}\right)^{-1}\\
-					&amp;=&amp; \frac{1}{z-1}\left( 1-\frac{1}{z-1}+\frac{1}{(z-1)^2}-\frac{1}{(z-1)^3}+\cdots\right)\\
-					&amp;=&amp; \frac{1}{z-1}-\frac{1}{(z-1)^2}+\frac{1}{(z-1)^3}-\frac{1}{(z-1)^4}+\cdots
+ \frac{1}{z}&amp;= \frac{1}{(z-1)+1} = \frac{1}{z-1}\left( \frac{1}{1+\frac{1}{z-1}} \right)\\
+					&amp;= \frac{1}{z-1}\left( 1+\frac{1}{z-1}\right)^{-1}\\
+					&amp;= \frac{1}{z-1}\left( 1-\frac{1}{z-1}+\frac{1}{(z-1)^2}-\frac{1}{(z-1)^3}+\cdots\right)\\
+					&amp;= \frac{1}{z-1}-\frac{1}{(z-1)^2}+\frac{1}{(z-1)^3}-\frac{1}{(z-1)^4}+\cdots
  \end{split}\]</div>
 <ul class="simple">
-<li><p>The binomial expansion of <span class="math notranslate nohighlight">\((1+x)^n\)</span> (for <span class="math notranslate nohighlight">\(n=-1\)</span>) is valid for <span class="math notranslate nohighlight">\(|x|&lt;1\)</span>. The above expression is therefore valid if <span class="math notranslate nohighlight">\(\left| \frac{1}{z-1}\right|&lt;1\)</span> as required.</p></li>
+<li><p>The binomial expansion of <span class="math notranslate nohighlight">\((1+x)^n\)</span> (for <span class="math notranslate nohighlight">\(n=-1\)</span>) is valid for <span class="math notranslate nohighlight">\(|x|&lt;{1}\)</span>. The above expression is therefore valid if <span class="math notranslate nohighlight">\(\left| \frac{1}{z-1}\right|&lt;{1}\)</span> as required.</p></li>
 </ul>
-<br>
-<p><strong>Example 5.3.3</strong>  Find the Laurent series of <span class="math notranslate nohighlight">\(f(z)=\frac{1}{z+5}\)</span> which is valid in the regions (a) <span class="math notranslate nohighlight">\(0&lt;|z|&lt;5\)</span>, (b) <span class="math notranslate nohighlight">\(5&lt;|z|&lt;\infty\)</span></p>
+</section>
+</div><div class="proof example admonition" id="example61">
+<p class="admonition-title"><span class="caption-number">Example 61 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Laurent series of <span class="math notranslate nohighlight">\(f(z)=\frac{1}{z+5}\)</span> which is valid in the regions (a) <span class="math notranslate nohighlight">\(0&lt;|z|&lt;{5}\)</span>, (b) <span class="math notranslate nohighlight">\(5&lt;|z|&lt;\infty\)</span></p>
 <p><strong>Solution</strong></p>
 <ul class="simple">
 <li><p><strong>Case (a):</strong> Manipulate the expression in a similar way</p></li>
@@ -793,7 +808,7 @@ f^{(n)}(z_0)=\frac{n!}{2i\pi}\oint_{\mathscr{C}}\frac{f(z)}{(z-z_0)^{n+1}}\mathr
 				 &amp;=&amp; \frac{1}{5}\left( \frac{1}{5} - \frac{z}{5} + \frac{z^2}{25}-\frac{z^3}{125}+\cdots \right)
  \end{split}\]</div>
 <p>Again, we used the known result from the binomial series expansion of <span class="math notranslate nohighlight">\((1+x)^n\)</span></p>
-<p>For this to converge, we require <span class="math notranslate nohighlight">\(\displaystyle\left|\frac{z}{5}\right|&lt;1\)</span>; <em>i.e.</em>, <span class="math notranslate nohighlight">\(|z|&lt;5\)</span></p>
+<p>For this to converge, we require <span class="math notranslate nohighlight">\(\displaystyle\left|\frac{z}{5}\right|&lt;{1}\)</span>; <em>i.e.</em>, <span class="math notranslate nohighlight">\(|z|&lt;{5}\)</span></p>
 <ul class="simple">
 <li><p><strong>Case (b):</strong> Manipulate the expression slightly differently</p></li>
 </ul>
@@ -805,26 +820,29 @@ f^{(n)}(z_0)=\frac{n!}{2i\pi}\oint_{\mathscr{C}}\frac{f(z)}{(z-z_0)^{n+1}}\mathr
  \end{split}\]</div>
 <p>again, using the binomial expansion.</p>
 <p>This converges if <span class="math notranslate nohighlight">\(\displaystyle \frac{5}{|z|}&lt;1\)</span>, <em>i.e.</em> <span class="math notranslate nohighlight">\(|z|&gt;5\)</span>.</p>
-<div class="admonition note">
+</section>
+</div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="simple">
 <li><p>The above examples show how you can exploit various known results from the binomial  expansion to create Laurent series.</p></li>
-<li><p>The manipulation in example 3 indicates the different approaches required for the expansions valid either side of the singular point <span class="math notranslate nohighlight">\(z=-5\)</span> (<span class="math notranslate nohighlight">\(|z|=5\)</span>)</p></li>
+<li><p>The manipulation in <a class="reference internal" href="#example61">Example 61</a> indicates the different approaches required for the expansions valid either side of the singular point <span class="math notranslate nohighlight">\(z=-5\)</span> (<span class="math notranslate nohighlight">\(|z|=5\)</span>)</p></li>
 <li><p>Below, I will take you through an example of calculating the series coefficients directly. This should illuminate a few key points which were exploited above but not explicitly referenced. It also shows the theory of Laurent series expansions more clearly.</p></li>
 </ol>
 </div>
-<br>
 </section>
 <section id="laurent-series-coefficients-by-direct-integration">
 <h2>Laurent series coefficients by direct integration<a class="headerlink" href="#laurent-series-coefficients-by-direct-integration" title="Permalink to this headline">#</a></h2>
-<p><strong>Example 5.3.5</strong> Calculate the Laurent series of <span class="math notranslate nohighlight">\(f(z)=\frac{1}{z(z-1)}\)</span> around <span class="math notranslate nohighlight">\(z_0=0\)</span></p>
+<div class="proof example admonition" id="example62">
+<p class="admonition-title"><span class="caption-number">Example 62 </span></p>
+<section class="example-content" id="proof-content">
+<p>Calculate the Laurent series of <span class="math notranslate nohighlight">\(f(z)=\frac{1}{z(z-1)}\)</span> around <span class="math notranslate nohighlight">\(z_0=0\)</span></p>
 <p><strong>Solution</strong></p>
-<p><span class="math notranslate nohighlight">\(f\)</span> has two singularities at <span class="math notranslate nohighlight">\(z=0,1\)</span> which are order one poles. The annulus of convergence is therefore <span class="math notranslate nohighlight">\(0&lt;|z|&lt;1\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(f\)</span> has two singularities at <span class="math notranslate nohighlight">\(z=0,1\)</span> which are order one poles. The annulus of convergence is therefore <span class="math notranslate nohighlight">\(0&lt;|z|&lt;{1}\)</span>.</p>
 <p>Returning to the two curves <span class="math notranslate nohighlight">\(\mathscr{C}_1,\ \mathscr{C}_2\)</span> which define our annular region, we set <span class="math notranslate nohighlight">\(R_2=\epsilon\)</span> and <span class="math notranslate nohighlight">\(R_1=r\)</span> and take <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> and <span class="math notranslate nohighlight">\(r\to 1\)</span>. See Figure below.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/AnnulusLS.png"><img alt="../../../../_images/AnnulusLS.png" src="../../../../_images/AnnulusLS.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">The annulus enclosing the region between <span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(z=1\)</span> in which the Laurent series is valid.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">The annulus enclosing the region between <span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(z=1\)</span> in which the Laurent series is valid.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Then, the coefficients are:</p>
@@ -840,12 +858,12 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 <p>Calculating <span class="math notranslate nohighlight">\(a_n\)</span> first:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	a_n &amp;=&amp;\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{1}{z(z-1)(z)^{n+1}}\mathrm{d} z = 
+	a_n &amp;=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{1}{z(z-1)(z)^{n+1}}\mathrm{d} z = 
 	\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{1}{(z-1)z^{n+2}}\mathrm{d} z\\
-		&amp;=&amp;\frac{1}{2i\pi}\int_{0}^{2\pi}\frac{1}{(re^{i\theta}-1)r^{n+2}e^{i(n+2)\theta}} i r e^{i\theta}\mathrm{d} \theta\\
-		&amp;=&amp; -\frac{1}{2\pi r^{n+1}}\int_0^{2\pi}\frac{1}{(1-re^{i\theta})e^{i(n+1)\theta}}\mathrm{d} \theta
+		&amp;=\frac{1}{2i\pi}\int_{0}^{2\pi}\frac{1}{(re^{i\theta}-1)r^{n+2}e^{i(n+2)\theta}} i r e^{i\theta}\mathrm{d} \theta\\
+		&amp;= -\frac{1}{2\pi r^{n+1}}\int_0^{2\pi}\frac{1}{(1-re^{i\theta})e^{i(n+1)\theta}}\mathrm{d} \theta
 \end{split}\]</div>
-<p>Now, since <span class="math notranslate nohighlight">\(r&lt;1\)</span> (the radius of convergence dictates this), <span class="math notranslate nohighlight">\(|re^{i\theta}|&lt;1\)</span> and the binomial series can be used:</p>
+<p>Now, since <span class="math notranslate nohighlight">\(r&lt;{1}\)</span> (the radius of convergence dictates this), <span class="math notranslate nohighlight">\(|re^{i\theta}|&lt;{1}\)</span> and the binomial series can be used:</p>
 <div class="math notranslate nohighlight">
 \[
 	\frac{1}{1-r e^{i\theta}}=\sum_m^\infty \left(re^{i\theta}\right)^m
@@ -853,8 +871,8 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 <p>Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	a_n &amp;=&amp; -\f{1}{2\pi r^{n+1}}\sum_{m=0}^\infty r^m\int_0^{2\pi}\f{e^{im\theta}}{e^{i(n+1)\theta}}\ud \theta\\
-	    &amp;=&amp; -\f{1}{2\pi}\sum_{m=0}^\infty r^{m-n-1}\int_0^{2\pi}e^{i(m-n-1)\theta}\ud \theta
+	a_n &amp;= -\frac{1}{2\pi r^{n+1}}\sum_{m=0}^\infty r^m\int_0^{2\pi}\frac{e^{im\theta}}{e^{i(n+1)\theta}}\,\mathrm{d} \theta\\
+	    &amp;= -\frac{1}{2\pi}\sum_{m=0}^\infty r^{m-n-1}\int_0^{2\pi}e^{i(m-n-1)\theta}\,\mathrm{d} \theta
 \end{split}\]</div>
 <p>and (nearly there)</p>
 <div class="math notranslate nohighlight">
@@ -881,15 +899,14 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 \[
 	f(z)=\frac{1}{z(z-1)}=-\frac{1}{z}+\sum_{n=0}^\infty -z^n.
 \]</div>
-<br>
-<div class="admonition note">
+</section>
+</div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="simple">
 <li><p>One cannot always use simplifying results like we did previously to read off the coefficients.</p></li>
 <li><p>It illustrated the method that you employ to construct your Laurent series by isolating singularities by surrounding them with vanishingly-small paths.</p></li>
 </ol>
 </div>
-<br>
 </section>
 <section id="a-useful-technique-for-laurent-series-at-singular-points">
 <h2>A useful technique for Laurent series at singular points<a class="headerlink" href="#a-useful-technique-for-laurent-series-at-singular-points" title="Permalink to this headline">#</a></h2>
@@ -897,7 +914,7 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(z_0\)</span> is a root of order <span class="math notranslate nohighlight">\(m\)</span> of <span class="math notranslate nohighlight">\(f(z)\)</span> if <span class="math notranslate nohighlight">\((z-z_0)^m f(z)\)</span> is analytic at <span class="math notranslate nohighlight">\(z_0\)</span> and <span class="math notranslate nohighlight">\((z-z_0)^{m-1} f(z)\)</span> is not.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\((z-z_0)^m f(z)\)</span> is analytic at <span class="math notranslate nohighlight">\(z_0\)</span>, the Taylor series can be constructed there. The Laurent series is then given by multiplying each term in the series by <span class="math notranslate nohighlight">\((z-z_0)^{-m}\)</span>.</p></li>
-<li><p>This was essentially the method we employed earlier to determine the Laurent series of <span class="math notranslate nohighlight">\(f(z)=\frac{e^z}{z^3}\)</span> at <span class="math notranslate nohighlight">\(z_0=0\)</span>. Clearly, <span class="math notranslate nohighlight">\(z_0=0\)</span> is a third order pole of <span class="math notranslate nohighlight">\(f\)</span> so</p></li>
+<li><p>This was essentially the method we employed earlier to determine the Laurent series of <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{e^z}{z^3}\)</span> at <span class="math notranslate nohighlight">\(z_0=0\)</span>. Clearly, <span class="math notranslate nohighlight">\(z_0=0\)</span> is a third order pole of <span class="math notranslate nohighlight">\(f\)</span> so</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
@@ -908,7 +925,6 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 \[
   f(z)=\frac{1}{z^3}\left(1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots\right)
 \]</div>
-<br>
 </section>
 <section id="the-relationship-between-series-and-singularities">
 <h2>The relationship between series and singularities<a class="headerlink" href="#the-relationship-between-series-and-singularities" title="Permalink to this headline">#</a></h2>
@@ -924,62 +940,55 @@ a_n=\frac{1}{2i\pi}\oint_{\mathscr{C}_2}\frac{f(z)}{(z-0)^{n+1}}\mathrm{d} z,\qu
 <li><p>If <span class="math notranslate nohighlight">\(z_0\)</span> is an <em>essential singularity</em> of <span class="math notranslate nohighlight">\(f(z)\)</span>, the series is <span class="math notranslate nohighlight">\(f(z)=\sum_{n=-\infty}^\infty d_n(z-z_0)^n\)</span>.</p></li>
 </ol>
 <p>As indicated in previous sections, if you look at these results in a slightly different way, they provide a method of determining the type of a singular point: the terms in a Laurent series about a singular point indicate its type.</p>
-<p>Returning to the examples considered in the Chapter 4 on singularities:</p>
-<ol class="simple">
-<li><p>The Laurent series expansion of <span class="math notranslate nohighlight">\(f(z)=\frac{\sin z}{z}\)</span> the singular point <span class="math notranslate nohighlight">\(z_0=0\)</span> is</p></li>
-</ol>
+<p>Consider the following examples</p>
+<div class="proof example admonition" id="example63">
+<p class="admonition-title"><span class="caption-number">Example 63 </span></p>
+<section class="example-content" id="proof-content">
+<p>The Laurent series expansion of <span class="math notranslate nohighlight">\(f(z)=\frac{\sin z}{z}\)</span> about the singular point <span class="math notranslate nohighlight">\(z_0=0\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{\sin z}{z} = 1-\frac{z^2}{3!}+\frac{z^4}{5!}+\cdots=\sum_{n=0}^\infty a_n z^n.
- \]</div>
-<ul class="simple">
-<li><p>This expansion has no negative powers of <span class="math notranslate nohighlight">\((z-z_0)\)</span>; that is, <span class="math notranslate nohighlight">\(b_n=0\)</span>. By result 1, <span class="math notranslate nohighlight">\(z_0\)</span> is a removable singularity, removed via the redefinition:
-$<span class="math notranslate nohighlight">\(
-\frac{\sin z}{z} = \begin{cases}
- 			\frac{\sin z}{z}, &amp; z\neq 0\\
- 				1, &amp; z=0.
- 			\end{cases}
-\)</span>$</p></li>
-</ul>
-<ol class="simple">
-<li><p>The Laurent series expansion of <span class="math notranslate nohighlight">\(f(z)=\frac{e^z}{z^3}\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span> is:</p></li>
-</ol>
+\]</div>
+<p>This expansion has no negative powers of <span class="math notranslate nohighlight">\((z-z_0)\)</span>; that is, <span class="math notranslate nohighlight">\(b_n=0\)</span>. By result 1, <span class="math notranslate nohighlight">\(z_0\)</span> is a removable singularity.</p>
+<p>This is in agreement with our result in <a class="reference internal" href="../Chapter3/RemovableSingularities.html#example44">Example 44</a>.</p>
+</section>
+</div><div class="proof example admonition" id="example64">
+<p class="admonition-title"><span class="caption-number">Example 64 </span></p>
+<section class="example-content" id="proof-content">
+<p>The Laurent series expansion of <span class="math notranslate nohighlight">\(f(z)=\frac{e^z}{z^3}\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[
- \frac{e^z}{z^3} = \frac{1}{z^3}+\frac{1}{z^2}+\frac{1}{2z}+\frac{1}{6}+\frac{z}{24}+\cdots = \sum_{n=-m}^\infty d_n z^n;\ m=3.
- \]</div>
-<ul class="simple">
-<li><p>The singular point <span class="math notranslate nohighlight">\(z_0=0\)</span> is therefore a 3<span class="math notranslate nohighlight">\(^{rd}\)</span> order pole of <span class="math notranslate nohighlight">\(f(z)\)</span>.</p></li>
-</ul>
-<ol class="simple">
-<li><p>It appears that <span class="math notranslate nohighlight">\(f(z)=\frac{\sin z}{z^2}\)</span> has a second order pole at <span class="math notranslate nohighlight">\(z_0=0\)</span>. However, using results from previously,</p></li>
-</ol>
+\frac{e^z}{z^3} = \frac{1}{z^3}+\frac{1}{z^2}+\frac{1}{2z}+\frac{1}{6}+\frac{z}{24}+\cdots = \sum_{n=-m}^\infty d_n z^n;\ m=3.
+\]</div>
+<p>Containing three negative power terms, the singular point <span class="math notranslate nohighlight">\(z_0=0\)</span> is a 3<span class="math notranslate nohighlight">\(^{rd}\)</span> order pole of <span class="math notranslate nohighlight">\(f(z)\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example65">
+<p class="admonition-title"><span class="caption-number">Example 65 </span></p>
+<section class="example-content" id="proof-content">
+<p>It appears that <span class="math notranslate nohighlight">\(f(z)=\frac{\sin z}{z^2}\)</span> has a second order pole at <span class="math notranslate nohighlight">\(z_0=0\)</span>. However, using results from previously,</p>
 <div class="math notranslate nohighlight">
 \[
- \frac{\sin z}{z^2}=\frac{1}{z^2}\left( z-\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots  \right)=\frac{1}{z}-\frac{z}{3!}+\frac{z^4}{5!}+\cdots = \sum_{n=-m}^\infty d_n z^n;\ m=1,
- \]</div>
-<ul class="simple">
-<li><p>The pole is actually of order 1.</p></li>
-</ul>
-<ol class="simple">
-<li><p>What type of singularity does <span class="math notranslate nohighlight">\(f(z)=\sin\left( \frac{1}{z}\right)\)</span> have at <span class="math notranslate nohighlight">\(z_0=0\)</span>?</p></li>
-</ol>
-<ul class="simple">
-<li><p>The expansion of <span class="math notranslate nohighlight">\(\sin x\)</span> valid for all <span class="math notranslate nohighlight">\(x\)</span> is:</p></li>
-</ul>
+\frac{\sin z}{z^2}=\frac{1}{z^2}\left( z-\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots  \right)=\frac{1}{z}-\frac{z}{3!}+\frac{z^4}{5!}+\cdots = \sum_{n=-m}^\infty d_n z^n;\ m=1,
+\]</div>
+<p>The pole is actually of order 1.</p>
+</section>
+</div><div class="proof example admonition" id="example66">
+<p class="admonition-title"><span class="caption-number">Example 66 </span></p>
+<section class="example-content" id="proof-content">
+<p>What type of singularity does <span class="math notranslate nohighlight">\(f(z)=\sin\left( \frac{1}{z}\right)\)</span> have at <span class="math notranslate nohighlight">\(z_0=0\)</span>?</p>
+<p>The expansion of <span class="math notranslate nohighlight">\(\sin x\)</span> valid for all <span class="math notranslate nohighlight">\(x\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[
- \sin(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots
- \]</div>
-<ul class="simple">
-<li><p>So, using this result, in the annulus <span class="math notranslate nohighlight">\(0&lt;|z|&lt;\infty\)</span>, the Laurent expansion is
-$<span class="math notranslate nohighlight">\(
+\sin(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots
+\]</div>
+<p>So, using this result, in the annulus <span class="math notranslate nohighlight">\(0&lt;|z|&lt;\infty\)</span>, the Laurent expansion is</p>
+<div class="math notranslate nohighlight">
+\[
 \sin\left(\frac{1}{z}\right)=\frac{1}{z}-\frac{1}{3!z^3}+\frac{1}{5!z^5}+\cdots
-\)</span>$</p></li>
-<li><p>The Laurent expansion of <span class="math notranslate nohighlight">\(f(z)\)</span> therefore has an infinity of negative powers of <span class="math notranslate nohighlight">\(z\)</span>; that is <span class="math notranslate nohighlight">\(f(z)=\sum_{n=-\infty}^\infty d_n z^n\)</span> and so <span class="math notranslate nohighlight">\(z_0=0\)</span> is an essential singularity.</p></li>
-</ul>
-<br>
-<p><strong>Remarks:</strong></p>
+\]</div>
+<p>The Laurent expansion of <span class="math notranslate nohighlight">\(f(z)\)</span> therefore has an infinity of negative powers of <span class="math notranslate nohighlight">\(z\)</span>; that is <span class="math notranslate nohighlight">\(f(z)=\sum_{n=-\infty}^\infty d_n z^n\)</span> and so <span class="math notranslate nohighlight">\(z_0=0\)</span> is an essential singularity.</p>
+</section>
+</div><p><strong>Remarks:</strong></p>
 <ol class="simple">
 <li><p>The part of the Laurent series which has negative powers of <span class="math notranslate nohighlight">\(z\)</span> (<em>i.e.</em> the <span class="math notranslate nohighlight">\(b_n\)</span> terms) is known as the “principle part” of <span class="math notranslate nohighlight">\(f(z)\)</span> at <span class="math notranslate nohighlight">\(z_0\)</span>. If <span class="math notranslate nohighlight">\(f(z)\)</span> has an <span class="math notranslate nohighlight">\(m^{th}\)</span> order pole at <span class="math notranslate nohighlight">\(z_0\)</span> the principle part has <span class="math notranslate nohighlight">\(m\)</span> terms. If the singularity is essential, the principle part has infinitely many terms.</p></li>
 <li><p>if <span class="math notranslate nohighlight">\(z_0\)</span> is an <span class="math notranslate nohighlight">\(m^{th}\)</span> order pole of <span class="math notranslate nohighlight">\(f(z)\)</span>, the function <span class="math notranslate nohighlight">\(g(z)=(z-z_0)^m f(z)\)</span> is analytic. This is another way of defining a pole of order <span class="math notranslate nohighlight">\(m\)</span>.</p></li>

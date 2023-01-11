@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof Index &#8212; Advanced Calculus MATH20471</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/SpiralWave.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Advanced Calculus MATH20471</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part I - PDEs and Fourier Series
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part1/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter1/IBVP.html">
+     1.1 Initial and Boundary Value Problems (IBVP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter1/ODERev.html">
+     1.2 ODE Revision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter1/IntroToPDEs.html">
+     1.3 Introduction to PDEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter1/PDEsToStudy.html">
+     1.4 The Equations we Shall Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part1/Chapter2/Chapter2Intro.html">
+   Chapter 2 Fourier Series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter2/Functions.html">
+     2.1 Periodic, Even and Odd Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter2/Fourierseries2pi.html">
+     2.2 Fourier Series for Functions of Period
+     <span class="math notranslate nohighlight">
+      \(2\pi\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter2/FSConvergence.html">
+     2.3 Convergence of Fourier Series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter2/FuncsAnyPeriod.html">
+     2.4 Functions of Any Period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part1/Chapter3/Chapter3Intro.html">
+   Chapter 3 The Heat Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter3/DerivationHeat.html">
+     3.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter3/HeatRod.html">
+     3.2 Heat Conduction in a Finite Rod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter3/IBVPHeat.html">
+     3.3 Initial and Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter3/UniquenessHeat.html">
+     3.4 Uniqueness (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter3/NonZeroBCsHeat.html">
+     3.5 Non-Zero Steady State (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part1/Chapter4/Chapter4Intro.html">
+   Chapter 4 The Wave Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter4/DerivationWave.html">
+     4.1 Derivation in One Space Dimension (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter4/NormalModesString.html">
+     4.2 Normal Modes of Vibration for a Finite String
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter4/IBVPWave.html">
+     4.3 Initial and Boundary Value Problem for Finite Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter4/UniquenessWave.html">
+     4.4 Uniqueness of an IBVP for a Finite String (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter4/GeneralSolutionWave.html">
+     4.4 The General Solution of the Wave Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter4/DAlembert.html">
+     4.6 Waves on Infinite Strings: D’Alembert’s Formula
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part1/Chapter5/Chapter5Intro.html">
+   Chapter 5 Laplace’s Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter5/CartesianCoords.html">
+     5.1 BVP in Catesian Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter5/PolarCoords.html">
+     5.2 BVP in Polar Coordinates (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part1/Chapter5/UniquenessLaplace.html">
+     5.3 Uniqueness (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Part II - Complex Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part2/Chapter1/Chapter1Intro.html">
+   Chapter 1 Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter1/ComplexNumbers.html">
+     1.1 Revision of complex numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter1/ComplexFunc.html">
+     1.2 Functions of a complex variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part2/Chapter2/Chapter2Intro.html">
+   Chapter 2 Differentiation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter2/Differentiation.html">
+     2.1 Differentiation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter2/CauchyRiemann.html">
+     2.2 Consequences of the Cauchy-Riemann equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter2/Examples.html">
+     2.3 Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part2/Chapter3/Chapter3Intro.html">
+   Chapter 3 Singularities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter3/Poles.html">
+     3.1 Poles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter3/RemovableSingularities.html">
+     3.2 Removable singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter3/EssentialSingularities.html">
+     3.3 Essential singularities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter3/Infinity.html">
+     3.4 Singularities at infinity (optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part2/Chapter4/Chapter4Intro.html">
+   Chapter 4 Integration
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter4/IntegrationPreliminaries.html">
+     4.1 Prelminary definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter4/FundamentalInt.html">
+     4.2 The fundamental theorem of contour integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter4/CauchyIntTheorem.html">
+     4.3 Cauchy’s integral theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter4/CauchyIntForm.html">
+     4.4 Cauchy’s integral formula
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter4/Annulus.html">
+     4.5 The annulus theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part2/Chapter5/Chapter5Intro.html">
+   Chapter 5 Taylor and Laurent series
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter5/TaylorSeries.html">
+     5.1 Revision of Taylor series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter5/TaylorSeriesComplex.html">
+     5.2 Taylor series for complex valued functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter5/LaurentSeries.html">
+     5.3 Laurent series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/notebooks/Part2/Chapter6/Chapter6Intro.html">
+   Chapter 6 Residues in complex variable analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter6/ResidueTheorem.html">
+     6.1 Cauchy’s residue theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter6/CalculatingResidues.html">
+     6.2 Calculating residues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/notebooks/Part2/Chapter6/RealIntegrals.html">
+     6.3 Evaluation of real integrals
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+
+   <h1>Proof Index</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-CIT"><strong>CIT</strong></a> | 
+   <a href="#cap-CRTheorem"><strong>CRTheorem</strong></a> | 
+   <a href="#cap-FSConv"><strong>FSConv</strong></a> | 
+   <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
+   <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
+   <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
+   <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
+   <a href="#cap-definition421"><strong>definition421</strong></a> | 
+   <a href="#cap-example 17"><strong>example 17</strong></a> | 
+   <a href="#cap-example1"><strong>example1</strong></a> | 
+   <a href="#cap-example10"><strong>example10</strong></a> | 
+   <a href="#cap-example11"><strong>example11</strong></a> | 
+   <a href="#cap-example12"><strong>example12</strong></a> | 
+   <a href="#cap-example13"><strong>example13</strong></a> | 
+   <a href="#cap-example14"><strong>example14</strong></a> | 
+   <a href="#cap-example15"><strong>example15</strong></a> | 
+   <a href="#cap-example16"><strong>example16</strong></a> | 
+   <a href="#cap-example18"><strong>example18</strong></a> | 
+   <a href="#cap-example19"><strong>example19</strong></a> | 
+   <a href="#cap-example2"><strong>example2</strong></a> | 
+   <a href="#cap-example20"><strong>example20</strong></a> | 
+   <a href="#cap-example21"><strong>example21</strong></a> | 
+   <a href="#cap-example22"><strong>example22</strong></a> | 
+   <a href="#cap-example23"><strong>example23</strong></a> | 
+   <a href="#cap-example24"><strong>example24</strong></a> | 
+   <a href="#cap-example25"><strong>example25</strong></a> | 
+   <a href="#cap-example26"><strong>example26</strong></a> | 
+   <a href="#cap-example27"><strong>example27</strong></a> | 
+   <a href="#cap-example28"><strong>example28</strong></a> | 
+   <a href="#cap-example29"><strong>example29</strong></a> | 
+   <a href="#cap-example30"><strong>example30</strong></a> | 
+   <a href="#cap-example31"><strong>example31</strong></a> | 
+   <a href="#cap-example32"><strong>example32</strong></a> | 
+   <a href="#cap-example33"><strong>example33</strong></a> | 
+   <a href="#cap-example34"><strong>example34</strong></a> | 
+   <a href="#cap-example35"><strong>example35</strong></a> | 
+   <a href="#cap-example36"><strong>example36</strong></a> | 
+   <a href="#cap-example37"><strong>example37</strong></a> | 
+   <a href="#cap-example38"><strong>example38</strong></a> | 
+   <a href="#cap-example39"><strong>example39</strong></a> | 
+   <a href="#cap-example4"><strong>example4</strong></a> | 
+   <a href="#cap-example40"><strong>example40</strong></a> | 
+   <a href="#cap-example41"><strong>example41</strong></a> | 
+   <a href="#cap-example42"><strong>example42</strong></a> | 
+   <a href="#cap-example43"><strong>example43</strong></a> | 
+   <a href="#cap-example44"><strong>example44</strong></a> | 
+   <a href="#cap-example45"><strong>example45</strong></a> | 
+   <a href="#cap-example46"><strong>example46</strong></a> | 
+   <a href="#cap-example48"><strong>example48</strong></a> | 
+   <a href="#cap-example49"><strong>example49</strong></a> | 
+   <a href="#cap-example5"><strong>example5</strong></a> | 
+   <a href="#cap-example50"><strong>example50</strong></a> | 
+   <a href="#cap-example51"><strong>example51</strong></a> | 
+   <a href="#cap-example52"><strong>example52</strong></a> | 
+   <a href="#cap-example53"><strong>example53</strong></a> | 
+   <a href="#cap-example54"><strong>example54</strong></a> | 
+   <a href="#cap-example55"><strong>example55</strong></a> | 
+   <a href="#cap-example56"><strong>example56</strong></a> | 
+   <a href="#cap-example57"><strong>example57</strong></a> | 
+   <a href="#cap-example58"><strong>example58</strong></a> | 
+   <a href="#cap-example59"><strong>example59</strong></a> | 
+   <a href="#cap-example6"><strong>example6</strong></a> | 
+   <a href="#cap-example60"><strong>example60</strong></a> | 
+   <a href="#cap-example61"><strong>example61</strong></a> | 
+   <a href="#cap-example62"><strong>example62</strong></a> | 
+   <a href="#cap-example63"><strong>example63</strong></a> | 
+   <a href="#cap-example64"><strong>example64</strong></a> | 
+   <a href="#cap-example65"><strong>example65</strong></a> | 
+   <a href="#cap-example66"><strong>example66</strong></a> | 
+   <a href="#cap-example67"><strong>example67</strong></a> | 
+   <a href="#cap-example68"><strong>example68</strong></a> | 
+   <a href="#cap-example69"><strong>example69</strong></a> | 
+   <a href="#cap-example7"><strong>example7</strong></a> | 
+   <a href="#cap-example8"><strong>example8</strong></a> | 
+   <a href="#cap-example9"><strong>example9</strong></a> | 
+   <a href="#cap-lemma1"><strong>lemma1</strong></a> | 
+   <a href="#cap-lemma2"><strong>lemma2</strong></a> | 
+   <a href="#cap-theorem-0"><strong>theorem-0</strong></a> | 
+   <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
+   <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
+   <a href="#cap-theorem421"><strong>theorem421</strong></a> | 
+   <a href="#cap-theoremconv"><strong>theoremconv</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-CIT"><td></td><td>
+       <strong>CIT</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/CauchyIntTheorem.html#CIT"><code class="xref">CIT</code></a> <em>(content/notebooks/Part2/Chapter4/CauchyIntTheorem)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-CRTheorem"><td></td><td>
+       <strong>CRTheorem</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Differentiation.html#CRTheorem"><code class="xref">CRTheorem</code></a> <em>(content/notebooks/Part2/Chapter2/Differentiation)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-FSConv"><td></td><td>
+       <strong>FSConv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FuncsAnyPeriod.html#FSConv"><code class="xref">FSConv</code></a> <em>(content/notebooks/Part1/Chapter2/FuncsAnyPeriod)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-0"><td></td><td>
+       <strong>definition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/Poles.html#definition-0"><code class="xref">definition-0</code></a> <em>(content/notebooks/Part2/Chapter3/Poles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-1"><td></td><td>
+       <strong>definition-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/Poles.html#definition-1"><code class="xref">definition-1</code></a> <em>(content/notebooks/Part2/Chapter3/Poles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-2"><td></td><td>
+       <strong>definition-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/Functions.html#definition-2"><code class="xref">definition-2</code></a> <em>(content/notebooks/Part1/Chapter2/Functions)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-3"><td></td><td>
+       <strong>definition-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/Functions.html#definition-3"><code class="xref">definition-3</code></a> <em>(content/notebooks/Part1/Chapter2/Functions)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition421"><td></td><td>
+       <strong>definition421</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/FundamentalInt.html#definition421"><code class="xref">definition421</code></a> <em>(content/notebooks/Part2/Chapter4/FundamentalInt)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example 17"><td></td><td>
+       <strong>example 17</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/Fourierseries2pi.html#example 17"><code class="xref">example 17</code></a> <em>(content/notebooks/Part1/Chapter2/Fourierseries2pi)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example1"><td></td><td>
+       <strong>example1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/IBVP.html#example1"><code class="xref">example1</code></a> <em>(content/notebooks/Part1/Chapter1/IBVP)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example10"><td></td><td>
+       <strong>example10</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example10"><code class="xref">example10</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example11"><td></td><td>
+       <strong>example11</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/IntroToPDEs.html#example11"><code class="xref">example11</code></a> <em>(content/notebooks/Part1/Chapter1/IntroToPDEs)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example12"><td></td><td>
+       <strong>example12</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/IntroToPDEs.html#example12"><code class="xref">example12</code></a> <em>(content/notebooks/Part1/Chapter1/IntroToPDEs)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example13"><td></td><td>
+       <strong>example13</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/IntroToPDEs.html#example13"><code class="xref">example13</code></a> <em>(content/notebooks/Part1/Chapter1/IntroToPDEs)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example14"><td></td><td>
+       <strong>example14</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/IntroToPDEs.html#example14"><code class="xref">example14</code></a> <em>(content/notebooks/Part1/Chapter1/IntroToPDEs)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example15"><td></td><td>
+       <strong>example15</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/Fourierseries2pi.html#example15"><code class="xref">example15</code></a> <em>(content/notebooks/Part1/Chapter2/Fourierseries2pi)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example16"><td></td><td>
+       <strong>example16</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/Fourierseries2pi.html#example16"><code class="xref">example16</code></a> <em>(content/notebooks/Part1/Chapter2/Fourierseries2pi)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example18"><td></td><td>
+       <strong>example18</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FSConvergence.html#example18"><code class="xref">example18</code></a> <em>(content/notebooks/Part1/Chapter2/FSConvergence)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example19"><td></td><td>
+       <strong>example19</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FSConvergence.html#example19"><code class="xref">example19</code></a> <em>(content/notebooks/Part1/Chapter2/FSConvergence)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example2"><td></td><td>
+       <strong>example2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/IBVP.html#example2"><code class="xref">example2</code></a> <em>(content/notebooks/Part1/Chapter1/IBVP)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example20"><td></td><td>
+       <strong>example20</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FSConvergence.html#example20"><code class="xref">example20</code></a> <em>(content/notebooks/Part1/Chapter2/FSConvergence)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example21"><td></td><td>
+       <strong>example21</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FuncsAnyPeriod.html#example21"><code class="xref">example21</code></a> <em>(content/notebooks/Part1/Chapter2/FuncsAnyPeriod)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example22"><td></td><td>
+       <strong>example22</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FuncsAnyPeriod.html#example22"><code class="xref">example22</code></a> <em>(content/notebooks/Part1/Chapter2/FuncsAnyPeriod)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example23"><td></td><td>
+       <strong>example23</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter3/IBVPHeat.html#example23"><code class="xref">example23</code></a> <em>(content/notebooks/Part1/Chapter3/IBVPHeat)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example24"><td></td><td>
+       <strong>example24</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter3/IBVPHeat.html#example24"><code class="xref">example24</code></a> <em>(content/notebooks/Part1/Chapter3/IBVPHeat)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example25"><td></td><td>
+       <strong>example25</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter3/NonZeroBCsHeat.html#example25"><code class="xref">example25</code></a> <em>(content/notebooks/Part1/Chapter3/NonZeroBCsHeat)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example26"><td></td><td>
+       <strong>example26</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter4/IBVPWave.html#example26"><code class="xref">example26</code></a> <em>(content/notebooks/Part1/Chapter4/IBVPWave)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example27"><td></td><td>
+       <strong>example27</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter4/IBVPWave.html#example27"><code class="xref">example27</code></a> <em>(content/notebooks/Part1/Chapter4/IBVPWave)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example28"><td></td><td>
+       <strong>example28</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter4/IBVPWave.html#example28"><code class="xref">example28</code></a> <em>(content/notebooks/Part1/Chapter4/IBVPWave)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example29"><td></td><td>
+       <strong>example29</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter4/IBVPWave.html#example29"><code class="xref">example29</code></a> <em>(content/notebooks/Part1/Chapter4/IBVPWave)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example30"><td></td><td>
+       <strong>example30</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter4/GeneralSolutionWave.html#example30"><code class="xref">example30</code></a> <em>(content/notebooks/Part1/Chapter4/GeneralSolutionWave)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example31"><td></td><td>
+       <strong>example31</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter5/PolarCoords.html#example31"><code class="xref">example31</code></a> <em>(content/notebooks/Part1/Chapter5/PolarCoords)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example32"><td></td><td>
+       <strong>example32</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter5/PolarCoords.html#example32"><code class="xref">example32</code></a> <em>(content/notebooks/Part1/Chapter5/PolarCoords)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example33"><td></td><td>
+       <strong>example33</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter5/PolarCoords.html#example33"><code class="xref">example33</code></a> <em>(content/notebooks/Part1/Chapter5/PolarCoords)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example34"><td></td><td>
+       <strong>example34</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter1/ComplexNumbers.html#example34"><code class="xref">example34</code></a> <em>(content/notebooks/Part2/Chapter1/ComplexNumbers)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example35"><td></td><td>
+       <strong>example35</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Differentiation.html#example35"><code class="xref">example35</code></a> <em>(content/notebooks/Part2/Chapter2/Differentiation)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example36"><td></td><td>
+       <strong>example36</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Examples.html#example36"><code class="xref">example36</code></a> <em>(content/notebooks/Part2/Chapter2/Examples)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example37"><td></td><td>
+       <strong>example37</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Examples.html#example37"><code class="xref">example37</code></a> <em>(content/notebooks/Part2/Chapter2/Examples)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example38"><td></td><td>
+       <strong>example38</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Examples.html#example38"><code class="xref">example38</code></a> <em>(content/notebooks/Part2/Chapter2/Examples)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example39"><td></td><td>
+       <strong>example39</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Examples.html#example39"><code class="xref">example39</code></a> <em>(content/notebooks/Part2/Chapter2/Examples)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example4"><td></td><td>
+       <strong>example4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example4"><code class="xref">example4</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example40"><td></td><td>
+       <strong>example40</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Examples.html#example40"><code class="xref">example40</code></a> <em>(content/notebooks/Part2/Chapter2/Examples)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example41"><td></td><td>
+       <strong>example41</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter2/Examples.html#example41"><code class="xref">example41</code></a> <em>(content/notebooks/Part2/Chapter2/Examples)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example42"><td></td><td>
+       <strong>example42</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/Poles.html#example42"><code class="xref">example42</code></a> <em>(content/notebooks/Part2/Chapter3/Poles)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example43"><td></td><td>
+       <strong>example43</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/Poles.html#example43"><code class="xref">example43</code></a> <em>(content/notebooks/Part2/Chapter3/Poles)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example44"><td></td><td>
+       <strong>example44</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/RemovableSingularities.html#example44"><code class="xref">example44</code></a> <em>(content/notebooks/Part2/Chapter3/RemovableSingularities)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example45"><td></td><td>
+       <strong>example45</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/RemovableSingularities.html#example45"><code class="xref">example45</code></a> <em>(content/notebooks/Part2/Chapter3/RemovableSingularities)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example46"><td></td><td>
+       <strong>example46</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter3/Infinity.html#example46"><code class="xref">example46</code></a> <em>(content/notebooks/Part2/Chapter3/Infinity)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example48"><td></td><td>
+       <strong>example48</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/FundamentalInt.html#example48"><code class="xref">example48</code></a> <em>(content/notebooks/Part2/Chapter4/FundamentalInt)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example49"><td></td><td>
+       <strong>example49</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/FundamentalInt.html#example49"><code class="xref">example49</code></a> <em>(content/notebooks/Part2/Chapter4/FundamentalInt)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example5"><td></td><td>
+       <strong>example5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example5"><code class="xref">example5</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example50"><td></td><td>
+       <strong>example50</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/CauchyIntTheorem.html#example50"><code class="xref">example50</code></a> <em>(content/notebooks/Part2/Chapter4/CauchyIntTheorem)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example51"><td></td><td>
+       <strong>example51</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/CauchyIntTheorem.html#example51"><code class="xref">example51</code></a> <em>(content/notebooks/Part2/Chapter4/CauchyIntTheorem)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example52"><td></td><td>
+       <strong>example52</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/CauchyIntTheorem.html#example52"><code class="xref">example52</code></a> <em>(content/notebooks/Part2/Chapter4/CauchyIntTheorem)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example53"><td></td><td>
+       <strong>example53</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/CauchyIntForm.html#example53"><code class="xref">example53</code></a> <em>(content/notebooks/Part2/Chapter4/CauchyIntForm)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example54"><td></td><td>
+       <strong>example54</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/Annulus.html#example54"><code class="xref">example54</code></a> <em>(content/notebooks/Part2/Chapter4/Annulus)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example55"><td></td><td>
+       <strong>example55</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/Annulus.html#example55"><code class="xref">example55</code></a> <em>(content/notebooks/Part2/Chapter4/Annulus)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example56"><td></td><td>
+       <strong>example56</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/TaylorSeriesComplex.html#example56"><code class="xref">example56</code></a> <em>(content/notebooks/Part2/Chapter5/TaylorSeriesComplex)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example57"><td></td><td>
+       <strong>example57</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/TaylorSeriesComplex.html#example57"><code class="xref">example57</code></a> <em>(content/notebooks/Part2/Chapter5/TaylorSeriesComplex)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example58"><td></td><td>
+       <strong>example58</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/TaylorSeriesComplex.html#example58"><code class="xref">example58</code></a> <em>(content/notebooks/Part2/Chapter5/TaylorSeriesComplex)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example59"><td></td><td>
+       <strong>example59</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example59"><code class="xref">example59</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example6"><td></td><td>
+       <strong>example6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example6"><code class="xref">example6</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example60"><td></td><td>
+       <strong>example60</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example60"><code class="xref">example60</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example61"><td></td><td>
+       <strong>example61</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example61"><code class="xref">example61</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example62"><td></td><td>
+       <strong>example62</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example62"><code class="xref">example62</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example63"><td></td><td>
+       <strong>example63</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example63"><code class="xref">example63</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example64"><td></td><td>
+       <strong>example64</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example64"><code class="xref">example64</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example65"><td></td><td>
+       <strong>example65</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example65"><code class="xref">example65</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example66"><td></td><td>
+       <strong>example66</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter5/LaurentSeries.html#example66"><code class="xref">example66</code></a> <em>(content/notebooks/Part2/Chapter5/LaurentSeries)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example67"><td></td><td>
+       <strong>example67</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter6/CalculatingResidues.html#example67"><code class="xref">example67</code></a> <em>(content/notebooks/Part2/Chapter6/CalculatingResidues)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example68"><td></td><td>
+       <strong>example68</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter6/CalculatingResidues.html#example68"><code class="xref">example68</code></a> <em>(content/notebooks/Part2/Chapter6/CalculatingResidues)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example69"><td></td><td>
+       <strong>example69</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter6/RealIntegrals.html#example69"><code class="xref">example69</code></a> <em>(content/notebooks/Part2/Chapter6/RealIntegrals)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example7"><td></td><td>
+       <strong>example7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example7"><code class="xref">example7</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example8"><td></td><td>
+       <strong>example8</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example8"><code class="xref">example8</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example9"><td></td><td>
+       <strong>example9</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter1/ODERev.html#example9"><code class="xref">example9</code></a> <em>(content/notebooks/Part1/Chapter1/ODERev)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lemma1"><td></td><td>
+       <strong>lemma1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/Fourierseries2pi.html#lemma1"><code class="xref">lemma1</code></a> <em>(content/notebooks/Part1/Chapter2/Fourierseries2pi)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lemma2"><td></td><td>
+       <strong>lemma2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter4/UniquenessWave.html#lemma2"><code class="xref">lemma2</code></a> <em>(content/notebooks/Part1/Chapter4/UniquenessWave)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-0"><td></td><td>
+       <strong>theorem-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter6/ResidueTheorem.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(content/notebooks/Part2/Chapter6/ResidueTheorem)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-1"><td></td><td>
+       <strong>theorem-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/CauchyIntForm.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(content/notebooks/Part2/Chapter4/CauchyIntForm)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-2"><td></td><td>
+       <strong>theorem-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/Annulus.html#theorem-2"><code class="xref">theorem-2</code></a> <em>(content/notebooks/Part2/Chapter4/Annulus)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem421"><td></td><td>
+       <strong>theorem421</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part2/Chapter4/FundamentalInt.html#theorem421"><code class="xref">theorem421</code></a> <em>(content/notebooks/Part2/Chapter4/FundamentalInt)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theoremconv"><td></td><td>
+       <strong>theoremconv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="content/notebooks/Part1/Chapter2/FSConvergence.html#theoremconv"><code class="xref">theoremconv</code></a> <em>(content/notebooks/Part1/Chapter2/FSConvergence)</em></td><td>
+       <em>theorem</em></td></tr>
+   </table>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan J Crofts<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

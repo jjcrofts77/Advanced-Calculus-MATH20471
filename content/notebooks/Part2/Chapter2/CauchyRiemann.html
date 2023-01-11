@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -708,25 +711,26 @@ title="Print to PDF"
 \[
 	f^\prime(z) = \frac{\partial}{\partial x}(u+iv) = \frac{\partial}{\partial y}(-iu+v).
 \]</div>
-<blockquote>
-<div><p><strong>Definition 2.2.1</strong> A function <span class="math notranslate nohighlight">\(\phi(x,y)\)</span> is said to be <em>harmonic</em> if it satisfies Laplace’s equation:</p>
-</div></blockquote>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<section class="definition-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(\phi(x,y)\)</span> is said to be <em>harmonic</em> if it satisfies Laplace’s equation:</p>
 <div class="math notranslate nohighlight">
 \[
 	\nabla^2\phi=0; \ \nabla^2\equiv\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}.
 \]</div>
-<p>Differentiating the Cauchy-Riemann equations yields:</p>
+</section>
+</div><p>Differentiating the Cauchy-Riemann equations yields:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	\frac{\partial}{\partial x}\frac{\partial u}{\partial x}&amp;=&amp;\frac{\partial}{\partial x}\frac{\partial v}{\partial y}\ \Rightarrow \frac{\partial^2 u}{\partial x^2}=\frac{\partial^2 v}{\partial y\partial x}\\
-	\frac{\partial}{\partial y}\frac{\partial u}{\partial y}&amp;=&amp;-\frac{\partial}{\partial y}\frac{\partial v}{\partial x}\ \Rightarrow \frac{\partial^2 u}{\partial y^2}=-\frac{\partial^2 v}{\partial y\partial x}.
+	\frac{\partial}{\partial x}\frac{\partial u}{\partial x}&amp;=\frac{\partial}{\partial x}\frac{\partial v}{\partial y}\ &amp;\Rightarrow \frac{\partial^2 u}{\partial x^2}&amp;=\frac{\partial^2 v}{\partial y\partial x}\\
+	\frac{\partial}{\partial y}\frac{\partial u}{\partial y}&amp;=-\frac{\partial}{\partial y}\frac{\partial v}{\partial x}\ &amp;\Rightarrow \frac{\partial^2 u}{\partial y^2}&amp;=-\frac{\partial^2 v}{\partial y\partial x}.
 \end{split}\]</div>
 <p>Adding provides <span class="math notranslate nohighlight">\(\nabla^2 u = 0\)</span>: <span class="math notranslate nohighlight">\(u\)</span> is harmonic. It is simple to show that <span class="math notranslate nohighlight">\(v\)</span> is similarly harmonic by differentiation with respect to <span class="math notranslate nohighlight">\(y\)</span>. (<strong>Recommend you do this as an exercise</strong>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The real and imaginary parts of an analytic complex function satisfy Laplace’s equation. The functions <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are therefore known as <strong>harmonic conjugate functions</strong>.</p>
 </div>
-<br>
 <section id="determining-an-analytic-function">
 <h2>Determining an analytic function<a class="headerlink" href="#determining-an-analytic-function" title="Permalink to this headline">#</a></h2>
 <p>The Cauchy-Riemann equations can be employed to determine an analytic function, given either its real or imaginary parts <span class="math notranslate nohighlight">\(u\)</span> or <span class="math notranslate nohighlight">\(v\)</span> <em>up to an arbitrary constant</em>.</p>
@@ -743,12 +747,12 @@ title="Print to PDF"
 <p>For instance, if <span class="math notranslate nohighlight">\(u(x,y)=x^2-y^2\)</span> is the real part of an analytic function <span class="math notranslate nohighlight">\(f(z)=u(x,y)+iv(x,y)\)</span> then the Cauchy-Riemann conditions give:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}=2x\ \mbox{and}\ \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}=2y.
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}=2x \quad \text{and} \quad \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}=2y.
 \]</div>
 <p>Integrating each of the above to determine <span class="math notranslate nohighlight">\(v\)</span> provides:</p>
 <div class="math notranslate nohighlight">
 \[
-v=\int 2x \mathrm{d} y = 2xy + h(x)\ \mbox{and}\ v=\int 2y \mathrm{d} x=2xy + g(y),
+v=\int 2x \mathrm{d} y = 2xy + h(x) \quad \text{and} \quad v=\int 2y \mathrm{d} x=2xy + g(y),
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(h(x)\)</span> and <span class="math notranslate nohighlight">\(g(y)\)</span> are arbitrary functions of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. These two expressions must be equal. We therefore conclude <span class="math notranslate nohighlight">\(h(x)=g(y)\)</span>; so we must choose <span class="math notranslate nohighlight">\(h=g=k\)</span> for some constant <span class="math notranslate nohighlight">\(k\)</span> independent of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>The solution is then:</p>
@@ -756,12 +760,11 @@ v=\int 2x \mathrm{d} y = 2xy + h(x)\ \mbox{and}\ v=\int 2y \mathrm{d} x=2xy + g(
 \[
 	f(z) = u+iv= x^2-y^2 +i( 2xy+k) = z^2 + ik.
 \]</div>
-<br>
 </section>
 <section id="expressing-an-analytic-function-in-terms-of-z">
 <h2>Expressing an analytic function in terms of <span class="math notranslate nohighlight">\(z\)</span><a class="headerlink" href="#expressing-an-analytic-function-in-terms-of-z" title="Permalink to this headline">#</a></h2>
 <p>Once you’ve determined the real and imaginary parts, it’s conventional to express the resulting analytic complex function in terms of <span class="math notranslate nohighlight">\(z\)</span>. In the above example, it is easy to see that <span class="math notranslate nohighlight">\(x^2-y^2 +i( 2xy+k) = z^2 + ik\)</span>; however, this can sometimes be a bit tricky.</p>
-<p>A simple approach is to inspect the function in the case <span class="math notranslate nohighlight">\(y=0\)</span>. This simplifies any complicated expressions you might have. Then, replace <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(z\)</span> in the resulting expression for <span class="math notranslate nohighlight">\(f\)</span> to give you the result. (This is a result of the so-called \emph{identity theorem}, but this is outside the scope of the current course.)</p>
+<p>A simple approach is to inspect the function in the case <span class="math notranslate nohighlight">\(y=0\)</span>. This simplifies any complicated expressions you might have. Then, replace <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(z\)</span> in the resulting expression for <span class="math notranslate nohighlight">\(f\)</span> to give you the result. (This is a result of the so-called <em>identity theorem</em>, but this is outside the scope of the current course.)</p>
 <p>To take a simple example, if <span class="math notranslate nohighlight">\(f(z) = x(1-y) + i(\frac{x^2-y^2}{2}+y)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -770,9 +773,9 @@ v=\int 2x \mathrm{d} y = 2xy + h(x)\ \mbox{and}\ v=\int 2y \mathrm{d} x=2xy + g(
 <p>Replacing <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(z\)</span>: <span class="math notranslate nohighlight">\(f(z)=z+i\frac{z^2}{2}\)</span>. To prove that this method is actually working, in this case, this form can easily be seen from inspection:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	f(z) &amp;=&amp; x(1-y) + i(\frac{x^2-y^2}{2}+y)\\
-		 &amp;=&amp; x+iy + \frac{i}{2}\left( x^2+ 2ixy+(iy)^2 \right)\\
-		 &amp;=&amp; z+i\frac{z^2}{2}
+	f(z) &amp;= x(1-y) + i(\frac{x^2-y^2}{2}+y)\\
+		 &amp;= x+iy + \frac{i}{2}\left( x^2+ 2ixy+(iy)^2 \right)\\
+		 &amp;= z+i\frac{z^2}{2}
 \end{split}\]</div>
 <p>Another method is to express <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(z=x+iy\)</span> and <span class="math notranslate nohighlight">\(\overline{z}=x-iy\)</span> and simplify the resulting expression.</p>
 <div class="math notranslate nohighlight">
@@ -780,7 +783,6 @@ v=\int 2x \mathrm{d} y = 2xy + h(x)\ \mbox{and}\ v=\int 2y \mathrm{d} x=2xy + g(
 	z+\overline{z} \Rightarrow x=\frac{z+\overline{z}}{2},\ z-\overline{z} \Rightarrow y=\frac{z-\overline{z}}{2i}.
 \]</div>
 <p><em>On simplification you should have no <span class="math notranslate nohighlight">\(\overline{z}\)</span>s left over since <span class="math notranslate nohighlight">\(f(z)\)</span> must be analytic</em>.</p>
-<br>
 </section>
 <section id="two-more-results">
 <h2>Two more results<a class="headerlink" href="#two-more-results" title="Permalink to this headline">#</a></h2>
@@ -827,9 +829,9 @@ v=\int 2x \mathrm{d} y = 2xy + h(x)\ \mbox{and}\ v=\int 2y \mathrm{d} x=2xy + g(
 <p>Multiplying the first by <span class="math notranslate nohighlight">\(u\)</span> and the second by <span class="math notranslate nohighlight">\(v\)</span> and adding:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-			0&amp;=&amp;u^2\frac{\partial u}{\partial x} - uv\frac{\partial u}{\partial y} + uv\frac{\partial u}{\partial y} + v^2\frac{\partial u}{\partial x}\\
-			0&amp;=&amp;(u^2+v^2)\frac{\partial u}{\partial x}\\
-			0&amp;=&amp;c^2\frac{\partial u}{\partial x}.
+			0&amp;=u^2\frac{\partial u}{\partial x} - uv\frac{\partial u}{\partial y} + uv\frac{\partial u}{\partial y} + v^2\frac{\partial u}{\partial x}\\
+			0&amp;=(u^2+v^2)\frac{\partial u}{\partial x}\\
+			0&amp;=c^2\frac{\partial u}{\partial x}.
 			\end{split}\]</div>
 <p>Therefore <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial u}{\partial x}=0\)</span> and by the above results so are the other derivatives. And therefore <span class="math notranslate nohighlight">\(f(z)=\mbox{constant}\)</span></p>
 </li>

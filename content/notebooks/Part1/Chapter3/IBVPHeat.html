@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -698,7 +701,10 @@ title="Print to PDF"
  T(x,t) = \sum_{n=1}^\infty a_n\sin\left(\frac{n\pi x}{L}\right)e^{-n^2\pi^2\kappa t/L^2}.
 \]</div>
 <br>
-<p><strong>Example 3.3.1</strong> Solve the IBVP for the case</p>
+<div class="proof example admonition" id="example23">
+<p class="admonition-title"><span class="caption-number">Example 23 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve the IBVP for the case</p>
 <div class="math notranslate nohighlight">
 \[
  T(x,0) = \sin\left(\frac{\pi x}{L}\right) + \frac{1}{2}\sin\left(\frac{2\pi x}{L}\right) = f(x), \quad 0 \leq x \leq L.
@@ -713,7 +719,8 @@ title="Print to PDF"
 \[
  T(x,t) = \sin\left(\frac{\pi x}{L}\right)e^{-\pi^2\kappa t/L^2} +\frac{1}{2}\sin\left(\frac{2\pi x}{L}\right)e^{-4\pi^2 \kappa t/L^2}.
 \]</div>
-<p>The initial condition and solution is shown in the figures below.</p>
+</section>
+</div><p>The initial condition and solution is shown in the figures below.</p>
 <br>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
@@ -743,7 +750,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Below we further illustrate how the tempertaure profile of the problem in Example 3.3.1 behaves as a function of time. Click on the tab to view the python code that creates the movie.</p>
+<p>Below we further illustrate how the tempertaure profile of the problem in <a class="reference internal" href="#example23">Example 23</a> behaves as a function of time. Click on the tab to view the python code that creates the movie.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot an animation of the solution T(x,t) with L = pi and kappa = 0.25</span>
@@ -819,7 +826,10 @@ title="Print to PDF"
  a_n = \frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x.
 \]</div>
 <br>
-<p><strong>Example 3.3.2</strong>  Find the solution of the IBVP when</p>
+<div class="proof example admonition" id="example24">
+<p class="admonition-title"><span class="caption-number">Example 24 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the solution of the IBVP when</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
  f(x) = \begin{cases}0&amp;\text{for $0\leq x\leq L_1$ and $L_2\leq x \leq L$,}\\1&amp;\text{for $L_1&lt;x&lt;L_2$.}\end{cases}
@@ -834,7 +844,8 @@ f(x) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1}{
 \[
 T(x,t) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1}{L}\right)-\cos\left(\frac{n\pi L_2}{L}\right)\right]\sin\left(\frac{n\pi x}{L}\right)e^{-n^2\pi^2\kappa t/L^2}.
 \]</div>
-<p>The initial condition and solution is shown in the figures below.</p>
+</section>
+</div><p>The initial condition and solution is shown in the figures below.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -863,7 +874,6 @@ T(x,t) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1
 </div>
 </div>
 </div>
-<br>
 <p>Notice Gibb’s phenomenon is present despite the large number of terms taken in the FS approximation.</p>
 </section>
 </section>
