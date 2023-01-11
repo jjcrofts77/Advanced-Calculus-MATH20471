@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -679,35 +682,40 @@ title="Print to PDF"
 <h1>5.2 Taylor series for complex valued functions<a class="headerlink" href="#taylor-series-for-complex-valued-functions" title="Permalink to this headline">#</a></h1>
 <p>If a complex function <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic in some region</p>
 <div class="math notranslate nohighlight" id="equation-taylorcomplex">
-<span class="eqno">(54)<a class="headerlink" href="#equation-taylorcomplex" title="Permalink to this equation">#</a></span>\[
-	f(z)=\sum_{n=0}^{\infty} \f{f^{(n)}(z_0)}{n!}\left(z-z_0\right)^n.\label
+<span class="eqno">(56)<a class="headerlink" href="#equation-taylorcomplex" title="Permalink to this equation">#</a></span>\[
+	f(z)=\sum_{n=0}^{\infty} \frac{f^{(n)}(z_0)}{n!}\left(z-z_0\right)^n.
 \]</div>
-<div class="highlight-note notranslate"><div class="highlight"><pre><span></span>Instead of a region of convergence on the real line $|x-x_0|&lt;R$, we now have a *circle* of convergence $|z-z_0|&lt;\mathscr{R}$. This radius of convergence (of this circle) is the distance from $z_0$ to the nearest singularity of $f(z)$.
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of a region of convergence on the real line <span class="math notranslate nohighlight">\(|x-x_0|&lt;{R}\)</span> we now have a circle of convergence <span class="math notranslate nohighlight">\(|z-z_0|&lt;\mathscr{R}\)</span>. This radius of convergence (of this circle) is the distance from <span class="math notranslate nohighlight">\(z_0\)</span> to the nearest singularity of <span class="math notranslate nohighlight">\(f(z)\)</span>.</p>
 </div>
 <p>As indicated above, <span class="math notranslate nohighlight">\(f\)</span> needs to be analytic (in order to determine its derivative) at, and in a neighbourhood of, <span class="math notranslate nohighlight">\(z_0\)</span>. Different expansions can therefore be valid in distinct parts of the complex plane.</p>
-<p><strong>Example 5.2.1</strong> Calculate the Taylor expansion of <span class="math notranslate nohighlight">\(f(z)=e^z\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span> and <span class="math notranslate nohighlight">\(z_0=3\)</span>}</p>
+<div class="proof example admonition" id="example56">
+<p class="admonition-title"><span class="caption-number">Example 56 </span></p>
+<section class="example-content" id="proof-content">
+<p>Calculate the Taylor expansion of <span class="math notranslate nohighlight">\(f(z)=e^z\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span> and <span class="math notranslate nohighlight">\(z_0=3\)</span>}</p>
 <p><strong>Solution</strong></p>
-<ul class="simple">
-<li><p>$e^z<span class="math notranslate nohighlight">\( is analytic everywhere in \)</span>\mathbb{C}<span class="math notranslate nohighlight">\( (except at \)</span>\infty$) so the radius of convergence of the series is infinite.\</p></li>
-<li><p>We need to calculate the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative at <span class="math notranslate nohighlight">\(z_0\)</span>:</p></li>
-</ul>
+<p>Since <span class="math notranslate nohighlight">\(e^z\)</span> is analytic everywhere in <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> (except at <span class="math notranslate nohighlight">\(\infty\)</span>) the radius of convergence of the series is infinite.</p>
+<p>We need to calculate the <span class="math notranslate nohighlight">\(n^{th}\)</span> derivative at <span class="math notranslate nohighlight">\(z_0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
- f^{(n)}(z)=\frac{\mathrm{d} }{\mathrm{d} z} e^z \bigg|_{z=z_0}=e^{z_0}.
- \]</div>
+f^{(n)}(z)=\frac{\mathrm{d} }{\mathrm{d} z} e^z \bigg|_{z=z_0}=e^{z_0}.
+\]</div>
 <p>The Taylor expansion of <span class="math notranslate nohighlight">\(f(z)=e^z\)</span> about <span class="math notranslate nohighlight">\(z_0\)</span> is therefore:</p>
 <div class="math notranslate nohighlight">
 \[
- e^z = \sum_{n=0}^\infty \frac{e^{z_0}}{n!}\left(z-z_0\right)^n
- \]</div>
+e^z = \sum_{n=0}^\infty \frac{e^{z_0}}{n!}\left(z-z_0\right)^n
+\]</div>
 <p>and so for each of the <span class="math notranslate nohighlight">\(z_0\)</span> above, we have:</p>
 <div class="math notranslate nohighlight">
 \[
- e^z = \sum_{n=0}^\infty \frac{z^n}{n!},\quad e^z = \sum_{n=0}^\infty \frac{e^{3}}{n!}\left( z-3 \right)^n
- \]</div>
-<br>
-<p><strong>Example 5.5.2</strong> Calculate the Taylor expansion of <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{1+z}\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span>}</p>
+e^z = \sum_{n=0}^\infty \frac{z^n}{n!},\quad e^z = \sum_{n=0}^\infty \frac{e^{3}}{n!}\left( z-3 \right)^n 
+\]</div>
+</section>
+</div><div class="proof example admonition" id="example57">
+<p class="admonition-title"><span class="caption-number">Example 57 </span></p>
+<section class="example-content" id="proof-content">
+<p>Calculate the Taylor expansion of <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{1+z}\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span>}</p>
 <p><strong>Solution</strong></p>
 <ul class="simple">
 <li><p>The distance to the nearest singularity is the radius of convergence of the series: <span class="math notranslate nohighlight">\(R=1\)</span> (<span class="math notranslate nohighlight">\(z=-1\)</span> is singular)</p></li>
@@ -725,11 +733,15 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>This can also be easily calculated with no calculus required (if you prefer) by using the binomial series expansion of <span class="math notranslate nohighlight">\((x+y)^n\)</span> to expand <span class="math notranslate nohighlight">\((1+z)^{-1}\)</span>.</p></li>
 </ul>
-<aside class="margin sidebar">
+</section>
+</div><aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p><strong>Exercise:</strong> employ the binomial series of <span class="math notranslate nohighlight">\(f\)</span> to determine the Taylor series above</p>
 </aside>
-<p><strong>Example 5.3.3</strong> Calculate the Taylor expansion of <span class="math notranslate nohighlight">\(f(z)=\sin(z)\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span></p>
+<div class="proof example admonition" id="example58">
+<p class="admonition-title"><span class="caption-number">Example 58 </span></p>
+<section class="example-content" id="proof-content">
+<p>Calculate the Taylor expansion of <span class="math notranslate nohighlight">\(f(z)=\sin(z)\)</span> about <span class="math notranslate nohighlight">\(z_0=0\)</span></p>
 <p><strong>Solution</strong></p>
 <ul class="simple">
 <li><p>The exponential notation comes in handy here:</p></li>
@@ -745,7 +757,8 @@ title="Print to PDF"
 \[
  \sin(z)=\frac{1}{2i}\sum_{n=0}^\infty\frac{1}{n!}\left[ \left( iz\right)^n+\left( -iz\right)^n\right] = z-\frac{z^3}{3!}+\frac{z^5}{5!}\ldots
  \]</div>
-<section id="differentiation-and-integration-of-taylor-series">
+</section>
+</div><section id="differentiation-and-integration-of-taylor-series">
 <h2>Differentiation and integration of Taylor series<a class="headerlink" href="#differentiation-and-integration-of-taylor-series" title="Permalink to this headline">#</a></h2>
 <p>A Taylor series may be differentiated or integrated <em>within</em> its circle of convergence: the resulting expression is valid within the same circle.</p>
 </section>

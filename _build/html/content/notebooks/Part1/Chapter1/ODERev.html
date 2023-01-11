@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -710,26 +713,11 @@ title="Print to PDF"
  \int g(x)\mathrm{d}x = \int f(t)\mathrm{d}t.
 \]</div>
 <br>
-<p><strong>Example 1.2.1</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = -2xt\)</span>.</p>
-<div class="toggle docutils container">
-<p>The right-hand side is clearly separable with <span class="math notranslate nohighlight">\(\displaystyle f(t)=-2t\)</span> and <span class="math notranslate nohighlight">\(\displaystyle g(x)=1/x\)</span> and so</p>
-<div class="math notranslate nohighlight">
-\[
-\int x^{-1}\mathrm{d}x = \int (-2t)\mathrm{d}t
-\]</div>
-<p>thus</p>
-<div class="math notranslate nohighlight">
-\[
-\log{x} = -t^2 + c
-\]</div>
-<p>giving</p>
-<div class="math notranslate nohighlight">
-\[
-x(t) = e^{-t^2+c} = ke^{-t^2}.
-\]</div>
-</div>
 <br>
-<p><strong>Example 1.2.2</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{t}{x}\)</span>.</p>
+<div class="proof example admonition" id="example4">
+<p class="admonition-title"><span class="caption-number">Example 3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{t}{x}\)</span>.</p>
 <div class="toggle docutils container">
 <p>Multiplying through by <span class="math notranslate nohighlight">\(x\mathrm{d}t\)</span> and integrating gives</p>
 <div class="math notranslate nohighlight">
@@ -759,7 +747,8 @@ x = \pm\sqrt{t^2 + c}.
 </figcaption>
 </figure>
 </div>
-<br>
+</section>
+</div><br>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the differential equation is of the form</p>
@@ -775,7 +764,10 @@ v+t\frac{\mathrm{d}v}{\mathrm{d}t} = f(v),
 <p>which is a separable equation (<em>i.e.</em> we can solve as in our earlier examples)</p>
 </div>
 <br>
-<p><strong>Example 1.2.3</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{t+x}{t}\)</span>.</p>
+<div class="proof example admonition" id="example5">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{t+x}{t}\)</span>.</p>
 <div class="toggle docutils container">
 <p>The right-hand side can be written as <span class="math notranslate nohighlight">\(\displaystyle 1 + x/t\)</span> and hence is of the form  <span class="math notranslate nohighlight">\(\displaystyle f(x/t)\)</span>.</p>
 <p>Putting <span class="math notranslate nohighlight">\(x = vt\)</span> we get</p>
@@ -804,7 +796,8 @@ v = \log{t} + \log{k} = \log{kt}.
 x(t) = t\log{kt}.
 \]</div>
 </div>
-<br>
+</section>
+</div><br>
 </section>
 <section id="integrating-factor">
 <h2>Integrating Factor<a class="headerlink" href="#integrating-factor" title="Permalink to this headline">#</a></h2>
@@ -844,7 +837,10 @@ x'e^{\int p(t)\mathrm{d}t} + p(t)e^{\int p(t)\mathrm{d}t}x = \frac{\mathrm{d}}{\
 <p>which can be integrated and solved to determine <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <p>Hopefully an example will clarify how the above process works in practice.</p>
 <br>
-<p><strong>Example 1.2.4</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x' = t + \frac{2x}{t}\)</span>.</p>
+<div class="proof example admonition" id="example6">
+<p class="admonition-title"><span class="caption-number">Example 5 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle x' = t + \frac{2x}{t}\)</span>.</p>
 <div class="toggle docutils container">
 <p>To start let us rearrange the equation into the standard form given in <a class="reference internal" href="#equation-intfact">(4)</a></p>
 <div class="math notranslate nohighlight">
@@ -878,7 +874,8 @@ t^{-2}x' - \frac{1}{t^3}x = t^{-1}.
  x(t) = t^2\log|kt|.
 \]</div>
 </div>
-<br>
+</section>
+</div><br>
 </section>
 <section id="complementary-functions-for-second-order-odes">
 <h2>Complementary Functions for Second-Order ODEs<a class="headerlink" href="#complementary-functions-for-second-order-odes" title="Permalink to this headline">#</a></h2>
@@ -913,7 +910,10 @@ t^{-2}x' - \frac{1}{t^3}x = t^{-1}.
 \]</div>
 <p>provided <span class="math notranslate nohighlight">\(\lambda_1\neq\lambda_2\)</span>.</p>
 <br>
-<p><strong>Example 1.2.5 (distinct roots)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''-3x'+2x=0\)</span>.</p>
+<div class="proof example admonition" id="example7">
+<p class="admonition-title"><span class="caption-number">Example 6 </span> (distinct roots)</p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle x''-3x'+2x=0\)</span>.</p>
 <div class="toggle docutils container">
 <p>Substituting <span class="math notranslate nohighlight">\(\displaystyle x=e^{\lambda t}\)</span> into our ODE gives the following auxillary equation</p>
 <div class="math notranslate nohighlight">
@@ -926,8 +926,12 @@ t^{-2}x' - \frac{1}{t^3}x = t^{-1}.
 x(t) = Ae^t + Be^{2t}.
 \]</div>
 </div>
-<br>
-<p><strong>Example 1.2.6 (repeated roots)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''-4x'+4x = 0.\)</span></p>
+</section>
+</div><br>
+<div class="proof example admonition" id="example8">
+<p class="admonition-title"><span class="caption-number">Example 7 </span> (repeated roots)</p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle x''-4x'+4x = 0.\)</span></p>
 <div class="toggle docutils container">
 <p>The axillary equation is</p>
 <div class="math notranslate nohighlight">
@@ -947,8 +951,12 @@ x(t) = Ae^t + Be^{2t}.
  x(t) = (A+Bt)e^{2t}.
 \]</div>
 </div>
-<br>
-<p><strong>Example 1.2.7 (complex roots)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''-6x'+25x=0\)</span>.</p>
+</section>
+</div><br>
+<div class="proof example admonition" id="example9">
+<p class="admonition-title"><span class="caption-number">Example 8 </span> (complex roots)</p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle x''-6x'+25x=0\)</span>.</p>
 <div class="toggle docutils container">
 <p>The auxillary equation is given by</p>
 <div class="math notranslate nohighlight">
@@ -974,7 +982,8 @@ x(t) &amp;= e^{3t}(A(\cos{4t}+i\sin{4t})+B(\cos{4t}-i\sin{4t}))\\
 <p>where <span class="math notranslate nohighlight">\(\displaystyle C=A+B\)</span> and <span class="math notranslate nohighlight">\(D=(A-B)i\)</span> are arbitrary constants.</p>
 <p>Clearly for real initial conditions the solutions are real for all <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </div>
-<br>
+</section>
+</div><br>
 <p>Recall that we can use the same technique to solve an inhomogeneous ODE of the form</p>
 <div class="math notranslate nohighlight" id="equation-general">
 <span class="eqno">(7)<a class="headerlink" href="#equation-general" title="Permalink to this equation">#</a></span>\[
@@ -986,7 +995,10 @@ x''-px'+qx = f(t);
  x(t) = x_c(t) + x_p(t).
 \]</div>
 <br>
-<p><strong>Example 1.2.8 (inhomogeneous)</strong> Solve <span class="math notranslate nohighlight">\(\displaystyle x''+3x'-4x=6t\)</span>.</p>
+<div class="proof example admonition" id="example10">
+<p class="admonition-title"><span class="caption-number">Example 9 </span> (inhomogeneous)</p>
+<section class="example-content" id="proof-content">
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle x''+3x'-4x=6t\)</span>.</p>
 <div class="toggle docutils container">
 <p>We start by solving the homogeneous equation</p>
 <div class="math notranslate nohighlight">
@@ -1021,7 +1033,8 @@ x(t) &amp;= x_c(t) + x_p(t)\\
 \end{split}\]</div>
 <p>As usual to find the arbitrary constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> requires additional information (<em>i.e.</em> initial or boundary data).</p>
 </div>
-<br>
+</section>
+</div><br>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In general, when choosing the form of the particular solution, <span class="math notranslate nohighlight">\(x_p(t)\)</span>, we are guided by the function <span class="math notranslate nohighlight">\(f(t)\)</span> on the right-hand side of <a class="reference internal" href="#equation-general">(7)</a>; however, care must be taken if the right-hand side function, <span class="math notranslate nohighlight">\(f(t)\)</span>, is similar to the complementary function <span class="math notranslate nohighlight">\(x_c(t)\)</span>.</p>

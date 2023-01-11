@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -698,16 +701,15 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="periodic-even-and-odd-functions">
 <h1>2.1 Periodic, Even and Odd Functions<a class="headerlink" href="#periodic-even-and-odd-functions" title="Permalink to this headline">#</a></h1>
 <p>We start this section by reminding ourselves what it means for a function to be <em>periodic</em> as well as reviewing some of the most important properties of such functions.</p>
-<br>
-<blockquote>
-<div><p><strong>Definition 2.1.1</strong> We say that <span class="math notranslate nohighlight">\(f\)</span> is a <em>periodic function</em> if there exists an <span class="math notranslate nohighlight">\(a&gt;0\)</span> such that</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span> (periodicity)</p>
+<section class="definition-content" id="proof-content">
+<p>We say that <span class="math notranslate nohighlight">\(f\)</span> is a <em>periodic function</em> if there exists an <span class="math notranslate nohighlight">\(a&gt;0\)</span> such that</p>
 <div class="math notranslate nohighlight">
-\[
- f(x+a) = f(x), \quad \forall x \in\mathbb{R}.
-\]</div>
+\[ f(x+a) = f(x), \quad \forall x \in\mathbb{R}.\]</div>
 <p>If this is the case then <span class="math notranslate nohighlight">\(a\)</span> is called a <em>period</em> for <span class="math notranslate nohighlight">\(f\)</span>. Note that the period is not unique, but if there is a smallest such <span class="math notranslate nohighlight">\(a\)</span>, it is called the <em>prime period</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
-</div></blockquote>
-<p>Some examples of periodic functions are shown below.</p>
+</section>
+</div><p>Some examples of periodic functions are shown below.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -725,14 +727,13 @@ prime period <span class="math notranslate nohighlight">\(a\)</span>. Examples o
 to be a periodic function by demanding it is periodic with period <span class="math notranslate nohighlight">\(a\)</span>. This is called a <em>periodic extension</em>.</p></li>
 </ol>
 <p>In order to solve certain PDEs it will be useful to consider the periodic extension of a function. (This will allow us to use the methods of FS to solve obtain series solutions of PDEs.)</p>
-<br>
-<blockquote>
-<div><p><strong>Definition 2.1.2</strong>
-Formally, we define the <em>periodic extension</em>, <span class="math notranslate nohighlight">\(F\)</span>, of <span class="math notranslate nohighlight">\(f\)</span> as follows: given <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> there exists a unique integer <span class="math notranslate nohighlight">\(m\)</span>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (periodic extension)</p>
+<section class="definition-content" id="proof-content">
+<p>Formally, we define the <em>periodic extension</em>, <span class="math notranslate nohighlight">\(F\)</span>, of <span class="math notranslate nohighlight">\(f\)</span> as follows: given <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> there exists a unique integer <span class="math notranslate nohighlight">\(m\)</span>
 such that <span class="math notranslate nohighlight">\(x-ma\in(\alpha, \alpha+a]\)</span>. If we then set <span class="math notranslate nohighlight">\(F(x) = f(x-ma)\)</span>, we can see that <span class="math notranslate nohighlight">\(F\)</span> is periodic with period <span class="math notranslate nohighlight">\(a\)</span>.</p>
-</div></blockquote>
-<br>
-<section id="properties-of-periodic-functions">
+</section>
+</div><section id="properties-of-periodic-functions">
 <h2>Properties of periodic functions<a class="headerlink" href="#properties-of-periodic-functions" title="Permalink to this headline">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(f, g\)</span> are periodic functions with period <span class="math notranslate nohighlight">\(a\)</span>, then:</p>
 <ol class="simple">
@@ -752,16 +753,14 @@ f(\lambda(x+a/\lambda)) = f(\lambda x+a) = f(\lambda x);
 <section id="odd-and-even-functions">
 <h2>Odd and even functions<a class="headerlink" href="#odd-and-even-functions" title="Permalink to this headline">#</a></h2>
 <br>
-<blockquote>
-<div><p><strong>Definition 2.1.3:</strong>
-A function <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span> is said to be <em>odd</em> if</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (odd function)</p>
+<section class="definition-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\mathbb{R}\)</span> is said to be <em>odd</em> if</p>
 <div class="math notranslate nohighlight">
-\[
- f(x) = -f(-x), \qquad \forall x\in\mathbb{R}.
-\]</div>
-</div></blockquote>
-<br>
-<p>For example, <span class="math notranslate nohighlight">\(\sin(\lambda x)\)</span> for <span class="math notranslate nohighlight">\(\lambda\in\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x^{2n+1}\)</span> for <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> are both odd functions.</p>
+\[ f(x) = -f(-x), \qquad \forall x\in\mathbb{R}.\]</div>
+</section>
+</div><p>For example, <span class="math notranslate nohighlight">\(\sin(\lambda x)\)</span> for <span class="math notranslate nohighlight">\(\lambda\in\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x^{2n+1}\)</span> for <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span> are both odd functions.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -777,17 +776,14 @@ A function <span class="math notranslate nohighlight">\(f:\mathbb{R}\rightarrow\
 </video>
 </div></div>
 </div>
-<br>
-<blockquote>
-<div><p><strong>Definition 2.1.4:</strong>
-A function <span class="math notranslate nohighlight">\(g:\mathbb{R}\rightarrow\mathbb{R}\)</span> is said to be <em>even</em> if</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (even function)</p>
+<section class="definition-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(g:\mathbb{R}\rightarrow\mathbb{R}\)</span> is said to be <em>even</em> if</p>
 <div class="math notranslate nohighlight">
-\[
- g(x) = g(-x), \qquad \forall x\in\mathbb{R}.
-\]</div>
-</div></blockquote>
-<br>
-<p>Examples of even functions are <span class="math notranslate nohighlight">\(\cos(\lambda x)\)</span> for <span class="math notranslate nohighlight">\(\lambda\in\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x^{2n}\)</span> for <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.</p>
+\[ g(x) = g(-x), \qquad \forall x\in\mathbb{R}.\]</div>
+</section>
+</div><p>Examples of even functions are <span class="math notranslate nohighlight">\(\cos(\lambda x)\)</span> for <span class="math notranslate nohighlight">\(\lambda\in\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x^{2n}\)</span> for <span class="math notranslate nohighlight">\(n\in\mathbb{N}\)</span>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">

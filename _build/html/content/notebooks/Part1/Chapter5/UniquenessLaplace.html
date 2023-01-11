@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -641,31 +644,28 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="uniqueness-optional">
 <h1>5.3 Uniqueness (optional)<a class="headerlink" href="#uniqueness-optional" title="Permalink to this headline">#</a></h1>
 <p>Uniqueness is established with the aid of <em>Green’s Theorem</em>:</p>
-<br>
-<blockquote>
-<div><p><strong>Theorem 5.1 (Green’s theorem)</strong> If <span class="math notranslate nohighlight">\(R\)</span> is a bounded and connected plane region whose boundary <span class="math notranslate nohighlight">\(\partial R\)</span> is the union <span class="math notranslate nohighlight">\(C_1\bigcup\ldots \bigcup C_n\)</span> of a finite number of simple closed curves, oriented so that <span class="math notranslate nohighlight">\(R\)</span> is on the left, and if <span class="math notranslate nohighlight">\(p(x,y)\)</span> and <span class="math notranslate nohighlight">\(q(x,y)\)</span> are continuous and have continuous first derivatives on <span class="math notranslate nohighlight">\(R\bigcup\partial R\)</span>, then</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 5 </span> (Green’s theorem )</p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(R\)</span> is a bounded and connected plane region whose boundary <span class="math notranslate nohighlight">\(\partial R\)</span> is the union <span class="math notranslate nohighlight">\(C_1\bigcup\ldots \bigcup C_n\)</span> of a finite number of simple closed curves, oriented so that <span class="math notranslate nohighlight">\(R\)</span> is on the left, and if <span class="math notranslate nohighlight">\(p(x,y)\)</span> and <span class="math notranslate nohighlight">\(q(x,y)\)</span> are continuous and have continuous first derivatives on <span class="math notranslate nohighlight">\(R\bigcup\partial R\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
  \int_{\partial R}p\mathrm{d}x+q\mathrm{d}y = \int\int_R\left(\frac{\partial q}{\partial x}-\frac{\partial p}{\partial y}\right)\mathrm{d}x\mathrm{d}y.
 \]</div>
-</div></blockquote>
-<br>
-<p>We consider uniqueness of solutions to the <em>Dirichlet problem</em>, working in Cartesian coordiantes.</p>
-<br>
-<blockquote>
-<div><p><strong>Theorem 5.2</strong> Consider the BVP</p>
-</div></blockquote>
+</section>
+</div><p>We consider uniqueness of solutions to the <em>Dirichlet problem</em>, working in Cartesian coordinates.</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span> (uniquness)</p>
+<section class="theorem-content" id="proof-content">
+<p>Consider the BVP</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial^2 T}{\partial x^2}+\frac{\partial^2 T}{\partial y^2} = 0 \text{ in } R, \quad T=f \text{ on } \partial R,
 \]</div>
-<blockquote>
-<div><p>where <span class="math notranslate nohighlight">\(f\)</span> is a prescribed function and <span class="math notranslate nohighlight">\(R\)</span> is a bounded and connected region as in the statement of Green’s theorem. Then the BVP has at most one solution.</p>
-</div></blockquote>
-<br>
-<blockquote>
-<div><p><strong>Proof</strong></p>
-<p>Let <span class="math notranslate nohighlight">\(S\)</span> be a solution, so that</p>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is a prescribed function and <span class="math notranslate nohighlight">\(R\)</span> is a bounded and connected region as in the statement of Green’s theorem. Then the BVP has at most one solution.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(S\)</span> be a solution, so that</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial^2 S}{\partial x^2}+\frac{\partial^2 S}{\partial y^2} = 0 \text{ in } R, \quad S=f \text{ on } \partial R.
@@ -690,8 +690,8 @@ W\left(\frac{\partial^2 W}{\partial x^2}+\frac{\partial^2 W}{\partial y^2}\right
 \[
 \int\int_R\left[\left(\frac{\partial W}{\partial x}\right)^2+\left(\frac{\partial W}{\partial y}\right)^2\right]\mathrm{d}x\mathrm{d}y=0.
 \]</div>
-<p>This is possible only if <span class="math notranslate nohighlight">\(\partial W/\partial x=0\)</span> and <span class="math notranslate nohighlight">\(\partial W/\partial y=0\)</span> in <span class="math notranslate nohighlight">\(R\)</span>. Hence <span class="math notranslate nohighlight">\(W\)</span> is constant and since <span class="math notranslate nohighlight">\(W=0\)</span> on <span class="math notranslate nohighlight">\(\partial R\)</span> the constant can only equal zero. Hence <span class="math notranslate nohighlight">\(T=S\)</span> and the solution is unique. <span class="math notranslate nohighlight">\(\quad \blacksquare\)</span></p>
-</div></blockquote>
+<p>This is possible only if <span class="math notranslate nohighlight">\(\partial W/\partial x=0\)</span> and <span class="math notranslate nohighlight">\(\partial W/\partial y=0\)</span> in <span class="math notranslate nohighlight">\(R\)</span>. Hence <span class="math notranslate nohighlight">\(W\)</span> is constant and since <span class="math notranslate nohighlight">\(W=0\)</span> on <span class="math notranslate nohighlight">\(\partial R\)</span> the constant can only equal zero. Hence <span class="math notranslate nohighlight">\(T=S\)</span> and the solution is unique.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

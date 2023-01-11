@@ -1,0 +1,7 @@
+%%html
+<figure>
+<center>
+<iframe scrolling="no" title="Example431" src="https://www.geogebra.org/material/iframe/id/ppge6eet/width/500/height/350/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="500px" height="350px" style="border:0px;"> </iframe>
+<figcaption style="position: center; bottom: 0; height: 10%; width 10%">Curve of integration in Example 48 (<b>click on the magenta circle!!!</b>)</figcaption>
+</center>
+</figure>

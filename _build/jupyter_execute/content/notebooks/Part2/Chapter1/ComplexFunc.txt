@@ -1,0 +1,112 @@
+# setup for plotting complex functions 
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# plot on grid [-lim,lim]^2
+N = 1000
+lim = 5
+
+x, y = np.meshgrid(np.linspace(-lim,lim,N),
+                   np.linspace(-lim,lim,N))
+z = x + 1j*y
+
+# plot the gamma function
+from scipy.special import gamma
+
+f = abs(gamma(z)) # plot bsolute value of gamma(z)
+f[f>6] = 6 # handle singularities
+
+fig = plt.figure(figsize=(8,8)) # figure size
+ax = fig.add_subplot(111, projection="3d", xlim=(-lim,lim), ylim=(-lim,lim), zlim=(0,6))
+
+ax.plot_surface(x, y, f, cmap="viridis", shade=True, alpha=1)
+ax.set_xlabel("$Re(z)$", size=16)
+ax.set_ylabel("$Im(z)$", size=16)
+ax.set_title("$|f(z)|=|\Gamma (z)|$", size=20, pad=30,weight='bold')
+ax.view_init(azim=-130, elev=35)
+
+plt.show()
+
+# real and imaginary parts of the Gamma function
+
+x, y = np.meshgrid(np.linspace(-4,4,N),
+                   np.linspace(-3*np.pi/2,3*np.pi/2,N))
+z = x + 1j*y
+
+f = np.exp(z) # plot bsolute value of gamma(z)
+f = abs(f.real)
+f[f>10] = 10 # handle singularities
+
+fig = plt.figure(figsize=(8,8)) # figure size
+ax = fig.add_subplot(111, projection="3d", xlim=(-lim,lim), ylim=(-lim,lim), zlim=(0,10))
+
+ax.plot_surface(x, y, f, cmap="jet", shade=True, alpha=1)
+ax.set_xlabel("$Re(z)$", size=16)
+ax.set_ylabel("$Im(z)$", size=16)
+ax.set_title("$|\mathrm{Real}(f)|=|\mathrm{Real}(e^z)|$", size=20, pad=30,weight='bold')
+ax.view_init(azim=-135, elev=35)
+
+plt.show()
+
+from colorsys import hls_to_rgb
+
+
+def colorize(fz):
+
+    """
+    The original colorize function can be found at:
+    https://stackoverflow.com/questions/17044052/mathplotlib-imshow-complex-2d-array
+    by the user nadapez.
+    """
+    
+    r = np.log2(1. + np.abs(fz))
+    
+    h = np.angle(fz)/(2*np.pi)
+    l = 1 - 0.45**(np.log(1+r)) 
+    s = 1
+
+    c = np.vectorize(hls_to_rgb)(h,l,s) # --> tuple
+    c = np.array(c)  # -->  array of (3,n,m) shape, but need (m,n,3)
+    c = np.rot90(c.transpose(2,1,0), 1) # Change shape to (m,n,3) and rotate 90 degrees
+    
+    return c
+
+
+# exp(z)/z
+lim = 1
+x, y = np.meshgrid(np.linspace(-lim,lim,N),
+                   np.linspace(-lim,lim,N))
+z = x + 1j*y
+
+f = np.exp(1/z)
+
+fig, (ax, ax2) = plt.subplots(1,2,figsize=(10,4))
+ax.legend(handles=legend_elements, loc='upper left')
+
+img = colorize(f)
+ax.imshow(img, extent=[-lim,lim, -lim,lim])
+ax.set_xlabel("$Re$ $Z$", fontsize=18)
+ax.set_ylabel("$Im$ $Z$", fontsize=18)
+ax.set_title(r"$f(z)=e^{1/z}$", fontsize=24)
+
+
+# sin(z)/z
+
+lim = 10
+x, y = np.meshgrid(np.linspace(-lim,lim,N),
+                   np.linspace(-lim,lim,N))
+z = x + 1j*y
+
+f = np.sin(z)/z
+
+ax2.legend(handles=legend_elements, loc='upper left')
+
+img = colorize(f)
+ax2.imshow(img, extent=[-lim,lim, -lim,lim])
+ax2.set_xlabel("$Re$ $Z$", fontsize=18)
+ax2.set_ylabel("$Im$ $Z$", fontsize=18)
+ax2.set_title(r"$f(z)=\frac{\sin(z)}{z}$", fontsize=24)
+
+plt.tight_layout()
+plt.show()

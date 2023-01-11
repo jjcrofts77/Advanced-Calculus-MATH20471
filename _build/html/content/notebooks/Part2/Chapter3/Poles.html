@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -640,28 +643,79 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter3/Poles.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="poles">
 <h1>3.1 Poles<a class="headerlink" href="#poles" title="Permalink to this headline">#</a></h1>
-<p>Taking <span class="math notranslate nohighlight">\(f(z)=\frac{z^3+2z+1}{z^2+3z+2}\)</span>, we see that the denominator may be expressed <span class="math notranslate nohighlight">\((z+2)(z+1)\)</span> and so <span class="math notranslate nohighlight">\(f\)</span> is not defined at <span class="math notranslate nohighlight">\(z=-1,-2\)</span> and so is not analytic at these two points.</p>
-<br>
-<p><strong>Definition 3.1.1</strong> A function <span class="math notranslate nohighlight">\(f(z)\)</span> has an order <span class="math notranslate nohighlight">\(n\)</span> pole at <span class="math notranslate nohighlight">\(z_0\)</span> if <span class="math notranslate nohighlight">\(z_0\)</span> is a root of order <span class="math notranslate nohighlight">\(n\)</span> for the function <span class="math notranslate nohighlight">\(1/f(z)\)</span></p>
-<br>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Another way of looking at it: <span class="math notranslate nohighlight">\(z_0\)</span> is a root of order <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(f(z)\)</span> if <span class="math notranslate nohighlight">\((z-z_0)^n f(z)\)</span> is analytic at <span class="math notranslate nohighlight">\(z_0\)</span> and <span class="math notranslate nohighlight">\((z-z_0)^{n-1} f(z)\)</span> is not.</p>
-</div>
-<p>For instance, in the above example,
-[
-\f{1}{f(z)}= \f{(z+2)(z+1)}{z^3+2z+1}
-]
-and <span class="math notranslate nohighlight">\(z=-1,-2\)</span> are 1<span class="math notranslate nohighlight">\(^{st}\)</span> order roots. Hence <span class="math notranslate nohighlight">\(z=-1,-2\)</span> are order one poles of <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<br>
-<p><strong>Example 3.1.1</strong> <span class="math notranslate nohighlight">\(\displaystyle f(z) = \frac{3z-2}{(z-1)^2(z+1)(z-4)}\)</span> has a pole of order 2 at <span class="math notranslate nohighlight">\(z=1\)</span>, and simple (<em>i.e.</em> order 1) poles at <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(4\)</span>.</p>
-<br>
-<p><strong>Definition 3.1.2</strong> If <span class="math notranslate nohighlight">\(\displaystyle g(z)=(z-z_0)^nf(z)\)</span>, where <span class="math notranslate nohighlight">\(f(z_0)\neq 0\)</span> and <span class="math notranslate nohighlight">\(n\)</span> is a positive integer, then <span class="math notranslate nohighlight">\(z=z_0\)</span> is called a <em>zero of order <span class="math notranslate nohighlight">\(n\)</span></em> of <span class="math notranslate nohighlight">\(g(z)\)</span>. If <span class="math notranslate nohighlight">\(n=1\)</span> <span class="math notranslate nohighlight">\(z_0\)</span> is called <em>simple zero</em>.</p>
+<p>Taking <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{z^3+2z+1}{z^2+3z+2}\)</span>, we see that the denominator may be expressed <span class="math notranslate nohighlight">\((z+2)(z+1)\)</span> and so <span class="math notranslate nohighlight">\(f\)</span> is not defined at <span class="math notranslate nohighlight">\(z=-1,-2\)</span> and so is not analytic at these two points.</p>
+<p>These isolated singular points are called <em>poles</em>. Before defining them formally let us remind ourselves what we mean by an order <span class="math notranslate nohighlight">\(n\)</span> zero (or root) of a function:</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>If <span class="math notranslate nohighlight">\(z_0\)</span> is an <span class="math notranslate nohighlight">\(n\)</span>th order zero of <span class="math notranslate nohighlight">\(g(x)\)</span>, then it is an <span class="math notranslate nohighlight">\(n\)</span>th order pole for <span class="math notranslate nohighlight">\(1/g(z)\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <span class="math notranslate nohighlight">\(n=1\)</span> <span class="math notranslate nohighlight">\(z_0\)</span> is called a <em>simple zero</em></p>
+</div>
 </aside>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 14 </span> (zeros)</p>
+<section class="definition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(\displaystyle f(z)=(z-z_0)^ng(z)\)</span>, where <span class="math notranslate nohighlight">\(g(z_0)\neq 0\)</span> and <span class="math notranslate nohighlight">\(n\)</span> is a positive integer, then <span class="math notranslate nohighlight">\(z=z_0\)</span> is called a <em>zero of order <span class="math notranslate nohighlight">\(n\)</span></em> of <span class="math notranslate nohighlight">\(f(z)\)</span>.</p>
 </section>
+</div><p>We are now in a position to define what we mean by an order <span class="math notranslate nohighlight">\(n\)</span> pole.</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 15 </span> (poles)</p>
+<section class="definition-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(f(z)\)</span> has an order <span class="math notranslate nohighlight">\(n\)</span> pole at <span class="math notranslate nohighlight">\(z_0\)</span> if <span class="math notranslate nohighlight">\(z_0\)</span> is a root of order <span class="math notranslate nohighlight">\(n\)</span> for the function <span class="math notranslate nohighlight">\(1/f(z)\)</span>.</p>
+</section>
+</div><p>In the above example, we have that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{f(z)}= \frac{(z+2)(z+1)}{z^3+2z+1}
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(z=-1,-2\)</span> are first order roots. Hence <span class="math notranslate nohighlight">\(z=-1,-2\)</span> are order one poles of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Alternatively, <span class="math notranslate nohighlight">\(z_0\)</span> is a pole of order <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(f(z)\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[(z-z_0)^n f(z)\]</div>
+<p>is analytic at <span class="math notranslate nohighlight">\(z_0\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+(z-z_0)^{n-1} f(z)
+\]</div>
+<p>is not.</p>
+<p>Returning to our previous example, we see that</p>
+<div class="math notranslate nohighlight">
+\[
+(z+2)^1 f(z) = \frac{z^3+2z}{z+1},
+\]</div>
+<p>which is analytic at <span class="math notranslate nohighlight">\(z_0=-2\)</span>, and that</p>
+<div class="math notranslate nohighlight">
+\[
+(z+2)^0 f(z) = f(z),
+\]</div>
+<p>which is not. Thus the function has a first order pole at <span class="math notranslate nohighlight">\(z_0=-2\)</span> in agreement with our earlier result.</p>
+<div class="proof example admonition" id="example42">
+<p class="admonition-title"><span class="caption-number">Example 42 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hopefully it is straightforward to see that the function</p>
+<div class="math notranslate nohighlight">
+\[
+f(z) = \frac{3z-2}{(z-1)^2(z+1)(z-4)}
+\]</div>
+<p>has a pole of order 2 at <span class="math notranslate nohighlight">\(z=1\)</span>, and simple (<em>i.e.</em> order 1) poles at <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(4\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example43">
+<p class="admonition-title"><span class="caption-number">Example 43 </span></p>
+<section class="example-content" id="proof-content">
+<p>It can be shown that the Gamma function, which recall can be defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(z) = \int_0^∞ t^{z-1} e^{-t}\mathrm{d}t,
+\]</div>
+<p>has a simple pole at at <em>every</em> non-positive integer (see the figure below for an illustration)</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/GammaFunc.png"><img alt="../../../../_images/GammaFunc.png" src="../../../../_images/GammaFunc.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Plot of the Gamma function on <span class="math notranslate nohighlight">\([-4, 4]^2\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

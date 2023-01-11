@@ -1,0 +1,15 @@
+%%html
+<figure>
+<center>
+<iframe scrolling="no" title="TraceCurveAnim" src="https://www.geogebra.org/material/iframe/id/jrw9nvsy/width/500/height/350/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="500px" height="350px" style="border:0px;"> </iframe>
+<figcaption style="position: center; bottom: 0; height: 10%; width 10%">Paramaterisation of a curve in the complex plane (<b>click on the magenta circle!!!</b>)</figcaption>
+</center>
+</figure>
+
+%%html
+<figure>
+<center>
+<iframe scrolling="no" title="ParamUnitCircle" src="https://www.geogebra.org/material/iframe/id/c57x97jq/width/500/height/350/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="500px" height="350px" style="border:0px;"> </iframe>
+<figcaption style="position: center; bottom: 0; height: 10%; width 10%">Paramaterisation of the unit circle (<b>click on the magenta circle!!!</b>)</figcaption>
+</center>
+</figure>

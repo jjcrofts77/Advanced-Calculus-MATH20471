@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -641,9 +644,12 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="singularities-at-infinity-optional">
 <h1>3.4 Singularities at infinity (optional)<a class="headerlink" href="#singularities-at-infinity-optional" title="Permalink to this headline">#</a></h1>
 <p>The type of singularity of <span class="math notranslate nohighlight">\(f(z)\)</span> at <span class="math notranslate nohighlight">\(z=\infty\)</span> is the same as that of <span class="math notranslate nohighlight">\(f(1/w)\)</span> at <span class="math notranslate nohighlight">\(w=0\)</span>.</p>
-<br>
-<p><strong>Example 3.4.1</strong> The function <span class="math notranslate nohighlight">\(f(z)=z^3\)</span> has a pole of order 3 at <span class="math notranslate nohighlight">\(z=infty\)</span>, since <span class="math notranslate nohighlight">\(f(1/w) = 1/w^3\)</span> has a pole of order 3 at <span class="math notranslate nohighlight">\(w=0\)</span>.</p>
+<div class="proof example admonition" id="example46">
+<p class="admonition-title"><span class="caption-number">Example 47 </span></p>
+<section class="example-content" id="proof-content">
+<p>The function <span class="math notranslate nohighlight">\(f(z)=z^3\)</span> has a pole of order 3 at <span class="math notranslate nohighlight">\(z=\infty\)</span>, since <span class="math notranslate nohighlight">\(f(1/w) = 1/w^3\)</span> has a pole of order 3 at <span class="math notranslate nohighlight">\(w=0\)</span>.</p>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

@@ -49,7 +49,7 @@
 # 	- $\overline{z}=x-iy$
 # 	- $z\overline{z}=x^2+y^2$. **This is REAL.**
 # 	- $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$
-# 	- $\overline{z_1 z_2} = \overline{z_1}\, \overline{z_2}$
+# 	- $\overline{z_1 z_2} = \overline{z_1} \cdot \overline{z_2}$
 # 	- $|\overline{z}|=|{z}|$
 # 6. Inverse: $\displaystyle z^{-1} = \frac{1}{x+iy} = \frac{x-iy}{x^2+y^2}$
 # 7. Division: $\displaystyle\frac{z_1}{z_2}=z_1z_2^{-1}$, so using the previous result, 
@@ -160,11 +160,12 @@
 # The result $e^{in\theta}=\cos(n\theta)+i\sin(n\theta)$ is known as **DeMoivre's theorem**.
 # ```
 # 
-# <br>
-# 
 # ## Curves and regions in the complex plane
 # 
-# **Example 1.1.1** The equation of a circle.
+# ```{prf:example} 
+# :label: example34
+# 
+# The equation of a circle.
 # 
 # In Cartesian coordinates, the equation of a circle with radius $R$, centred on $(x_0,y_0)$ is:
 # 
@@ -173,6 +174,7 @@
 # $$
 # 
 # which, in complex form is: $|z-z_0|=R$, where $z_0=x_0+iy_0$. Employing the exponential notation above, this may also be written in the compact form: $z=z_0+Re^{i\theta}$.
+# ```
 # 
 # By simple extension, regions in the complex plane may be defined via inequalities such as: $a<|z-z_0|<b$.
 # 

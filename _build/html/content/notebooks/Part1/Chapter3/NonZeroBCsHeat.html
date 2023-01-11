@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -641,8 +644,10 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="non-zero-steady-state-optional">
 <h1>3.5 Non-Zero Steady State (optional)<a class="headerlink" href="#non-zero-steady-state-optional" title="Permalink to this headline">#</a></h1>
 <p>It may be that the temperatures at the ends <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span> are prescribed and constant but not equal to zero.</p>
-<br>
-<p><strong>Example 3.5.1</strong> Solve the IBVP</p>
+<div class="proof example admonition" id="example25">
+<p class="admonition-title"><span class="caption-number">Example 25 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solve the IBVP</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial x^2},\quad 0&lt;x&lt;L, t&gt;0,
@@ -692,7 +697,8 @@ U(x) = T_0\left(1-\frac{x}{L}\right)+T_1\left(\frac{x}{L}\right).
 \[
 T(x,t) =  T_0\left(1-\frac{x}{L}\right)+T_1\left(\frac{x}{L}\right)+\frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[-T_0+(-1)^nT_1\right]\sin\left(\frac{n\pi x}{L}\right)e^{-n^2\pi^2\kappa t/L^2}.
 \]</div>
-<p>Note that other more complicated boundary conditions are possible but lie outside the scope of the current course.</p>
+</section>
+</div><p>Note that other more complicated boundary conditions are possible but lie outside the scope of the current course.</p>
 </section>
 
     <script type="text/x-thebe-config">

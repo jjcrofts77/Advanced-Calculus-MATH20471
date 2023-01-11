@@ -31,7 +31,10 @@
 # 
 # <br>
 # 
-# **Example 3.3.1** Solve the IBVP for the case
+# ```{prf:example} 
+# :label: example23
+# 
+# Solve the IBVP for the case
 # 
 # $$
 #  T(x,0) = \sin\left(\frac{\pi x}{L}\right) + \frac{1}{2}\sin\left(\frac{2\pi x}{L}\right) = f(x), \quad 0 \leq x \leq L.
@@ -48,6 +51,7 @@
 # $$
 #  T(x,t) = \sin\left(\frac{\pi x}{L}\right)e^{-\pi^2\kappa t/L^2} +\frac{1}{2}\sin\left(\frac{2\pi x}{L}\right)e^{-4\pi^2 \kappa t/L^2}.
 # $$
+# ```
 # 
 # The initial condition and solution is shown in the figures below.
 # 
@@ -70,7 +74,7 @@
 # 
 # `````
 # 
-# Below we further illustrate how the tempertaure profile of the problem in Example 3.3.1 behaves as a function of time. Click on the tab to view the python code that creates the movie.
+# Below we further illustrate how the tempertaure profile of the problem in {prf:ref}`example23` behaves as a function of time. Click on the tab to view the python code that creates the movie.
 
 # In[1]:
 
@@ -160,7 +164,9 @@ HTML("""
 # 
 # <br>
 # 
-# **Example 3.3.2**  Find the solution of the IBVP when
+# ```{prf:example}  
+# :label: example24
+# Find the solution of the IBVP when
 # 
 # $$
 #  f(x) = \begin{cases}0&\text{for $0\leq x\leq L_1$ and $L_2\leq x \leq L$,}\\1&\text{for $L_1<x<L_2$.}\end{cases}
@@ -177,6 +183,7 @@ HTML("""
 # $$
 # T(x,t) = \frac{2}{\pi}\sum_{n=1}^\infty\frac{1}{n}\left[\cos\left(\frac{n\pi L_1}{L}\right)-\cos\left(\frac{n\pi L_2}{L}\right)\right]\sin\left(\frac{n\pi x}{L}\right)e^{-n^2\pi^2\kappa t/L^2}.
 # $$
+# ```
 # 
 # The initial condition and solution is shown in the figures below.
 # 
@@ -197,7 +204,5 @@ HTML("""
 # ````
 # 
 # `````
-# 
-# <br>
 # 
 # Notice Gibb's phenomenon is present despite the large number of terms taken in the FS approximation.

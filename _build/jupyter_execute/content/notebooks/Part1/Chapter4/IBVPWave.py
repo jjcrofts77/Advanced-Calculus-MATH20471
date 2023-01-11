@@ -39,7 +39,10 @@
 # 
 # <br>
 # 
-# **Example 4.3.1** Solve the IBVP for the case 
+# ```{prf:example} 
+# :label: example26
+# 
+# Solve the IBVP for the case 
 # 
 # $$
 #  f(x) = A\sin\left(\frac{\pi x}{L}\right)+B\sin\left(\frac{\pi x}{L}\right)\cos\left(\frac{\pi x}{L}\right),\quad g(x)=0.
@@ -57,7 +60,7 @@
 #  y(x,t) = A\sin\left(\frac{\pi x}{L}\right)\cos\left(\frac{\pi c t}{L}\right) + \frac{1}{2}B\sin\left(\frac{2\pi x}{L}\right)\cos\left(\frac{2\pi c t}{L}\right).
 # $$
 # 
-# <br>
+# ```
 # 
 # ````{panels}
 # 
@@ -73,9 +76,12 @@
 # 
 # ````
 # 
-# <br>
 # 
-# **Example 4.3.2** Solve the IBVP for the case
+# 
+# ```{prf:example} 
+# :label: example27
+# 
+# Solve the IBVP for the case
 # 
 # $$
 #  f(x)=0, \quad g(x) = \sin^3\left(\frac{\pi x}{L}\right).
@@ -99,7 +105,7 @@
 # y(x,t) = \frac{3L}{4\pi c}\sin\left(\frac{\pi x}{L}\right)\sin\left(\frac{\pi c t}{L}\right) - \frac{L}{12\pi c}\sin\left(\frac{3\pi x}{L}\right)\sin\left(\frac{3\pi c t}{L}\right).
 # $$
 # 
-# <br>
+# ```
 # 
 # ````{panels}
 # 
@@ -203,9 +209,10 @@ HTML("""
 #  b_n &= \frac{2}{n\pi c}\int_0^L g(x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x.
 # $$
 # 
-# <br>
+# ```{prf:example} guitar
+# :label: example28
 # 
-# **Example 4.3.3 (Guitar)** For the special case {eq}`waveTriIC`,
+# For the special case {eq}`waveTriIC`,
 # 
 # $$
 #  a_n &= \frac{2}{L}\cdot\frac{2h}{L}\int_0^{\frac{L}{2}}x\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x +\frac{2}{L}\cdot\frac{2h}{L}\int_{\frac{L}{2}}^L(L-x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x,\\
@@ -225,16 +232,16 @@ HTML("""
 # &= \frac{8h}{\pi^2}\left[\frac{1}{1^2}\sin\left(\frac{\pi x}{L}\right)\cos\left(\frac{\pi c t}{L}\right)-\frac{1}{3^2}\sin\left(\frac{3\pi x}{L}\right)\cos\left(\frac{3\pi c t}{L}\right)\right.\\
 # &\left. \qquad\qquad +\frac{1}{5^2}\sin\left(\frac{5\pi x}{L}\right)\cos\left(\frac{5\pi c t}{L}\right) - \cdots\right].
 # $$
-# 
-# <br>
+# ```
 # 
 # ```{figure} ../../../images/GuitarWave.png
 # Solution for Example (4.3.1) with $c = 1$ and $L = \pi$
 # ```
 # 
-# <br>
 # 
-# **Example 4.3.4 (Piano)** The initial tranverse displacement is zero and the section $[L_1,L_2]$ is given an initial tranverse velocity $v$. Here $f(x)=0$ for $0\leq x\leq L$, and
+# ```{prf:example} piano 
+# :label: example29
+# The initial tranverse displacement is zero and the section $[L_1,L_2]$ is given an initial tranverse velocity $v$. Here $f(x)=0$ for $0\leq x\leq L$, and
 # 
 # $$
 # g(x) = \begin{cases}0& \text{for } 0\leq x< L_1 \text{ and } L_2< x \leq L,\\
@@ -253,7 +260,7 @@ HTML("""
 #  y(x,t) = \frac{2vL}{\pi^2c}\sum_{n=1}^\infty \frac{1}{n^2}\left[\cos\left(\frac{n\pi L_1}{L}\right)-\cos\left(\frac{n\pi L_2}{L}\right)\right]\sin\left(\frac{n\pi x}{L}\right)\sin\left(\frac{n\pi c t}{L}\right).
 # $$
 # 
-# <br>
+# ```
 # 
 # ```{figure} ../../../images/PianoWave.png
 # Solution for Example (4.3.1) with $c = 1$ and $L = \pi$

@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -613,12 +616,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contour-integration">
+   4.2.1 Contour integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#antiderivatives-and-the-fundamental-theorem">
+   4.2.2 Antiderivatives and the fundamental theorem
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -630,6 +662,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contour-integration">
+   4.2.1 Contour integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#antiderivatives-and-the-fundamental-theorem">
+   4.2.2 Antiderivatives and the fundamental theorem
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -640,28 +690,129 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter4/FundamentalInt.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-fundamental-theorem-of-contour-integration">
 <h1>4.2 The fundamental theorem of contour integration<a class="headerlink" href="#the-fundamental-theorem-of-contour-integration" title="Permalink to this headline">#</a></h1>
-<p>If <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is a simple path in the complex plane from <span class="math notranslate nohighlight">\(z_1\)</span> to <span class="math notranslate nohighlight">\(z_2\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> is an antiderivative of <span class="math notranslate nohighlight">\(f\)</span> (<span class="math notranslate nohighlight">\(F^\prime = f\)</span> on <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>) then:</p>
+<section id="contour-integration">
+<h2>4.2.1 Contour integration<a class="headerlink" href="#contour-integration" title="Permalink to this headline">#</a></h2>
+<p>Given a paramaterisation, <span class="math notranslate nohighlight">\(z(t)=x(t)+iy(t),~~ t\in[a, b]\)</span>, of the curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> in the complex plane, we define the integral of the complex-valued function, <span class="math notranslate nohighlight">\(f(z)\)</span>, over the curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> as follows:</p>
+<div class="math notranslate nohighlight" id="equation-contint">
+<span class="eqno">(52)<a class="headerlink" href="#equation-contint" title="Permalink to this equation">#</a></span>\[
+\int_\mathscr{C} f(z)\,\mathrm{d}z = \int_a^b f(z(t))z'(t)\,\mathrm{d}t
+\]</div>
+<p>In the above we assume the curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> to be piecewise continuous for <span class="math notranslate nohighlight">\(t\in[a,b]\)</span> and refer to function <span class="math notranslate nohighlight">\(f(z)\)</span> as being piecewise continuous.</p>
+<p>The integral on the right handside of <a class="reference internal" href="#equation-contint">(52)</a> is a standard integral of a complex-valued function, which can be written as a linear combination of two real integrals. To see this, note that we can write <span class="math notranslate nohighlight">\(f(z(t))z'(t) = u(t)+iv(t)\)</span> for real-valued functions <span class="math notranslate nohighlight">\(u, v\)</span> and rewrite <a class="reference internal" href="#equation-contint">(52)</a> as</p>
 <div class="math notranslate nohighlight">
 \[
-\int_\mathscr{C} f(z) \mathrm{d} z = F(z_2)-F(z_1)
+\int_a^b f(z(t))z'(t)\,\mathrm{d}t = \int_a^b u(t)\,\mathrm{d}t + i\int_a^b v(t)\,\mathrm{d}t,
 \]</div>
-<p>This can be shown easily by changing variables to evaluate the path integral along <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> as a line integral in the new variable.</p>
+<p>thus resulting in two standard integrals.</p>
+<p>Alternatively, writing</p>
+<div class="math notranslate nohighlight">
+\[
+f(z) = u(x,y)+iv(x,y)
+\]</div>
+<p>and noting that <span class="math notranslate nohighlight">\(\mathrm{d}z = \mathrm{d}x+i\mathrm{d}y\)</span>, we can rewrite the integral in <a class="reference internal" href="#equation-contint">(52)</a> as</p>
+<div class="math notranslate nohighlight">
+\[
+\int_\mathscr{C}f(z)\,\mathrm{d}z = \int_\mathscr{C}(u+iv)(\mathrm{d}x+i\mathrm{d}y) = \int_\mathscr{C}\left(u\mathrm{d}x-v\mathrm{d}y\right)+i\int_\mathscr{C}\left(v\mathrm{d}x+u\mathrm{d}y\right),
+\]</div>
+<p>resulting in a pair of real line integrals.</p>
+<p>Either method enables us to perform contour integration of a complex-valued function by using familiar techniques from real analysis, as should be clear from the examples to follow.</p>
+<div class="proof example admonition" id="example48">
+<p class="admonition-title"><span class="caption-number">Example 48 </span></p>
+<section class="example-content" id="proof-content">
+<p>Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \int_\mathscr{C}\bar{z}\,\mathrm{d}z\)</span>, where <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is the curve <span class="math notranslate nohighlight">\(x=2t, y=2t^2\)</span>, with <span class="math notranslate nohighlight">\(0\leq t\leq 3\)</span>.</p>
+<p>Noting that <span class="math notranslate nohighlight">\(z(t) = 2t+2it^2\)</span>, we start by working out</p>
+<div class="math notranslate nohighlight">
+\[
+ f(z(t)) = \bar{z}(t) = x(t) - iy(t) = 2t-2it^2 
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(\displaystyle z'(t) = \frac{\mathrm{d}}{\mathrm{d}t}\left(2t+2it^2\right) = 2+4it\)</span>.</p>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_\mathscr{C} &amp;= \int_0^3(2t-2it^2)(2+4it)\,\mathrm{d}t\\ 
+								 &amp;= \int_0^3(8t^3+4t+4it^2)\,\mathrm{d}t\\ 
+                 &amp;= \int_0^3(8t^3+4t)\mathrm{d}t+i\int_0^2(4t^2)\,\mathrm{d}t\\
+								 &amp;= \Bigg[2t^4+2t^2\Bigg]_0^3 + \Bigg[\frac{4}{3}t^3\Bigg]_0^3\\
+								 &amp;= 180 + 36i
+\end{split}\]</div>
+</section>
+</div><p>The applet below shows the curve of integration for the above example.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><figure>
+<center>
+<iframe scrolling="no" title="Example431" src="https://www.geogebra.org/material/iframe/id/ppge6eet/width/500/height/350/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="500px" height="350px" style="border:0px;"> </iframe>
+<figcaption style="position: center; bottom: 0; height: 10%; width 10%">Curve of integration in Example 48 (<b>click on the magenta circle!!!</b>)</figcaption>
+</center>
+</figure>
+</div></div>
+</div>
+<p>Click on the tab below to see the above example solved using the second approach outlined above.</p>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_\mathscr{C} \bar{z}\,\mathrm{d}z &amp;= \int_\mathscr{C} (x-iy)(\mathrm{d}x+i\mathrm{d}y) \\ &amp;= \int_\mathscr{C} (x\mathrm{d}x+y\mathrm{d}y) +i\int_\mathscr{C} (x\mathrm{d}y-y\mathrm{d}x)
+\end{split}\]</div>
+<p>We can rewrite this (using <span class="math notranslate nohighlight">\(x=2t, \mathrm{d}x = 2\,\mathrm{d}t\)</span> and <span class="math notranslate nohighlight">\(y=2t^2, \mathrm{d}y = 4t\,\mathrm{d}t\)</span>) as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_0^3 4t + 8t^3\,\mathrm{d}t + i\left(\int_0^3 4t^2\,\mathrm{d}t\right) &amp;= \bigg[2t^2+2t^4\bigg]_0^3 +i\bigg[\frac{4}{3}t^3\bigg]_0^3\\ &amp;= 180+36i,
+\end{split}\]</div>
+<p>which agrees with our earlier result.</p>
+</div>
+<div class="proof example admonition" id="example49">
+<p class="admonition-title"><span class="caption-number">Example 49 </span></p>
+<section class="example-content" id="proof-content">
+<p>Evaluate the integral <span class="math notranslate nohighlight">\(\displaystyle \int_\mathscr{C}\frac{1}{z}\,\mathrm{d}z\)</span>, where <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is the curve <span class="math notranslate nohighlight">\(x=\cos{t}, y=\sin{t}\)</span>, with <span class="math notranslate nohighlight">\(0\leq t\leq 2\pi\)</span>.</p>
+<div class="toggle docutils container">
+<p>Since <span class="math notranslate nohighlight">\(z(t)=\cos{t}+i\sin{t} = e^{it}\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+f(z(t)) = \frac{1}{e^{it}} = e^{-it}
+\]</div>
+<p>and since <span class="math notranslate nohighlight">\(z'(t) = ie^{it}\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+\int_\mathscr{C} \frac{1}{z}\,\mathrm{d}z = \int_0^{2\pi} e^{-it}\cdot ie^{it}\,\mathrm{d}t = i\int_0^{2\pi} \mathrm{d}t = 2\pi i.
+\]</div>
+</div>
+</section>
+</div></section>
+<section id="antiderivatives-and-the-fundamental-theorem">
+<h2>4.2.2 Antiderivatives and the fundamental theorem<a class="headerlink" href="#antiderivatives-and-the-fundamental-theorem" title="Permalink to this headline">#</a></h2>
+<p>Whilst in general the integral between two points <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span> in the complex plane depends on the path of integration, there are are certain functions for which this is not the case (akin to path independence observed for a conservative vector field). Firstly, let us remind ourselves what we mean by an <em>anti-derivative</em> of a function.</p>
+<div class="proof definition admonition" id="definition421">
+<p class="admonition-title"><span class="caption-number">Definition 17 </span> (Anti-derivative)</p>
+<section class="definition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> and <span class="math notranslate nohighlight">\(F(z)\)</span> are analytic in a region <span class="math notranslate nohighlight">\(\mathscr{R}\)</span> and <span class="math notranslate nohighlight">\(F'(z)=f(z)\)</span>, then <span class="math notranslate nohighlight">\(F(z)\)</span> is called an <em>anti-derivative</em> of <span class="math notranslate nohighlight">\(f(z)\)</span> and is denoted by</p>
+<div class="math notranslate nohighlight">
+\[
+F(z) = \oint_\mathscr{C} f(z)\,\mathrm{d}z.
+\]</div>
+</section>
+</div><p>Given the above, we can now present a key result in complex analysis, namely  <em>the Fundamental Theorem of Contour Integration</em>, which enables us determine whether integration of a given function is path-dependent or not.</p>
+<div class="proof theorem admonition" id="theorem421">
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span> (Fundamental Theorem of Contour Integration)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f(z)=F'(z)\)</span> be the derivative of a single-valued complex function <span class="math notranslate nohighlight">\(F(z)\)</span> defined on a region <span class="math notranslate nohighlight">\(\mathscr{R}\subset\mathbb{C}\)</span>. Let <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> be a contour lying entirely in <span class="math notranslate nohighlight">\(\mathscr{R}\)</span> with initial point <span class="math notranslate nohighlight">\(z_0\)</span> and final point <span class="math notranslate nohighlight">\(z_1\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[\int_\mathscr{C} f(z)\,\mathrm{d}z = F(z_1) - F(z_0)\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. This can be shown easily by changing variables to evaluate the path integral along <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> as a line integral in the new variable.</p>
 <p>Parametrising <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> by a new dummy variable <span class="math notranslate nohighlight">\(t\)</span> via <span class="math notranslate nohighlight">\(x=x(t)\)</span>, <span class="math notranslate nohighlight">\(y=y(t)\)</span> and <span class="math notranslate nohighlight">\(z=x+iy\)</span>. <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> can be traced out by varying the single variable <span class="math notranslate nohighlight">\(t\)</span> over some range <span class="math notranslate nohighlight">\(t_1 \to t_2\)</span>, say. To be explicit about it: <span class="math notranslate nohighlight">\(z(t_1)=x(t_1)+iy(t_1)=z_1\)</span> and <span class="math notranslate nohighlight">\(z(t_2)=x(t_2)+iy(t_2)=z_2\)</span>.</p>
 <p>The chain rule and some manipulation then gives the result. Defining <span class="math notranslate nohighlight">\(g(t)=F(\mathscr{C}(t))\)</span>, the chain rule gives</p>
 <div class="math notranslate nohighlight">
-\[
-g^\prime(t)=F^\prime(\mathscr{C}(t))\mathscr{C}^\prime(t) = f(\mathscr{C}(t))\mathscr{C}^\prime(t)
-\]</div>
+\[g^\prime(t)=F^\prime(\mathscr{C}(t))\mathscr{C}^\prime(t) = f(\mathscr{C}(t))\mathscr{C}^\prime(t)\]</div>
 <p>and so</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-	\int_\mathscr{C} f(z) \mathrm{d} z &amp;=&amp; \int_{t_1}^{t_2} f(\mathscr{C}(t))\mathscr{C}^\prime(t) \mathrm{d} t\\
-					  &amp;=&amp; \int_{t_1}^{t_2} g^\prime(t) \mathrm{d} t\\
-					  &amp;=&amp; g(t_2)-g(t_1)\\
-					  &amp;=&amp; F(\mathscr{C}(t_2))-F(\mathscr{C}(t_1))\\
-					  &amp;=&amp; F(z_2)-F(z_1).
-\end{split}\]</div>
-<p>This has the following consequences:</p>
+\[\begin{split}	\int_\mathscr{C} f(z) \mathrm{d} z &amp;= \int_{t_1}^{t_2} f(\mathscr{C}(t))\mathscr{C}^\prime(t) \mathrm{d} t\\
+					  &amp;= \int_{t_1}^{t_2} g^\prime(t) \mathrm{d} t\\
+					  &amp;= g(t_2)-g(t_1)\\
+					  &amp;= F(\mathscr{C}(t_2))-F(\mathscr{C}(t_1))\\
+					  &amp;= F(z_2)-F(z_1).\end{split}\]</div>
+</div>
+<p>The above result has a number of consequences. For example</p>
 <ol class="simple">
 <li><p>If two curves <span class="math notranslate nohighlight">\(\mathscr{C}_1\)</span>, <span class="math notranslate nohighlight">\(\mathscr{C}_2\)</span> start and end at the same points <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span></p></li>
 </ol>
@@ -676,6 +827,7 @@ g^\prime(t)=F^\prime(\mathscr{C}(t))\mathscr{C}^\prime(t) = f(\mathscr{C}(t))\ma
 \[
  \oint_{\mathscr{C}} f(z) \mathrm{d} z = \int_{\mathscr{C}_1} f(z) \mathrm{d} z -\int_{\mathscr{C}_2} f(z) \mathrm{d} z = 0.
  \]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

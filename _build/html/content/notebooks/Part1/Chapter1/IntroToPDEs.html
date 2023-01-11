@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -752,8 +755,10 @@ governs the flow of heat in a homogeneous isotropic material, <em>etc</em>.</p>
 <section id="solution-by-direct-integration">
 <h2>Solution by direct integration<a class="headerlink" href="#solution-by-direct-integration" title="Permalink to this headline">#</a></h2>
 <p>The simplest ordinary differential equations (ODEs) such as <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{d}^2u}{\mathrm{d}x^2}=F(x)\)</span> can be solved by direct integration.</p>
-<br>
-<p><strong>Example 1.2.1</strong> If</p>
+<div class="proof example admonition" id="example10">
+<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
+<section class="example-content" id="proof-content">
+<p>If</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\mathrm{d}^2 u}{\mathrm{d}x^2} = 2,
@@ -764,8 +769,10 @@ governs the flow of heat in a homogeneous isotropic material, <em>etc</em>.</p>
 \frac{\mathrm{d}u}{\mathrm{d}x} &amp;= \int 2\mathrm{d}x = 2x+A\\
             u(x) &amp;= \int (2x+A) \mathrm{d}x=x^2+Ax+B.
 \end{split}\]</div>
-<p>This is the general solution of the ODE containing the two arbitrary constants, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. The values of these constants may be found if the solution must satisfy other conditions. If, for example, the solution to the above equation must also satisfy the inital conditions <span class="math notranslate nohighlight">\(u(0)=5\)</span> and <span class="math notranslate nohighlight">\(u'(0)=0\)</span> then we have that <span class="math notranslate nohighlight">\(A=0\)</span> and <span class="math notranslate nohighlight">\(B=5\)</span>, giving the particular solution  <span class="math notranslate nohighlight">\(u=x^2+5\)</span>.</p>
-<p>In a similar fashion, certain partial differential equations may be solved by direct integration. For example, given that <span class="math notranslate nohighlight">\(u=u(x,t)\)</span> then the solution of the partial differential equation</p>
+<p>This is the general solution of the ODE containing the two arbitrary constants, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. The values of these constants may be found if the solution must satisfy other conditions.</p>
+<p>If, for example, the solution to the above equation must also satisfy the inital conditions <span class="math notranslate nohighlight">\(u(0)=5\)</span> and <span class="math notranslate nohighlight">\(u'(0)=0\)</span> then we have that <span class="math notranslate nohighlight">\(A=0\)</span> and <span class="math notranslate nohighlight">\(B=5\)</span>, giving the particular solution  <span class="math notranslate nohighlight">\(u=x^2+5\)</span>.</p>
+</section>
+</div><p>In a similar fashion, certain partial differential equations may be solved by direct integration. For example, given that <span class="math notranslate nohighlight">\(u=u(x,t)\)</span> then the solution of the partial differential equation</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial^2u}{\partial{x^2}} = 2
@@ -782,14 +789,15 @@ u(x,t) = x^2+xF(t)+G(t).
 \]</div>
 <p>This is the general solution to the given partial differential equation. Note that it contains two arbitrary functions, as required for a second
 order partial differential equation.</p>
-<br>
-<p><strong>Example 1.2.2</strong> Given that <span class="math notranslate nohighlight">\(u=u(x,y)\)</span>: (a) find the general solution to the partial differential equation</p>
+<div class="proof example admonition" id="example11">
+<p class="admonition-title"><span class="caption-number">Example 11 </span></p>
+<section class="example-content" id="proof-content">
+<p>Given that <span class="math notranslate nohighlight">\(u=u(x,y)\)</span>: (a) find the general solution to the partial differential equation</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{\partial{u}}{\partial{x}} = 2x-e^y,
 \]</div>
 <p>and (b) find the particular solution, which satisfies <span class="math notranslate nohighlight">\(u(0,y)=\sin{y}\)</span>.</p>
-<p><strong>Solution</strong></p>
 <div class="toggle docutils container">
 <p>Integrating gives</p>
 <div class="math notranslate nohighlight">
@@ -807,7 +815,8 @@ order partial differential equation.</p>
  u(x,y) = x^2-xe^y+\sin{y}.
 \]</div>
 </div>
-<p>We plot this solution below using python.</p>
+</section>
+</div><p>We plot this solution below using python (click the tab to see the code).</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># solution for the PDE of Example 1.2.2</span>
@@ -849,9 +858,10 @@ order partial differential equation.</p>
 <section id="solving-pdes-like-odes">
 <h2>Solving PDEs like ODEs<a class="headerlink" href="#solving-pdes-like-odes" title="Permalink to this headline">#</a></h2>
 <p>When a PDE involves only derivatives with respect to one variable (or can be transformed to such a form) we can solve using the techniques of ODEs, treating the other variables as parameters.</p>
-<br>
-<p><strong>Example 1.2.3</strong> Find solutions <span class="math notranslate nohighlight">\(\displaystyle u = u(x,y)\)</span> of the PDE <span class="math notranslate nohighlight">\(\displaystyle u_{xx}-u=0\)</span></p>
-<p><strong>Solution</strong></p>
+<div class="proof example admonition" id="example12">
+<p class="admonition-title"><span class="caption-number">Example 12 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find solutions <span class="math notranslate nohighlight">\(\displaystyle u = u(x,y)\)</span> of the PDE <span class="math notranslate nohighlight">\(\displaystyle u_{xx}-u=0\)</span></p>
 <div class="toggle docutils container">
 <p>Since no <span class="math notranslate nohighlight">\(y\)</span> derivatives occur we can solve this as</p>
 <div class="math notranslate nohighlight">
@@ -869,13 +879,15 @@ order partial differential equation.</p>
  u(x,y) = A_1(y)e^x + A_2(y)e^{-x}.
 \]</div>
 </div>
-<br>
 </section>
+</div></section>
 <section id="solutions-partly-known">
 <h2>Solutions partly known<a class="headerlink" href="#solutions-partly-known" title="Permalink to this headline">#</a></h2>
 <p>On occasions, when solving a partial differential equation, the solution may be partly known. Often this information reduces a partial differential equation to an ordinary differential equation, which can then be solved in the usual fashion.</p>
-<br>
-<p><strong>Example 1.2.4</strong> Find the solution of the IBVP</p>
+<div class="proof example admonition" id="example13">
+<p class="admonition-title"><span class="caption-number">Example 13 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the solution of the IBVP</p>
 <div class="math notranslate nohighlight">
 \[
 z+\frac{\partial^2z}{\partial{x^2}}+\frac{\partial^2z}{\partial{t^2}}-2\frac{
@@ -886,7 +898,6 @@ z+\frac{\partial^2z}{\partial{x^2}}+\frac{\partial^2z}{\partial{t^2}}-2\frac{
 \[
 z = F(x)e^{-2t}.
 \]</div>
-<p><strong>Solution</strong></p>
 <div class="toggle docutils container">
 <p>The approach used is to find the derivatives appearing in the partial differential equation in terms of <span class="math notranslate nohighlight">\(F(x)\)</span> and its derivatives, then to substitute these into the given partial differential equation and solve the resulting ordinary differential equation. We are given that</p>
 <div class="math notranslate nohighlight">
@@ -939,14 +950,15 @@ F''(x)+9F(x)=0.
 \]</div>
 <p>The required solution is given by <span class="math notranslate nohighlight">\(z(x,t)=4\sin(3x)e^{-2t}\)</span>.</p>
 </div>
-<br>
-<p><strong>Example 1.2.5</strong> Assuming a solution of the form <span class="math notranslate nohighlight">\(\displaystyle u(x,y) = y^\alpha f(x)\)</span>, where <span class="math notranslate nohighlight">\(\displaystyle \alpha\in\mathbb{R}\)</span>, solve the following PDE</p>
+</section>
+</div><div class="proof example admonition" id="example14">
+<p class="admonition-title"><span class="caption-number">Example 14 </span></p>
+<section class="example-content" id="proof-content">
+<p>Assuming a solution of the form <span class="math notranslate nohighlight">\(\displaystyle u(x,y) = y^\alpha f(x)\)</span>, where <span class="math notranslate nohighlight">\(\displaystyle \alpha\in\mathbb{R}\)</span>, solve the following PDE</p>
 <div class="math notranslate nohighlight" id="equation-ex125">
 <span class="eqno">(8)<a class="headerlink" href="#equation-ex125" title="Permalink to this equation">#</a></span>\[
 y^2u_{yy}+2yu_y-2u=0.
 \]</div>
-<br>
-<p><strong>Solution</strong></p>
 <div class="toggle docutils container">
 <p>We have that</p>
 <div class="math notranslate nohighlight">
@@ -996,6 +1008,7 @@ y^2\left(6A_2f_2\frac{1}{y^4}\right) + 2y\left(A_1f_1-2A_2f_2\frac{1}{y^3}\right
 </div>
 </div>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

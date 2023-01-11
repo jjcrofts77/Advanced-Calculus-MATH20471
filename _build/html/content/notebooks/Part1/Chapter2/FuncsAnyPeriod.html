@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -727,16 +730,20 @@ a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \mathrm{d}x, 
 \]</div>
 <p>so we obtain</p>
 <br>
-<blockquote>
-<div><p><strong>Theorem 2.4.1</strong> Let <span class="math notranslate nohighlight">\(f\)</span> be a periodic function of period <span class="math notranslate nohighlight">\(2L\)</span> which is sufficiently well-behaved. Then the Fourier series of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span> converges to</p>
+<div class="proof theorem admonition" id="FSConv">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (FS convergence)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a periodic function of period <span class="math notranslate nohighlight">\(2L\)</span> which is sufficiently well-behaved. Then the Fourier series of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span> converges to</p>
 <div class="math notranslate nohighlight">
 \[
  \frac{f(x_+)+f(x_-)}{2},
 \]</div>
 <p>so that Equation <a class="reference internal" href="#equation-feqn">(21)</a> holds at any point where <span class="math notranslate nohighlight">\(f\)</span> is continuous.</p>
-</div></blockquote>
-<br>
-<p><strong>Example 2.4.1</strong> Find the Fourier series of the <span class="math notranslate nohighlight">\(2L\)</span>-periodic extension of</p>
+</section>
+</div><div class="proof example admonition" id="example21">
+<p class="admonition-title"><span class="caption-number">Example 21 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the Fourier series of the <span class="math notranslate nohighlight">\(2L\)</span>-periodic extension of</p>
 <div class="math notranslate nohighlight" id="equation-funcexample241">
 <span class="eqno">(22)<a class="headerlink" href="#equation-funcexample241" title="Permalink to this equation">#</a></span>\[\begin{split}
  f(x) = \begin{cases}x &amp; x\in(0, L]\\ 0 &amp; x\in(-L, 0].\end{cases}
@@ -752,12 +759,12 @@ a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \mathrm{d}x, 
 <span class="eqno">(23)<a class="headerlink" href="#equation-ex1" title="Permalink to this equation">#</a></span>\[
  \frac{\pi^2}{8} = \sum_{m=0}^\infty \frac{1}{(2m+1)^2}.
 \]</div>
+<div class="toggle docutils container">
 <p>We have</p>
 <div class="math notranslate nohighlight">
 \[
-a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{1}{L}\int_0^Lx\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{L[(-1)^n-1]}{n^2\pi^2}, \quad n\neq 0,
+a_n = \frac{1}{L}\int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{1}{L}\int_0^Lx\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{L[(-1)^n-1]}{n^2\pi^2}, \quad n\neq 0.
 \]</div>
-<p>as in Example 2.2.1.</p>
 <p>So we have <span class="math notranslate nohighlight">\(a_{2m}=0\)</span> for <span class="math notranslate nohighlight">\(m&gt;0\)</span> and</p>
 <div class="math notranslate nohighlight">
 \[
@@ -802,13 +809,17 @@ x = \frac{L}{4}+ \sum_{m=0}^\infty \frac{-2L}{(2m+1)^2\pi^2}\cos\left[\frac{(2m+
 \[
  \frac{0+L}{2} = \frac{L}{4} + \sum_{m=0}^\infty\frac{-2L}{(2m+1)^2\pi^2},
 \]</div>
-<p>which gives equation (<a class="reference internal" href="#equation-ex1">(23)</a> again.</p>
-<section id="sine-and-cosine-series">
+<p>which gives equation <a class="reference internal" href="#equation-ex1">(23)</a> again.</p>
+</div>
+</section>
+</div><section id="sine-and-cosine-series">
 <h2>Sine and cosine series<a class="headerlink" href="#sine-and-cosine-series" title="Permalink to this headline">#</a></h2>
 <p>Given a function <span class="math notranslate nohighlight">\(f\)</span> defined on <span class="math notranslate nohighlight">\([0,L]\)</span> we require an expansion with only cosine terms or only sine terms. This will be done by extending <span class="math notranslate nohighlight">\(f\)</span> to be even (for only cosine terms) or odd (for only sine terms) on <span class="math notranslate nohighlight">\((-L,L]\)</span> and then extending to a <span class="math notranslate nohighlight">\(2L\)</span>-periodic function. The series obtained will then be valid on <span class="math notranslate nohighlight">\((0,L)\)</span>.</p>
 <br>
-<blockquote>
-<div><p><strong>Definition 2.4.1</strong> If <span class="math notranslate nohighlight">\(f\)</span> is defined on <span class="math notranslate nohighlight">\([0, L]\)</span>, the <em>even extension</em> for <span class="math notranslate nohighlight">\(f\)</span>, denoted by <span class="math notranslate nohighlight">\(f_e\)</span>, is the periodic extension of</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (half-range cosine series)</p>
+<section class="definition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is defined on <span class="math notranslate nohighlight">\([0, L]\)</span>, the <em>even extension</em> for <span class="math notranslate nohighlight">\(f\)</span>, denoted by <span class="math notranslate nohighlight">\(f_e\)</span>, is the periodic extension of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 f_e(x) = \begin{cases}
@@ -826,11 +837,12 @@ f_e(x)\sim \frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos\left(\frac{n\pi x}{L}\right),
 \[
  a_n = \frac{1}{L}\int_{-L}^Lf_e(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x = \frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\mathrm{d}x,
 \]</div>
-<p>is called the <em>Fourier cosine series</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
-</div></blockquote>
-<br>
-<blockquote>
-<div><p><strong>Definition 2.4.2</strong> The <em>odd extension</em> for <span class="math notranslate nohighlight">\(f\)</span>, denoted by <span class="math notranslate nohighlight">\(f_o\)</span>, is the periodic extension of</p>
+<p>is called the <em>half-range cosine series</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span> (half-range sine series)</p>
+<section class="definition-content" id="proof-content">
+<p>The <em>odd extension</em> for <span class="math notranslate nohighlight">\(f\)</span>, denoted by <span class="math notranslate nohighlight">\(f_o\)</span>, is the periodic extension of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 f_o(x) = \begin{cases}
@@ -848,12 +860,16 @@ f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
 \[
  b_n = \frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x,
 \]</div>
-<p>is called the <em>Fourier sine series</em> for <span class="math notranslate nohighlight">\(f\)</span>.</p>
-</div></blockquote>
-<br>
-<p><strong>Note:</strong> For <span class="math notranslate nohighlight">\(f_o\)</span> to really be odd we must have <span class="math notranslate nohighlight">\(f_o(0)=0\)</span> and also <span class="math notranslate nohighlight">\(f_o(L)=-f_o(-L)=-f_o(L)\)</span> (the last equality follows from periodicity) giving <span class="math notranslate nohighlight">\(f_o(L)=0\)</span> and therefore <span class="math notranslate nohighlight">\(f_o(nL)=0\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>. However, the value of <span class="math notranslate nohighlight">\(f\)</span> at these isolated points does not affect the Fourier series.</p>
-<br>
-<p><strong>Example 2.4.2</strong> Find the Fourier sine and cosine series  expansions of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span>.</p>
+<p>is called the <em>half-range sine series</em> for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <span class="math notranslate nohighlight">\(f_o\)</span> to really be odd we must have <span class="math notranslate nohighlight">\(f_o(0)=0\)</span> and also <span class="math notranslate nohighlight">\(f_o(L)=-f_o(-L)=-f_o(L)\)</span> (the last equality follows from periodicity) giving <span class="math notranslate nohighlight">\(f_o(L)=0\)</span> and therefore <span class="math notranslate nohighlight">\(f_o(nL)=0\)</span> for all <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>. However, the value of <span class="math notranslate nohighlight">\(f\)</span> at these isolated points does not affect the Fourier series.</p>
+</div>
+<div class="proof example admonition" id="example22">
+<p class="admonition-title"><span class="caption-number">Example 22 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the half-range sine and cosine series  expansions of <span class="math notranslate nohighlight">\(f(x)=x\)</span> for <span class="math notranslate nohighlight">\(x\in[0,L]\)</span>.</p>
 <p><em>Sine expansion:</em></p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/Example24Odd.png"><img alt="../../../../_images/Example24Odd.png" src="../../../../_images/Example24Odd.png" style="height: 200px;" /></a>
@@ -871,7 +887,7 @@ f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
 \[
  b_n = \frac{2}{L}\int_0^L x\sin\left(\frac{n\pi x}{L}\right)\mathrm{d}x = (-1)^{n+1}\frac{2L}{n\pi},
 \]</div>
-<p>as in Example 2.4.1. For <span class="math notranslate nohighlight">\(x\in[0,L)\)</span> we therefore obtain</p>
+<p>as in <a class="reference internal" href="#example21">Example 21</a>. For <span class="math notranslate nohighlight">\(x\in[0,L)\)</span> we therefore obtain</p>
 <div class="math notranslate nohighlight">
 \[
  x = \sum_{n=1}^\infty (-1)^{n+1}\frac{2L}{n\pi}\sin\left(\frac{n\pi x}{L}\right).
@@ -900,6 +916,7 @@ f_o(x)\sim \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right),
  \begin{cases}0&amp;n=2m \text{ even},\\ \frac{-4L}{(2m+1)^2\pi^2}&amp;n=2m+1 \text{ odd}. \end{cases}
 \end{split}\]</div>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

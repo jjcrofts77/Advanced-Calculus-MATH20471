@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Part2/Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -717,8 +720,10 @@ y(x,t) = F(x-ct),
 \[
 Y(\xi,\eta) = F(\xi)+G(\eta) \implies y(x,t) = F(x-ct)+G(x+ct).
 \]</div>
-<br>
-<p><strong>Example 4.5</strong> A string occupies <span class="math notranslate nohighlight">\(-\infty&lt;x\leq 0\)</span> and is fixed at <span class="math notranslate nohighlight">\(x=0\)</span>. A wave <span class="math notranslate nohighlight">\(y(x,t)=F(x-ct)\)</span> is incident from <span class="math notranslate nohighlight">\(x&lt;0\)</span>. Find the reflected wave.</p>
+<div class="proof example admonition" id="example30">
+<p class="admonition-title"><span class="caption-number">Example 30 </span></p>
+<section class="example-content" id="proof-content">
+<p>A string occupies <span class="math notranslate nohighlight">\(-\infty&lt;x\leq 0\)</span> and is fixed at <span class="math notranslate nohighlight">\(x=0\)</span>. A wave <span class="math notranslate nohighlight">\(y(x,t)=F(x-ct)\)</span> is incident from <span class="math notranslate nohighlight">\(x&lt;0\)</span>. Find the reflected wave.</p>
 <p>The solution of the wave equation is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -730,6 +735,7 @@ Y(\xi,\eta) = F(\xi)+G(\eta) \implies y(x,t) = F(x-ct)+G(x+ct).
 y(x,t) = \underbrace{F(x-ct)}_\text{incident} - \underbrace{F(-x-ct)}_\text{reflective}.
 \]</div>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

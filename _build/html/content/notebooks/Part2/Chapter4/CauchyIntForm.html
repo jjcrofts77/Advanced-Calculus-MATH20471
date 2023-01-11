@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Cauchy’s integral formula &#8212; Advanced Calculus MATH20471</title>
+    <title>4.4 Cauchy’s integral formula &#8212; Advanced Calculus MATH20471</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -636,8 +639,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cauchy-s-derivative-formula">
-   Cauchy’s derivative formula
+  <a class="reference internal nav-link" href="#cauchy-s-integral-formula-for-derivatives">
+   Cauchy’s integral formula for derivatives
   </a>
  </li>
 </ul>
@@ -649,7 +652,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Cauchy’s integral formula</h1>
+                <h1>4.4 Cauchy’s integral formula</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -660,8 +663,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cauchy-s-derivative-formula">
-   Cauchy’s derivative formula
+  <a class="reference internal nav-link" href="#cauchy-s-integral-formula-for-derivatives">
+   Cauchy’s integral formula for derivatives
   </a>
  </li>
 </ul>
@@ -676,33 +679,44 @@ title="Print to PDF"
                 
   <p><a href="https://colab.research.google.com/github/jjcrofts77/Advanced-Calculus-MATH20471/blob/main/content/notebooks/Part2/Chapter4/CauchyIntForm.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="cauchy-s-integral-formula">
-<h1>Cauchy’s integral formula<a class="headerlink" href="#cauchy-s-integral-formula" title="Permalink to this headline">#</a></h1>
+<h1>4.4 Cauchy’s integral formula<a class="headerlink" href="#cauchy-s-integral-formula" title="Permalink to this headline">#</a></h1>
 <p>We have seen that if <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on and within a closed curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
 	\oint_\mathscr{C} f(z) \mathrm{d} z=0,
 \]</div>
 <p>but what if <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> contains a singularity?</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span> (Cauchy’s integral formula)</p>
+<section class="theorem-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> is a closed contour within which <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic and <span class="math notranslate nohighlight">\(z_0\)</span> lies within <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> then it can be shown that</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-cif">
+<span class="eqno">(55)<a class="headerlink" href="#equation-cif" title="Permalink to this equation">#</a></span>\[
 	f(z_0)=\frac{1}{2\pi i}\oint_\mathscr{C} \frac{f(z)}{z-z_0}\mathrm{d} z.
 \]</div>
-<p>Rearrangement allows evaluation of integrals.</p>
-<br>
-<section id="cauchy-s-derivative-formula">
-<h2>Cauchy’s derivative formula<a class="headerlink" href="#cauchy-s-derivative-formula" title="Permalink to this headline">#</a></h2>
-<p>The above result can be extended as follows. If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on and within some simple closed curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> (traversed anticlockwise) and <span class="math notranslate nohighlight">\(z_0\)</span> is a point within <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> then:</p>
+</section>
+</div><p>Rearrangement of <a class="reference internal" href="#equation-cif">(55)</a> allows for the evaluation of certain integrals.</p>
+<section id="cauchy-s-integral-formula-for-derivatives">
+<h2>Cauchy’s integral formula for derivatives<a class="headerlink" href="#cauchy-s-integral-formula-for-derivatives" title="Permalink to this headline">#</a></h2>
+<p>The above result can be extended as follows.</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 11 </span> (Cauchy’s derivative formula)</p>
+<section class="theorem-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(f(z)\)</span> is analytic on and within some simple closed curve <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> (traversed anticlockwise) and <span class="math notranslate nohighlight">\(z_0\)</span> is a point within <span class="math notranslate nohighlight">\(\mathscr{C}\)</span> then:</p>
 <div class="math notranslate nohighlight">
 \[
 	f^{(n)}(z_0) = \frac{n!}{2i\pi}\oint_\mathscr{C}\frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d} z.
 \]</div>
-<p>This result can be rearranged to easily evaluate integrals of the form</p>
+</section>
+</div><p>This result can be rearranged to easily evaluate integrals of the form</p>
 <div class="math notranslate nohighlight">
 \[
 	\oint_\mathscr{C}\frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}z
 \]</div>
-<p><strong>Example 4.3.1</strong> The integral</p>
+<div class="proof example admonition" id="example53">
+<p class="admonition-title"><span class="caption-number">Example 53 </span></p>
+<section class="example-content" id="proof-content">
+<p>The integral</p>
 <div class="math notranslate nohighlight">
 \[
 	I = \oint_\mathscr{C}\frac{z^3}{(z-2)^2}\mathrm{d} z
@@ -714,6 +728,7 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(I=\frac{2i\pi}{1!}12=24i\pi\)</span></p></li>
 </ul>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

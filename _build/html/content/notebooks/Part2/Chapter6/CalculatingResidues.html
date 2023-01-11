@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -641,7 +644,10 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="calculating-residues">
 <h1>6.2 Calculating residues<a class="headerlink" href="#calculating-residues" title="Permalink to this headline">#</a></h1>
 <p>The residue theorem can be used to calculate integrals. For it to be of much use we must find ways of calculating residues.</p>
-<p><strong>Example 6.1.1</strong> Find the poles and corresponding residues of <span class="math notranslate nohighlight">\(f(z)=\frac{z^2+5z+3}{(z-1)(z+2)^2}\)</span></p>
+<div class="proof example admonition" id="example67">
+<p class="admonition-title"><span class="caption-number">Example 67 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the poles and corresponding residues of <span class="math notranslate nohighlight">\(f(z)=\frac{z^2+5z+3}{(z-1)(z+2)^2}\)</span></p>
 <p><strong>Solution</strong></p>
 <ul class="simple">
 <li><p>Using partial fractions, <span class="math notranslate nohighlight">\(f\)</span> may be expressed <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{z-1}+\frac{1}{(z+2)^2}\)</span></p></li>
@@ -672,8 +678,8 @@ title="Print to PDF"
 <p>The residue is therefore <span class="math notranslate nohighlight">\(\mathrm{Res}(f,z_2)=0\)</span>.</p>
 </li>
 </ul>
-<br>
-<p>The above example has indicated that the integral may be easily evaluated by use of the residue theorem. In certain circumstances there are easier ways to determine the residue. The three options are as follows:</p>
+</section>
+</div><p>The above example has indicated that the integral may be easily evaluated by use of the residue theorem. In certain circumstances there are easier ways to determine the residue. The three options are as follows:</p>
 <ol class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(z_i\)</span> is a removable singularity of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Res}(f;z_i)=0\)</span> since the Laurent series reduces to a Taylor series with <span class="math notranslate nohighlight">\(b_{-1}=0\)</span> and the residue is zero.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(z_i\)</span> is an essential singularity of <span class="math notranslate nohighlight">\(f(z)\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Res}(f;z_i)\)</span> can only be determined by direct expansion of <span class="math notranslate nohighlight">\(f(z)\)</span> around <span class="math notranslate nohighlight">\(z_i\)</span>.</p></li>
@@ -695,29 +701,31 @@ title="Print to PDF"
 \[
  \mathrm{Res}(f;z_0) = \frac{p(z_0)}{q'(z_0)}.
  \]</div>
-<br>
-Returning to the previous example: 
-<p><strong>Example 6.1.2</strong> Find the poles and corresponding residues of <span class="math notranslate nohighlight">\(f(z)=\frac{z^2+5z+3}{(z-1)(z+2)^2}\)</span></p>
+<p>Returning to the previous example:</p>
+<div class="proof example admonition" id="example68">
+<p class="admonition-title"><span class="caption-number">Example 68 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the poles and corresponding residues of <span class="math notranslate nohighlight">\(f(z)=\frac{z^2+5z+3}{(z-1)(z+2)^2}\)</span></p>
 <p><strong>Solution</strong></p>
-<ul class="simple">
-<li><p>The pole at <span class="math notranslate nohighlight">\(z_1=1\)</span> is order 1 so
-$<span class="math notranslate nohighlight">\(
+<p>The pole at <span class="math notranslate nohighlight">\(z_1=1\)</span> is order 1 so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \mathrm{Res}(f;z_1)&amp;=\lim_{z\rightarrow z_1}\left\{(z-z_1) f(z)\right\}\\
 &amp;= \lim_{z\rightarrow 1}\left\{(z-1) \frac{z^2+5z+3}{(z-1)(z+2)^2}\right\}\\
 &amp;= \left. \frac{z^2+5z+3}{(z+2)^2}\right|_{z=1}\\
-&amp;= \frac{9}{(3)^2} = 1\\
-\)</span>$</p></li>
-<li><p>The pole at <span class="math notranslate nohighlight">\(z_2=-2\)</span> is order 2 so</p></li>
-</ul>
+&amp;= \frac{9}{(3)^2} = 1.
+\end{split}\]</div>
+<p>The pole at <span class="math notranslate nohighlight">\(z_2=-2\)</span> is order 2 so</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	\mathrm{Res}(f;z_2)&amp;=&amp;\lim_{z\rightarrow z_2}\left\{\frac{\mathrm{d} }{\mathrm{d} z}((z-z_2)^2 f(z))\right\}\\
-	&amp;= \lim_{z\rightarrow -2}\left\{\frac{\mathrm{d}}{\mathrm{d} z}\left((z+2)^2 \frac{z^2+5z+3}{(z-1)(z+2)^2}\right)\right\}\\
-	&amp;= \frac{\mathrm{d}}{\mathrm{d} z}\bigg\{  \frac{z^2+5z+3}{(z-1)}\bigg\}\bigg|_{z=-2}\\
-	&amp;= \bigg\{  \frac{(z-1)(2z+5)-(z^2+5z+3)}{(z-1)^2}\bigg\}\bigg|_{z=-2}\\
-	&amp;=  0.
-	\end{split}\]</div>
+\mathrm{Res}(f;z_2)&amp;=\lim_{z\rightarrow z_2}\left\{\frac{\mathrm{d} }{\mathrm{d} z}((z-z_2)^2 f(z))\right\}\\
+&amp;= \lim_{z\rightarrow -2}\left\{\frac{\mathrm{d}}{\mathrm{d} z}\left((z+2)^2 \frac{z^2+5z+3}{(z-1)(z+2)^2}\right)\right\}\\
+&amp;= \frac{\mathrm{d}}{\mathrm{d} z}\bigg\{  \frac{z^2+5z+3}{(z-1)}\bigg\}\bigg|_{z=-2}\\
+&amp;= \bigg\{  \frac{(z-1)(2z+5)-(z^2+5z+3)}{(z-1)^2}\bigg\}\bigg|_{z=-2}\\
+&amp;=  0.
+\end{split}\]</div>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/myfonts.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
@@ -39,6 +41,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -410,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter4/CauchyIntForm.html">
-     Cauchy’s integral formula
+     4.4 Cauchy’s integral formula
     </a>
    </li>
    <li class="toctree-l2">
@@ -650,27 +653,29 @@ title="Print to PDF"
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/IsolatedSingularities.png"><img alt="../../../../_images/IsolatedSingularities.png" src="../../../../_images/IsolatedSingularities.png" style="height: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Argand diagram for the complex number <span class="math notranslate nohighlight">\(z = x+ iy\)</span>, indicating Cartesian and Polar coordinates</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Isolated and essential singularities</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p><strong>Definition 3.3.1</strong> A singularity which is not a pole or removable singularity is called an <em>essential singularity</em>.</p>
-<aside class="margin sidebar">
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 16 </span> (essential singularity)</p>
+<section class="definition-content" id="proof-content">
+<p>A singularity which is not a pole or removable singularity is called an <em>essential singularity</em>.</p>
+</section>
+</div><aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Technically we should include branch points in the above definition; however, we do not consider such points in this course since all functions are single-valued.</p>
+<p>Technically we should include branch points in the above definition; however, we do not consider such points in this course since the functions we consider are single-valued.</p>
 </div>
 </aside>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Alternatively, we say that any singularity that is <strong>not</strong> <em>isolated</em> is an <em>essential singularity</em>.</p>
-</div>
-<p>In contrast to the aforementioned singularities, these singularities cannot be removed, since a deleted <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighbourhood cannot be drawn which doesn’t enclose another singularity.</p>
-<br>
-<p><strong>Example 3.3.1</strong> the function <span class="math notranslate nohighlight">\(f(z)=\frac{1}{\sin (z^{-1})}\)</span> has singular points at <span class="math notranslate nohighlight">\(z_n=(n\pi)^{-1}\)</span> (<span class="math notranslate nohighlight">\(n=1,2,\ldots\)</span>). In the limit <span class="math notranslate nohighlight">\(n\to\infty\)</span>, <span class="math notranslate nohighlight">\(z_n\to 0\)</span>; The last in the sequence of poles <span class="math notranslate nohighlight">\(z_\infty=0\)</span> can never be isolated in an <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighbourhood.</p>
+<p>In contrast to the aforementioned singularities, these singularities cannot be removed, since a deleted <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighbourhood cannot be drawn which doesn’t enclose another singularity. For this reason, we alternatively say that any singularity that is <strong>not</strong> <em>isolated</em> is an <em>essential singularity</em>.</p>
+<div class="proof example admonition" id="example46">
+<p class="admonition-title"><span class="caption-number">Example 46 </span></p>
+<section class="example-content" id="proof-content">
+<p>The function <span class="math notranslate nohighlight">\(\displaystyle f(z)=\frac{1}{\sin (z^{-1})}\)</span> has singular points at <span class="math notranslate nohighlight">\(z_n=(n\pi)^{-1}\)</span> (<span class="math notranslate nohighlight">\(n=1,2,\ldots\)</span>). In the limit <span class="math notranslate nohighlight">\(n\to\infty\)</span>, <span class="math notranslate nohighlight">\(z_n\to 0\)</span>; The last in the sequence of poles <span class="math notranslate nohighlight">\(z_\infty=0\)</span> can never be isolated in an <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighbourhood.</p>
 <p>See the above figure. Again, this can be shown using Laurent series. This will be illustrated later in the course.</p>
-<br>
-<div class="admonition note">
+</section>
+</div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If a function is <em>single-valued</em> and has a singularity, then the singularity is either a pole or an essential singularity. For this reason a pole is sometimes referred to as a <em>non-essential singularity</em>.</p>
 </div>
